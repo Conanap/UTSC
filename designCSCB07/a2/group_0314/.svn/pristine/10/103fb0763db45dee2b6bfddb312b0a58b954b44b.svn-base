@@ -1,0 +1,2086 @@
++++ASSIGNMENT2 TEAM MEMBER CONTRIBUTION+++
+
+
+
+PART 1) +++SVN CHECKOUT ON YOUR ASSIGNMENT1+++
+A    Assignment2/readMeAssignment2A.txt
+A    Assignment2/src
+A    Assignment2/src/test
+A    Assignment2/src/test/PopdTest.java
+A    Assignment2/src/test/PushdTest.java
+A    Assignment2/src/test/FileSystemTest.java
+A    Assignment2/src/test/ValidatorTest.java
+A    Assignment2/src/test/MkDirTest.java
+A    Assignment2/src/test/CatTest.java
+A    Assignment2/src/test/MockFile.java
+A    Assignment2/src/test/PwdTest.java
+A    Assignment2/src/test/TokenizerTest.java
+A    Assignment2/src/test/ManTest.java
+A    Assignment2/src/test/EchoTest.java
+A    Assignment2/src/test/LsTest.java
+A    Assignment2/src/test/MockDirectory.java
+A    Assignment2/src/test/InputTest.java
+A    Assignment2/src/test/RedirectTest.java
+A    Assignment2/src/driver
+A    Assignment2/src/driver/History.java
+A    Assignment2/src/driver/Redirect.java
+A    Assignment2/src/driver/Popd.java
+A    Assignment2/src/driver/Directory.java
+A    Assignment2/src/driver/DirStack.java
+A    Assignment2/src/driver/MkDir.java
+A    Assignment2/src/driver/Append.java
+A    Assignment2/src/driver/Cat.java
+A    Assignment2/src/driver/Tokenizer.java
+A    Assignment2/src/driver/Man.java
+A    Assignment2/src/driver/Echo.java
+A    Assignment2/src/driver/Ls.java
+A    Assignment2/src/driver/File.java
+A    Assignment2/src/driver/JShell.java
+A    Assignment2/src/driver/Pushd.java
+A    Assignment2/src/driver/FileSystem.java
+A    Assignment2/src/driver/Validator.java
+A    Assignment2/src/driver/Cd.java
+A    Assignment2/src/driver/Overwrite.java
+A    Assignment2/src/driver/RunCmd.java
+A    Assignment2/src/driver/Pwd.java
+A    Assignment2/src/driver/Input.java
+A    Assignment2/dailyScrumMeetings
+A    Assignment2/dailyScrumMeetings/chenbrodBrodyChenSprint1June10.txt
+A    Assignment2/dailyScrumMeetings/readMeDailyScrumMeetings.txt
+A    Assignment2/dailyScrumMeetings/chenbrodBrodyChenSprint2June20.txt
+A    Assignment2/dailyScrumMeetings/chenbrodBrodyChenSprint2June14.txt
+A    Assignment2/dailyScrumMeetings/chenbrodBrodyChenSprint2June17.txt
+A    Assignment2/dailyScrumMeetings/chenbrodBrodyChenSprint3June26.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint1June10.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint1June10.txt
+A    Assignment2/dailyScrumMeetings/moha1075Sprint1June11.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint3June22.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint2June14.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint3June20.txt
+A    Assignment2/dailyScrumMeetings/moha1075Sprint3June20.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint3June23.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint3June27second.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint2June16.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint2June14.txt
+A    Assignment2/dailyScrumMeetings/moha1075Sprint2June14.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint3June23.txt
+A    Assignment2/dailyScrumMeetings/moha1075Sprint3June23.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint2June19.txt
+A    Assignment2/dailyScrumMeetings/fungalbiAlbionKaHeiFungSprint3June27.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint2June17.txt
+A    Assignment2/dailyScrumMeetings/moha1075Sprint2June17.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint3June26.txt
+A    Assignment2/dailyScrumMeetings/moha1075Sprint3June26.txt
+A    Assignment2/dailyScrumMeetings/lawchi1LawChiFaiSprint3June27.txt
+A    Assignment2/sprints
+A    Assignment2/sprints/readMeSprints.txt
+A    Assignment2/sprints/Sprint1Backlog.txt
+A    Assignment2/sprints/Sprint2Backlog.txt
+A    Assignment2/sprints/Sprint3Backlog.txt
+A    Assignment2/productBacklog
+A    Assignment2/productBacklog/readMeProductBacklog.txt
+A    Assignment2/productBacklog/productBacklogfor2A.txt
+A    Assignment2/crcCards
+A    Assignment2/crcCards/Input.txt
+A    Assignment2/crcCards/Redirect.txt
+A    Assignment2/crcCards/History.txt
+A    Assignment2/crcCards/Popd.txt
+A    Assignment2/crcCards/Directory.txt
+A    Assignment2/crcCards/DirStack.txt
+A    Assignment2/crcCards/MkDir.txt
+A    Assignment2/crcCards/Cat.txt
+A    Assignment2/crcCards/Append.txt
+A    Assignment2/crcCards/readMeForCrcCards.txt
+A    Assignment2/crcCards/Tokenizer.txt
+A    Assignment2/crcCards/Man.txt
+A    Assignment2/crcCards/Echo.txt
+A    Assignment2/crcCards/Ls.txt
+A    Assignment2/crcCards/File.txt
+A    Assignment2/crcCards/JShell.txt
+A    Assignment2/crcCards/Pushd.txt
+A    Assignment2/crcCards/FileSystem.txt
+A    Assignment2/crcCards/Validator.txt
+A    Assignment2/crcCards/Cd.txt
+A    Assignment2/crcCards/Overwrite.txt
+A    Assignment2/crcCards/RunCmd.txt
+A    Assignment2/crcCards/Pwd.txt
+Checked out revision 422.
+
+
+
+PART 2) +++SVN COMMIT LOGS ARE+++
+Marks Deductions here (-.5 max): 
+------------------------------------------------------------------------
+r422 | lawchi1@UTORONTO.CA | 2016-06-27 21:00:43 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Fixed CatTest such that Test code works with edited MockFile.class.
+(MockFile.class was changed in order to work with RedirectTest.class, which required MockFile content to be created and edit-able)
+------------------------------------------------------------------------
+r421 | lawchi1@UTORONTO.CA | 2016-06-27 20:59:10 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Committed last Sprint
+------------------------------------------------------------------------
+r420 | lawchi1@UTORONTO.CA | 2016-06-27 20:56:26 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Updated CRC cards to match current status of project.
+------------------------------------------------------------------------
+r419 | fungalbi@UTORONTO.CA | 2016-06-27 20:48:57 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Daily scrum
+
+------------------------------------------------------------------------
+r418 | moha1075@UTORONTO.CA | 2016-06-27 18:23:38 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Rename class in EchoTest to the appropriate name
+------------------------------------------------------------------------
+r417 | moha1075@UTORONTO.CA | 2016-06-27 17:52:53 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Fixed minor typo in FileSystem.java
+------------------------------------------------------------------------
+r416 | lawchi1@UTORONTO.CA | 2016-06-27 14:45:00 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Updated format as per request of albion
+------------------------------------------------------------------------
+r415 | lawchi1@UTORONTO.CA | 2016-06-27 14:42:52 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Fixed Formatting as per request of Albion
+------------------------------------------------------------------------
+r414 | lawchi1@UTORONTO.CA | 2016-06-27 14:36:56 -0400 (Mon, 27 Jun 2016) | 1 line
+
+RedirectTest uploaded.
+------------------------------------------------------------------------
+r413 | lawchi1@UTORONTO.CA | 2016-06-27 14:28:11 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Fixed bug in File, Edited Albion's MockFile to better suit testing Append and Overwrite for RedirectTest.java(yet to be uploaded)
+------------------------------------------------------------------------
+r412 | fungalbi@UTORONTO.CA | 2016-06-27 14:22:09 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+A ton of comments and javadocs
+
+------------------------------------------------------------------------
+r411 | fungalbi@UTORONTO.CA | 2016-06-27 14:12:55 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Java doc + uploaded a moc thing
+
+------------------------------------------------------------------------
+r410 | fungalbi@UTORONTO.CA | 2016-06-27 14:10:51 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Javadocs
+
+------------------------------------------------------------------------
+r409 | fungalbi@UTORONTO.CA | 2016-06-27 10:35:58 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added cat unit test
+
+------------------------------------------------------------------------
+r408 | fungalbi@UTORONTO.CA | 2016-06-27 10:29:25 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added pushd unit test
+
+------------------------------------------------------------------------
+r407 | fungalbi@UTORONTO.CA | 2016-06-27 10:23:35 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added test for Popd
+
+------------------------------------------------------------------------
+r406 | fungalbi@UTORONTO.CA | 2016-06-27 10:01:27 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Fixed imports
+
+------------------------------------------------------------------------
+r405 | fungalbi@UTORONTO.CA | 2016-06-27 09:56:18 -0400 (Mon, 27 Jun 2016) | 3 lines
+
+Forgot to save before commiting.
+Also, this commit marks the 405th commit. No problem guys, I saved all our work so it won't be not found
+
+------------------------------------------------------------------------
+r404 | fungalbi@UTORONTO.CA | 2016-06-27 09:55:01 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added test case for parseFilePath in tokenizer
+
+------------------------------------------------------------------------
+r403 | fungalbi@UTORONTO.CA | 2016-06-27 09:48:50 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added file system unit test
+
+------------------------------------------------------------------------
+r402 | fungalbi@UTORONTO.CA | 2016-06-27 09:32:38 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added new constructors that can set dirstack and root dir
+
+------------------------------------------------------------------------
+r401 | fungalbi@UTORONTO.CA | 2016-06-27 09:28:50 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added input test, changed the JShell implementation slightly
+
+------------------------------------------------------------------------
+r400 | moha1075@UTORONTO.CA | 2016-06-27 09:12:09 -0400 (Mon, 27 Jun 2016) | 1 line
+
+Add daily scrum meeting
+------------------------------------------------------------------------
+r399 | fungalbi@UTORONTO.CA | 2016-06-27 09:11:11 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Removed unecessary unit test + some comments
+
+------------------------------------------------------------------------
+r398 | fungalbi@UTORONTO.CA | 2016-06-27 00:40:19 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Daily scrum
+
+------------------------------------------------------------------------
+r397 | fungalbi@UTORONTO.CA | 2016-06-27 00:25:33 -0400 (Mon, 27 Jun 2016) | 2 lines
+
+Added echo test
+
+------------------------------------------------------------------------
+r396 | chenbrod@UTORONTO.CA | 2016-06-26 22:23:15 -0400 (Sun, 26 Jun 2016) | 1 line
+
+first tests for ls
+------------------------------------------------------------------------
+r395 | chenbrod@UTORONTO.CA | 2016-06-26 22:22:55 -0400 (Sun, 26 Jun 2016) | 2 lines
+
+added mock getDir and getFile methods
+
+------------------------------------------------------------------------
+r394 | fungalbi@UTORONTO.CA | 2016-06-26 21:45:26 -0400 (Sun, 26 Jun 2016) | 2 lines
+
+THIS TIME I ACTUALLY ADDED IT.
+
+------------------------------------------------------------------------
+r393 | fungalbi@UTORONTO.CA | 2016-06-26 21:44:48 -0400 (Sun, 26 Jun 2016) | 2 lines
+
+Added a test file for mkdir
+
+------------------------------------------------------------------------
+r392 | fungalbi@UTORONTO.CA | 2016-06-26 21:07:43 -0400 (Sun, 26 Jun 2016) | 2 lines
+
+Moved a method from FS to tokenizer since it's more logical
+
+------------------------------------------------------------------------
+r391 | chenbrod@UTORONTO.CA | 2016-06-26 20:20:15 -0400 (Sun, 26 Jun 2016) | 1 line
+
+fixed so null pointer will not crash program
+------------------------------------------------------------------------
+r390 | lawchi1@UTORONTO.CA | 2016-06-26 16:09:26 -0400 (Sun, 26 Jun 2016) | 1 line
+
+anti-compilers get ye gone
+------------------------------------------------------------------------
+r389 | moha1075@UTORONTO.CA | 2016-06-26 16:03:58 -0400 (Sun, 26 Jun 2016) | 1 line
+
+[Cat] Fix buggy while loop by turning it into a for loop
+------------------------------------------------------------------------
+r388 | lawchi1@UTORONTO.CA | 2016-06-26 16:00:45 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Reverted changes
+------------------------------------------------------------------------
+r387 | fungalbi@UTORONTO.CA | 2016-06-26 15:59:02 -0400 (Sun, 26 Jun 2016) | 2 lines
+
+fix a bug where the program ends prematurely
+
+------------------------------------------------------------------------
+r386 | lawchi1@UTORONTO.CA | 2016-06-26 15:55:39 -0400 (Sun, 26 Jun 2016) | 1 line
+
+updated on current situation
+------------------------------------------------------------------------
+r385 | lawchi1@UTORONTO.CA | 2016-06-26 15:45:16 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Edited with addFile and getFile
+------------------------------------------------------------------------
+r384 | lawchi1@UTORONTO.CA | 2016-06-26 15:43:51 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Update to CatTest attempt
+------------------------------------------------------------------------
+r383 | lawchi1@UTORONTO.CA | 2016-06-26 15:34:53 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Fixed Directory and FS interaction
+------------------------------------------------------------------------
+r382 | lawchi1@UTORONTO.CA | 2016-06-26 15:32:54 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Edited to allow getFile
+------------------------------------------------------------------------
+r381 | lawchi1@UTORONTO.CA | 2016-06-26 15:29:24 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Made a horribly basic MockFile and MockFileSystem and CatTest.
+------------------------------------------------------------------------
+r380 | lawchi1@UTORONTO.CA | 2016-06-26 15:04:35 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Uploaded MockFile and MockFile System as well as CatTest in case of future conflict
+------------------------------------------------------------------------
+r379 | lawchi1@UTORONTO.CA | 2016-06-26 12:07:30 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Self Scrum Meetings (Ken)
+------------------------------------------------------------------------
+r378 | lawchi1@UTORONTO.CA | 2016-06-26 12:06:25 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Updated all file commenting and javadoc to comply with peer javadoc and comments.
+------------------------------------------------------------------------
+r377 | lawchi1@UTORONTO.CA | 2016-06-26 11:56:26 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Javadoc updated
+------------------------------------------------------------------------
+r376 | fungalbi@UTORONTO.CA | 2016-06-26 09:39:40 -0400 (Sun, 26 Jun 2016) | 2 lines
+
+fixed cat behavior to better match that of a unix terminal
+
+------------------------------------------------------------------------
+r375 | moha1075@UTORONTO.CA | 2016-06-26 04:29:48 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Add MockDirectory class used in PwdTest
+------------------------------------------------------------------------
+r374 | moha1075@UTORONTO.CA | 2016-06-26 04:26:47 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Add test for Pwd
+------------------------------------------------------------------------
+r373 | moha1075@UTORONTO.CA | 2016-06-26 04:25:50 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Fix bug in Pwd where directories are printed in reverse order
+------------------------------------------------------------------------
+r372 | moha1075@UTORONTO.CA | 2016-06-26 03:56:35 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Add ManTest into JShellTest suite
+------------------------------------------------------------------------
+r371 | moha1075@UTORONTO.CA | 2016-06-26 03:50:21 -0400 (Sun, 26 Jun 2016) | 1 line
+
+Add test class for Man
+------------------------------------------------------------------------
+r370 | chenbrod@UTORONTO.CA | 2016-06-25 22:56:34 -0400 (Sat, 25 Jun 2016) | 1 line
+
+missed a scrum report, woops.
+------------------------------------------------------------------------
+r369 | moha1075@UTORONTO.CA | 2016-06-25 18:04:06 -0400 (Sat, 25 Jun 2016) | 1 line
+
+[ValidatorTest] Fixed incorrect assertFalse() statement in testExitWithExtraArguments
+------------------------------------------------------------------------
+r368 | chenbrod@UTORONTO.CA | 2016-06-24 22:25:14 -0400 (Fri, 24 Jun 2016) | 1 line
+
+fixed to display last n commands instead of first n commands
+------------------------------------------------------------------------
+r367 | chenbrod@UTORONTO.CA | 2016-06-24 22:09:52 -0400 (Fri, 24 Jun 2016) | 1 line
+
+updated javadocs
+------------------------------------------------------------------------
+r366 | chenbrod@UTORONTO.CA | 2016-06-24 22:00:10 -0400 (Fri, 24 Jun 2016) | 1 line
+
+updated javadoc
+------------------------------------------------------------------------
+r365 | moha1075@UTORONTO.CA | 2016-06-24 20:18:30 -0400 (Fri, 24 Jun 2016) | 1 line
+
+Global cleanup. Enforced 80 char limit and applied Google Java Style
+------------------------------------------------------------------------
+r364 | moha1075@UTORONTO.CA | 2016-06-24 20:12:40 -0400 (Fri, 24 Jun 2016) | 1 line
+
+[Man] Completed class and method JavaDocs
+------------------------------------------------------------------------
+r363 | moha1075@UTORONTO.CA | 2016-06-24 14:59:59 -0400 (Fri, 24 Jun 2016) | 1 line
+
+[Man] Cleanup and formatting
+------------------------------------------------------------------------
+r362 | moha1075@UTORONTO.CA | 2016-06-24 14:55:16 -0400 (Fri, 24 Jun 2016) | 1 line
+
+Add Javadoc for Pwd
+------------------------------------------------------------------------
+r361 | lawchi1@UTORONTO.CA | 2016-06-24 14:53:01 -0400 (Fri, 24 Jun 2016) | 1 line
+
+uploaded my sprint
+------------------------------------------------------------------------
+r360 | chenbrod@UTORONTO.CA | 2016-06-24 10:06:43 -0400 (Fri, 24 Jun 2016) | 1 line
+
+attempt to organize failed
+------------------------------------------------------------------------
+r359 | chenbrod@UTORONTO.CA | 2016-06-24 10:06:23 -0400 (Fri, 24 Jun 2016) | 1 line
+
+moved history back
+------------------------------------------------------------------------
+r358 | chenbrod@UTORONTO.CA | 2016-06-24 10:03:16 -0400 (Fri, 24 Jun 2016) | 1 line
+
+moved file to operations folder
+------------------------------------------------------------------------
+r357 | chenbrod@UTORONTO.CA | 2016-06-24 10:02:52 -0400 (Fri, 24 Jun 2016) | 1 line
+
+testing organizing files
+------------------------------------------------------------------------
+r356 | chenbrod@UTORONTO.CA | 2016-06-24 10:01:16 -0400 (Fri, 24 Jun 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r355 | moha1075@UTORONTO.CA | 2016-06-24 03:51:18 -0400 (Fri, 24 Jun 2016) | 1 line
+
+[Man] Remove instructionsregarding inputing documentation as all documenation has been completed
+------------------------------------------------------------------------
+r354 | moha1075@UTORONTO.CA | 2016-06-24 02:39:13 -0400 (Fri, 24 Jun 2016) | 1 line
+
+Add JShellTest class to test all classes
+------------------------------------------------------------------------
+r353 | moha1075@UTORONTO.CA | 2016-06-24 02:37:13 -0400 (Fri, 24 Jun 2016) | 1 line
+
+Add daily scrum meeting
+------------------------------------------------------------------------
+r352 | moha1075@UTORONTO.CA | 2016-06-24 00:42:00 -0400 (Fri, 24 Jun 2016) | 1 line
+
+Simplify check for exit command
+------------------------------------------------------------------------
+r351 | lawchi1@UTORONTO.CA | 2016-06-23 22:45:15 -0400 (Thu, 23 Jun 2016) | 1 line
+
+Updated append, overwrite, redirect with javadocs
+------------------------------------------------------------------------
+r350 | lawchi1@UTORONTO.CA | 2016-06-23 22:37:25 -0400 (Thu, 23 Jun 2016) | 1 line
+
+Submitted CRCCard for RunCMD
+------------------------------------------------------------------------
+r349 | fungalbi@UTORONTO.CA | 2016-06-23 22:34:32 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Javadocs + comments
+
+------------------------------------------------------------------------
+r348 | fungalbi@UTORONTO.CA | 2016-06-23 22:30:50 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Daily scrum U
+
+------------------------------------------------------------------------
+r347 | fungalbi@UTORONTO.CA | 2016-06-23 22:29:30 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+COmments + java docs; catching edge cases for pop and push d; removed some debug prints
+
+------------------------------------------------------------------------
+r346 | fungalbi@UTORONTO.CA | 2016-06-23 21:59:46 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Fixed a infinite loop bug + comments + javadocs
+
+------------------------------------------------------------------------
+r345 | fungalbi@UTORONTO.CA | 2016-06-23 21:56:36 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Updated cat so that it doesn't use break in the for loop but now uses a while loop instead
+
+------------------------------------------------------------------------
+r344 | fungalbi@UTORONTO.CA | 2016-06-23 21:54:22 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Added javadocs and comments
+
+------------------------------------------------------------------------
+r343 | fungalbi@UTORONTO.CA | 2016-06-23 21:38:10 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+daily scrum U
+
+------------------------------------------------------------------------
+r342 | fungalbi@UTORONTO.CA | 2016-06-23 21:37:22 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Typo on error message
+
+------------------------------------------------------------------------
+r341 | fungalbi@UTORONTO.CA | 2016-06-23 21:36:36 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Same error as before ==
+
+------------------------------------------------------------------------
+r340 | fungalbi@UTORONTO.CA | 2016-06-23 21:36:10 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Forgot return
+
+------------------------------------------------------------------------
+r339 | fungalbi@UTORONTO.CA | 2016-06-23 21:10:24 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Fixed a bug when cding to a file
+
+------------------------------------------------------------------------
+r338 | fungalbi@UTORONTO.CA | 2016-06-23 21:03:02 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Removed more debug code
+
+------------------------------------------------------------------------
+r337 | fungalbi@UTORONTO.CA | 2016-06-23 20:36:15 -0400 (Thu, 23 Jun 2016) | 3 lines
+
+Daily scrum
+
+
+------------------------------------------------------------------------
+r336 | fungalbi@UTORONTO.CA | 2016-06-23 20:30:05 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Removed debug prints
+
+------------------------------------------------------------------------
+r335 | fungalbi@UTORONTO.CA | 2016-06-23 20:27:54 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+I am a retard and I forgot to set curr to root. fixed now
+
+------------------------------------------------------------------------
+r334 | fungalbi@UTORONTO.CA | 2016-06-23 19:28:49 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Removed some junk code, have some debug code in this doe
+
+------------------------------------------------------------------------
+r333 | fungalbi@UTORONTO.CA | 2016-06-23 19:09:51 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Fixed a bug where putting an empty line in command line would crash the program
+
+------------------------------------------------------------------------
+r332 | fungalbi@UTORONTO.CA | 2016-06-23 18:24:47 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+A little bit of possible bug fix? Theoretically catches some problems
+
+------------------------------------------------------------------------
+r331 | fungalbi@UTORONTO.CA | 2016-06-23 17:55:45 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Added the runcmd file
+
+------------------------------------------------------------------------
+r330 | fungalbi@UTORONTO.CA | 2016-06-23 17:55:28 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+Moved out runcmd, here's first part of commit
+
+------------------------------------------------------------------------
+r329 | lawchi1@UTORONTO.CA | 2016-06-23 15:17:39 -0400 (Thu, 23 Jun 2016) | 1 line
+
+fixed man page format issue
+------------------------------------------------------------------------
+r328 | moha1075@UTORONTO.CA | 2016-06-23 12:37:46 -0400 (Thu, 23 Jun 2016) | 1 line
+
+[Man.java] Change type of descriptions to Map
+------------------------------------------------------------------------
+r327 | moha1075@UTORONTO.CA | 2016-06-23 12:36:54 -0400 (Thu, 23 Jun 2016) | 1 line
+
+Finish all command man pages
+------------------------------------------------------------------------
+r326 | moha1075@UTORONTO.CA | 2016-06-23 12:26:45 -0400 (Thu, 23 Jun 2016) | 1 line
+
+Allow history to be called from JShell with no arguments
+------------------------------------------------------------------------
+r325 | chenbrod@UTORONTO.CA | 2016-06-23 10:39:58 -0400 (Thu, 23 Jun 2016) | 1 line
+
+fixed method names
+------------------------------------------------------------------------
+r324 | chenbrod@UTORONTO.CA | 2016-06-23 10:39:33 -0400 (Thu, 23 Jun 2016) | 1 line
+
+version 1.0 of History class
+------------------------------------------------------------------------
+r323 | chenbrod@UTORONTO.CA | 2016-06-23 01:10:44 -0400 (Thu, 23 Jun 2016) | 2 lines
+
+added line to send raw input to History for storage
+ 
+------------------------------------------------------------------------
+r322 | fungalbi@UTORONTO.CA | 2016-06-22 23:26:59 -0400 (Wed, 22 Jun 2016) | 2 lines
+
+Daily scrum
+
+------------------------------------------------------------------------
+r321 | moha1075@UTORONTO.CA | 2016-06-22 13:57:09 -0400 (Wed, 22 Jun 2016) | 1 line
+
+Disallow providing arguments to exit command
+------------------------------------------------------------------------
+r320 | moha1075@UTORONTO.CA | 2016-06-21 20:14:40 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Add testNoEchoRedirection() to ValidatorTest
+------------------------------------------------------------------------
+r319 | moha1075@UTORONTO.CA | 2016-06-21 20:04:09 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Fix JShell crash on empty input
+------------------------------------------------------------------------
+r318 | moha1075@UTORONTO.CA | 2016-06-21 19:35:12 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Change occurences of Cd.changeDir() into fs.getDirectory() as it is more semantically correct
+------------------------------------------------------------------------
+r317 | moha1075@UTORONTO.CA | 2016-06-21 19:30:39 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Rearrange input of Man documentation for better organization
+------------------------------------------------------------------------
+r316 | moha1075@UTORONTO.CA | 2016-06-21 19:23:32 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Give JShell access to raw input string, allowing History to be implemented
+------------------------------------------------------------------------
+r315 | moha1075@UTORONTO.CA | 2016-06-21 16:48:37 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Simplify Pwd's for loop
+------------------------------------------------------------------------
+r314 | fungalbi@UTORONTO.CA | 2016-06-21 15:48:04 -0400 (Tue, 21 Jun 2016) | 2 lines
+
+Added cd's man page
+
+------------------------------------------------------------------------
+r313 | fungalbi@UTORONTO.CA | 2016-06-21 15:36:40 -0400 (Tue, 21 Jun 2016) | 2 lines
+
+Fixed null poitner error in append and overwrite
+
+------------------------------------------------------------------------
+r312 | fungalbi@UTORONTO.CA | 2016-06-21 13:34:17 -0400 (Tue, 21 Jun 2016) | 2 lines
+
+Fixed a bug with parse file where if we provide a full path, the file name includes a "/" in it
+
+------------------------------------------------------------------------
+r311 | fungalbi@UTORONTO.CA | 2016-06-21 13:10:33 -0400 (Tue, 21 Jun 2016) | 2 lines
+
+Fixed a few bugs with mkdir: now properly creates multiple directories, now catches a null pointer exception when directory does not exists and we try to create a directory within that non-existant directory
+
+------------------------------------------------------------------------
+r310 | moha1075@UTORONTO.CA | 2016-06-21 11:01:45 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Remove trailing / on Pwd output
+------------------------------------------------------------------------
+r309 | moha1075@UTORONTO.CA | 2016-06-21 01:56:04 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Add tests for Tokenizer
+------------------------------------------------------------------------
+r308 | moha1075@UTORONTO.CA | 2016-06-21 01:50:34 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Add a few more tests for Validator, mostly regarding redirection
+------------------------------------------------------------------------
+r307 | moha1075@UTORONTO.CA | 2016-06-21 00:45:55 -0400 (Tue, 21 Jun 2016) | 1 line
+
+Add tests for Validator
+------------------------------------------------------------------------
+r306 | chenbrod@UTORONTO.CA | 2016-06-20 22:17:30 -0400 (Mon, 20 Jun 2016) | 1 line
+
+June 20 scrum report
+------------------------------------------------------------------------
+r305 | fungalbi@UTORONTO.CA | 2016-06-20 17:35:24 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed a bug where "cd /" would do nothing
+
+------------------------------------------------------------------------
+r304 | fungalbi@UTORONTO.CA | 2016-06-20 17:31:28 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed a bug where it won't cd
+
+------------------------------------------------------------------------
+r303 | fungalbi@UTORONTO.CA | 2016-06-20 17:16:58 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed incorrect cat output style
+
+------------------------------------------------------------------------
+r302 | fungalbi@UTORONTO.CA | 2016-06-20 17:11:15 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed a bug where redirect would always be append
+
+------------------------------------------------------------------------
+r301 | fungalbi@UTORONTO.CA | 2016-06-20 16:51:17 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed all mkdir bugs (i think). Now no longer returns an error message even if successfully created a dir
+
+------------------------------------------------------------------------
+r300 | fungalbi@UTORONTO.CA | 2016-06-20 16:46:26 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed a bug in MkDir
+
+------------------------------------------------------------------------
+r299 | fungalbi@UTORONTO.CA | 2016-06-20 16:42:07 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Test version of mkdir
+
+------------------------------------------------------------------------
+r298 | fungalbi@UTORONTO.CA | 2016-06-20 16:31:49 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+fixed bug with mkdir
+
+------------------------------------------------------------------------
+r297 | fungalbi@UTORONTO.CA | 2016-06-20 16:18:10 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed typo ==
+
+------------------------------------------------------------------------
+r296 | fungalbi@UTORONTO.CA | 2016-06-20 16:17:37 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+All bugs should be fixed (that prevented compilation)
+
+------------------------------------------------------------------------
+r295 | fungalbi@UTORONTO.CA | 2016-06-20 16:15:39 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fix part 9?
+
+------------------------------------------------------------------------
+r294 | fungalbi@UTORONTO.CA | 2016-06-20 16:13:08 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed bug part 8?
+
+------------------------------------------------------------------------
+r293 | moha1075@UTORONTO.CA | 2016-06-20 16:11:29 -0400 (Mon, 20 Jun 2016) | 1 line
+
+[JShell.java] Fix typo when passing MkDir a Directory
+------------------------------------------------------------------------
+r292 | moha1075@UTORONTO.CA | 2016-06-20 16:10:54 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Change Cd type signature to match calls in JShell
+------------------------------------------------------------------------
+r291 | moha1075@UTORONTO.CA | 2016-06-20 16:07:55 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Add missing brace in Cd
+------------------------------------------------------------------------
+r290 | moha1075@UTORONTO.CA | 2016-06-20 16:07:19 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Let Cd use FileSystem.getDirectory()
+------------------------------------------------------------------------
+r289 | fungalbi@UTORONTO.CA | 2016-06-20 15:55:51 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fix part 7?
+
+------------------------------------------------------------------------
+r288 | fungalbi@UTORONTO.CA | 2016-06-20 15:53:44 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fix 6
+
+------------------------------------------------------------------------
+r287 | fungalbi@UTORONTO.CA | 2016-06-20 15:52:21 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fix 5
+
+------------------------------------------------------------------------
+r286 | fungalbi@UTORONTO.CA | 2016-06-20 15:49:12 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fix part 4
+
+------------------------------------------------------------------------
+r285 | fungalbi@UTORONTO.CA | 2016-06-20 15:47:11 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fix part 3
+
+------------------------------------------------------------------------
+r284 | moha1075@UTORONTO.CA | 2016-06-20 15:47:10 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Rename Directory.isDirIn to hasDirectory
+------------------------------------------------------------------------
+r283 | moha1075@UTORONTO.CA | 2016-06-20 15:46:42 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Make directory check if a file or directory exists before attempting to get() it
+------------------------------------------------------------------------
+r282 | fungalbi@UTORONTO.CA | 2016-06-20 15:45:41 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fixing part 2
+
+------------------------------------------------------------------------
+r281 | fungalbi@UTORONTO.CA | 2016-06-20 15:45:05 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Bug fixing part 1
+
+------------------------------------------------------------------------
+r280 | fungalbi@UTORONTO.CA | 2016-06-20 15:41:52 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Removed legacy code from fs; completed mkdir code in JShell
+
+------------------------------------------------------------------------
+r279 | fungalbi@UTORONTO.CA | 2016-06-20 15:37:27 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Changed the rest of the files to use the same static method
+
+------------------------------------------------------------------------
+r278 | fungalbi@UTORONTO.CA | 2016-06-20 15:35:51 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Made a method static public since multiple classes uses the same method; completed mkdir
+
+------------------------------------------------------------------------
+r277 | moha1075@UTORONTO.CA | 2016-06-20 15:27:27 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Convert Directory.addFile() parameter name to camelCase
+------------------------------------------------------------------------
+r276 | fungalbi@UTORONTO.CA | 2016-06-20 15:26:28 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Overhaul for fixing code! (for new implementation)
+
+------------------------------------------------------------------------
+r275 | moha1075@UTORONTO.CA | 2016-06-20 15:23:45 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Remove unused methods in various classes (Cleanup)
+------------------------------------------------------------------------
+r274 | lawchi1@UTORONTO.CA | 2016-06-20 15:21:34 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Submitted self scrum meetings
+------------------------------------------------------------------------
+r273 | fungalbi@UTORONTO.CA | 2016-06-20 15:16:44 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+removed some legacy code
+
+------------------------------------------------------------------------
+r272 | fungalbi@UTORONTO.CA | 2016-06-20 15:14:42 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Modified some code in prep for mkdir; updated filsys after new implementation
+
+------------------------------------------------------------------------
+r271 | fungalbi@UTORONTO.CA | 2016-06-20 15:09:51 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Updated JShell to take advantage of new FS implementation
+
+------------------------------------------------------------------------
+r270 | moha1075@UTORONTO.CA | 2016-06-20 15:05:06 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Add getDirectory() method to FileSystem
+------------------------------------------------------------------------
+r269 | moha1075@UTORONTO.CA | 2016-06-20 14:49:49 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Small edit to Validator javadoc
+------------------------------------------------------------------------
+r268 | moha1075@UTORONTO.CA | 2016-06-20 14:47:49 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Move tokenizer code from Input into new Tokenizer class with JavaDoc. Allows for easier testing and better modularity.
+------------------------------------------------------------------------
+r267 | moha1075@UTORONTO.CA | 2016-06-20 12:54:12 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Simplify Pwd path building
+------------------------------------------------------------------------
+r266 | chenbrod@UTORONTO.CA | 2016-06-20 11:52:12 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+added isIn methods to check if dir or files exist
+
+------------------------------------------------------------------------
+r265 | chenbrod@UTORONTO.CA | 2016-06-20 11:49:24 -0400 (Mon, 20 Jun 2016) | 1 line
+
+fixed to take Directory instead of FileSystem
+------------------------------------------------------------------------
+r264 | moha1075@UTORONTO.CA | 2016-06-20 11:32:10 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Format all files according to Google Java Style
+------------------------------------------------------------------------
+r263 | chenbrod@UTORONTO.CA | 2016-06-20 11:29:26 -0400 (Mon, 20 Jun 2016) | 1 line
+
+fixed to return Directory
+------------------------------------------------------------------------
+r262 | chenbrod@UTORONTO.CA | 2016-06-20 11:18:17 -0400 (Mon, 20 Jun 2016) | 1 line
+
+changed to take directory instead of fileSystem
+------------------------------------------------------------------------
+r261 | moha1075@UTORONTO.CA | 2016-06-20 10:43:24 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Simplify listContents(path, fs) method, using listContents(fs). Uncomment Push and Pop usages
+------------------------------------------------------------------------
+r260 | moha1075@UTORONTO.CA | 2016-06-20 10:39:50 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Fix similar bug as last commit
+------------------------------------------------------------------------
+r259 | moha1075@UTORONTO.CA | 2016-06-20 10:23:47 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Fixed bug in Ls where wrong iterator was called
+------------------------------------------------------------------------
+r258 | fungalbi@UTORONTO.CA | 2016-06-20 10:20:33 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+More bandaids!
+
+------------------------------------------------------------------------
+r257 | fungalbi@UTORONTO.CA | 2016-06-20 10:16:40 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed some bugs and naming convetions
+
+------------------------------------------------------------------------
+r256 | fungalbi@UTORONTO.CA | 2016-06-20 09:44:36 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Forgot to set Ls' output; fixed some backwards \n
+
+------------------------------------------------------------------------
+r255 | fungalbi@UTORONTO.CA | 2016-06-20 09:41:52 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Forgot to enable the cat code. Oops
+
+------------------------------------------------------------------------
+r254 | fungalbi@UTORONTO.CA | 2016-06-20 09:36:47 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Fixed a bug where cd changes directory to null
+
+------------------------------------------------------------------------
+r253 | fungalbi@UTORONTO.CA | 2016-06-20 09:01:47 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Completed sprint backlog
+
+------------------------------------------------------------------------
+r252 | moha1075@UTORONTO.CA | 2016-06-20 02:13:23 -0400 (Mon, 20 Jun 2016) | 1 line
+
+Add newline to Pwd output
+------------------------------------------------------------------------
+r251 | moha1075@UTORONTO.CA | 2016-06-20 01:06:06 -0400 (Mon, 20 Jun 2016) | 2 lines
+
+Add daily scrum meeting
+
+------------------------------------------------------------------------
+r250 | fungalbi@UTORONTO.CA | 2016-06-19 21:57:52 -0400 (Sun, 19 Jun 2016) | 2 lines
+
+Daily scrum
+
+------------------------------------------------------------------------
+r249 | moha1075@UTORONTO.CA | 2016-06-19 18:06:45 -0400 (Sun, 19 Jun 2016) | 1 line
+
+Disable ability to extend or instantize Validator as it is a fully static class
+------------------------------------------------------------------------
+r248 | moha1075@UTORONTO.CA | 2016-06-19 17:30:33 -0400 (Sun, 19 Jun 2016) | 1 line
+
+Simplify Pwd.printWorkingDirectory() return statement
+------------------------------------------------------------------------
+r247 | moha1075@UTORONTO.CA | 2016-06-19 17:22:12 -0400 (Sun, 19 Jun 2016) | 1 line
+
+Improve handling of echo. Allow echo to be passed empty string. Only allow redirection for echo command
+------------------------------------------------------------------------
+r246 | moha1075@UTORONTO.CA | 2016-06-19 16:53:39 -0400 (Sun, 19 Jun 2016) | 1 line
+
+Add documentation to Validator
+------------------------------------------------------------------------
+r245 | moha1075@UTORONTO.CA | 2016-06-19 16:37:36 -0400 (Sun, 19 Jun 2016) | 1 line
+
+Remove unnecessary java.util.StringJoiner import
+------------------------------------------------------------------------
+r244 | lawchi1@UTORONTO.CA | 2016-06-18 17:23:42 -0400 (Sat, 18 Jun 2016) | 1 line
+
+updated javadoc with info
+------------------------------------------------------------------------
+r243 | lawchi1@UTORONTO.CA | 2016-06-18 17:23:07 -0400 (Sat, 18 Jun 2016) | 1 line
+
+filled in honor code for lawchi1
+------------------------------------------------------------------------
+r242 | fungalbi@UTORONTO.CA | 2016-06-18 16:16:08 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Added some to sprint 3 backlog
+
+------------------------------------------------------------------------
+r241 | chenbrod@UTORONTO.CA | 2016-06-18 16:15:04 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+fixed line 15
+
+------------------------------------------------------------------------
+r240 | fungalbi@UTORONTO.CA | 2016-06-18 16:13:52 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Bug fixes + made Pwd return a / if it's at root dir
+
+------------------------------------------------------------------------
+r239 | fungalbi@UTORONTO.CA | 2016-06-18 16:03:25 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+IT COMPILES. SOME TIMES IM A RETARD.
+
+------------------------------------------------------------------------
+r238 | fungalbi@UTORONTO.CA | 2016-06-18 15:59:13 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+A butt load of bug fixes; still won't compile, almost there doe
+
+------------------------------------------------------------------------
+r237 | fungalbi@UTORONTO.CA | 2016-06-18 15:53:54 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Fixed naming for Cd in other classes (ie, called incorrect name); also forgot curr has private not public. fixed that in redirect
+
+------------------------------------------------------------------------
+r236 | fungalbi@UTORONTO.CA | 2016-06-18 15:52:10 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+When you're an idiot and gave a String a void return type. K den
+
+------------------------------------------------------------------------
+r235 | fungalbi@UTORONTO.CA | 2016-06-18 15:51:25 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+I promised not to forget return type, yet I have forgettoen them. I'm sorry =( added back, also removed garbage line in JShell
+
+------------------------------------------------------------------------
+r234 | fungalbi@UTORONTO.CA | 2016-06-18 15:48:14 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+First version of a supposedly working redirect (not tested yet)
+
+------------------------------------------------------------------------
+r233 | fungalbi@UTORONTO.CA | 2016-06-18 15:34:43 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Changed implementation of DirStack to a has-a relationship by FileSystem, and change according implementations. Removed unecessary code from Redirect
+
+------------------------------------------------------------------------
+r232 | fungalbi@UTORONTO.CA | 2016-06-18 15:28:01 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Fixed if statement comparison written as assignment
+
+------------------------------------------------------------------------
+r231 | fungalbi@UTORONTO.CA | 2016-06-18 15:27:28 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Fixed non-static declaration
+
+------------------------------------------------------------------------
+r230 | fungalbi@UTORONTO.CA | 2016-06-18 15:26:49 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+Fixed declaration in file
+
+------------------------------------------------------------------------
+r229 | chenbrod@UTORONTO.CA | 2016-06-18 13:48:46 -0400 (Sat, 18 Jun 2016) | 1 line
+
+made changes to javadoc
+------------------------------------------------------------------------
+r228 | chenbrod@UTORONTO.CA | 2016-06-18 13:48:26 -0400 (Sat, 18 Jun 2016) | 1 line
+
+Wrote javadocs for functions
+------------------------------------------------------------------------
+r227 | chenbrod@UTORONTO.CA | 2016-06-18 13:39:58 -0400 (Sat, 18 Jun 2016) | 1 line
+
+overloaded function to take string path as optional parameter
+------------------------------------------------------------------------
+r226 | chenbrod@UTORONTO.CA | 2016-06-18 13:23:17 -0400 (Sat, 18 Jun 2016) | 2 lines
+
+changed to take string instead of arraylist
+
+------------------------------------------------------------------------
+r225 | moha1075@UTORONTO.CA | 2016-06-18 04:32:55 -0400 (Sat, 18 Jun 2016) | 1 line
+
+Fix bug that caused Validator to crash given redirection tokens or empty tokens
+------------------------------------------------------------------------
+r224 | lawchi1@UTORONTO.CA | 2016-06-17 23:19:45 -0400 (Fri, 17 Jun 2016) | 1 line
+
+quickfix: no capitalization on null
+------------------------------------------------------------------------
+r223 | lawchi1@UTORONTO.CA | 2016-06-17 23:18:57 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Screwed up the conflict resolution - fixed 
+------------------------------------------------------------------------
+r222 | lawchi1@UTORONTO.CA | 2016-06-17 23:18:00 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Conflict resolved (Added command input to Redirect as well as changing the call command in Append and Overwrite with "ap" and "ow" to represent their respective command. May change to something that uses polymorphism instead in the future.
+------------------------------------------------------------------------
+r221 | chenbrod@UTORONTO.CA | 2016-06-17 22:34:16 -0400 (Fri, 17 Jun 2016) | 1 line
+
+3rd scrum meeting
+------------------------------------------------------------------------
+r220 | fungalbi@UTORONTO.CA | 2016-06-17 22:28:15 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Fixed some non-static accessing as well as a poor forgotten semicolon. I promise I won't forget you agin
+
+------------------------------------------------------------------------
+r219 | chenbrod@UTORONTO.CA | 2016-06-17 22:27:00 -0400 (Fri, 17 Jun 2016) | 1 line
+
+changed to take (String, FileSystem)
+------------------------------------------------------------------------
+r218 | fungalbi@UTORONTO.CA | 2016-06-17 22:24:21 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Fixed a call in overwrite and append that didn't pass proper values. Enabled a line that will prevent compilation, but is being used to find out the problem rn
+
+------------------------------------------------------------------------
+r217 | lawchi1@UTORONTO.CA | 2016-06-17 22:19:01 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Temp fix for Append Overwrite and Redirect; Had fixed methods from Object class but did not fix their call commands from super to Redirect.redirect
+------------------------------------------------------------------------
+r216 | fungalbi@UTORONTO.CA | 2016-06-17 22:14:24 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Changed LS to take a FS, reflected in JShell
+
+------------------------------------------------------------------------
+r215 | fungalbi@UTORONTO.CA | 2016-06-17 22:12:49 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Corrected append and overwrite which has a return type (void) but has the same name as the class. Also added temporary code until append and overwrite is corrected
+
+------------------------------------------------------------------------
+r214 | fungalbi@UTORONTO.CA | 2016-06-17 22:09:31 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Enabled more commands (pushd, ls)
+
+------------------------------------------------------------------------
+r213 | fungalbi@UTORONTO.CA | 2016-06-17 21:56:48 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Enabled pwd in JShell
+
+------------------------------------------------------------------------
+r212 | moha1075@UTORONTO.CA | 2016-06-17 18:20:37 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix missing + symbol when concatenating string
+------------------------------------------------------------------------
+r211 | moha1075@UTORONTO.CA | 2016-06-17 18:19:35 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix formatting for returned Man documentation
+------------------------------------------------------------------------
+r210 | moha1075@UTORONTO.CA | 2016-06-17 18:18:41 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix formatting to follow Google Java Style
+------------------------------------------------------------------------
+r209 | moha1075@UTORONTO.CA | 2016-06-17 18:10:09 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Add exit case into Validator
+------------------------------------------------------------------------
+r208 | moha1075@UTORONTO.CA | 2016-06-17 18:09:46 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Incorporate Validator into JShell and cleanup
+------------------------------------------------------------------------
+r207 | moha1075@UTORONTO.CA | 2016-06-17 17:49:07 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix bugs that were causing Man to be disfunctional
+------------------------------------------------------------------------
+r206 | moha1075@UTORONTO.CA | 2016-06-17 17:44:42 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix name of Pwd method call
+------------------------------------------------------------------------
+r205 | fungalbi@UTORONTO.CA | 2016-06-17 17:41:15 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Fixed pushd to string pushing not array
+
+------------------------------------------------------------------------
+r204 | moha1075@UTORONTO.CA | 2016-06-17 17:34:17 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Change Validator to be command-agnostic when validating redirects
+------------------------------------------------------------------------
+r203 | fungalbi@UTORONTO.CA | 2016-06-17 17:18:34 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Enabled Pushd.java
+
+------------------------------------------------------------------------
+r202 | fungalbi@UTORONTO.CA | 2016-06-17 17:14:25 -0400 (Fri, 17 Jun 2016) | 2 lines
+
+Fixed some problem due to stack that prevented compilation
+
+------------------------------------------------------------------------
+r201 | moha1075@UTORONTO.CA | 2016-06-17 04:41:47 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix inaccuracies in daily scrum meeting
+------------------------------------------------------------------------
+r200 | moha1075@UTORONTO.CA | 2016-06-17 04:40:18 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Command description cleanup
+------------------------------------------------------------------------
+r199 | moha1075@UTORONTO.CA | 2016-06-17 04:39:08 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Remove references of arguments in command descriptions, following general Unix conventions
+------------------------------------------------------------------------
+r198 | moha1075@UTORONTO.CA | 2016-06-17 04:37:39 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Input echo usage message directly into HashMap
+------------------------------------------------------------------------
+r197 | moha1075@UTORONTO.CA | 2016-06-17 04:35:27 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Remove unncessary "usage: " prefix from echo usage message
+------------------------------------------------------------------------
+r196 | moha1075@UTORONTO.CA | 2016-06-17 04:34:56 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Prefix output of getUsage() with "usage: "
+------------------------------------------------------------------------
+r195 | moha1075@UTORONTO.CA | 2016-06-17 04:33:44 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Add Man documentation for ls and pwd
+------------------------------------------------------------------------
+r194 | moha1075@UTORONTO.CA | 2016-06-17 04:30:16 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Change echo usage message to follow more standard format
+------------------------------------------------------------------------
+r193 | moha1075@UTORONTO.CA | 2016-06-17 04:28:42 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Fix typo in daily scrum meeting file
+------------------------------------------------------------------------
+r192 | moha1075@UTORONTO.CA | 2016-06-17 04:26:59 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Add daily scrum meeting
+------------------------------------------------------------------------
+r191 | moha1075@UTORONTO.CA | 2016-06-17 04:24:40 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Complete Validator class
+------------------------------------------------------------------------
+r190 | moha1075@UTORONTO.CA | 2016-06-17 02:54:42 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Add Pwd class
+------------------------------------------------------------------------
+r189 | lawchi1@UTORONTO.CA | 2016-06-17 00:08:22 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Uploaded new Sprintlog
+------------------------------------------------------------------------
+r188 | lawchi1@UTORONTO.CA | 2016-06-17 00:02:16 -0400 (Fri, 17 Jun 2016) | 1 line
+
+Accidentally created 3 classes instead of "commands", oops. Will further look into them tomorrow, but for its own sake, corrected to a static void method for now. (Append.java, Overwrite.java, Redirect.java)
+------------------------------------------------------------------------
+r187 | fungalbi@UTORONTO.CA | 2016-06-16 22:38:47 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Added blank place holder for MkDir
+
+------------------------------------------------------------------------
+r186 | fungalbi@UTORONTO.CA | 2016-06-16 22:38:17 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Added daily scrum
+
+------------------------------------------------------------------------
+r185 | fungalbi@UTORONTO.CA | 2016-06-16 22:33:25 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Added cards for push and popd
+
+------------------------------------------------------------------------
+r184 | fungalbi@UTORONTO.CA | 2016-06-16 22:31:08 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Added a crc card for Input.class
+
+------------------------------------------------------------------------
+r183 | fungalbi@UTORONTO.CA | 2016-06-16 22:29:35 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Added Cd's crc card
+
+------------------------------------------------------------------------
+r182 | fungalbi@UTORONTO.CA | 2016-06-16 22:27:35 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Same as prev
+
+------------------------------------------------------------------------
+r181 | fungalbi@UTORONTO.CA | 2016-06-16 22:25:54 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Same as prev 
+
+------------------------------------------------------------------------
+r180 | fungalbi@UTORONTO.CA | 2016-06-16 22:25:39 -0400 (Thu, 16 Jun 2016) | 2 lines
+
+Removed unecessary item
+
+------------------------------------------------------------------------
+r179 | chenbrod@UTORONTO.CA | 2016-06-16 00:25:25 -0400 (Thu, 16 Jun 2016) | 1 line
+
+First version of Cd class
+------------------------------------------------------------------------
+r178 | chenbrod@UTORONTO.CA | 2016-06-15 20:05:41 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+First version of cd class
+
+------------------------------------------------------------------------
+r177 | fungalbi@UTORONTO.CA | 2016-06-15 18:59:28 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added a easy way to set curr to root
+
+------------------------------------------------------------------------
+r176 | fungalbi@UTORONTO.CA | 2016-06-15 18:57:50 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added a temp directory in filesystem that can be manipulated without changing directory
+
+------------------------------------------------------------------------
+r175 | fungalbi@UTORONTO.CA | 2016-06-15 18:53:17 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added an addDir method in fs
+
+------------------------------------------------------------------------
+r174 | fungalbi@UTORONTO.CA | 2016-06-15 18:42:57 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Made file system return directories as well
+
+------------------------------------------------------------------------
+r173 | chenbrod@UTORONTO.CA | 2016-06-15 18:42:00 -0400 (Wed, 15 Jun 2016) | 1 line
+
+changed listContents to listDirectories
+------------------------------------------------------------------------
+r172 | chenbrod@UTORONTO.CA | 2016-06-15 18:41:27 -0400 (Wed, 15 Jun 2016) | 1 line
+
+First version of ls. Can list contents given a directory object. May need to be able to tokenize path string.
+------------------------------------------------------------------------
+r171 | fungalbi@UTORONTO.CA | 2016-06-15 16:43:32 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Put commented code in JShell for pop and pushd as they rely on cd; completed push and popd java files
+
+------------------------------------------------------------------------
+r170 | fungalbi@UTORONTO.CA | 2016-06-15 16:35:05 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added a stack for pushd and popd
+
+------------------------------------------------------------------------
+r169 | fungalbi@UTORONTO.CA | 2016-06-15 16:27:42 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Removed useless line in JShell
+
+------------------------------------------------------------------------
+r168 | moha1075@UTORONTO.CA | 2016-06-15 02:46:57 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Update Man instructions
+------------------------------------------------------------------------
+r167 | moha1075@UTORONTO.CA | 2016-06-15 02:43:29 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Add $ to Man usage example
+------------------------------------------------------------------------
+r166 | moha1075@UTORONTO.CA | 2016-06-15 02:42:00 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Improve formatting of getDocumentation() return string
+------------------------------------------------------------------------
+r165 | moha1075@UTORONTO.CA | 2016-06-15 02:37:51 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Fix alignment of ASCII box in Man.java instructions
+------------------------------------------------------------------------
+r164 | moha1075@UTORONTO.CA | 2016-06-15 02:36:22 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Cleanup the inputting of echo command\'s message
+------------------------------------------------------------------------
+r163 | moha1075@UTORONTO.CA | 2016-06-15 02:33:16 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Remove line breaks from stored documentation as this will be handled by the getDocumentation() method
+------------------------------------------------------------------------
+r162 | moha1075@UTORONTO.CA | 2016-06-15 02:29:52 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Added documentation for man command
+------------------------------------------------------------------------
+r161 | moha1075@UTORONTO.CA | 2016-06-15 02:28:42 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Rename manPages to descriptions to better reflect purpose
+------------------------------------------------------------------------
+r160 | moha1075@UTORONTO.CA | 2016-06-15 02:20:49 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Rename manPage to manPages for consistency
+------------------------------------------------------------------------
+r159 | moha1075@UTORONTO.CA | 2016-06-15 02:17:01 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Add daily scrum meeting
+------------------------------------------------------------------------
+r158 | moha1075@UTORONTO.CA | 2016-06-15 01:57:38 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Enable man command in JShell
+------------------------------------------------------------------------
+r157 | fungalbi@UTORONTO.CA | 2016-06-15 01:56:04 -0400 (Wed, 15 Jun 2016) | 3 lines
+
+ made man more efficient
+
+
+------------------------------------------------------------------------
+r156 | moha1075@UTORONTO.CA | 2016-06-15 01:54:26 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Remove String temp in the first static block as it is never used
+------------------------------------------------------------------------
+r155 | moha1075@UTORONTO.CA | 2016-06-15 01:53:00 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Fixed typo in Man.class instructions
+------------------------------------------------------------------------
+r154 | fungalbi@UTORONTO.CA | 2016-06-15 01:52:13 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Fixed echo so that it doesn't print on the same line as next prompt for command
+
+------------------------------------------------------------------------
+r153 | fungalbi@UTORONTO.CA | 2016-06-15 01:51:23 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Completed echo.java
+
+------------------------------------------------------------------------
+r152 | fungalbi@UTORONTO.CA | 2016-06-15 01:51:07 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Fixed an if statement
+
+------------------------------------------------------------------------
+r151 | moha1075@UTORONTO.CA | 2016-06-15 01:50:18 -0400 (Wed, 15 Jun 2016) | 1 line
+
+Add instructions on how to add man pages and usage messages
+------------------------------------------------------------------------
+r150 | fungalbi@UTORONTO.CA | 2016-06-15 01:49:33 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Forgot to put quotes around the strings. oops
+
+------------------------------------------------------------------------
+r149 | fungalbi@UTORONTO.CA | 2016-06-15 01:48:15 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Updated JShell to use Man.java
+
+------------------------------------------------------------------------
+r148 | fungalbi@UTORONTO.CA | 2016-06-15 01:43:48 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added a get usage method
+
+------------------------------------------------------------------------
+r147 | fungalbi@UTORONTO.CA | 2016-06-15 01:41:35 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added usage message for echo, cat and exit (previous is man page, ma bad)
+
+------------------------------------------------------------------------
+r146 | fungalbi@UTORONTO.CA | 2016-06-15 01:38:32 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added manPage hash map
+
+------------------------------------------------------------------------
+r145 | fungalbi@UTORONTO.CA | 2016-06-15 01:34:49 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Man page for exit, echo and cat
+
+------------------------------------------------------------------------
+r144 | fungalbi@UTORONTO.CA | 2016-06-15 01:19:47 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added a parsePath method and a commented getFile method (since it requires cd and pushd and popd); fixed cat to work with file system but the code is commented until getFile is completed.
+
+------------------------------------------------------------------------
+r143 | fungalbi@UTORONTO.CA | 2016-06-15 00:56:54 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Made output code more efficient for JShell.java
+
+------------------------------------------------------------------------
+r142 | fungalbi@UTORONTO.CA | 2016-06-15 00:53:02 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Fixed typo in directory that would prevent it from compiling; fixed JShell where a dir is expected but instead fs is passed; temporarily removed code in cat.java to allow for comiplation; fixed a typo in FileSystem.java that would prevent compilation
+
+------------------------------------------------------------------------
+r141 | fungalbi@UTORONTO.CA | 2016-06-15 00:42:09 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Added a file managment class; changed JShell to accomodate. Also moved initialization to within main function.
+
+------------------------------------------------------------------------
+r140 | fungalbi@UTORONTO.CA | 2016-06-15 00:34:45 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Made changes to Directory.java so that it should not need to be able to return it's entire path; added a fuction to return the name of the directory
+
+------------------------------------------------------------------------
+r139 | fungalbi@UTORONTO.CA | 2016-06-15 00:28:57 -0400 (Wed, 15 Jun 2016) | 2 lines
+
+Removed unecessary stacks
+
+------------------------------------------------------------------------
+r138 | chenbrod@UTORONTO.CA | 2016-06-14 22:03:11 -0400 (Tue, 14 Jun 2016) | 1 line
+
+changed listDir and listFile to use hashmap keys
+------------------------------------------------------------------------
+r137 | chenbrod@UTORONTO.CA | 2016-06-14 21:58:16 -0400 (Tue, 14 Jun 2016) | 1 line
+
+seperated listContent into listDir and listFile
+------------------------------------------------------------------------
+r136 | lawchi1@UTORONTO.CA | 2016-06-14 21:39:15 -0400 (Tue, 14 Jun 2016) | 1 line
+
+Changed mkDir and mkFile into addDir and addFile, such that new files and directories are not created through those commands, as per request of Albion.
+------------------------------------------------------------------------
+r135 | chenbrod@UTORONTO.CA | 2016-06-14 20:26:44 -0400 (Tue, 14 Jun 2016) | 1 line
+
+wrote scrum report for june 14
+------------------------------------------------------------------------
+r134 | chenbrod@UTORONTO.CA | 2016-06-14 20:21:41 -0400 (Tue, 14 Jun 2016) | 1 line
+
+
+------------------------------------------------------------------------
+r133 | moha1075@UTORONTO.CA | 2016-06-14 19:34:10 -0400 (Tue, 14 Jun 2016) | 1 line
+
+Create Man class
+------------------------------------------------------------------------
+r132 | lawchi1@UTORONTO.CA | 2016-06-14 11:07:51 -0400 (Tue, 14 Jun 2016) | 1 line
+
+Update sprint log on blockage due to DirMgt.class being unimplemented.
+------------------------------------------------------------------------
+r131 | lawchi1@UTORONTO.CA | 2016-06-14 11:06:47 -0400 (Tue, 14 Jun 2016) | 1 line
+
+Added Append.java, Overwrite.java and Redirect.java. All three are only partially completed, due to Redirect's dependence on DirMgt (Which is not completed).
+------------------------------------------------------------------------
+r130 | lawchi1@UTORONTO.CA | 2016-06-14 10:42:21 -0400 (Tue, 14 Jun 2016) | 1 line
+
+Updated own sprint with new information
+------------------------------------------------------------------------
+r129 | lawchi1@UTORONTO.CA | 2016-06-14 10:31:48 -0400 (Tue, 14 Jun 2016) | 1 line
+
+Uploaded Sprint2 for myself. (lawchi1)
+------------------------------------------------------------------------
+r128 | fungalbi@UTORONTO.CA | 2016-06-14 00:54:14 -0400 (Tue, 14 Jun 2016) | 2 lines
+
+Added daily scrum meeting
+
+------------------------------------------------------------------------
+r127 | fungalbi@UTORONTO.CA | 2016-06-13 18:30:15 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+A bunch of bug fixes so that it now compiles
+
+------------------------------------------------------------------------
+r126 | fungalbi@UTORONTO.CA | 2016-06-13 18:17:27 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Added Cat.java (mostly completed, not sure about get file), uncommented cat command in JShell
+
+------------------------------------------------------------------------
+r125 | fungalbi@UTORONTO.CA | 2016-06-13 18:10:49 -0400 (Mon, 13 Jun 2016) | 3 lines
+
+Completed ground work for push and popd (unless we changing that to an obj),
+have commented code if we make history a static class
+
+------------------------------------------------------------------------
+r124 | fungalbi@UTORONTO.CA | 2016-06-13 18:08:42 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Removed unecessary dictionary
+
+------------------------------------------------------------------------
+r123 | fungalbi@UTORONTO.CA | 2016-06-13 18:08:14 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated JShell to properly use validator class (when it's completed) and began ground work for History as well as push/popd
+
+------------------------------------------------------------------------
+r122 | fungalbi@UTORONTO.CA | 2016-06-13 12:29:10 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated JShell to fix a bracket and added a method for error messages
+
+------------------------------------------------------------------------
+r121 | fungalbi@UTORONTO.CA | 2016-06-13 12:22:29 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Separated parse input and run command method to more accurately reflect method name and its function
+
+------------------------------------------------------------------------
+r120 | fungalbi@UTORONTO.CA | 2016-06-13 12:17:01 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated JShell.java to use input.java and completed input.java
+
+------------------------------------------------------------------------
+r119 | fungalbi@UTORONTO.CA | 2016-06-13 12:11:30 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Added an input java
+
+------------------------------------------------------------------------
+r118 | moha1075@UTORONTO.CA | 2016-06-13 11:47:27 -0400 (Mon, 13 Jun 2016) | 1 line
+
+Remove unnecessary java.util.Arrays import
+------------------------------------------------------------------------
+r117 | fungalbi@UTORONTO.CA | 2016-06-13 10:55:19 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated Jshell and directory to start working with the new directory implementation
+
+------------------------------------------------------------------------
+r116 | fungalbi@UTORONTO.CA | 2016-06-13 10:42:11 -0400 (Mon, 13 Jun 2016) | 3 lines
+
+Updated sprint backlog with different responsibilities
+removed cat.java due to change in responsibility
+
+------------------------------------------------------------------------
+r115 | fungalbi@UTORONTO.CA | 2016-06-13 10:39:15 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated JShell.java with new implementation of echo, removed unecessary echo class
+
+------------------------------------------------------------------------
+r114 | fungalbi@UTORONTO.CA | 2016-06-13 10:38:12 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated sprint backlog 2 to more accurately reflect changes to design
+
+------------------------------------------------------------------------
+r113 | chenbrod@UTORONTO.CA | 2016-06-13 10:19:08 -0400 (Mon, 13 Jun 2016) | 1 line
+
+added getter and setter for parent directory
+------------------------------------------------------------------------
+r112 | fungalbi@UTORONTO.CA | 2016-06-13 09:52:59 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Fixed exit's behavior to more accurately reflect that of a unix shell's
+
+------------------------------------------------------------------------
+r111 | fungalbi@UTORONTO.CA | 2016-06-13 09:42:31 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Fixed the usage messages to more accurately match unix shell behavoir
+
+------------------------------------------------------------------------
+r110 | fungalbi@UTORONTO.CA | 2016-06-13 09:39:51 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Fixed bug in echo that prevents compilation
+
+------------------------------------------------------------------------
+r109 | fungalbi@UTORONTO.CA | 2016-06-13 09:39:07 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Fixed some problems that would prevent compilation. Still have one with echo to be fixed in next commit
+
+------------------------------------------------------------------------
+r108 | fungalbi@UTORONTO.CA | 2016-06-13 09:33:09 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Completed function call for Echo
+
+------------------------------------------------------------------------
+r107 | fungalbi@UTORONTO.CA | 2016-06-13 09:23:35 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Added Cat.java and its base code
+
+------------------------------------------------------------------------
+r106 | fungalbi@UTORONTO.CA | 2016-06-13 09:13:09 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Added return type to a function in Echo
+
+------------------------------------------------------------------------
+r105 | fungalbi@UTORONTO.CA | 2016-06-13 09:06:24 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Part 2 of fixing echo for matching JShell
+
+------------------------------------------------------------------------
+r104 | fungalbi@UTORONTO.CA | 2016-06-13 09:05:44 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Adjusted JShell output to more accurately match unix based shell behavoir
+
+------------------------------------------------------------------------
+r103 | fungalbi@UTORONTO.CA | 2016-06-13 09:03:50 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Fixed echo's return string to properly match Unix terminal's behavior
+
+------------------------------------------------------------------------
+r102 | fungalbi@UTORONTO.CA | 2016-06-13 00:33:32 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Added base code for Echo.java; still working on `echo .*` such that it would print all files in current directory
+
+------------------------------------------------------------------------
+r101 | fungalbi@UTORONTO.CA | 2016-06-13 00:27:04 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Updated the file with information on what extra things have been completed that was unplanned
+
+------------------------------------------------------------------------
+r100 | fungalbi@UTORONTO.CA | 2016-06-13 00:25:29 -0400 (Mon, 13 Jun 2016) | 2 lines
+
+Completed Sprint log for sprint 2
+
+------------------------------------------------------------------------
+r99 | lawchi1@UTORONTO.CA | 2016-06-12 17:55:35 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Added basic javadoc to File.java before a standard for it is decided amongst group members
+------------------------------------------------------------------------
+r98 | chenbrod@UTORONTO.CA | 2016-06-12 17:47:01 -0400 (Sun, 12 Jun 2016) | 1 line
+
+wrote code for creating and getting directories and files, also listing out contents within directory
+------------------------------------------------------------------------
+r97 | lawchi1@UTORONTO.CA | 2016-06-12 16:45:55 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Fixed JShell.java formatting as per request of Albion
+------------------------------------------------------------------------
+r96 | lawchi1@UTORONTO.CA | 2016-06-12 16:05:45 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Added empty string for non-input constructor so that program can still 'getContent' without crashing.
+------------------------------------------------------------------------
+r95 | moha1075@UTORONTO.CA | 2016-06-12 15:46:30 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Style JShell.java with Google Java Style
+------------------------------------------------------------------------
+r94 | moha1075@UTORONTO.CA | 2016-06-12 12:52:09 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Add Directory and File CRC cards
+------------------------------------------------------------------------
+r93 | lawchi1@UTORONTO.CA | 2016-06-12 12:24:30 -0400 (Sun, 12 Jun 2016) | 2 lines
+
+Added appendToContent command to File.java
+
+------------------------------------------------------------------------
+r92 | lawchi1@UTORONTO.CA | 2016-06-12 11:46:09 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Removed random \n at start.
+------------------------------------------------------------------------
+r91 | lawchi1@UTORONTO.CA | 2016-06-12 11:45:42 -0400 (Sun, 12 Jun 2016) | 1 line
+
+First Version of File.java svn'd.
+------------------------------------------------------------------------
+r90 | lawchi1@UTORONTO.CA | 2016-06-12 11:24:50 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Forgot to upload sprint1......Fixed.
+------------------------------------------------------------------------
+r89 | moha1075@UTORONTO.CA | 2016-06-12 02:53:45 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Remove unneeded CRC cards
+------------------------------------------------------------------------
+r88 | moha1075@UTORONTO.CA | 2016-06-12 02:27:28 -0400 (Sun, 12 Jun 2016) | 1 line
+
+Add daily scrum meeting
+------------------------------------------------------------------------
+r87 | moha1075@UTORONTO.CA | 2016-06-11 15:34:28 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Fix bug introduced by missing braces
+------------------------------------------------------------------------
+r86 | moha1075@UTORONTO.CA | 2016-06-11 15:33:27 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Fix bug introduced by missing braces
+------------------------------------------------------------------------
+r85 | moha1075@UTORONTO.CA | 2016-06-11 15:23:04 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Remove unncessary braces
+------------------------------------------------------------------------
+r84 | moha1075@UTORONTO.CA | 2016-06-11 14:16:55 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Complete echo command without redirection
+------------------------------------------------------------------------
+r83 | moha1075@UTORONTO.CA | 2016-06-11 14:14:25 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Rename exit method to camelCase
+------------------------------------------------------------------------
+r82 | moha1075@UTORONTO.CA | 2016-06-11 14:13:29 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Code cleanup
+------------------------------------------------------------------------
+r81 | moha1075@UTORONTO.CA | 2016-06-11 14:09:43 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Add code to tokenize input using custom method
+------------------------------------------------------------------------
+r80 | moha1075@UTORONTO.CA | 2016-06-11 12:45:22 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Remove unncessary parentheses in parseInput() return statement
+------------------------------------------------------------------------
+r79 | moha1075@UTORONTO.CA | 2016-06-11 12:44:12 -0400 (Sat, 11 Jun 2016) | 2 lines
+
+Increase specifity of temporary comments
+
+------------------------------------------------------------------------
+r78 | moha1075@UTORONTO.CA | 2016-06-11 12:31:19 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Fix usage message for "history" and "man" commands
+------------------------------------------------------------------------
+r77 | moha1075@UTORONTO.CA | 2016-06-11 04:33:47 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Add usage messages for all commands
+------------------------------------------------------------------------
+r76 | moha1075@UTORONTO.CA | 2016-06-11 04:24:25 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Rename parseInput method and parameters
+------------------------------------------------------------------------
+r75 | moha1075@UTORONTO.CA | 2016-06-11 04:20:05 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Fill in pledge information
+------------------------------------------------------------------------
+r74 | moha1075@UTORONTO.CA | 2016-06-11 04:18:56 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Fix a type with command not found message
+------------------------------------------------------------------------
+r73 | moha1075@UTORONTO.CA | 2016-06-11 04:17:49 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Add code to trim surrounding whitespace before tokenizing input
+------------------------------------------------------------------------
+r72 | moha1075@UTORONTO.CA | 2016-06-11 04:03:56 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Add check for argument number in exit command
+------------------------------------------------------------------------
+r71 | moha1075@UTORONTO.CA | 2016-06-11 04:01:03 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Add basic argument parsing and verification for all commands
+------------------------------------------------------------------------
+r70 | moha1075@UTORONTO.CA | 2016-06-11 02:00:49 -0400 (Sat, 11 Jun 2016) | 1 line
+
+Remove unncessary commands from being picked up by JShell
+------------------------------------------------------------------------
+r69 | chenbrod@UTORONTO.CA | 2016-06-11 00:48:50 -0400 (Sat, 11 Jun 2016) | 1 line
+
+created constructor for directory
+------------------------------------------------------------------------
+r68 | fungalbi@UTORONTO.CA | 2016-06-10 22:34:54 -0400 (Fri, 10 Jun 2016) | 2 lines
+
+Forgot to close the scanner before exit; now it does.
+
+------------------------------------------------------------------------
+r67 | fungalbi@UTORONTO.CA | 2016-06-10 22:02:43 -0400 (Fri, 10 Jun 2016) | 2 lines
+
+Added daily scrum for Albion on June 10
+
+------------------------------------------------------------------------
+r66 | chenbrod@UTORONTO.CA | 2016-06-10 21:58:33 -0400 (Fri, 10 Jun 2016) | 1 line
+
+scrum 1 update
+------------------------------------------------------------------------
+r65 | fungalbi@UTORONTO.CA | 2016-06-10 21:51:09 -0400 (Fri, 10 Jun 2016) | 2 lines
+
+Fixed so that where there is no output, JShell would not output an empty line
+
+------------------------------------------------------------------------
+r64 | moha1075@UTORONTO.CA | 2016-06-10 20:11:13 -0400 (Fri, 10 Jun 2016) | 1 line
+
+Added basic code to support directory creation from JShell
+------------------------------------------------------------------------
+r63 | moha1075@UTORONTO.CA | 2016-06-10 19:57:45 -0400 (Fri, 10 Jun 2016) | 1 line
+
+Format code according to Google Java Style
+------------------------------------------------------------------------
+r62 | fungalbi@UTORONTO.CA | 2016-06-09 22:12:17 -0400 (Thu, 09 Jun 2016) | 2 lines
+
+Put in base code for JShell.java such that it will take commands until "exit" command issued and will prompt user when command is not recognized.
+
+------------------------------------------------------------------------
+r61 | fungalbi@UTORONTO.CA | 2016-06-09 21:27:03 -0400 (Thu, 09 Jun 2016) | 2 lines
+
+Fixed DirMgt to FileSystem
+
+------------------------------------------------------------------------
+r60 | fungalbi@UTORONTO.CA | 2016-06-09 21:17:21 -0400 (Thu, 09 Jun 2016) | 2 lines
+
+Added dir's crc cards
+
+------------------------------------------------------------------------
+r59 | fungalbi@UTORONTO.CA | 2016-06-09 21:17:07 -0400 (Thu, 09 Jun 2016) | 2 lines
+
+Changed FileSystem's card to reflect new format of file system
+
+------------------------------------------------------------------------
+r58 | fungalbi@UTORONTO.CA | 2016-06-09 21:12:41 -0400 (Thu, 09 Jun 2016) | 2 lines
+
+Renamed DirMgt.txt to FileSystem.txt
+
+------------------------------------------------------------------------
+r57 | chenbrod@UTORONTO.CA | 2016-06-09 00:35:58 -0400 (Thu, 09 Jun 2016) | 1 line
+
+listed out tasked to be addressed this sprint, assigned tasked to each member
+------------------------------------------------------------------------
+r56 | fungalbi@UTORONTO.CA | 2016-06-08 23:36:59 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Specified crcCards to be finished
+
+------------------------------------------------------------------------
+r55 | lawchi1@UTORONTO.CA | 2016-06-08 23:13:30 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Filled in Mv.txt
+
+------------------------------------------------------------------------
+r54 | fungalbi@UTORONTO.CA | 2016-06-08 23:13:03 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Udpated responsibility of 'exit' command in JShell
+
+------------------------------------------------------------------------
+r53 | fungalbi@UTORONTO.CA | 2016-06-08 23:11:49 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Updated redirect's subclass names
+
+------------------------------------------------------------------------
+r52 | fungalbi@UTORONTO.CA | 2016-06-08 23:11:06 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Udpated MkDir collaborators
+
+------------------------------------------------------------------------
+r51 | fungalbi@UTORONTO.CA | 2016-06-08 23:10:17 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Pwd crc cards
+
+------------------------------------------------------------------------
+r50 | fungalbi@UTORONTO.CA | 2016-06-08 23:09:03 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Ls crc cards
+
+------------------------------------------------------------------------
+r49 | fungalbi@UTORONTO.CA | 2016-06-08 23:07:44 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Append crc cards; updated Overwrite collaborators
+
+------------------------------------------------------------------------
+r48 | fungalbi@UTORONTO.CA | 2016-06-08 23:05:24 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Updated collaborators on Man; history crc cards
+
+------------------------------------------------------------------------
+r47 | fungalbi@UTORONTO.CA | 2016-06-08 23:03:05 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Overwrite crcCards
+
+------------------------------------------------------------------------
+r46 | fungalbi@UTORONTO.CA | 2016-06-08 23:00:33 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+DirStack crcCards
+
+------------------------------------------------------------------------
+r45 | fungalbi@UTORONTO.CA | 2016-06-08 22:57:29 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Cat crccards
+
+------------------------------------------------------------------------
+r44 | fungalbi@UTORONTO.CA | 2016-06-08 22:55:27 -0400 (Wed, 08 Jun 2016) | 3 lines
+
+Echo crcCards
+
+
+------------------------------------------------------------------------
+r43 | lawchi1@UTORONTO.CA | 2016-06-08 22:53:54 -0400 (Wed, 08 Jun 2016) | 1 line
+
+Filled in Cp.txt
+------------------------------------------------------------------------
+r42 | fungalbi@UTORONTO.CA | 2016-06-08 22:53:42 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Man crcCard
+
+------------------------------------------------------------------------
+r41 | lawchi1@UTORONTO.CA | 2016-06-08 22:52:08 -0400 (Wed, 08 Jun 2016) | 1 line
+
+Filled in Redirect.txt
+------------------------------------------------------------------------
+r40 | fungalbi@UTORONTO.CA | 2016-06-08 22:50:30 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Jshell crcCard
+
+------------------------------------------------------------------------
+r39 | lawchi1@UTORONTO.CA | 2016-06-08 22:48:52 -0400 (Wed, 08 Jun 2016) | 1 line
+
+Filled in Rm.txt
+------------------------------------------------------------------------
+r38 | lawchi1@UTORONTO.CA | 2016-06-08 22:47:03 -0400 (Wed, 08 Jun 2016) | 1 line
+
+Filled in MkDir.txt
+------------------------------------------------------------------------
+r37 | lawchi1@UTORONTO.CA | 2016-06-08 22:45:50 -0400 (Wed, 08 Jun 2016) | 1 line
+
+Ver1 of DirMgt.txt, responsibilities fully added
+------------------------------------------------------------------------
+r36 | lawchi1@UTORONTO.CA | 2016-06-08 22:44:10 -0400 (Wed, 08 Jun 2016) | 1 line
+
+Edited DirMgt.txt
+------------------------------------------------------------------------
+r35 | fungalbi@UTORONTO.CA | 2016-06-08 22:43:28 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Part 2
+
+------------------------------------------------------------------------
+r34 | fungalbi@UTORONTO.CA | 2016-06-08 22:41:30 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Added files for crcCards part 1 (empty)
+
+------------------------------------------------------------------------
+r33 | fungalbi@UTORONTO.CA | 2016-06-08 22:23:25 -0400 (Wed, 08 Jun 2016) | 2 lines
+
+Added jshell and dirmgt for crc cards
+
+------------------------------------------------------------------------
+r32 | moha1075@UTORONTO.CA | 2016-06-07 23:56:43 -0400 (Tue, 07 Jun 2016) | 1 line
+
+Completed product backlog
+------------------------------------------------------------------------
+r31 | moha1075@UTORONTO.CA | 2016-06-07 23:48:20 -0400 (Tue, 07 Jun 2016) | 1 line
+
+Improve user story for pushing and popping directories
+------------------------------------------------------------------------
+r30 | moha1075@UTORONTO.CA | 2016-06-07 23:40:42 -0400 (Tue, 07 Jun 2016) | 1 line
+
+Partial restyling of product backlog
+------------------------------------------------------------------------
+r29 | chenbrod@UTORONTO.CA | 2016-06-07 23:17:23 -0400 (Tue, 07 Jun 2016) | 1 line
+
+changed wording to match example user stories
+------------------------------------------------------------------------
+r28 | chenbrod@UTORONTO.CA | 2016-06-07 23:08:12 -0400 (Tue, 07 Jun 2016) | 1 line
+
+attempted to fix formatting
+------------------------------------------------------------------------
+r27 | fungalbi@UTORONTO.CA | 2016-06-07 21:29:37 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+List of possible CRC cards
+
+------------------------------------------------------------------------
+r26 | fungalbi@UTORONTO.CA | 2016-06-07 21:26:13 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+Added a file that details the order of the overall project that we want to do in
+
+------------------------------------------------------------------------
+r25 | fungalbi@UTORONTO.CA | 2016-06-07 19:09:18 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+Added the log 2 and 3 again, using the template from log 1 with modified corectedates
+
+------------------------------------------------------------------------
+r24 | fungalbi@UTORONTO.CA | 2016-06-07 19:06:30 -0400 (Tue, 07 Jun 2016) | 3 lines
+
+rm log2 and log3 so we can copy the template from log1.
+Added template for log1
+
+------------------------------------------------------------------------
+r23 | fungalbi@UTORONTO.CA | 2016-06-07 19:01:03 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+Added sprint backlog files in prep for start of sprint
+
+------------------------------------------------------------------------
+r22 | fungalbi@UTORONTO.CA | 2016-06-07 17:41:12 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+rm get command, added the specific commands at the end of the line in () for easier identification of the command
+
+------------------------------------------------------------------------
+r21 | fungalbi@UTORONTO.CA | 2016-06-07 17:28:19 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+Added notes for instructor to see a clean formatting
+
+------------------------------------------------------------------------
+r20 | fungalbi@UTORONTO.CA | 2016-06-07 17:26:27 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+rm tr command
+
+------------------------------------------------------------------------
+r19 | fungalbi@UTORONTO.CA | 2016-06-07 17:22:37 -0400 (Tue, 07 Jun 2016) | 2 lines
+
+Fixed formatting (pt1, may have pt2 if instructor desires a diff format)
+
+------------------------------------------------------------------------
+r18 | moha1075@UTORONTO.CA | 2016-06-06 22:17:49 -0400 (Mon, 06 Jun 2016) | 1 line
+
+Add user story for directory pushing and popping
+------------------------------------------------------------------------
+r17 | lawchi1@UTORONTO.CA | 2016-06-06 21:49:39 -0400 (Mon, 06 Jun 2016) | 1 line
+
+Added shell and dirmgt
+------------------------------------------------------------------------
+r16 | chenbrod@UTORONTO.CA | 2016-06-06 21:34:30 -0400 (Mon, 06 Jun 2016) | 1 line
+
+added user stories for man and history
+------------------------------------------------------------------------
+r15 | fungalbi@UTORONTO.CA | 2016-06-06 21:29:42 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+Added a specific story just for file creation
+
+------------------------------------------------------------------------
+r14 | fungalbi@UTORONTO.CA | 2016-06-06 21:20:05 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+Added exit 
+
+------------------------------------------------------------------------
+r13 | fungalbi@UTORONTO.CA | 2016-06-06 21:19:04 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+added cat and mentioned tr in the appropriate story
+
+------------------------------------------------------------------------
+r12 | fungalbi@UTORONTO.CA | 2016-06-06 21:17:36 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+added ls, pwd, get, echo, redirects and tr
+
+------------------------------------------------------------------------
+r11 | fungalbi@UTORONTO.CA | 2016-06-06 21:15:06 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+added echo and changed unit of time to hours
+
+------------------------------------------------------------------------
+r10 | fungalbi@UTORONTO.CA | 2016-06-06 21:13:53 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+Added file to directory word
+
+------------------------------------------------------------------------
+r9 | fungalbi@UTORONTO.CA | 2016-06-06 21:10:41 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+ Added directory management related user stories and time
+
+------------------------------------------------------------------------
+r8 | fungalbi@UTORONTO.CA | 2016-06-06 21:04:11 -0400 (Mon, 06 Jun 2016) | 2 lines
+
+Added the required file (empty)
+
+------------------------------------------------------------------------
+r7 | attarwal@UTORONTO.CA | 2016-06-05 18:57:36 -0400 (Sun, 05 Jun 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r6 | attarwal@UTORONTO.CA | 2016-06-05 18:57:35 -0400 (Sun, 05 Jun 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r5 | attarwal@UTORONTO.CA | 2016-06-05 18:57:35 -0400 (Sun, 05 Jun 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r4 | attarwal@UTORONTO.CA | 2016-06-05 18:57:34 -0400 (Sun, 05 Jun 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r3 | attarwal@UTORONTO.CA | 2016-06-05 18:57:33 -0400 (Sun, 05 Jun 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r2 | attarwal@UTORONTO.CA | 2016-06-05 18:57:33 -0400 (Sun, 05 Jun 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r1 | markus | 2016-06-05 18:21:24 -0400 (Sun, 05 Jun 2016) | 1 line
+
+
+------------------------------------------------------------------------
+
+
+
+Part 3) +++Work Distribution of Team Members+++
++++ON ALL SOURCE FILES+++
+  26 attarwal@U
+ 268 chenbrod@U
+ 732 fungalbi@U
+ 196 lawchi1@UT
+ 821 moha1075@U
++++ON CRC CARDS+++
+   9 attarwal@U
+ 106 fungalbi@U
+  65 lawchi1@UT
+  11 moha1075@U
++++ON DAILYSCRUMMEETINGS+++
+  33 attarwal@U
+  51 chenbrod@U
+ 128 fungalbi@U
+ 113 lawchi1@UT
+  49 moha1075@U
++++ON PRODUCT BACKLOG +++
+  11 attarwal@U
+  22 moha1075@U
++++ON SPRINTS+++
+  68 attarwal@U
+  12 chenbrod@U
+  91 fungalbi@U
+3595
+Part 4) SVN Commits
+
+
+On Sprints
+   1  attarwal@UTORONTO.CA 
+   1  chenbrod@UTORONTO.CA 
+  10  fungalbi@UTORONTO.CA 
+
+
+On CRC Cards
+   1  attarwal@UTORONTO.CA 
+  24  fungalbi@UTORONTO.CA 
+   9  lawchi1@UTORONTO.CA 
+   2  moha1075@UTORONTO.CA 
+
+
+On DailyScrumMeetings
+   1  attarwal@UTORONTO.CA 
+   6  chenbrod@UTORONTO.CA 
+  10  fungalbi@UTORONTO.CA 
+  10  lawchi1@UTORONTO.CA 
+   8  moha1075@UTORONTO.CA 
+
+
+On ProductBacklog
+   1  attarwal@UTORONTO.CA 
+   3  chenbrod@UTORONTO.CA 
+  12  fungalbi@UTORONTO.CA 
+   1  lawchi1@UTORONTO.CA 
+   4  moha1075@UTORONTO.CA 
+
+
+On source
+   1  attarwal@UTORONTO.CA 
+  33  chenbrod@UTORONTO.CA 
+ 141  fungalbi@UTORONTO.CA 
+  32  lawchi1@UTORONTO.CA 
+ 106  moha1075@UTORONTO.CA 

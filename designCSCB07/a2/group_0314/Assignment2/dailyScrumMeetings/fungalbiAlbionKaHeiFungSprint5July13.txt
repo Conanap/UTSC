@@ -1,0 +1,19 @@
+What did I do?
+	- a bunch of bug fixes (generally typos and due to new implementation)
+	- Import statements for all files
+	- Some optimization in a few command classes
+	- Rewrote a few classes to properly utilize the new implementation
+	- Changed command to a abstract class
+	- updated all except append, redirect and overwrite to reflect above change
+	- Completed file / dir not found exception
+	- implemented exceptions above into cd (partly), cat, cp, mkdir, popd, pushd, !
+
+To do:
+	- unit test
+	- docs
+	- bug fix moar
+	- testing, optimization
+
+Blocked:
+	- redirect, append, overwrite
+

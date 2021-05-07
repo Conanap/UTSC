@@ -1,0 +1,76 @@
+package command;
+
+import filesystem.*;
+import driver.Output;
+import driver.CommandRunner;
+/**
+* Retrieves a file at URL and adds it to the current working directory
+*
+* @author Chi Fai Law
+*/
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Scanner;
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+
+public class Curl extends Command{
+  /**
+   * Pops the last pushed dir and cd to it
+   *
+   * @param adr  The URL of the file we are retrieving
+   * @param curr The current working directory.
+   */
+  private Directory curr;
+  private FileSystem fs;
+  
+  public Curl() {}
+  
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    try {
+    URL adr = new URL(tokens[1]);
+    BufferedReader in = new BufferedReader(
+        new InputStreamReader(adr.openStream()));
+    // Starts a new scanner with delimiter \A, 'Beginning of the input boundary'
+    Scanner s = new Scanner(in).useDelimiter("\\A");
+    // Reads from Scanner, ensuring there is more before continuing
+    String read = s.hasNext() ? s.next() : "";
+    in.close();
+    // Creates a new file with the new content
+    File dl = new File(read);
+    // Retrieve file name
+    String filename = adr.getFile();
+    String[] name = filename.split("/");
+    // Add file to current directory
+    curr.addFile(dl, name[name.length - 1]);
+    }
+    catch (MalformedURLException e) {
+      String errs = "Malformed URL: String could not be parsed.\n";
+      output.sendErrBuffer(errs);
+    }
+    catch (IOException e){
+      output.sendErrBuffer("-jshell: " + tokens[0] + ": URL error\n");
+    }
+  }
+  
+  public void initialize(Directory curr, FileSystem fs, History his){
+    this.curr = curr;
+    this.fs = fs;
+  }
+  
+  public boolean validate(String[] tokens) {
+    return tokens[0].equals("curl") && tokens.length == 2;
+  }
+  
+  public String getUsage() {
+    return "curl URL";
+  }
+  
+  public String getManual() {
+    return "curl - Downloads a File from URL to current working directory, "
+        + "retaining original file name.";
+  }
+    
+}

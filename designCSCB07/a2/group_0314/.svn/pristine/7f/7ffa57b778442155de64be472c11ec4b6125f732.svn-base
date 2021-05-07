@@ -1,0 +1,70 @@
+// **********************************************************
+// Assignment2:
+// Student1:
+// UTORID user_name: fungalbi
+// UT Student #: 1002444321
+// Author: Albion Ka Hei Fung
+//
+// Student2:
+// UTORID user_name: chenbrod
+// UT Student #: 1002262115
+// Author: Brody Chen
+//
+// Student3:
+// UTORID user_name: lawchi1
+// UT Student #: 1002470444
+// Author: Chi Fai Law
+//
+// Student4:
+// UTORID user_name: moha1075
+// UT Student #: 1002307434
+// Author: Rizadh Mohamed Nizam
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// I have also read the plagiarism section in the course info
+// sheet of CSC B07 and understand the consequences.
+// *********************************************************
+package driver;
+import filesystem.*;
+import command.*;
+
+/**
+* Runs a shell like environt ment
+*
+* @author Albion Ka Hei Fung
+*/
+public class JShell {
+  private static FileSystem fs = new FileSystem();
+
+  public static void main(String[] args) {
+    // initialize var
+    History history = new History();
+    Input in = new Input(System.in);
+    boolean exit = false;
+    Directory curr = fs.getRoot();
+    String input;
+    String[] tokens;
+    Output output = new Output();
+    CommandRunner runner = new CommandRunner(fs);
+    while (!exit) {
+        System.out.print("JVM: ~User$ ");
+        input = in.getNextInput();
+        if(!input.equals("")) {
+        history.addCmd(input);
+        tokens = Tokenizer.tokenizeInput(input);
+        if (tokens.length == 1 && tokens[0].equals("exit")) {
+          exit = true;
+        } else {
+          runner.execute(tokens, curr, history, output);
+          curr = runner.getCurrDir();
+          System.out.print(output.getOutBuffer());
+          System.out.print(output.getErrBuffer());
+        }
+      }
+    }
+    in.closeInput();
+  }
+}

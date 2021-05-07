@@ -1,0 +1,5 @@
+public class InvalidPathException extends Exception {
+	public class InvalidPathException (String e) {
+		;
+	}
+}

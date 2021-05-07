@@ -1,0 +1,9 @@
+I completed the ant build.
+Since instructors did not answer the question with regards to ant build with junit testing, taken straight from announcement:
+	"The number of targets in your ant file should be exactly the same for A2b. You can see my previous  		 announcement for A2b ant file to get more details here."
+
+In A2b's assignment:
+	"7. The junit target when invode, must only compile your junit tests. These JUnit depend on the JUnit 		jar files. Make sure the jar files are conveniently located in the libs folder. The libs folder must 		reside in the same location as the src folder."
+
+Neither mentions the creation of a .jar file for junit file. Therefore the ant build will only compile the junit files, but not create a jar file nor run it.
+

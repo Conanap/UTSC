@@ -1,0 +1,19 @@
+What did I do last time:
+	- Finished Base Code for Files
+	- Made revision changes to Files after discussion with group members
+
+What do I plan to do now?
+	- Writing the Overwrite.class
+	- Writing the Append.class
+	- Document commands to this point.
+	- Writing Redirect.class?
+
+Am I blocked on anything?
+	- In order to test these classes properly, in their intended environment, the Shell must be implemented.
+	- As Redirect.class is necessary for both classes that I am writing, I will probably write it also.
+	- DirMgt.class is also above Redirect.class, and its implementation is paramount to how Redirect works.
+
+Law Chi Fai
+lawchi1
+1002470444
+June 14, 2016

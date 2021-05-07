@@ -1,0 +1,30 @@
+//Sprint 1 backlog
+June 8 to June 13
+
+
+User Stories from Product Backlog that we will address in this sprint:
+a)...create files and directories
+b)...remove files and directories
+c)...navigate/control the file system through the shell using commands
+
+Specific tasks to be accomplished:
+a-1.crcCards
+b-1.Start base code for JShell
+b-2.Have shell continually prompt input from user
+b-3.Parse input from user to commands
+c-1.Begin base code for File class
+c-2.Begin base code for Directory class 
+
+These tasks are assigned as follows:
+
+User: Albion Ka Hei Fung
+Tasks:a-1, b-1, b-2
+
+User: Rizadh Nizam
+Tasks:b-3
+
+User: Chi Fai Law
+Tasks:a-1,c-1
+
+User: Brody Chen
+Tasks:c-2

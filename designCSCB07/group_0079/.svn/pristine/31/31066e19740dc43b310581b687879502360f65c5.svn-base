@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project name="B08Assignment3" default="run">
+
+  <target name="run" depends="jar">
+    <echo>run</echo>
+    <java classname="driver.MyParser" fork="true">
+      <classpath path ="Assignment3.jar"/>
+      <arg value="${arg0}"/>
+      <arg value="${arg1}"/>
+    </java>
+  </target>
+
+  <target name="jar" depends="compile">
+    <echo>jar</echo>
+    <jar destfile="Assignment3.jar" basedir="./bin/" includes="**/*.class"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <echo>compile</echo>
+    <javac srcdir="./src/driver:./src/JavaIO" destdir="bin"/>
+  </target>
+
+  <target name="init" depends="clean">
+    <echo>init</echo>
+    <mkdir dir="bin"/>
+  </target>
+
+  <target name="clean">
+    <echo>clean</echo>
+    <delete dir="./bin/"/>
+  </target>
+
+  <target name="junit" depends="compile">
+    <echo>junit</echo>
+    <javac srcdir="./src/Test" destdir="bin/"/>
+  </target>
+
+</project>

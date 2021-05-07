@@ -1,0 +1,39 @@
+import org.junit.Test;
+
+import CatTest.MockFileSystem;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+
+import command.PopDirectory;
+
+public class PopdTest {
+	private MockFileSystem fs = new MockFileSystem();
+	private MockDirectory dir = new MockDirectory();
+	private MockOutput out = new MockOutput();
+	PopDirectory popd = new PopDirectory();
+	
+	@Before
+	public void setUp(){
+	  popd = new PopDirectory();
+	  popd.initialize(dir, fs, null);
+	}
+
+	@Test
+	public void testPopEmpty() {
+		String[] in = {"popd"};
+		popd.execute(in, null, out);
+		assertEquals("No more directories to pop\n", out.getErrBuffer());
+	}
+
+	@Test
+	public void testPop() {
+		fs.pushd("h");
+		MockDirectory h = new MockDirectory();
+		dir.addDir(h, "h");
+		String[] in = {"popd"};
+		popd.execute(in, null, out);
+		assertEquals("", out.getErrBuffer());
+	}
+}

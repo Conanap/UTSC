@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=void\ Exit()
+comment2.params=cmd
+comment2.target=java.lang.String\ parseCmd(java.lang.String)
+numComments=3

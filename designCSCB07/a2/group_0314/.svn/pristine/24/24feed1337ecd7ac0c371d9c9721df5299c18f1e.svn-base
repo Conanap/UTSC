@@ -1,0 +1,38 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import command.Pwd;
+import driver.Output;
+
+public class PwdTest {
+  @Test
+  public void testNestedDirectores() {
+    MockDirectory dir = new MockDirectory(
+        "dir3",
+        new MockDirectory(
+            "dir2",
+            new MockDirectory(
+                "dir1",
+                new MockDirectory()
+            )
+        )
+    );
+
+    Pwd p1 = new Pwd();
+    Output o = new Output();
+    p1.initialize(dir, null, null);
+    p1.execute(new String[]{"pwd"}, null, o);
+    assertEquals("/dir1/dir2/dir3\n", o.getOutBuffer());
+  }
+
+  @Test
+  public void testRootDirectory() {
+    MockDirectory dir = new MockDirectory();
+    Pwd p1 = new Pwd();
+    Output o = new Output();
+    p1.initialize(dir, null, null);
+    p1.execute(new String[]{"pwd"}, null, o);
+    assertEquals("/\n", o.getOutBuffer());
+  }
+}

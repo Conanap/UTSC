@@ -1,0 +1,9 @@
+Class name: Cd.java
+Parent class: DirMgt.java
+Subclasses: None
+
+Responsibilities:
+*Changes directory to the given DIR.
+*Allows both relative to current directory, and full path.
+
+Collaborators

@@ -1,0 +1,33 @@
+package Test;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.junit.Test;
+
+import driver.HTMLParser;
+
+public class HTMLParserTest {
+
+  private HTMLParser hp;
+  
+  @Before
+  public void setup() {
+    hp = new HTMLParser();
+  }
+  @Test
+  public void testGetHTML() {
+    String html = "<html></html>";
+    try {
+      assertEquals(html, hp.getHTML("test.html"));
+      
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+}

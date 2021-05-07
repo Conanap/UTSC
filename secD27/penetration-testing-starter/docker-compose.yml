@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  metasploitable:
+    image: thierrysans/metasploitable:penetration-testing
+    container_name: metasploitable
+    tty: true
+    networks:
+      channel:
+        ipv4_address: 10.0.0.2
+  
+  metasploit:
+    image: strm/metasploit
+    container_name: metasploit
+    stdin_open: true
+    tty: true
+    networks:
+      channel:
+        ipv4_address: 10.0.0.3
+            
+  openvas:
+      image: mikesplain/openvas:9
+      container_name: openvas
+      ports:
+        - "443:443"
+      networks:
+        channel:
+          ipv4_address: 10.0.0.4
+             
+networks:
+  channel:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24

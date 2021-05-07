@@ -1,0 +1,14 @@
+What did I do?
+	- Helped fix redirect's improper implementation and bugs
+	- In effect, also had to fix overwrtie and append
+	- Changed dirStack's implementation to a has-a relatoinship
+	- Fixed Pwd such that it returns / when it's at root
+	- Completed sprint 3 backlog
+
+What do I plan to do now?
+	- Complete java docs
+	- Continue to update crcCards
+	- Help debug
+
+Am I blocked on anything?
+	- Null as of writing

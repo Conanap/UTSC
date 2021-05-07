@@ -1,0 +1,17 @@
+public class Pushd {
+	/**
+	* Pushes current working directory to a stack, then cd to a given
+	* directory
+	*
+	* @param path Directory to cd to after pushing cwd
+	* @param fs The file system which the instance is running on
+	* @param curr The current directory in the instance
+	*/
+  public static Directory pushd(String path, FileSystem fs, Directory curr) {
+    // cd
+    Directory temp = Cd.changeDir(path, fs, curr);
+    if(temp != null) // if dir exist, then we push
+    	fs.push(Pwd.printWorkingDirectory(curr));
+    return temp;
+  }
+}

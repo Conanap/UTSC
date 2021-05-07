@@ -1,0 +1,10 @@
+Class name: Mkdir.java
+Parent class: ShellIO.java
+Subclasses: None
+
+Responsibilities:
+*Creates a new directory, either in current directory, or of a full path.
+
+Collaborators
+*DirMgt.java
+*Cd.java

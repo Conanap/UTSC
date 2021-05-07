@@ -1,0 +1,19 @@
+What did I do?
+	- Created and completed FileSystem.java
+	- Help modify Directory.java to work a file system
+	- Implemented FileSystem into JShell
+	- Completed echo.java
+	- Completed Cat.java
+	- Completed DirStack.java
+	- Completed Pushd.java
+	- Completed Popd.java
+	- Completed  Cd, Input, Pushd and Popd's crc Cards
+
+What do I plan to do now?
+	- Complete missing man pages
+	- Finish updating crc Cards
+	- Complete MkDir.class
+
+Am I blocked on anything?
+	- Waiting on completion of Validator class
+	- Waiting on completion of Cd class

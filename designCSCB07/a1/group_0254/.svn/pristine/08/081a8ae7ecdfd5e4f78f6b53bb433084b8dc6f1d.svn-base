@@ -1,0 +1,11 @@
+Class name: Mv.java
+Parent class: DirMgt.java
+Subclasses: None
+
+Responsibilities:
+*Moves file from old location to new location.
+*Both old location and new location may be relative to the current directory, or full paths.
+*File at old location is removed.
+
+Collaborators
+*Cp.java

@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Input {
+	public static String[] getInput() {
+		Scanner scan = new Scanner(System.in);
+		String in;
+		String [] tokens;
+		in = scan.nextLine();
+		tokens = tokenizeInput(in);
+		return tokens;
+	}
+
+	private static String[] tokenizeInput(String input) {
+    input += ' ';
+    boolean inQuote = false;
+    int inputLength = input.length();
+    String currentArgument = "";
+    ArrayList<String> argumentList = new ArrayList<>();
+    for (int i = 0; i < inputLength; i++) {
+      if (input.charAt(i) == '"') {
+        inQuote = !inQuote;
+      } else if (inQuote) {
+        currentArgument += input.charAt(i);
+      } else if (input.charAt(i) == ' ') {
+        if (!currentArgument.equals("")) {
+          argumentList.add(currentArgument);
+          currentArgument = "";
+        }
+      } else {
+        currentArgument += input.charAt(i);
+      }
+    }
+    if (argumentList.size() == 0) {
+      argumentList.add("");
+    }
+    return argumentList.toArray(new String[argumentList.size()]);
+  }
+}

@@ -1,0 +1,9 @@
+Class name: Get.java
+Parent class: DirMgt.java
+Subclasses: None
+
+Responsibilities:
+*Downloads file at given URL
+*Creates new directories as needed for file downloaded in current directory
+
+Collaborators

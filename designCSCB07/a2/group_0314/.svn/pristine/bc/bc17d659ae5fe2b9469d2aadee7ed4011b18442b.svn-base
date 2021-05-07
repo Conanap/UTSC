@@ -1,0 +1,56 @@
+package command;
+
+import driver.CommandRunner;
+import driver.Output;
+import filesystem.Directory;
+import filesystem.FileSystem;
+
+/**
+ * Responsible for finding the path from root to a provided directory
+ */
+public class Pwd extends Command {
+  private Directory currentDirectory;
+  private static final String
+      MAN_USAGE = "pwd",
+      MAN_DESCRIPTION = "Print the current working directory.";
+
+  @Override
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    currentDirectory = curr;
+  }
+
+  @Override
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    StringBuilder directoryPaths = new StringBuilder();
+    String pathToCurrent;
+
+    // Loop until parent directory leads to self
+    while (currentDirectory != currentDirectory.getParent()) {
+      directoryPaths.insert(0, "/" + currentDirectory.getDirName());
+      currentDirectory = currentDirectory.getParent();
+    }
+
+    if (directoryPaths.length() > 0) {
+      pathToCurrent = directoryPaths.toString() + '\n';
+    } else {
+      pathToCurrent = "/\n";
+    }
+
+    output.sendOutBuffer(pathToCurrent);
+  }
+
+  @Override
+  public boolean validate(String[] tokens) {
+    return tokens.length == 1;
+  }
+
+  @Override
+  public String getUsage() {
+    return Man.formatUsage(MAN_USAGE);
+  }
+
+  @Override
+  public String getManual() {
+    return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+  }
+}

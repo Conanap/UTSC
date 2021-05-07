@@ -1,0 +1,43 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class Validator {
+  public static boolean validateTokens(String[] tokens) {
+    boolean isValid = false,
+            redirectIsValid = true;
+    List tokenList = Arrays.asList(tokens);
+    int writeIndex = tokenList.indexOf(">");
+    int appendIndex = tokenList.indexOf(">>");
+    if (writeIndex != appendIndex) {
+      int splitIndex = Math.max(writeIndex, appendIndex);
+      tokens = (String[]) tokenList.subList(0, splitIndex).toArray();
+      String[] redirectTokens = (String[]) tokenList.subList(0, splitIndex).toArray();
+      redirectIsValid = validateTokens(redirectTokens);
+    }
+    switch (tokens[0]) {
+      case "cd":
+      case "pushd":
+      case "man":
+      case "echo":
+      case ">>":
+      case ">":
+        isValid = tokens.length == 2;
+        break;
+      case "popd":
+      case "pwd":
+        isValid = tokens.length == 1;
+        break;
+      case "mkdir":
+      case "cat":
+        isValid = tokens.length > 1;
+        break;
+      case "ls":
+        isValid = true;
+        break;
+      case "history":
+        isValid = tokens.length == 1 || tokens.length == 2;
+        break;
+    }
+    return isValid && redirectIsValid;
+  }
+}

@@ -1,0 +1,20 @@
+public class Mv {
+	public static int mv(String src, String dest, Directory curr, FileSystem fs) {
+		Directory srcDir = fs.getDirectory(src, curr);
+        File srcFle = fs.getFile(src, curr);
+        
+        int status = Cp.copy(src, dest, curr, fs);
+        if(status != 0)
+          // error from cp
+          return status;
+        else if (srcDir != null){
+          // directory moved, remove original
+          curr.removeDir(src);
+        }
+        else {
+          // file moved, remove original
+          curr.removeFile(src);
+        }
+		return 0; // success
+	}
+}

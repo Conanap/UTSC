@@ -1,0 +1,102 @@
+package driver;
+
+import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.Hashtable;
+
+import filesystem.Directory;
+import filesystem.FileSystem;
+import command.*;
+
+/**
+* Runs the command and updates related files
+*
+* @author Albion Ka Hei Fung
+*/
+public class CommandRunner {
+  private Directory curr;
+  private Hashtable<String,String> cmd;
+  private FileSystem fs;
+  private History history;
+
+  public CommandRunner(FileSystem fs) {
+     this.cmd = initializeCommands();
+     this. fs = fs;
+     this.curr = this.fs.getRoot();
+  }
+  /**
+   * The method runs the command when given tokens, where the zeroth token is a
+   * string representing the command you want to run, and the tokens after are
+   * its arguments
+   *
+   * @param tokens  The tokens for the command
+   * @param current The current directory in which the instance is running
+   * @param fs      The file system in which the current isntance is running on
+   */
+    public void execute(String[] tokens, Directory current, History history, Output output) {
+      // init vars
+      String out = "", errs = "";
+      int status = 1, secondLast = tokens.length - 2;
+      Directory temp;
+
+      if(tokens[secondLast].equals(">") || tokens[secondLast].equals(">>")) {
+        // run overwrite/redirect
+        Command command = this.getCommand(tokens[secondLast]);
+        if(command.validate(tokens)) {
+          command.initialize(current, this.fs, history);
+          command.execute(tokens, this, output);
+        } else
+          output.sendErrBuffer(command.getUsage());
+        return; // end method early
+      }
+
+      // create command if not redirect
+      try {
+        Command command = this.getCommand(tokens[0]);
+        if(command.validate(tokens)) { // execute command
+          command.initialize(current, this.fs, history);
+          command.execute(tokens, this, output);
+        } else { // usage msg
+          output.sendErrBuffer(command.getUsage());
+        }
+      } catch (NullPointerException e) { // can't find the command
+        output.sendErrBuffer("-jshell: " + tokens[0] + ": command not found\n");
+      }
+    }
+
+  private Hashtable<String, String> initializeCommands() {
+    Hashtable<String, String> ht = new Hashtable<String, String>();
+
+    ht.put("echo", "Echo");
+    ht.put("mkdir", "MakeDirectory");
+    ht.put("cd", "Cd");
+    ht.put("ls", "Ls");
+    ht.put("cat", "Concatonate");
+    ht.put("pushd", "PushDirectory");
+    ht.put("popd", "PopDirectory");
+    ht.put("history", "History");
+    ht.put("man", "GetManual");
+    ht.put("pwd", "Pwd");
+    ht.put("cp", "Copy");
+    ht.put("mv", "Mv");
+    ht.put(">", "Overwrite");
+    ht.put(">>", "Append");
+
+    return ht;
+  }
+  /**
+   * Use this method after running cd to update your instance's current
+   * directory.
+   */
+  public Directory getCurrDir() {
+    return this.curr;
+  }
+
+  public void setCurrDir(Directory newCurr) {
+    this.curr = newCurr;
+  }
+
+  public Command getCommand(String command) {
+    return (Command) Class.forName(this.cmd.get(command)).newInstance();
+  }
+}

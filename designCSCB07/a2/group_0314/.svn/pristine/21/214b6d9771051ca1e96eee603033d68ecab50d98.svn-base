@@ -1,0 +1,12 @@
+class name: DirMgt.class
+super: none
+sub: Mkdir.class, DirStack.class, Cp.class, Redirect.class, Rm.class
+Responsibilities:
+*Manages the local directory
+*Creates new directory and files
+*Handles change of directories for files
+*Handles moving and copying of files
+*Handles operations related to the Stack Directory
+*Handles the removal of files and directories.
+Collaborators:
+*JShell.class

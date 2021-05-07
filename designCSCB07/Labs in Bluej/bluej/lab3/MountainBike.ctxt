@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=minGear\ maxGear\ suspType
+comment0.target=MountainBike(int,\ int,\ SuspensionType)
+comment1.params=
+comment1.target=SuspensionType\ getSuspensionType()
+comment2.params=
+comment2.target=void\ printDescription()
+numComments=3

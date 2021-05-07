@@ -1,0 +1,11 @@
+What did I work on last time? 
+	-Started code for cd and ls class
+	-Made adjustments to Directory class
+	
+What do I plan to do now?
+	-Write javadocs for classes done so far
+	-parse path strings for cd
+	-implement ls using cd
+
+Am I blocked on anything?
+	-Nothing at the moment.

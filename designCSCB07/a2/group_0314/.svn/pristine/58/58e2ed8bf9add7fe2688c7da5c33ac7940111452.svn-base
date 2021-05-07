@@ -1,0 +1,10 @@
+Class name: Jshell.class
+Super: Object.class
+Subclasses: History.class, Man.class, Echo.class
+Responsibilities:
+*Takes in commands and interprets it to call correct classes
+*Provides user with standard output
+*Provides user with standard error
+*Closes the shell when the user desires with the command exit
+Collaborators:
+DirMgt.class

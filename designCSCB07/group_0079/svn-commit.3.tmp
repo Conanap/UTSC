@@ -1,0 +1,7 @@
+output std complete, console out is complete, fle out is partial ocmplete, removed debug print from context parser
+--This line, and those below, will be ignored--
+
+M    B07Assignment3/src/JavaIO/ConsoleOut.java
+M    B07Assignment3/src/JavaIO/OutputStandard.java
+M    B07Assignment3/src/JavaIO/FileOut.java
+M    B07Assignment3/src/driver/ContextParser.java

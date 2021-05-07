@@ -1,0 +1,9 @@
+Class name: Redirect.class
+Parent class: DirMgt.class
+Subclasses: Append.class, Overwrite.class
+
+Responsibilities:
+*Redirects output of a command to a file.
+
+Collaborators:
+Filesystem.class, Directory.class, File.class, Directory.class

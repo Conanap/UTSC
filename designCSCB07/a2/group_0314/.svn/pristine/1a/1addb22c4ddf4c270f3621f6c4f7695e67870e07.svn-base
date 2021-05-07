@@ -1,0 +1,99 @@
+package command;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import command.Pwd;
+import driver.Output;
+import filesystem.Directory;
+
+public class PwdTest {
+  @Test
+  public void testNestedDirectories() {
+    MockDirectory
+        dir =
+        new MockDirectory("dir3", new MockDirectory("dir2",
+            new MockDirectory("dir1", new MockDirectory())));
+
+    Pwd p1 = new Pwd();
+    Output o = new Output();
+    p1.initialize(dir, null, null);
+    p1.execute(new String[]{"pwd"}, null, o);
+    assertEquals("/dir1/dir2/dir3\n", o.getOutBuffer());
+  }
+
+  @Test
+  public void testRootDirectory() {
+    MockDirectory dir = new MockDirectory();
+    Pwd p1 = new Pwd();
+    Output o = new Output();
+    p1.initialize(dir, null, null);
+    p1.execute(new String[]{"pwd"}, null, o);
+    assertEquals("/\n", o.getOutBuffer());
+  }
+
+  @Test
+  public void testValidateValidInput() {
+    Pwd p1 = new Pwd();
+    String[] tokens = {"pwd"};
+    assertTrue(p1.validate(tokens));
+  }
+
+  @Test
+  public void testValidateInvalidInput() {
+    Pwd p1 = new Pwd();
+    String[] tokens = {"pwd", "hello"};
+    assertFalse(p1.validate(tokens));
+  }
+
+  @Test
+  public void testGetUsageMessage() {
+    Pwd p1 = new Pwd();
+    String actual = p1.getManual();
+    String expected = "";
+  }
+
+  /**
+   * Created for use with PwdTest. Mocks getParent and getDirName methods.
+   */
+  public class MockDirectory extends Directory {
+    private Directory parent;
+    private String name;
+
+    /**
+     * Constructor for creating a root directory
+     */
+    public MockDirectory() {
+      parent = this;
+    }
+
+    /**
+     * Constructor for creating a named, non-root directory
+     */
+    public MockDirectory(String name, Directory parent) {
+      this.parent = parent;
+      this.name = name;
+    }
+
+    /**
+     * Returns the stored directory name. Will not work for root.
+     *
+     * @return name of directory
+     */
+    public String getDirName() {
+      return this.name;
+    }
+
+    /**
+     * Return the parent of this directory
+     *
+     * @return parent of this directory
+     */
+    public Directory getParent() {
+      return this.parent;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+2018-11-02 02:24:44,773 Resolving host: sec-commerce.seclab.space
+2018-11-02 02:24:44,775 Host not cached.
+2018-11-02 02:24:44,780 Resolved host successfully: sec-commerce.seclab.space -> 142.1.97.172
+2018-11-02 02:24:44,781 Sending request via HTTP...
+2018-11-02 02:24:44,801 HTTP connection made.
+2018-11-02 02:24:44,802 Sending Request: GET /home?lang=en
+2018-11-02 02:24:44,803 Sending header: host : sec-commerce.seclab.space
+2018-11-02 02:24:44,803 Sending header: connection : close
+2018-11-02 02:24:44,823 Got server response: HTTP/1.1 301 Moved Permanently
+2018-11-02 02:24:44,824 Got server header: Server:nginx/1.14.0
+2018-11-02 02:24:44,825 Got server header: Date:Fri, 02 Nov 2018 02:24:44 GMT
+2018-11-02 02:24:44,826 Got server header: Content-Type:text/html
+2018-11-02 02:24:44,827 Got server header: Content-Length:185
+2018-11-02 02:24:44,828 Got server header: Connection:close
+2018-11-02 02:24:44,829 Got server header: Location:https://sec-commerce.seclab.space/home?lang=en
+2018-11-02 02:24:44,829 Found secure reference: https://sec-commerce.seclab.space/home?lang=en
+2018-11-02 02:24:44,830 Read from server:
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.14.0</center>
+</body>
+</html>
+
+2018-11-02 02:24:44,838 Resolving host: sec-commerce.seclab.space
+2018-11-02 02:24:44,838 Host cached.
+2018-11-02 02:24:44,839 Resolved host successfully: sec-commerce.seclab.space -> 142.1.97.172
+2018-11-02 02:24:44,840 Sending request via SSL...
+2018-11-02 02:24:44,861 HTTP connection made.
+2018-11-02 02:24:44,862 Sending Request: GET /home?lang=en
+2018-11-02 02:24:44,863 Sending header: host : sec-commerce.seclab.space
+2018-11-02 02:24:44,863 Sending header: referer : http://sec-commerce.seclab.space/home?lang=en
+2018-11-02 02:24:44,864 Sending header: connection : close
+2018-11-02 02:24:44,955 Got server response: HTTP/1.1 200 OK
+2018-11-02 02:24:44,957 Got server header: Server:nginx
+2018-11-02 02:24:44,958 Got server header: Date:Fri, 02 Nov 2018 02:24:44 GMT
+2018-11-02 02:24:44,964 Got server header: Content-Type:text/html; charset=utf-8
+2018-11-02 02:24:44,964 Got server header: Content-Length:63
+2018-11-02 02:24:44,965 Got server header: Connection:close
+2018-11-02 02:24:44,966 Got server header: X-Powered-By:Express
+2018-11-02 02:24:44,966 Got server header: ETag:W/"3f-wHWVYusDU2GtGO2pVug9pUVZTRA"
+2018-11-02 02:24:44,967 Got server header: Strict-Transport-Security:max-age=31536000
+2018-11-02 02:24:44,967 Read from server:
+Welcome to e-commerce. Please enter your username and password.
+2018-11-02 02:24:44,981 Resolving host: sec-commerce.seclab.space
+2018-11-02 02:24:44,982 Host cached.
+2018-11-02 02:24:44,982 Resolved host successfully: sec-commerce.seclab.space -> 142.1.97.172
+2018-11-02 02:24:44,983 Sending request via HTTP...
+2018-11-02 02:24:45,002 HTTP connection made.
+2018-11-02 02:24:45,002 Sending Request: POST /login
+2018-11-02 02:24:45,003 Sending header: content-type : application/x-www-form-urlencoded
+2018-11-02 02:24:45,004 Sending header: host : sec-commerce.seclab.space
+2018-11-02 02:24:45,004 Sending header: cookie : session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; order-id=99999
+2018-11-02 02:24:45,005 Sending header: connection : close
+2018-11-02 02:24:45,006 Sending header: content-length : 34
+2018-11-02 02:24:45,006 POST Data (sec-commerce.seclab.space):
+username=alice&password=4l1c343v3R
+2018-11-02 02:24:45,024 Got server response: HTTP/1.1 301 Moved Permanently
+2018-11-02 02:24:45,025 Got server header: Server:nginx/1.14.0
+2018-11-02 02:24:45,026 Got server header: Date:Fri, 02 Nov 2018 02:24:45 GMT
+2018-11-02 02:24:45,027 Got server header: Content-Type:text/html
+2018-11-02 02:24:45,027 Got server header: Content-Length:185
+2018-11-02 02:24:45,028 Got server header: Connection:close
+2018-11-02 02:24:45,028 Got server header: Location:https://sec-commerce.seclab.space/login
+2018-11-02 02:24:45,029 Found secure reference: https://sec-commerce.seclab.space/login
+2018-11-02 02:24:45,030 Read from server:
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.14.0</center>
+</body>
+</html>
+

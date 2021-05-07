@@ -1,0 +1,187 @@
+// **********************************************************
+// Assignment2:
+// Student1:
+// UTORID user_name: fungalbi
+// UT Student #: 1002444321
+// Author: Albion Ka Hei Fung
+//
+// Student2:
+// UTORID user_name:
+// UT Student #:
+// Author: Brody Chen
+//
+// Student3:
+// UTORID user_name:
+// UT Student #:
+// Author: Chi Fai Law
+//
+// Student4:
+// UTORID user_name: moha1075
+// UT Student #: 1002307434
+// Author: Rizadh Mohamed Nizam
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// I have also read the plagiarism section in the course info
+// sheet of CSC B07 and understand the consequences.
+// *********************************************************
+
+package driver;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class JShell {
+  private static String input, output;
+  private static boolean exit = false;
+
+  public static void main(String[] args) {
+    // uncomment when ready
+    // FileSystem file_sys = new FileSystem();
+    Scanner scan = new Scanner(System.in);
+    while (!exit) {
+      System.out.print("JVM: ~Root$ ");
+      input = scan.nextLine();
+      output = parseInput(input);
+      if (output.length() > 0)
+        System.out.print(output);
+    }
+    // reset for next run
+    // exit = false;
+    scan.close();
+  }
+
+  private static void exit() {
+    exit = true;
+  }
+
+  private static String[] tokenizeInput(String input) {
+    input += ' ';
+    boolean inQuote = false;
+    int inputLength = input.length();
+    String currentArgument = "";
+    ArrayList<String> argumentList = new ArrayList<>();
+    for (int i = 0; i < inputLength; i++) {
+      if (input.charAt(i) == '"') {
+        inQuote = !inQuote;
+      } else if (inQuote) {
+        currentArgument += input.charAt(i);
+      } else if (input.charAt(i) == ' ') {
+        if (!currentArgument.equals("")) {
+          argumentList.add(currentArgument);
+          currentArgument = "";
+        }
+      } else {
+        currentArgument += input.charAt(i);
+      }
+    }
+    if (argumentList.size() == 0) {
+      argumentList.add("");
+    }
+    return argumentList.toArray(new String[argumentList.size()]);
+  }
+
+  private static String parseInput(String input) {
+    String[] tokens = tokenizeInput(input);
+    String out = "";
+    switch (tokens[0]) {
+      case "exit":
+        if (tokens.length == 1) {
+          exit();
+        } else {
+          out = "usage: exit";
+        }
+        break;
+      case "echo":
+        if (tokens.length == 2) {
+          out = tokens[1];
+        } else if (tokens.length == 4) {
+          if (tokens[2] == ">") {
+            // Write tokens[1] to tokens[3]
+          } else if (tokens[2] == ">>") {
+            // Append tokens[1] to tokens[3]
+          } else {
+            out = "usage: echo STRING";
+          }
+        } else {
+          out = "usage: echo STRING";
+        }
+        break;
+      case "mkdir":
+        if (tokens.length > 1) {
+          for (int i = 1; i < tokens.length; i++) {
+            // Create directory tokens[i]
+          }
+        } else {
+          out = "usage: mkdir DIR ...";
+        }
+        break;
+      case "cd":
+        if (tokens.length == 2) {
+          // Change current directory to tokens[1]
+        } else {
+          out = "usage: cd DIR";
+        }
+        break;
+      case "ls":
+        if (tokens.length == 1) {
+          // List contents of current directory
+        } else {
+          for (int i = 1; i < tokens.length; i++) {
+            // List contents of token[i]
+          }
+        }
+        break;
+      case "cat":
+        if (tokens.length > 1) {
+          for (int i = 1; i < tokens.length; i++) {
+            // Show contents of token[i]
+          }
+        } else {
+          out = "usage: cat FILE ...";
+        }
+        break;
+      case "pushd":
+        if (tokens.length == 2) {
+          // Push current directory to stack
+          // Change current directory to tokens[1]
+        } else {
+          out = "usage: pushd DIR";
+        }
+        break;
+      case "popd":
+        if (tokens.length == 1) {
+          // Pop directory off stack
+          // Change current directory to popped directory
+        } else {
+          out = "usage: popd";
+        }
+        break;
+      case "history":
+        if (tokens.length == 1) {
+          // Show all previous commands
+        } else if (tokens.length == 2) {
+          // Show last tokens[1]'th commands
+        } else {
+          // Print usage message
+          out = "usage: history [NUMBER]";
+        }
+        break;
+      case "man":
+        if (tokens.length == 2) {
+          // Show documentation for tokens[1]
+        } else {
+          out = "usage: man COMMAND";
+        }
+        break;
+      case "":
+        break;
+      default:
+        out = "-jshell: " + tokens[0] + ": command not found";
+        break;
+    }
+    return out;
+  }
+}

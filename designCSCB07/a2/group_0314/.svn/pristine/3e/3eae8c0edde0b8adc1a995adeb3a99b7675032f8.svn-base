@@ -1,0 +1,34 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class History {
+  private static int cmdCount = 1;
+  private static Map<Integer, String> cmds =
+      new HashMap<Integer, String>();
+  
+  private History(){}
+  
+  public static void addCmd(String input) {
+    cmds.put(cmdCount++, input);
+  }
+  
+  public static String getHistory(){
+    return getHistory(cmdCount);
+  }
+  
+  public static String getHistory(int numberOfCmds) {
+    String outStr = "";
+    if (numberOfCmds == 1) {
+      outStr = outStr + numberOfCmds + ". " + cmds.get(numberOfCmds) +  "\n";
+    } else {
+      String prevLine = getHistory(numberOfCmds - 1);
+      String currLine = cmds.get(numberOfCmds);
+      if (currLine == null){
+        outStr = outStr = prevLine;
+      } else {
+        outStr = outStr + prevLine + numberOfCmds + ". " + cmds.get(numberOfCmds) +  "\n";
+      }
+    }
+    return outStr;
+  }
+}

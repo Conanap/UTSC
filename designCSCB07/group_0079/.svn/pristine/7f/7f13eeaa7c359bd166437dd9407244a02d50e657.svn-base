@@ -1,0 +1,370 @@
++++ASSIGNMENT0 MARK DETAIL+++
+Your mark out of 10 is: [ 10:/10] 
+This assignment has been marked by TA (Name and Email): Kyung Hun Lee khryan.lee@mail.utoronto.ca
+If you have any questions about your mark, contact the above TA first
+
+
+
+PART 1) +++SVN CHECKOUT ON YOUR ASSIGNMENT0+++
+A    B07Assignment0/src
+A    B07Assignment0/src/driver
+A    B07Assignment0/src/driver/CfilteringDriver.java
+A    B07Assignment0/src/a0
+A    B07Assignment0/src/a0/Cfiltering.java
+A    B07Assignment0/input1.txt
+A    B07Assignment0/input2.txt
+A    B07Assignment0/test
+A    B07Assignment0/test/t1.txt
+A    B07Assignment0/test/t10.txt
+A    B07Assignment0/test/t11.txt
+A    B07Assignment0/test/t2.txt
+A    B07Assignment0/test/t3.txt
+A    B07Assignment0/test/t4.txt
+A    B07Assignment0/test/t5.txt
+A    B07Assignment0/test/t6.txt
+A    B07Assignment0/test/t7.txt
+A    B07Assignment0/test/t8.txt
+A    B07Assignment0/test/t9.txt
+Checked out revision 22.
+
+
+
+PART 2) +++SVN COMMIT LOGS ARE+++
+------------------------------------------------------------------------
+r22 | fungalbi@UTORONTO.CA | 2016-05-20 14:52:21 -0400 (Fri, 20 May 2016) | 2 lines
+
+Made it more efficient.
+
+------------------------------------------------------------------------
+r21 | fungalbi@UTORONTO.CA | 2016-05-20 13:13:50 -0400 (Fri, 20 May 2016) | 2 lines
+
+Properly fixed an error where scores are not displayed correctly on the matrix
+
+------------------------------------------------------------------------
+r20 | fungalbi@UTORONTO.CA | 2016-05-17 19:53:59 -0400 (Tue, 17 May 2016) | 2 lines
+
+added again
+
+------------------------------------------------------------------------
+r19 | fungalbi@UTORONTO.CA | 2016-05-17 19:53:07 -0400 (Tue, 17 May 2016) | 2 lines
+
+removed again.
+
+------------------------------------------------------------------------
+r18 | fungalbi@UTORONTO.CA | 2016-05-17 19:52:31 -0400 (Tue, 17 May 2016) | 2 lines
+
+Re-added the file.
+
+------------------------------------------------------------------------
+r17 | fungalbi@UTORONTO.CA | 2016-05-17 19:49:59 -0400 (Tue, 17 May 2016) | 3 lines
+
+Removed a file because it won't update properly
+
+
+------------------------------------------------------------------------
+r16 | fungalbi@UTORONTO.CA | 2016-05-17 19:25:38 -0400 (Tue, 17 May 2016) | 2 lines
+
+Add test files part 2
+
+------------------------------------------------------------------------
+r15 | fungalbi@UTORONTO.CA | 2016-05-17 19:24:56 -0400 (Tue, 17 May 2016) | 3 lines
+
+Add test files part 1
+
+
+------------------------------------------------------------------------
+r14 | fungalbi@UTORONTO.CA | 2016-05-17 18:54:30 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed a bug where if highest and lowest scores are the same, there will be no dissimilar users.
+
+------------------------------------------------------------------------
+r13 | fungalbi@UTORONTO.CA | 2016-05-17 18:47:23 -0400 (Tue, 17 May 2016) | 2 lines
+
+Finished up some comments and java docs stuff.
+
+------------------------------------------------------------------------
+r12 | fungalbi@UTORONTO.CA | 2016-05-17 18:38:16 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed when printing it does not show the rounded off 0's at the end, updated version number for both files.
+
+------------------------------------------------------------------------
+r11 | fungalbi@UTORONTO.CA | 2016-05-17 18:15:53 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed where it had incorrect dimensions for userMovieMatrix. Also something changed in driver file, dk what yet.
+
+------------------------------------------------------------------------
+r10 | fungalbi@UTORONTO.CA | 2016-05-17 16:54:58 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed output to match the desired format.
+
+------------------------------------------------------------------------
+r9 | fungalbi@UTORONTO.CA | 2016-05-17 16:49:09 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed a problem where each user pair is duplicated when printed.
+
+------------------------------------------------------------------------
+r8 | fungalbi@UTORONTO.CA | 2016-05-17 16:43:17 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed a problem where it would not add the users  who are the most similar or not similar enough because of a calculation error on determining the location of the value on the matrix.
+
+------------------------------------------------------------------------
+r7 | fungalbi@UTORONTO.CA | 2016-05-17 16:20:48 -0400 (Tue, 17 May 2016) | 2 lines
+
+Fixed a bug with bounds error while accessing and setting values of user scores
+
+------------------------------------------------------------------------
+r6 | fungalbi@UTORONTO.CA | 2016-05-17 15:03:48 -0400 (Tue, 17 May 2016) | 2 lines
+
+Finished most functions, except printing most similar and dissimilar users
+
+------------------------------------------------------------------------
+r5 | fungalbi@UTORONTO.CA | 2016-05-16 23:09:38 -0400 (Mon, 16 May 2016) | 2 lines
+
+Added test dir and the first test file for input
+
+------------------------------------------------------------------------
+r4 | attarwal@UTORONTO.CA | 2016-05-14 19:28:47 -0400 (Sat, 14 May 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r3 | attarwal@UTORONTO.CA | 2016-05-14 19:28:46 -0400 (Sat, 14 May 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+r2 | attarwal@UTORONTO.CA | 2016-05-14 19:28:45 -0400 (Sat, 14 May 2016) | 1 line
+
+Starter code by instructor
+------------------------------------------------------------------------
+Marks Deductions here: 0
+
+
+
+PART 3) +++FOLLOWING LINES ARE GREATER THAN 80 CHARACTERS+++
+Marks Deductions here: 0
+
+
+
+PART 4) +++TEST FOLDER WITH TEST FILES IN IT?+++
+------------------------------------------------------------------------
+r16 | fungalbi@UTORONTO.CA | 2016-05-17 19:25:38 -0400 (Tue, 17 May 2016) | 2 lines
+
+Add test files part 2
+
+------------------------------------------------------------------------
+r15 | fungalbi@UTORONTO.CA | 2016-05-17 19:24:56 -0400 (Tue, 17 May 2016) | 3 lines
+
+Add test files part 1
+
+
+------------------------------------------------------------------------
+r5 | fungalbi@UTORONTO.CA | 2016-05-16 23:09:38 -0400 (Mon, 16 May 2016) | 2 lines
+
+Added test dir and the first test file for input
+
+------------------------------------------------------------------------
+Marks Deductions here: 0
+
+
+
+PART 5) +++HONOR CODE?+++
+// **********************************************************
+// Assignment0:
+// UTORID: fungalbi
+// UT Student #: 1002444321
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// I have also read the plagiarism section in the course info
+// sheet of CSC B07 and understand the consequences. In this semester
+// we will select any three of your assignments from total of 5 and run it
+// for plagiarism check.
+Marks Deductions here: 0
+
+
+
+PART 6) +++IDE FILES+++
+Marks Deductions here: 0
+
+
+
+PART 7) +++STATIC FUNCTIONS IN YOUR CODE+++
+Marks Deductions here: 0
+
+
+
+PART 8) +++COMMENTS IN cFiltering.java
+Marks Deductions here: 0
+// for plagiarism check.
+// *********************************************************
+// Albion Ka Hei Fung
+// May 16, 2016
+// v0.0.7
+  // this is a 2d matrix i.e. user*movie
+  // this is a 2d matrix i.e. user*movie
+  // saving highest and lowest scores
+  // scores
+  // save the dimensions
+    // this is 2d matrix of size 1*1
+    // this is 2d matrix of size 1*1
+    // set dimensions
+    // creating user movie matrix
+    // creating user user matrix
+    // set dimensions
+    // set highest and lowest similiarity
+    // set the values
+    // initialize vars
+    // for every score
+      // cast to float
+      // add the scores together
+      // square it, the ancient way
+      // add to total
+    // square root of it to find distance
+    // find the score by def
+    // return the score
+    // initialize vars
+    // reset saved sim and dissm string
+    // loop in the vars
+        // calculate each score
+        // add to userUserMatrix
+        // if the score is not of the user compared to themselves and has not
+        // been calculated yet
+          // check if they are the most similar or dissimilar users
+    // get their score
+    // compare to high, if new high
+      // set new high
+      // clear string and add new pair
+    // if same as high
+      // add to string
+    // if new low
+      // set new low
+      // clear string and add this pair
+    // if same as low
+      // add this low
+    // initialize var
+    // print initial line
+    // for each horizontal line
+      // each line starts with '['
+      // print out each field
+          // if this is not the last field in the line, print ', ' as well
+      // finish with ']' and start a new line
+    // initialize vars
+    // indexing the decimal
+    // if no decimal
+      // add a decimal dot and 4 zeroes
+    // if there are less than 4 decimals but has 1 or more
+      // calculate how many decimals missing
+        // for each case, add respective digits
+    // return properly rounded string
+    // imitialize var
+    // desperately trying to keep in the 80 char limit
+    // print dat line
+    // split the string up into the user pairs
+    // print each pair of user out
+    // print the score
+    // imitialize var
+    // desperately trying to keep in the 80 char limit
+    // print dat first line
+    // split the string up into the user pairs
+    // print each pair of user out
+    // print the score
+
+
+
+PART 9) +++COMPILING YOUR CODE+++
+Marks Deductions here: 0
+
+
+
++++RUNNING YOUR CODE+++
+PART 10) +++RUNNING TESTCASE1+++
+Marks Deductions here: 0
+Enter the name of input file? 
+
+
+userUserMatrix is:
+[1.0000, 1.0000, 1.0000, 1.0000]
+[1.0000, 1.0000, 1.0000, 1.0000]
+[1.0000, 1.0000, 1.0000, 1.0000]
+[1.0000, 1.0000, 1.0000, 1.0000]
+
+
+The most similar pairs of users from above userUserMatrix are:
+User1 and User2
+User1 and User3
+User1 and User4
+User2 and User3
+User2 and User4
+User3 and User4
+With similarity score of1.0000
+
+
+The most dissimilar pairs of users from above userUserMatrix are:
+User1 and User2
+User1 and User3
+User1 and User4
+User2 and User3
+User2 and User4
+User3 and User4
+With similarity score of1.0000
+
+
+
+PART 11) +++RUNNING TESTCASE2+++
+Marks Deductions here: 0
+Enter the name of input file? 
+
+
+userUserMatrix is:
+[1.0000, 1.0000, 0.1006, 0.1006]
+[1.0000, 1.0000, 0.1006, 0.1006]
+[0.1006, 0.1006, 1.0000, 1.0000]
+[0.1006, 0.1006, 1.0000, 1.0000]
+
+
+The most similar pairs of users from above userUserMatrix are:
+User1 and User2
+User3 and User4
+With similarity score of1.0000
+
+
+The most dissimilar pairs of users from above userUserMatrix are:
+User1 and User3
+User1 and User4
+User2 and User3
+User2 and User4
+With similarity score of0.1006
+
+
+
+PART 12) +++RUNNING TESTCASE3+++
+Marks Deductions here:0 
+Enter the name of input file? 
+
+
+userUserMatrix is:
+[1.0000, 0.1082, 0.1082, 0.1082, 1.0000]
+[0.1082, 1.0000, 1.0000, 1.0000, 0.1082]
+[0.1082, 1.0000, 1.0000, 1.0000, 0.1082]
+[0.1082, 1.0000, 1.0000, 1.0000, 0.1082]
+[1.0000, 0.1082, 0.1082, 0.1082, 1.0000]
+
+
+The most similar pairs of users from above userUserMatrix are:
+User1 and User5
+User2 and User3
+User2 and User4
+User3 and User4
+With similarity score of1.0000
+
+
+The most dissimilar pairs of users from above userUserMatrix are:
+User1 and User2
+User1 and User3
+User1 and User4
+User2 and User5
+User3 and User5
+User4 and User5
+With similarity score of0.1082

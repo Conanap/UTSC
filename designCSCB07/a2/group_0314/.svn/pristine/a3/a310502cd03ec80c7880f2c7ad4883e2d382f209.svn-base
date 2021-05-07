@@ -1,0 +1,8 @@
+What did I do last time?
+- Restructured source files into packages
+- Update tests test for Man
+What do I plan to do now?
+- Finish all JUnit tests
+- Help cleanup all broken dependencies resulting from the restructuring
+Am I blocked on anything?
+- Nothing at the moment 

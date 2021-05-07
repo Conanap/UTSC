@@ -1,0 +1,127 @@
+package driver;
+
+import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.Hashtable;
+
+import filesystem.Directory;
+import filesystem.FileSystem;
+import command.*;
+
+/**
+* Runs the command and updates related files
+*
+* @author Albion Ka Hei Fung
+*/
+public class CommandRunner {
+  private Directory curr;
+  private Hashtable<String,String> cmd;
+  private FileSystem fs;
+  private History history;
+
+  public CommandRunner(FileSystem fs) {
+     this.cmd = this.initializeCommands();
+     this. fs = fs;
+     this.curr = this.fs.getRoot();
+  }
+  /**
+   * The method runs the command when given tokens, where the zeroth token is a
+   * string representing the command you want to run, and the tokens after are
+   * its arguments
+   *
+   * @param tokens  The tokens for the command
+   * @param current The current directory in which the instance is running
+   * @param fs      The file system in which the current isntance is running on
+   */
+    public void execute(String[] tokens, Directory current, History history, Output output) {
+      // init vars
+      String out = "", errs = "";
+      int status = 1, secondLast = tokens.length - 2;
+      Directory temp;
+      if(secondLast >= 0 && (tokens[secondLast].equals(">") || tokens[secondLast].equals(">>"))) {
+        // run overwrite/redirect
+        try {
+          Command command = this.getCommand(tokens[secondLast]);
+          if(command.validate(tokens)) {
+            command.initialize(current, this.fs, history);
+            command.execute(tokens, this, output);
+          } else
+            output.sendErrBuffer(command.getUsage());
+        return; // end method early
+        } catch(NullPointerException e) {
+          output.sendErrBuffer("-jshell: " + tokens[0] + ": command not found\n");
+          return;
+        }
+      }
+      // create command if not redirect
+      try {
+        Command command = this.getCommand(tokens[0]);
+        if(command.validate(tokens)) { // execute command
+          command.initialize(current, this.fs, history);
+          command.execute(tokens, this, output);
+        } else { // usage msg
+          output.sendErrBuffer(command.getUsage());
+        }
+      } catch (NullPointerException e) { // can't find the command
+        output.sendErrBuffer("-jshell: " + tokens[0] + ": command not found\n");
+      }
+    }
+
+  /**
+  * Initializes the hash table of commands.
+  */
+  private Hashtable<String, String> initializeCommands() {
+    Hashtable<String, String> ht = new Hashtable<String, String>();
+
+    ht.put("echo", "command.Echo");
+    ht.put("mkdir", "command.MakeDirectory");
+    ht.put("cd", "command.Cd");
+    ht.put("ls", "command.Ls");
+    ht.put("cat", "command.Concatenate");
+    ht.put("pushd", "command.PushDirectory");
+    ht.put("popd", "command.PopDirectory");
+    ht.put("history", "command.History");
+    ht.put("man", "command.GetManual");
+    ht.put("pwd", "command.Pwd");
+    ht.put("cp", "command.Copy");
+    ht.put("mv", "command.Mv");
+    ht.put(">", "command.Overwrite");
+    ht.put(">>", "command.Append");
+    ht.put("grep", "command.Grep");
+    ht.put("curl", "command.Curl");
+    ht.put("man", "command.Man");
+
+    return ht;
+  }
+  /**
+   * Use this method after running cd to update your instance's current
+   * directory.
+   */
+  public Directory getCurrDir() {
+    return this.curr;
+  }
+
+  /**
+  * Use this method after running a command to change the current directory if needed
+  * @param newCurr   The new current directory the JShell instance should be in
+  */
+  public void setCurrDir(Directory newCurr) {
+    this.curr = newCurr;
+  }
+
+  /**
+  * Gets the command object which we are tring to call
+  * @param command    The name of the command we're calling
+  */
+  public Command getCommand(String command) {
+    try {
+     return (Command) Class.forName(this.cmd.get(command)).newInstance();
+    } catch(ClassNotFoundException e) {
+      return null;
+    } catch (IllegalAccessException e){
+      return null;
+    } catch(InstantiationException e) {
+      return null;
+    }
+  }
+}

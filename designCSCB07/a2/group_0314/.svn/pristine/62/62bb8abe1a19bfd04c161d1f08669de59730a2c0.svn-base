@@ -1,0 +1,27 @@
+/**
+* Outputs the argument
+*
+* @author Albion Ka Hei Fung
+*/
+public class Echo extends Command {
+  public Echo() {}
+
+  public void initialize(){}
+
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    output.sendOutBuffer(tokens[1] + "\n");
+  }
+
+  public boolean isValid(String[] tokens) {
+  	return true;
+  }
+
+  public String getManual() {
+  	String out = "";
+  	return out;
+  }
+
+  public String getUsage() {
+    return "";
+  }
+}

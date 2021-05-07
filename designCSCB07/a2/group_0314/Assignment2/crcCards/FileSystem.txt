@@ -1,0 +1,12 @@
+class name: FileSystem.class
+super: Object.class
+sub: Mkdir.class, DirStack.class, Cp.class, Redirect.class, Rm.class
+Responsibilities:
+*Manages the local directory through creating a dictionary of inodes
+*Creates new directory and files
+*Handles change of directories for files
+*Handles moving and copying of files
+*Handles operations related to the Stack Directory
+*Handles the removal of files and directories.
+Collaborators:
+*JShell.class

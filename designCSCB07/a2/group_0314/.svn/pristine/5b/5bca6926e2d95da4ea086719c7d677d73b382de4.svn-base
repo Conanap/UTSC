@@ -1,0 +1,52 @@
+package command;
+
+import driver.Tokenizer;
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+/**
+ * This represents a file related command that overwrites a file with stdin. If
+ * The file already exists, the file is removed and re-created with a new file,
+ * but with Standard Input as its content instead. Else, a new file is created
+ * in the same manner.
+ *
+ * @author Law Chi Fai
+ */
+
+public class Overwrite extends Redirect implements Command {
+  private String content;
+  private String filename;
+  private Directory curr;
+  private FileSystem fs;
+  private History history;
+  private Redirect redirect;
+  
+  public Overwrite() {
+    this.redirect = new Redirect();
+  }
+  
+  public void execute(String[] tokens, CommandRunner cmd, Output output){
+    this.redirect.execute(tokens, cmd, output);
+  }
+  
+  public void initialize(Directory curr, FileSystem fs, History his){
+    this.curr = curr;
+    this.fs = fs;
+    this.redirect.initialize(curr, fs, his);
+    this.redirect.setType("ow");
+  }
+  
+  public boolean validate(String[] tokens){
+    return true;
+  }
+  
+  public String getUsage(){
+    return "";
+  }
+  
+  public String getManual(){
+    return "";
+  }
+}
+

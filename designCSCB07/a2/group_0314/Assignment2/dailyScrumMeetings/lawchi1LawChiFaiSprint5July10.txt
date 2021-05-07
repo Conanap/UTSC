@@ -1,0 +1,16 @@
+What did I do last time:
+	- Completed Curl class
+	- Ported Curl class over to implement Command
+	- Assisted in porting several other classes over to implement Command
+
+What do I plan to do now?
+	- Port Redirects over to Command (Template done on local drive, awaiting clarification, see "blocked")
+	- If nothing else, CRC cards.
+
+Am I blocked on anything?
+	- Somewhat confused over Redirect implementation in RunCommand, awaiting clarification atm
+
+Law Chi Fai
+lawchi1
+1002470444
+July 10th, 2016

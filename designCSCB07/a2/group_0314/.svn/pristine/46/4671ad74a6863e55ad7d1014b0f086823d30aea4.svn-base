@@ -1,0 +1,5 @@
+package command;
+
+public class FileNotFoundException extends Exception {
+
+}

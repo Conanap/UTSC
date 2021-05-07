@@ -1,0 +1,2 @@
+package filesystem;
+public class DirectoryNotFoundException extends Exception {}

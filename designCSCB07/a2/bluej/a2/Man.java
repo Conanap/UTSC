@@ -1,0 +1,69 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Man {
+  private static Map<String, String> usageMessages;
+  private static HashMap<String, String> descriptions;
+
+  static {
+    usageMessages = new HashMap<String, String>();
+    // Input usage messages for all commands using put()
+    usageMessages.put("exit", "exit");
+    usageMessages.put("echo", "echo FILE1 [> FILE | >> FILE]");
+    usageMessages.put("cat", "cat FILE1 [FILE2 ...]");
+    usageMessages.put("man", "man COMMAND");
+    usageMessages.put("ls", "ls [PATH ...]");
+    usageMessages.put("pwd", "pwd");
+  }
+
+  static {
+    descriptions = new HashMap<String, String>();
+    descriptions.put("exit", "Exits JShell.");
+    descriptions.put("cat", "View the contents of provided files.");
+    descriptions.put("echo", "Prints the provided string.\n" +
+            "> Write string into a file\n" +
+            ">> Appends string to a file");
+    descriptions.put("man", "Print documentation for a given command.");
+    descriptions.put("ls", "List the contents of the specified directories.");
+    descriptions.put("pwd", "Print the current working directory.");
+  }
+
+  /*
+    Below is an example of how to do your man pages and usage messages!
+
+    ----------------------------------------------------------------------------------------
+    |                                                                                      |
+    |   descriptions.put("echo", echoManPages);                                            |
+    |   usageMessages.put("echo", echoUsage);                                              |
+    |                                                                                      |
+    ----------------------------------------------------------------------------------------
+
+    echoUsage being something that looks like the following line:
+
+    command ARGUMENT1 ARGUMENT2 [OPTIONAL_ARGUMENT]
+
+    and echoManPages being a brief description of the command, approximately two lines.
+
+  */
+
+  public static String getDocumentation(String commandName) {
+    if (descriptions.containsKey(commandName) && usageMessages.containsKey(commandName)) {
+      String documentation = "";
+      documentation += descriptions.get(commandName);
+      documentation += "\n\n";
+      documentation += "$ " + usageMessages.get(commandName);
+      documentation += "\n";
+      return documentation;
+    } else {
+      return "No man page found for \"" + commandName + "\"\n";
+    }
+  }
+
+  public static String getUsage(String commandName) {
+    if (usageMessages.containsKey(commandName))
+      return "usage: " + usageMessages.get(commandName) + "\n";
+    else
+      return ("-jshell: " + commandName + ": command not found\n");
+  }
+
+}

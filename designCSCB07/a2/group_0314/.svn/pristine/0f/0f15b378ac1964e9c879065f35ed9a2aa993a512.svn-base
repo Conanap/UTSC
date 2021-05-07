@@ -1,0 +1,10 @@
+import Command.History;
+
+public class MockHistory extends History{
+  
+  String cmds;
+  int cmdCount;
+  
+  public MockOutput() {
+    cmds = "";
+  }

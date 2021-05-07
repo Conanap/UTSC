@@ -1,0 +1,12 @@
+GET /?flag=there-is-a-man-in-the-middle HTTP/1.1
+host: welcome.seclab.space
+Connection: close
+
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/2.7.15rc1
+Date: Wed, 24 Oct 2018 19:15:54 GMT
+Content-type: text/html
+Content-Length: 18
+Last-Modified: Wed, 24 Oct 2018 19:06:39 GMT
+
+Welcome to DarkLab

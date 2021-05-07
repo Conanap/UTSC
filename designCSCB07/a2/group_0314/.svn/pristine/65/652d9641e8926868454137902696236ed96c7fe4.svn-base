@@ -1,0 +1,78 @@
+public class FileSystem {
+	private Directory root;
+	private Directory curr;
+	private Directory temp; // this directory is for temp uses
+	private DirStack ds;
+	
+	public FileSystem() {
+		this.root = new Directory();
+		this.curr = this.root;
+		this.ds = new DirStack();
+	}
+
+	public push(String path) {
+		this.ds.pushDir(path);
+	}
+
+	public pop() {
+		return this.ds.popDir();
+	}
+	public Directory getCurr() {
+		return (this.curr);
+	}
+
+	public String getCurrName() {
+		return (this.curr.getName());
+	}
+
+	public void setCurr(Directory dir) {
+		this.curr = dir;
+	}
+
+	public void setTempToCurr() {
+		this.temp = this.curr;
+	}
+
+	public void setTempToParent() {
+		if(this.temp != null) {
+			this.temp = this.temp.getParent();
+		}
+	}
+
+	public void resetTemp() {
+		this.temp = null;
+	}
+
+	public void currToRoot() {
+		this.curr = root;
+	}
+
+	public String getTempName() {
+		return this.temp.getName();
+	}
+	public void addFile(File file, String name) {
+		this.curr.addFile(file, name);
+	}
+
+	public void addDir(Directory dir, String name) {
+		this.curr.addDir(dir, name);
+	}
+
+	public File getFile (String path) {
+		String[] paths = this.parseFilePath(path);
+		File file;
+		pushd(this);
+		cd(this, paths[0]);
+		file = this.curr.getFile(paths[1]);
+		popd(this);
+		return file;
+	}
+
+	private String[] parseFilePath(String path) {
+		String[] paths = new String[2];
+		int last = path.lastIndexOf("/");
+		paths[0] = path.substring(0, last);
+		paths[1] = path.substring(last, path.length());
+		return paths;
+	}
+}

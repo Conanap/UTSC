@@ -1,0 +1,66 @@
+package command;
+
+import java.lang.Integer;
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Tokenizer;
+import driver.Output;
+
+public class RunHistory implements Command {
+	private Directory curr;
+	private FileSystem fs;
+	private History history;
+	private CommandRunner cmd;
+	private Output output;
+
+	private void runHis(String tokens) {
+		Integer num;
+		num = getNum(tokens);
+		if(num != null && (int)num > 0) {
+			String rcmd = history.getHistory((int)num, (int)num);
+			rcmd = rcmd.substring(3, rcmd.length() - 1);
+			if(!rcmd.substring(rcmd.length() - 4, rcmd.length()).equals("null")) {
+				String cmds[] = Tokenizer.tokenizeInput(rcmd);
+				cmd.execute(cmds, this.curr, this.history, this.output);
+			} else
+				output.sendErrBuffer("Command number " + num + " does not exist\n");
+		} else if((int) num <= 0)
+			output.sendErrBuffer("Num must be non zero positive integer\n");
+	}
+
+	public void execute(String[] tokens, CommandRunner cmd, Output output) {
+		this.cmd = cmd;
+		this.output = output;
+		this.runHis(tokens[0]);
+	}
+
+	public void initialize(Directory curr, FileSystem fs, History his) {
+		this.curr = curr;
+		this. fs = fs;
+		this. history = his;
+	}
+
+	public boolean validate(String[] tokens) {
+		return true;
+	}
+
+	public String getManual() {
+		return this.getUsage() + "\n" + 
+		"Run the num'th command in history." + 
+		" num must be a valid number and non negative";
+	}
+
+	public String getUsage() {
+		return "!POSITIVE_INTEGER_NON_ZERO_NUMBER";
+	}
+
+	private Integer getNum(String cmd) {
+		cmd = cmd.substring(1, 2);
+		try {
+			return Integer.parseInt(cmd);
+		} catch(NumberFormatException e) {
+			this.output.sendErrBuffer("Invalid number\n");
+			return null;
+		}
+	}
+}

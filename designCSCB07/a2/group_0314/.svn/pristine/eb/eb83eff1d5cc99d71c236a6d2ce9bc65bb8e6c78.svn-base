@@ -1,0 +1,51 @@
+package command;
+
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+public class Mv implements Command {
+  private Directory curr;
+  private FileSystem fs;
+  private Copy cp;
+
+  public Mv() {
+    this.cp = new Copy();
+  }
+
+	public void execute(String[] tokens, CommandRunner cmd, Output output) {
+		Directory srcDir = this.fs.getDirectory(tokens[1], this.curr);
+    File srcFle = this.fs.getFile(tokens[1], this.curr);
+    
+    this.cp.execute(tokens, cmd, output);
+    if(cp.getStatus() != 0)
+      // error from cp
+      return;
+    else if (srcDir != null){
+      // directory moved, remove original
+      curr.removeDir(tokens[1]);
+    }
+    else {
+      // file moved, remove original
+      curr.removeFile(tokens[1]);
+    }
+	}
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.curr = curr;
+    this.fs = fs;
+    this.cp.initialize(curr, fs, his);
+  }
+
+  public boolean validate(String[] tokens) {
+    return tokens[0].equals("mv") && tokens.length == 3;
+  }
+
+  public String getUsage() {
+    return "mv SOURCE DEST";
+  }
+
+  public String getManual() {
+    return "mv - Moves File/Directory from SOURCE to DESTINATION.";
+  }
+}

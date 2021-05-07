@@ -1,0 +1,40 @@
+/**
+ * Responsible for finding the path from root to a provided directory
+ */
+public class Pwd implements Command {
+  Directory currentDirectory;
+
+  @Override
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    currentDirectory = curr;
+  }
+
+  @Override
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    StringBuilder directoryPaths = new StringBuilder();
+    for (; currentDirectory != currentDirectory.getParent();
+         currentDirectory = currentDirectory.getParent()) {
+      directoryPaths.insert(0, "/" + currentDirectory.getDirName());
+    }
+    output.sendOutBuffer(directoryPaths.length() > 0 ?
+            directoryPaths.toString() + '\n' : "/\n");
+  }
+
+  @Override
+  public boolean validate(String[] tokens) {
+    // TODO Implement method
+    return false;
+  }
+
+  @Override
+  public String getManual() {
+    // TODO Implement method
+    return null;
+  }
+
+  @Override
+  public String getUsage() {
+    // TODO Implement method
+    return null;
+  }
+}

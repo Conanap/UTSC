@@ -1,0 +1,42 @@
+(module lab3 scheme
+
+  ;;; (my-length xs) -> int
+  ;;; xs: list
+  ;;; Return the length of xs.
+  (define my-length 42)
+
+  ;;; (reverse xs) -> list
+  ;;; xs: list
+  ;;; Return the reverse of xs.
+  (define my-reverse 42)
+
+  ;;; (is-pal xs) -> boolean
+  ;;; xs: list
+  ;;; Return whether xs is a palindrome.
+  (define is-pal 42)
+
+  ;;; (num-el xs) -> int
+  ;;; xs: list
+  ;;; Return the number of (non-list) elements of lst, on any nesting level.
+  (define num-el 42)
+
+  ;;; (stutter xs) -> list
+  ;;; xs: list
+  ;;; Return a list, which repeats each element of lst.
+  (define stutter 42)
+
+  ;;; (my-filter f xs) -> list
+  ;;; f: boolean-valued function applicable to every element of xs
+  ;;; xs: list
+  ;;; Return a list of those elements from xs that pass the function
+  ;;;  f (i.e., f(x) is true for element x in xs), in their original order.
+  (define my-filter 42)
+
+  ;;; (my-map f xs) -> list
+  ;;; f: function applicable to every element of xs
+  ;;; xs: list
+  ;;; Return the result of applying f to every element of xs.
+  (define my-map 42)
+
+  (provide my-length my-reverse is-pal num-el stutter my-filter my-map)
+  )

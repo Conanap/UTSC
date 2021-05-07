@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+public class Output {
+	private static ArrayList<String> stdout = new ArrayList<String>();
+	private static ArrayList<String> stderr = new ArrayList<String>();
+	
+	public void sendOutBuffer(String out) {
+		stdout.add(out);
+	}
+
+	public static void sendErrBuffer(String err) {
+		stderr.add(err);
+	}
+
+	public static String getOutBuffer(String out) {
+		if(stdout.size() == 0)
+			return null;
+		String f_out = "";
+		for (String temp : stdout)
+			f_out += temp;
+		f_out += "\n";
+		stdout.clear();
+		return f_out;
+	}
+
+	public static String getErrBuffer(String err) {
+		if(stderr.size() == 0)
+			return null;
+		String f_err = "";
+		for (String temp : stderr)
+			f_err += temp;
+		f_err += "\n";
+		sterr.clear();
+		return f_err;
+	}
+
+	public static void flushOut() {
+		stdout.clear();
+	}
+
+	public static void flushErr() {
+		stderr.clear();
+	}
+}

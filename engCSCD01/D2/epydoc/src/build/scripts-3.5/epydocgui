@@ -1,0 +1,7 @@
+#!/usr/local/opt/python3/bin/python3.5
+#
+# Call the graphical interface for Epydoc.
+#
+
+from epydoc.gui import gui
+gui()

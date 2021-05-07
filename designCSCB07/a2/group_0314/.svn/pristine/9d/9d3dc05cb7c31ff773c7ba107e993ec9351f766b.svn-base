@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class Cd {
+  /**
+   * Given an String of directory names representing a directory path, and a
+   * Directory object, find and return directory at path
+   *
+   * @param String    path, Directory currDir
+   * @param Directory currDir
+   */
+  public static Directory changeDir(String path, Directory currDir) {
+    ArrayList<String> pathArray =
+            new ArrayList<String>(Arrays.asList(path.split("/")));
+    Iterator<String> pathIt = pathArray.iterator();
+    while (pathIt.hasNext()) {
+      String nextDir = (String) pathIt.next();
+      // change to parent directory
+      if (nextDir.equals("..")) {
+        currDir = currDir.getParent();
+      }
+      // go to root
+      else if (nextDir.equals("")) {
+        while (currDir.getParent() != currDir) {
+          currDir = currDir.getParent();
+        }
+      } else if (nextDir.equals(".")) {
+        continue;
+      }
+      // else change to directory within
+      else {
+        if (currDir.hasDirectory(nextDir)) {
+          currDir = currDir.getDir(nextDir);
+        } else {
+        }
+      }
+    }
+    return currDir;
+  }
+}

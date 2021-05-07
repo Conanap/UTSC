@@ -1,0 +1,7 @@
+Class name: Popd.class
+Super: Null
+Sub: Null
+Responsibilities:
+*Pops current directory from a stack
+Collaborators:
+FileSystem.class, Directory.class

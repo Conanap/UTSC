@@ -1,0 +1,25 @@
+import java.util.Iterator;
+
+public class Ls {
+  
+  /**
+   * Given a directory return string listing out contents (directories and 
+   * files) containing in directory
+   * @param directory
+   * @return String outStr
+   */
+  public static String listContents (Directory directory) {
+    String outStr = "";
+    // get directories
+    Iterator dirIt = directory.listDirectories().iterator();
+    while (dirIt.hasNext()) {
+      outStr = outStr + (String) dirIt.next() + "/n";
+    }
+    // get files
+    Iterator  fileIt = directory.listFiles().iterator();
+    while (fileIt.hasNext()) {
+       outStr = outStr + (String) dirIt.next() + "/n";
+    }
+    return outStr;
+  }
+}

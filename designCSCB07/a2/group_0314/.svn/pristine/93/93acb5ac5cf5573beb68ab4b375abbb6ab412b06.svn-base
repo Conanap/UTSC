@@ -1,0 +1,5 @@
+public class CannotFindFileException extends Exception {
+	public CannotFindFileException(String e) {
+		;
+	}
+}

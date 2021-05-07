@@ -1,0 +1,16 @@
+What did I do last time:
+	- Documentation for Man, fixed formatting.
+	- CRC card for RunCmd
+	- Fixed Javadoc to standard for redirect, overwrite and append
+	- Test cases
+
+What do I plan to do now?
+	- More test cases
+
+Am I blocked on anything?
+	- None as of writing.
+
+Law Chi Fai
+lawchi1
+1002470444
+June 23, 2016

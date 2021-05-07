@@ -1,0 +1,56 @@
+package command;
+
+/**
+ * Outputs the contents of the file
+ *
+ * @author Albion Ka Hei Fung
+ */
+public class Concatenate implements Command {
+  private Directory curr;
+  private FileSystem fs;
+
+  public Concatenate() {
+  }
+
+  /**
+   * Prints content of files.
+   *
+   * @param tokens The command itself and its arguments
+   * @param fs     The file system of the current running instance
+   * @param curr   The current working directory on the instance
+   */
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    // init vars
+    String out = "";
+    File file;
+    // cat through all args
+    for (int i = 1; i < tokens.length; i++) {
+      // if file exist, append output string with content
+      try {
+        out += this.fs.getFile(tokens[i], this.curr).getContent();
+      } catch (NullPointerException e) {
+        // if file doesn't exist, return error message
+        output.sendErrBuffer("File not found: " + tokens[i] + "\n");
+      }
+    }
+    output.sendOutBuffer(out);
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History history) {
+    this.curr = curr;
+    this.fs = fs;
+  }
+
+  public boolean isValid(String[] tokens) {
+    return true;
+  }
+
+  public String getManual() {
+    return this.getUsage() + "\n" +
+            "View the contents of provided files.";
+  }
+
+  public String getUsage() {
+    return "cat PATH [...]";
+  }
+}

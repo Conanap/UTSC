@@ -1,0 +1,8 @@
+Class name: Input.class
+Super: Null
+Sub: Null
+Responsibilities:
+*Takes input from a scanner
+*Parses the input into tokens
+Collaborators:
+JShell.class

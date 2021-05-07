@@ -1,0 +1,4 @@
+public interface Command {
+	public void initialize(Directory curr, FileSystem fs, History his);
+	public void execute(String[] tokens, CommandRunner cmd, Output output);
+}

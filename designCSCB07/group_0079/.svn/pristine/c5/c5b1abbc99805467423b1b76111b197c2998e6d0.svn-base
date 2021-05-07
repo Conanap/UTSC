@@ -1,0 +1,34 @@
+package Test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ConsoleOutTest {
+
+  @Test
+  public void testSendEOF() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testConsoleOut() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendOutput() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendError() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendCoauthor() {
+    fail("Not yet implemented");
+  }
+
+}

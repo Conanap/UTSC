@@ -1,0 +1,229 @@
+import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+public class ValidatorTest {
+
+  @Test
+  public void testExit() {
+    String[] tokens = {"exit"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testExitWithExtraArguments() {
+    String[] tokens = {"exit", "arg1", "arg2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testMkdirSingleDirectory() {
+    String[] tokens = {"mkdir", "dir1"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testMkdirMultipleDirectories() {
+    String[] tokens = {"mkdir", "dir1", "dir2"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testMkdirNoDirectory() {
+    String[] tokens = {"mkdir"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testCd() {
+    String[] tokens = {"cd", "dir"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testCdMultipleDirectories() {
+    String[] tokens = {"cd", "dir1", "dir2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testCdNoDirectory() {
+    String[] tokens = {"cd"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testLsNoDirectory() {
+    String[] tokens = {"ls"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testLsSingleDirectory() {
+    String[] tokens = {"ls", "dir1"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testLsMultipleDirectory() {
+    String[] tokens = {"ls", "dir1", "dir2"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPwd() {
+    String[] tokens = {"pwd"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPwdWithArgument() {
+    String[] tokens = {"pwd", "dir1", "dir2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPushdOneDirectory() {
+    String[] tokens = {"pushd", "dir1"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPushdMultipleDirectories() {
+    String[] tokens = {"pushd", "dir1", "dir2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPushdNoDirectories() {
+    String[] tokens = {"pushd"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPopd() {
+    String[] tokens = {"popd"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testPopdWithArgument() {
+    String[] tokens = {"popd", "dir1", "dir2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testHistoryNoArguments() {
+    String[] tokens = {"history"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testHistoryOneArguments() {
+    String[] tokens = {"history", "number"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testHistoryMultipleArguments() {
+    String[] tokens = {"history", "number", "morenumbers"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testCatSingleFile() {
+    String[] tokens = {"cat", "file1"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testCatMultipleFiles() {
+    String[] tokens = {"cat", "file1", "file2"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testCatNoFile() {
+    String[] tokens = {"cat"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoTooFewArguments() {
+    String[] tokens = {"echo"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEcho() {
+    String[] tokens = {"echo", "hello"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoTooManyArguments() {
+    String[] tokens = {"echo", "hello", "stuff"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoRedirectionWithMissingFilename() {
+    String[] tokens = {"echo", "hello", ">"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoRedirection() {
+    String[] tokens = {"echo", "hello", ">", "file"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoRedirectionAppend() {
+    String[] tokens = {"echo", "hello", ">>", "file"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoRedirectionWithExtraFilename() {
+    String[] tokens = {"echo", "hello", ">", "file1", "file2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testEchoMultipleRedirection() {
+    String[] tokens = {"echo", "hello", ">", "file1", ">", "file2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testRedirectionOnly() {
+    String[] tokens = {">", "file1"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testNonEchoRedirection() {
+    String[] tokens = {"cat", "file", ">", "file1"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testManOneCommand() {
+    String[] tokens = {"man", "cmd1"};
+    assertTrue(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testManMultipleCommands() {
+    String[] tokens = {"man", "cmd2", "cmd2"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+
+  @Test
+  public void testManNoCommand() {
+    String[] tokens = {"man"};
+    assertFalse(Validator.validateTokens(tokens));
+  }
+}

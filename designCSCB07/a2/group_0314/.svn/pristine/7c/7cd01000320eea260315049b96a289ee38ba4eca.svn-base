@@ -1,0 +1,11 @@
+public class MkDir {
+	public static int mkdir(String path, FileSystem fs, Directory curr) {
+		String[] paths = FileSystem.parseFilePath(path);
+		if(paths[1] == null)
+			return(0);
+		curr = Cd.changeDir(paths[0], fs, curr);
+		Directory dir = new Directory(paths[1], curr);
+		curr.addDir(dir);
+		return(1);
+	}
+}

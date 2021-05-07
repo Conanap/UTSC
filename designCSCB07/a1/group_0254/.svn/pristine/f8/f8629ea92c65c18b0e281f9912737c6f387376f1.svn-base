@@ -1,0 +1,8 @@
+class name: Cat
+super: Echo
+sub: Null
+responsibilities:
+Prints out entire files
+Prints out input
+collaborators:
+Null

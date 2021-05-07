@@ -1,0 +1,116 @@
+package command;
+
+import java.util.Arrays;
+import driver.Tokenizer;
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+/**
+ * This represents a file related command that redirects a command to a file. If
+ * not found, a new file is created.
+ *
+ * @author Law Chi Fai
+ */
+public class Redirect extends Command{
+
+  /**
+   * Checks whether the file exists. If so, checks whether command is "ap" or
+   * "ow", and redirects command to said file. Else (i.e. file DNE), creates a
+   * new file.
+   * 
+   * @param cmd the String of the input command
+   * @param content the String representing the content to be redirected.
+   * @param filename the String representing the name of the file input
+   * @param fs The file system in which the current instance is running.
+   * @param curr The current directory that the current instance is in
+   */
+  
+  private FileSystem fs;
+  private Directory curr;
+  private History history;
+  private String type;
+  
+  public void execute(String[] tokens, CommandRunner cmd, Output output){
+    String filename = tokens[tokens.length-1];
+    String[] tempTokens = Arrays.copyOfRange(tokens, 0, tokens.length - 2);
+    try {
+    this.runSubCommand(tempTokens, cmd, output);
+    } catch(InvalidCommandException e) {
+      return;
+    }
+    try {
+      fs.getFile(filename, curr);
+      // Command is Append
+      if (type == "ap") {
+        fs.getFile(filename, curr).appendToContent(output.getOutBuffer());
+      }
+      // Command is Overwrite
+      else if (type == "ow") {
+        fs.getFile(filename, curr).setContent(output.getOutBuffer());
+      }
+    } catch (FileNotFoundException e) {
+      // File name does not exist.
+      String[] paths = Tokenizer.parseFilePath(filename);
+      if (paths[1] != null) {
+        try {
+          curr = fs.getDirectory(paths[0], curr);
+        } catch(DirectoryNotFoundException f) {
+          output.sendErrBuffer("Directory Not Found");
+          return;
+        }
+      }
+      else
+        paths[1] = paths[0];
+      if ((paths[1].equals(".") || paths[1].equals(".."))) {
+        output.sendErrBuffer("Illegal File Name.");
+        return;
+      }
+      File file = new File();
+      file.setContent(output.getOutBuffer());
+      curr.addFile(file, paths[1]);
+    }
+  }
+
+  private void runSubCommand (String[] tokens, CommandRunner cmd, Output output) throws InvalidCommandException {
+    // create command if not redirect
+      try {
+        Command command = cmd.getCommand(tokens[0]);
+        if(command.validate(tokens)) { // execute command
+          command.initialize(this.curr, this.fs, this.history);
+          command.execute(tokens, cmd, output);
+        } else { // usage msg
+          output.sendErrBuffer(command.getUsage());
+          throw new InvalidCommandException();
+        }
+      } catch (NullPointerException e) { // can't find the command
+        output.sendErrBuffer("-jshell: " + tokens[0] + ": command not found\n");
+        throw new InvalidCommandException();
+      }
+  }
+  
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.fs = fs;
+    this.curr = curr;
+    this.history = his;
+  }
+  
+  public boolean validate(String[] tokens) {
+    int len = tokens.length - 2;
+    if(len < 0)
+      return false;
+    String cmd = tokens[tokens.length - 2];
+    return (cmd.equals(">") || cmd.equals(">>"));
+  }
+  
+  public String getManual() {
+    return "";
+  }
+  
+  public String getUsage() {
+    return "";
+  }
+  
+  public void setType(String type){
+    this.type = type;
+  }
+}

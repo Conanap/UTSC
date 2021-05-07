@@ -1,0 +1,115 @@
+package command;
+
+import java.util.Iterator;
+import java.util.Map;
+
+import filesystem.*;
+import driver.*;
+import driver.Output;
+
+public class Ls implements Command {
+  
+  Output output;
+  FileSystem fsRef;
+  Directory currDir;
+
+  /**
+   * Given a Directory return list of content in directory
+   *
+   * @param Directory currDir
+   * @return String outStr
+   */
+  public static String listContents(Directory currDir) {
+    String outStr = "";
+    // get directories
+    Iterator dirIt = currDir.listDirectories().iterator();
+    while (dirIt.hasNext()) {
+      outStr = outStr + (String) dirIt.next() + "\n";
+    }
+    // get files
+    Iterator fileIt = currDir.listFiles().iterator();
+    while (fileIt.hasNext()) {
+      outStr = outStr + (String) fileIt.next() + "\n";
+    }
+    return outStr;
+  }
+
+  /**
+   * Given current Directory and a path. return list of content in directory at
+   * path
+   *
+   * @param String path
+   * @param Directory currDir
+   * @return String outStr
+   */
+  public static String listContents(String path, FileSystem fs,
+      Directory currDir, Output output) {
+    String outStr = "";
+    try {
+      currDir = fs.getDirectory(path, currDir);
+      if (currDir != null) {
+        outStr = listContents(currDir);
+      }
+    } catch (NullPointerException e) {
+      output.sendErrBuffer(path + ": No such file or directory\n");
+    }
+    return outStr;
+  }
+
+  public static String listContentsR(Directory currDir) {
+    if (currDir.getDirContainer().isEmpty()) {
+      return listContents(currDir);
+    } else {
+      String outStr = listContents(currDir);
+      Map<String, Directory> subDirs = currDir.getDirContainer();
+      for (Map.Entry<String, Directory> subDir : subDirs.entrySet()) {
+        outStr = outStr + listContentsR(subDir.getValue());
+      }
+      return outStr;
+    }
+  }
+
+  public static String listContentsR(String path, FileSystem fs,
+      Directory currDir, Output output) {
+    String outStr = "";
+    try {
+      currDir = fs.getDirectory(path, currDir);
+      if (currDir != null) {
+        outStr = listContentsR(currDir);
+      }
+    } catch (NullPointerException e) {
+      output.sendErrBuffer(path + ": No such file or directory\n");
+    }
+    return outStr;
+  }
+
+  @Override
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public boolean validate(String[] tokens) {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public String getManual() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public String getUsage() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+}

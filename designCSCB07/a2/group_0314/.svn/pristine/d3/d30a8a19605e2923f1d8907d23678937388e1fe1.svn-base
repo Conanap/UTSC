@@ -1,0 +1,16 @@
+What did I do?
+	- Moved out runcmd to it's own class
+	- Fixed a bug where if you don't type anything before pressing entre in the JShell, it would cause a crash
+	- Show proper error messages for mkdir (eg file already exists)
+	- Fixed a bug where runcmd causes improper file allocation
+	- Fixed a bug that allowed you to cd to a file
+	- Fixed a bug in popd which makes you can't pop any directory
+	- Added edge case catching for push and pop
+	- Fixed Cat.java such that it is more inline with conventions
+
+What do I plan to do?
+	- Keep debugging
+	- Make some more test cases (if needed)
+
+Blocked?
+	- Nop. 

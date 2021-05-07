@@ -1,0 +1,99 @@
+package command;
+
+import java.lang.Integer;
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Tokenizer;
+import driver.Output;
+
+/**
+*@author Albion Fung
+* Use !# to call a command from a previous command input
+*/
+public class RunHistory extends Command {
+	private Directory curr;
+	private FileSystem fs;
+	private History history;
+	private CommandRunner cmd;
+	private Output output;
+	private int num;
+	private final String MAN_DESCRIPTION = "Run the num'th command in history." + 
+		" num must be a valid number and non negative";
+	private final String MAN_USAGE = "!POSITIVE_INTEGER_NON_ZERO_NUMBER";
+
+	/**
+	* actually runs the command.
+	* @param tokens   raw input
+	*/
+	private void runHis(String tokens) {
+		String rcmd = history.getHistory(this.num, this.num);
+		rcmd = rcmd.substring(3, rcmd.length() - 1); // remove \n
+		// check for null history
+		if(!rcmd.substring(rcmd.length() - 4, rcmd.length()).equals("null")) {
+			String cmds[] = Tokenizer.tokenizeInput(rcmd);
+			cmd.execute(cmds, this.curr, this.history, this.output);
+		} else
+			output.sendErrBuffer("Command number " + num + " does not exist\n");
+	}
+
+  /**
+  * Exceute the command
+  * @param tokens    The tokens of the input (raw)
+  * @param cmd       The command runner which is running the command
+  * @param output    Output buffer for the shell instance
+  */
+	public void execute(String[] tokens, CommandRunner cmd, Output output) {
+		this.cmd = cmd;
+		this.output = output;
+		this.runHis(tokens[0]);
+	}
+
+  /**
+  * Initializing the command's objects and variables
+  * @param curr     Current directory
+  * @param fs       File system which the shell is running on
+  * @param his      History of the shell's commands
+  */
+	public void initialize(Directory curr, FileSystem fs, History his) {
+		this.curr = curr;
+		this.fs = fs;
+		this.history = his;
+	}
+
+  /**
+  * Check if the given input is a valid command for this command
+  * @param tokens    The tokens of the input (raw)
+  */
+	public boolean validate(String[] tokens) {
+		boolean test = (tokens.length == 2);
+		Integer tnum;
+		if(test) {
+			try {
+				tnum = this.getNum(tokens[1]);
+			} catch (NumberFormatException e) {
+			return false;
+			}
+			test = ((int)tnum > 0);
+			this.num = (int)tnum;
+		}
+		return test;
+	}
+
+  /**
+  * Get the manual for the command
+  */
+	public String getManual() {
+		return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+	}
+
+  /**
+  * Get the usage for the command
+  */
+	public String getUsage() {
+		return Man.formatUsage(MAN_USAGE);
+	}
+
+	private Integer getNum(String cmd) throws NumberFormatException{
+		return Integer.parseInt(cmd);
+	}
+}

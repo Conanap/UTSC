@@ -1,0 +1,75 @@
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * This class consists of one static method responsible for checking the
+ * validity of parsed command-line tokens.
+ */
+public final class Validator {
+
+  /**
+   * Disables the public constructor as it does not make sense to have an
+   * instance of Validator
+   */
+  private Validator() {
+  }
+
+  /**
+   * Verifies whether the given command tokens contain the correct number of
+   * arguments, based on the command name.
+   *
+   * @param tokens - An array of tokens to validate
+   * @return A boolean representing whether the given tokens are valid
+   */
+  public static boolean validateTokens(String[] tokens) {
+    boolean isValid = false,
+            prefixIsValid = true,
+            isRedirect = false;
+    List<String> tokenList = Arrays.asList(tokens);
+    // Handle each half of a redirection seperately if a redirection token is present
+    int writeIndex = tokenList.indexOf(">");
+    int appendIndex = tokenList.indexOf(">>");
+    if (writeIndex != appendIndex) {
+      isRedirect = true;
+      // Get the first occurrence of a redirection token
+      int splitIndex = Math.max(writeIndex, appendIndex);
+      String[] prefixTokens = tokenList.subList(0, splitIndex).toArray(new String[0]);
+      tokens = tokenList.subList(splitIndex, tokenList.size()).toArray(new String[0]);
+      // Validate first half of redirection
+      prefixIsValid = validateTokens(prefixTokens);
+    }
+    if (tokens.length > 0 && prefixIsValid) {
+      switch (tokens[0]) {
+        case ">>":
+        case ">":
+          if (!isRedirect) {
+            break;
+          }
+        case "cd":
+        case "pushd":
+        case "man":
+        case "echo":
+          isValid = tokens.length == 2;
+          break;
+        case "popd":
+        case "pwd":
+          isValid = tokens.length == 1;
+          break;
+        case "mkdir":
+        case "cat":
+          isValid = tokens.length > 1;
+          break;
+        case "ls":
+        case "exit":
+          isValid = true;
+          break;
+        case "history":
+          isValid = tokens.length == 1 || tokens.length == 2;
+          break;
+      }
+    }
+    // Limit redirection to echo only
+    isValid = isValid && (!isRedirect || tokenList.get(0).equals("echo"));
+    return isValid;
+  }
+}

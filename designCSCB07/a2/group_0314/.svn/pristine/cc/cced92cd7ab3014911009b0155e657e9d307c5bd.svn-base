@@ -1,0 +1,9 @@
+Class name: Dir.class
+Super class: FileSystem.class
+Sub class: Null
+Responsibilities:
+*Resides within the dictionary of inodes
+*Contain information for inodes of directories under it and its parent dir
+*Special directories own files
+Collaborators:
+Null

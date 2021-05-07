@@ -1,0 +1,25 @@
+Backlog item                                                        Estimate
+* As a user, I want to be able to create files and directories      2.0 hours
+* As a user, I want to be able to remove files and directories      1.0 hours
+* As a user, I want to be able to copy files and directories        0.5 hours
+* As a user, I want to be able to rename files and directories      0.5 hours
+* As a user, I want to be able to move files and directories        1.0 hours
+* As a user, I want to be able to print text to the console         2.0 hours
+* As a user, I want to be able to list all files in a directory     1.0 hours
+* As a user, I want to be able to see which directory I am          0.5 hours
+  currently in      
+* As a user, I want to be able to write text into a file            2.0 hours
+* As a user, I want to be able to append text into a file           1.0 hours
+* As a user, I want to be able to view the contents of a file       2.0 hours
+* As a user, I want to be able to exit the shell via a command      1.0 hours
+* As a user, I want to be able to see my recent commands            2.0 hours
+* As a user, I want to be able to obtain help documentation for     2.5 hours
+  all commands
+* As a user, I want to be able to save the current directory for    3.0 hours
+  later retrieval
+
+####### IN PROGRESS ###############
+*allow users to create new and save files (part of >, >>)		2.0 hours
+*allow users to interface with the computer through a shell		2.0 hours
+*allow users to use dir related commands through a directory manager	2.0 hours
+

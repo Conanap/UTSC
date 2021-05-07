@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.io.InputStream;
+
+/**
+* takes input given an input stream
+*
+* @author Albion Ka Hei Fung
+*/
+
+public class Input {
+	/**
+	* takes input given an input stream and returns the input
+	* @param input A valid input stream
+	*/
+  public static String getInput(InputStream input) {
+    Scanner scan = new Scanner(input);
+    return scan.nextLine();
+  }
+}

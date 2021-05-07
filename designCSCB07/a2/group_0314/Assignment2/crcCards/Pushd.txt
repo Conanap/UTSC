@@ -1,0 +1,7 @@
+Class name: Pushd.class
+Super: Null
+Sub: Null
+Responsibilities:
+*Pushes the current directory to the stack
+Collaborators:
+FileSystem.class, Directory.class, Pwd.class

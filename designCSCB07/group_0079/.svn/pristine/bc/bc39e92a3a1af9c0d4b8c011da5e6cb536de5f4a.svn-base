@@ -1,0 +1,85 @@
+// **********************************************************
+// Assignment3:
+// UTORID user_name: fungalbi
+//
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// *********************************************************
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import driver.ContextParser;
+import driver.MyParser;
+
+import java.lang.reflect.Method;
+
+public class MyParserTest {
+
+  private class MockContextParser extends ContextParser {
+    public MockContextParser() {}
+
+    public String getAuthor() {
+      return "Mario";
+    }
+
+    public String getNumberCitations() {
+      return "250";
+    }
+
+    public String getNumberi10Index() {
+      return "9";
+    }
+
+    public String getFirstThreePublication() {
+      return "Super Mario Bros.\nSuper Mario Bros. 2\n";
+    }
+
+    public String getNumPublicationFirstFive() {
+      return "100";
+    }
+
+    public String getNumCoauthor() {
+      return "1000";
+    }
+  }
+
+  private MockContextParser cp;
+
+  @Before
+  public void setup() {
+    cp = new MockContextParser();
+  }
+
+  @Test
+  public void testParseContext() {
+    String[] out = MyParser.parseContext(cp);
+    String[] exp = {"Mario", "250", "9",
+        "Super Mario Bros.\nSuper Mario Bros. 2\n", "100", "1000"};
+    assertArrayEquals(exp, out);
+  }
+
+  @Test
+  public void testGetURLList() {
+    String inurl = "sample1.html,sample&#82081.html,lmfao-uwotm8.html";
+    String[] out, exp = {"sample1.html", "sample-1.html", "lmfao-uwotm8.html"};;
+    Method method;
+    MyParser mp = new MyParser();
+    try {
+      method = mp.getClass().getDeclaredMethod("getURLList", String.class);
+      method.setAccessible(true);
+      out = (String[]) method.invoke(mp, inurl);
+    } catch (Exception e) {
+      fail("can't get method");
+      return;
+    }
+    assertArrayEquals(exp, out);
+  }
+}

@@ -1,0 +1,10 @@
+Class name: Ls.java
+Parent class: DirMgt.java
+Subclasses: None
+
+Responsibilities:
+*Prints out name of files and directory in current directory.
+*Separates each entry with a new line.
+
+Collaborators
+*Echo.java

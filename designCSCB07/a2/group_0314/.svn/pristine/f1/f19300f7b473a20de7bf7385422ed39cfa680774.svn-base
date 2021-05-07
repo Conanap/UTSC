@@ -1,0 +1,10 @@
+import java.io.InputStream;
+
+public class InputTest {
+	@Test
+	public void testInput() {
+		System.setIn(new InputStream("Hello"));
+		String out = Input.getInput(System.in);
+		assertEquals("Hello", out);
+	}
+}

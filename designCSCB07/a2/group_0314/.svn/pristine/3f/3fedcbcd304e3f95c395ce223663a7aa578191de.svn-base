@@ -1,0 +1,58 @@
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.junit.Before;
+
+import command.Curl;
+
+public class CurlTest{
+  
+  Curl curl;
+  String[] testTokens;
+  MockOutput output;
+  MockFileSystem fs;
+  MockHistory his;
+  MockCommandRunner cmd;
+  MockDirectory curr = fs.getDirectory(".");
+  
+  @Before
+  public void setUp(){
+    curl = new Curl();
+    testTokens = new String[2];
+    testTokens[0] = "curl";
+    testTokens[1] = "http://www.textfiles.com/history/heroic.txt";
+    curl.initialize(curr, fs, his);
+  }
+  
+  @Test
+  public void testURLRetrieve(){
+    try{
+      curl.execute(testTokens, cmd, output);
+    }
+    catch (IOException e){
+      fail();
+    }
+  }
+  
+  @Test
+  public void testIOException() {
+    testTokens[1] = "asdasfasdasdasd";
+    try{
+      curl.execute(testTokens, cmd, output);
+      fail();
+    }
+    catch (IOException e){
+    }
+  }
+  
+  @Test
+  public void testFileCreation() {
+    curl.execute(testTokens, cmd, output);
+    assertNotNull(curr.getFile("heroic.txt"));
+  }
+  
+}

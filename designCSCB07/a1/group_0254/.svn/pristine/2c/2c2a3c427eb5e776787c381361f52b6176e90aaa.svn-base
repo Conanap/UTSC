@@ -1,0 +1,10 @@
+class name: Redirect
+super: Null
+sub: Null
+responsibilities:
+Redirects command output to files, either ammendment or overwrite
+collaborators:
+DirMgt.java
+Echo.java
+Cat.java
+Pwd.java

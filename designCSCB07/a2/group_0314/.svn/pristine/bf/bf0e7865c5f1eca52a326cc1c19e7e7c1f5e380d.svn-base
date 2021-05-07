@@ -1,0 +1,11 @@
+import filesystem.FileSystem;
+
+public class MockFileSystem extends FileSystem{
+  
+  MockDirectory root;
+  
+  public MockFileSystem() {
+    // what a surprise its nothing!
+    // dummy created just so execute() and initialize() would work
+    // Add stuff here if your code actually calls fs
+  }

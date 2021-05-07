@@ -1,0 +1,51 @@
+package command;
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+public class Cd implements Command{
+  
+  FileSystem fsRef;
+  Directory currDir;
+  
+  @Override
+  public void initialize(Directory curr, FileSystem fs, History his){
+    fsRef = fs;
+    currDir = curr;
+  }
+  @Override
+  public void execute(String[] tokens, CommandRunner cmd, Output output){
+    Directory dir = this.changeDir(tokens[1], fsRef, currDir, output);
+    if(dir != null)
+      cmd.setCurrDir(dir);
+  }
+  @Override
+  public boolean validate(String[] tokens ){
+    return tokens[0].equals("cd") && tokens.length > 1;
+  }
+  @Override
+  public String getManual() {
+    return "cd - Change the shell working directory to DIR.";
+  }
+  @Override
+  public String getUsage() {
+    return "cd DIR";
+  }
+  /**
+   * Given an String of directory names representing a directory path, and a
+   * Directory object, find and return directory at path
+   *
+   * @param path    a String giving the location of target Directory
+   * @param currDir current directory
+   * @param fs  FileSystem used to handle file navigation
+   * @return Directory  directory located at path
+   */
+  public Directory changeDir(String path, FileSystem fs,
+                                    Directory currDir, Output output) {
+    Directory newDir = fs.getDirectory(path, currDir);
+    if (newDir == null) {
+      output.sendErrBuffer(path + ": No such directory\n");
+    }
+    return newDir;
+  }  
+}

@@ -1,0 +1,133 @@
+package driver;
+
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ContextParser {
+  private ArrayList<String> coauthors;
+  private String html;
+  
+  private String citPattern = "<td .*?>([0-9]+?)</td>";
+  private String authorPat = "<span id=\"cit-name-display\" class=\"" +
+      "cit-in-place-nohover\">(.*?)</span>";
+  private String citDetailPat = "<table class=\"cit-table\">.*?</table>";
+  private String tdPat = "<tr class=\"cit-table item\">" +
+      "<td id=\"col-title\"><a href=.*?>(.*?)</a>";
+  private String tdNumPat = "<td id=\"col-citedby\"><a.*?>([0-9]+?)</a>";
+  private String coauthPat = "<a class=\"cit-dark-link\".*?>(.*?)</a>";
+  
+  public ContextParser() {
+    this.coauthors = new ArrayList<String>();
+  }
+  
+  public ContextParser(String html) {
+    this.coauthors= new ArrayList<String>();
+    this.html = html;
+  }
+  
+  private String getAuthor() {
+    String author;
+    String sec = this.extractSection("cit-user-info(.*?)</html>");
+    Pattern pattern = Pattern.compile(this.authorPat);
+    Matcher match = pattern.matcher(sec);
+    if(!match.find())
+      return "Author name not found";
+    author = match.group(1);
+    return author;
+  }
+  
+  private String getNumberCitations() {
+    String number;
+    String sec = this.extractSection("Citation indices.*?</html>");
+    Pattern pattern = Pattern.compile(this.citPattern);
+    Matcher match = pattern.matcher(sec);
+    if(!match.find())
+      return "Number of citations not found";
+    number = match.group(1);
+    return number;
+  }
+  
+  private String getNumberi10Index() {
+    Pattern pattern = Pattern.compile(this.citPattern);
+    Matcher match = pattern.matcher(this.html);
+    String i10num;
+    for (int i = 0; i < 5; i++)
+      match.find();
+    if(!match.find())
+      return "i10 not found";
+    i10num = match.group(1);
+    return i10num;
+  }
+  
+  private String getFirstThreePublication() {
+    String tbl = this.extractSection(this.citDetailPat);
+    String td = this.tdPat;
+    String pubs ="";
+    Pattern pattern = Pattern.compile(td);
+    Matcher match = pattern.matcher(tbl);
+    for(int i = 0; i < 3 && match.find(); i++) {
+      pubs += match.group(1);
+      pubs += "\n";
+    }
+    return pubs;
+  }
+  
+  private String getNumPublicationFirstFive() {
+    String tbl = this.extractSection(this.citDetailPat);
+    Pattern pattern = Pattern.compile(this.tdNumPat);
+    Matcher match = pattern.matcher(tbl);
+    String ret = "";
+    int tot = 0;
+    for(int i = 0; i < 5 && match.find(); i++) {
+      tot += Integer.parseInt(match.group(1));
+    }
+    ret += tot;
+    return ret;
+  }
+  
+  private String getNumCoauthor() {
+    String sec = this.extractSection("Co-authors.*?View all co-authors");
+    Pattern pattern = Pattern.compile(this.coauthPat);
+    Matcher match = pattern.matcher(sec);
+    int coauthNum = 0;
+    while(match.find()) {
+      if(!this.coauthors.contains(match.group(1)) &&
+          !match.group(1).equals("View all co-authors")) {
+       this.coauthors.add(match.group(1));
+       coauthNum ++;
+      }
+    }
+    return "" + coauthNum;
+  }
+  
+  private String extractSection(String table) {
+    Pattern pattern = Pattern.compile(table);
+    Matcher match = pattern.matcher(this.html);
+    if(!match.find())
+      return "";
+    return this.html.substring(match.start(), match.end());
+  }
+
+  public ArrayList<String> getCoauthors() {
+    return this.coauthors;
+  }
+  
+  /**
+   * parses all of the context into an array of string from an string formatted
+   * as a html site.
+   * @param html The String formatted as html webpage
+   * @return A list of information extracted from the string
+   */
+  public String[] parseContext(String html) {
+    String out[] = new String[6];
+    this.html = html;
+    out[0] = this.getAuthor();
+    out[1] = this.getNumberCitations();
+    out[2] = this.getNumberi10Index();
+    out[3] = this.getFirstThreePublication();
+    out[4] = this.getNumPublicationFirstFive();
+    out[5] = this.getNumCoauthor();
+    return out;
+  }
+}

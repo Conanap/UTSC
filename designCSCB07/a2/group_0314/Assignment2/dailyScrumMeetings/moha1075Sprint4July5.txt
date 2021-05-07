@@ -1,0 +1,10 @@
+What did I do last time?
+- Updated Man to use new output system
+- Updated Validator to allow more flexible redirection as per a2b requirements
+- Updated ValidatorTest to test for new redirection requirements
+What do I plan to do now?
+- Updating Pwd to work with the new Ouput system
+- Update ManTest according to new Output system
+- Update PwdTest according to new Output system 
+Am I blocked on anything?
+- Nothing at the moment 

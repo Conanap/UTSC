@@ -1,0 +1,13 @@
+What'd I do:
+	- Completed product backlog
+	- Completed sprint backlog
+	- Completed the ! command (not in JShell yet)
+	- Completed Cp class (not in JShell yet)
+	- Updated redirects to work with any command; captures stdout only
+	- Completed output class, which separates stdout from sdterr
+
+To do:
+	- Update classes to separate stdout from sdterr
+
+Blocked?: 
+	- Null

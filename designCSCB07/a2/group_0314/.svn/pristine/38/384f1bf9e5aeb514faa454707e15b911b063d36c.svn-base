@@ -1,0 +1,8 @@
+Class name: File
+Super class:
+Sub class:
+Responsibilities:
+*Allow writing contents to file
+*Allow appending contents to file
+*Return file contents
+Collaborators:

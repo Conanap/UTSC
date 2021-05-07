@@ -1,0 +1,46 @@
+package CatTest;
+
+import org.junit.*;
+import static org.junit.Assert.assertEquals;
+import command.Concatenate;
+
+public class CatTest {
+  private MockFileSystem fs = new MockFileSystem();
+  private MockOutput out = new MockOutput();
+  private Concatenate cat;
+  private MockDirectory curr = new MockDirectory();
+
+  @Before
+  public void setup() {
+  	cat = new Concatenate();
+  	cat.initialize(curr, fs, null);
+  	out.fflushOut();
+  	out.fflushErr();
+  }
+
+  @Test
+  public void testCatDNEFile() {
+    String[] in = {"cat", "poop"};
+	 cat.execute(in, null, out);
+   assertEquals("poop: no such file\n", out.getErrBuffer());
+	 assertEquals("", out.getOutBuffer());
+  }
+
+  @Test
+  public void testCatOneFile() {
+    String[] in = {"cat", "poop"};
+    MockFile f1 = new MockFile("ehhh lmao");
+    fs.addFile(f1);
+	 cat.execute(in, null, out);
+	 assertEquals("ehhh lmao\n", out.getOutBuffer());
+  }
+
+  @Test
+  public void testCatMultFile() {
+    String[] in = {"cat", "poop", "rar'"};
+    MockFile f2 = new MockFile("ehhh lmao");
+    fs.addFile(f2);
+	  cat.execute(in, null, out);
+	  assertEquals("ehhh lmao\nehhhlmao\n", out.getOutBuffer());
+  }
+}

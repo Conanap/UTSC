@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=minG\ maxG\ charge
+comment0.target=MoPed(int,\ int,\ int)
+comment1.params=charge
+comment1.target=void\ setCharge(int)
+comment2.params=
+comment2.target=int\ getCharge()
+comment3.params=
+comment3.target=void\ printDescription()
+numComments=4

@@ -1,0 +1,18 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+The flag is b7RBWRGSAUBk
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.0.2
+Comment: https://openpgpjs.org
+
+wsBcBAEBCAAQBQJbpQyMCRDKVonUt3LpjwAAqm8H/RkduFz+vjRt/AHo1CBz
+sdzHg/f2nmmWJm5Y4OLgtf6eO0A2Y27TzTAwmGFTbMjRUxJz4ogb0ly7Y4Ak
+ugDkDwRVPBlocbYl0LIYMsl9qojLAhTpgaU1lo1cn1GyGsjLpvngwPcp3tZQ
+21XJFv+P2/72/ZtsC9wsXvc9oU4s/bUHZ3XxCsxDdfZCaknPEio7Go5p2I3D
+fFqLCyyLygO1WtUbMPcHmyfFIZHZI6xZiUs8mHtYjVM4JdcILtelSsO1bqno
+afBrwrCfxFgDzBkqmC2p6oAluJLONjsrQIJ0sYo0f9L4xj2k0QzEv9U0eWFZ
+fAukganz5+E1hbtTR1K1zps=
+=Yq2H
+-----END PGP SIGNATURE-----

@@ -1,0 +1,5 @@
+public class MockFile() {
+	public String getContent() {
+		return "ehhh lmao";
+	}
+}

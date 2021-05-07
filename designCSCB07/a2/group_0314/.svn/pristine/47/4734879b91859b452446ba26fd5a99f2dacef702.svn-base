@@ -1,0 +1,44 @@
+package command; /**
+* Retrieves a file at URL and adds it to the current working directory
+*
+* @author Chi Fai Law
+*/
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Scanner;
+import java.io.IOException;
+
+
+public class Curl {
+  /**
+   * Pops the last pushed dir and cd to it
+   *
+   * @param adr  The URL of the file we are retrieving
+   * @param curr The current working directory.
+   */
+  public static int curl(URL adr, Directory curr){
+    
+    try {
+    BufferedReader in = new BufferedReader(
+        new InputStreamReader(adr.openStream()));
+    }
+    catch (IOException e){
+      output.sendErrBuffer("-jshell: " + tokens[0] + ": URL error\n");
+    }
+    // Starts a new scanner with delimiter \A, 'Beginning of the input boundary'
+    Scanner s = new Scanner(in).useDelimiter("\\A");
+    // Reads from Scanner, ensuring there is more before continuing
+    String read = s.hasNext() ? s.next() : "";
+    in.close();
+    // Creates a new file with the new content
+    File dl = new File(read);
+    // Retrieve file name
+    String filename = adr.getFile();
+    String[] name = filename.split("/");
+    // Add file to current directory
+    curr.addFile(dl, name[name.length - 1]);
+    return 0;
+  }
+    
+}

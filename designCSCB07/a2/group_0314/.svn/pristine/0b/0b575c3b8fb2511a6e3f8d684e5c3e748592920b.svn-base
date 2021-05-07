@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+
+public class Output {
+  private ArrayList<String> stdout;
+  private ArrayList<String> stderr;
+
+  public Output() {
+    this.stdout = new ArrayList<String>();
+    this.stderr = new ArrayList<String>();
+  }
+
+  public void sendOutBuffer(String out) {
+    stdout.add(out);
+  }
+
+  public void sendErrBuffer(String err) {
+    stderr.add(err);
+  }
+
+  public String getOutBuffer() {
+    return getBuffer(stdout);
+  }
+
+  public String getErrBuffer() {
+    return getBuffer(stderr);
+  }
+
+  private String getBuffer(ArrayList<String> buffer) {
+    String out = "";
+    for (String temp : buffer)
+      out += temp;
+    buffer.clear();
+    return out;
+  }
+
+  public void flushOut() {
+    stdout.clear();
+  }
+
+  public void flushErr() {
+    stderr.clear();
+  }
+}

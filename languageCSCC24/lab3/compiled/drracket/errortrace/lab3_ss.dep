@@ -1,0 +1,1 @@
+("6.7" ("0439f6a9bee2e93669216c52f6f2bd73f8830978" . "8217f8f14117cfcaa241d246c00477f2e5e228cf") (collects #"errortrace" #"errortrace-key.rkt") (collects #"scheme" #"main.rkt") (collects #"scheme" #"runtime-config.rkt"))

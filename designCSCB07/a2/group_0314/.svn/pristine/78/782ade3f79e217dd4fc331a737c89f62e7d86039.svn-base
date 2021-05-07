@@ -1,0 +1,9 @@
+Class name: DirStack.class
+Super class: FileSystem.class
+Sub class: Null
+Responsibilities:
+*Manages pushd and popd command
+*Saves directory in a stack when pushd is called
+*Cds user to top directory in stack when popd called
+Collaborators:
+Cd.class

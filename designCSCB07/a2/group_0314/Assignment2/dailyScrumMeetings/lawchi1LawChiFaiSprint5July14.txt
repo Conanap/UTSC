@@ -1,0 +1,16 @@
+What did I do last time:
+	- Completed Redirect class and subclasses
+	- Fixed numerous JUnitTests to comply with new class standards
+	- Created new JUnitTest for Curl.
+	- Created mock files for JUnitTests
+
+What do I plan to do now?
+	- JUnitTests
+
+Am I blocked on anything?
+	- None
+
+Law Chi Fai
+lawchi1
+1002470444
+July 14th, 2016

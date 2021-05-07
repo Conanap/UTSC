@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Cd {
+  
+  public static void changeDir(String path, FileSystem fs) {
+    //TODO: parse path into ArrayList and call changeDirectory
+  }
+  
+  /**
+   * Given an ArrayList of directory names representing a directory path, 
+   * and a FileSystem object, change current directory of FileSystem
+   * to directory in path.
+   * 
+   * Example of ArrayList path
+   * &#47 dir1 &#47 dir2 &#47 dir3      a path from root to dir3
+   * ["/", "dir1", "dir2, "dir3"]       ArrayList representation
+   * for absolute path, use "/"
+   * to go to parent directory ".."
+   * to use current directory "." or start with directory name
+   * 
+   * @param ArrayList path, FileSystem fs
+   * @param void
+   */
+  public static void changeDirectoy (ArrayList path, FileSystem fs) {
+    Iterator pathIt = path.iterator();
+    while (pathIt.hasNext()) {
+      String nextDir = (String) pathIt.next();
+      // change to parent directory
+      if (nextDir.equals("..")) {
+        fs.setCurr(fs.getCurr().getParent());
+      }
+      // go to root
+      else if (nextDir.equals("/")) {
+        fs.currToRoot();
+      }
+      // else change to directory within
+      else {
+        fs.setCurr(fs.getCurr().getDir(nextDir));
+      }
+    }
+  }
+
+}

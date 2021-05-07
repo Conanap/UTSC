@@ -1,0 +1,37 @@
+import java.util.HashMap;
+
+public class Man {
+  private static HashMap<String, String> usageMessages;
+  private static HashMap<String, String> manPage;
+
+  static {
+    usageMessages = new HashMap<String, String>();
+    String temp;
+    // Input usage messages for all commands using put()
+    
+  }
+
+  static {
+    manPage = new HashMap<String, String>();
+    String temp;
+    
+    usageMessages.put(exit, "usage: exit\nEnds JShell");
+    
+    temp = "usage: cat FILE1 [FILE2 ...]\nView the contents of FILE1, ";
+    temp += "FILE2,...\n";
+    usageMessages.put(cat, temp);
+    
+    temp = "usage: echo STRING [>, >> FILE]\nPrints the STRING.\n>  ";
+    temp += "Overwrite STRING into FILE\n>>  Append STRING into FILE\n";
+    usageMessages.put(echo, temp);
+  }
+
+  public static String getDocumentation(String commandName) {
+    if (usageMessages.containsKey(commandName)) {
+      return usageMessages.get(commandName);
+    } else {
+      return "No man page found for \"" + commandName + "\" \n";
+    }
+  }
+
+}

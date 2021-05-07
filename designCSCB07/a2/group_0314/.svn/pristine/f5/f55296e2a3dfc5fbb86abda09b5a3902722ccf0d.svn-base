@@ -1,0 +1,28 @@
+package driver;
+
+import java.util.Scanner;
+import java.io.InputStream;
+
+/**
+* takes input given an input stream
+*
+* @author Albion Ka Hei Fung
+*/
+
+public class Input {
+	private Scanner in;
+	public Input(InputStream in) {
+		this.in = new Scanner(in);
+	}
+	/**
+	* takes input given an input stream and returns the input
+	* @param input A valid input stream
+	*/
+  public String getNextInput() {
+    return this.in.nextLine();
+  }
+
+  public void closeInput() {
+  	this.in.close();
+  }
+}

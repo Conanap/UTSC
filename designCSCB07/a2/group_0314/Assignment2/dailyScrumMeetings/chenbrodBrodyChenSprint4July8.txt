@@ -1,0 +1,11 @@
+What did I do?
+	- Mostly done implementing grep, needs to be refined and tweaked
+	- Updated Ls to print correct format
+
+What do I plan to do now?
+	- Finish implementing grep
+	- Update Ls to print files
+	- Write test cases for grep
+
+Am I blocked on anything?
+	- Nothing atm.

@@ -1,0 +1,30 @@
+/**
+* Retrieves a file at URL and adds it to the current working directory
+*
+* @author Chi Fai Law
+*/
+import java.net.*;
+
+public class Curl {
+  /**
+   * Pops the last pushed dir and cd to it
+   *
+   * @param adr  The URL of the file we are retrieving
+   * @param curr The current working directory.
+   */
+  public static void curl(URL adr, Directory curr) {
+    
+    BufferedReader in = newBufferedReader(
+        new InputStreamReader(adr.openStream()););
+    // Starts a new scanner with delimiter \A, 'Beginning of the input boundary'
+    Scanner s = new Scanner(in).useDelimiter("\\A");
+    // Reads from Scanner, ensuring there is more before continuing
+    String read = s.hasNext() ? s.next() : "";
+    // Creates a new file with the new content
+    File dl = new File(read);
+    // Add file to current directory
+    curr.addFile(dl, "Placeholder name of File");
+    return 0;
+  }
+    
+}

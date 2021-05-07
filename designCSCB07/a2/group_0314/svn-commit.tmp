@@ -1,0 +1,9 @@
+fixed some typos
+--This line, and those below, will be ignored--
+
+M    Assignment2/src/driver/nJShell.java
+M    Assignment2/src/driver/CommandRunner.java
+M    Assignment2/src/command/Command.java
+M    Assignment2/src/command/Concatenate.java
+M    Assignment2/src/command/MakeDirectory.java
+M    Assignment2/src/command/Curl.java

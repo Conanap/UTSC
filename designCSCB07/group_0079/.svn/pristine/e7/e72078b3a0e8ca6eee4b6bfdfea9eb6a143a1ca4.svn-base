@@ -1,0 +1,136 @@
+// **********************************************************
+// Assignment3:
+// UTORID user_name: fungalbi
+//
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program fode and that I have foded on my own. I received
+// help from no one in designing and debugging my program.
+// *********************************************************
+package Test;
+
+import static org.junit.Assert.*;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import JavaIO.FileOut;
+
+public class FileOutTest {
+
+  private String expected;
+  private FileOut fo;
+  private final String separator =
+      "----------------------------------------------------------------"
+          + "-------\n";
+
+  @Before
+  public void setup() {
+    fo = new FileOut("poop");
+    expected = separator;
+  }
+
+  @Test
+  public void testSendEOF() {
+
+  }
+
+  @Test
+  public void testSendOutputTwoPublications() {
+    String[] out = {"Cape Baldy", "666", "4",
+        "One Punch Notebook\nSale guide\n", "13", "0"};
+    fo.sendOutput(out);
+    Field field;
+    StringBuilder sb;
+    try {
+      field = (fo.getClass()).getDeclaredField("sb");
+      field.setAccessible(true);
+      sb = (StringBuilder) field.get(fo);
+    } catch (Exception e) {
+      fail("can't get field");
+      return;
+    }
+    String fompout = sb.toString();
+    expected += ("1. Name of Author:\nCape Baldy\n2. Number of All Cita"
+        + "tions:\n666\n3. Number of i10-index after 2009:\n4\n"
+        + "4. Title of the first 3 publications:\n1- One Punch Notebook\n"
+        + "2- Sale guide\n5. Total paper citation (first 5 papers):\n"
+        + "13\n6. Total Co-authors:\n0\n");
+    assertEquals(expected, fompout);
+  }
+
+
+  @Test
+  public void testSendOutputThreePublications() {
+    String[] out = {"Cape Baldy", "666", "4",
+        "One Punch Notebook\nSale guide\nPretend to be Charanko\n", "13", "0"};
+    fo.sendOutput(out);
+    Field field;
+    StringBuilder sb;
+    try {
+      field = (fo.getClass()).getDeclaredField("sb");
+      field.setAccessible(true);
+      sb = (StringBuilder) field.get(fo);
+    } catch (Exception e) {
+      fail("can't get field");
+      return;
+    }
+    String fompout = sb.toString();
+    expected += ("1. Name of Author:\nCape Baldy\n2. Number of All Cita"
+        + "tions:\n666\n3. Number of i10-index after 2009:\n4\n"
+        + "4. Title of the first 3 publications:\n1- One Punch Notebook\n"
+        + "2- Sale guide\n3- Pretend to be Charanko\n5. Total paper citation"
+        + " (first 5 papers):\n" + "13\n6. Total Co-authors:\n0\n");
+    assertEquals(expected, fompout);
+  }
+
+  @Test
+  public void testSendError() {
+    fo.sendError("you wot m8");
+    Field field;
+    StringBuilder sb;
+    try {
+      field = (fo.getClass()).getDeclaredField("sb");
+      field.setAccessible(true);
+      sb = (StringBuilder) field.get(fo);
+    } catch (Exception e) {
+      fail("can't get field");
+      return;
+    }
+
+    String fompout = sb.toString();
+    String exp = "you wot m8\n";
+    assertEquals(exp, fompout);
+  }
+
+  @Test
+  public void testSendCoauthor() {
+    ArrayList<String> out = new ArrayList<String>();
+    out.add("Demon Cyborg");
+    out.add("Waste King");
+    out.add("Silver Fang");
+    out.add("Pri-Pri-Prisoner");
+    fo.sendCoauthor(out);
+
+    Field field;
+    StringBuilder sb;
+    try {
+      field = (fo.getClass()).getDeclaredField("sb");
+      field.setAccessible(true);
+      sb = (StringBuilder) field.get(fo);
+    } catch (Exception e) {
+      fail("can't get field");
+      return;
+    }
+    String fompout = sb.toString();
+    expected += ("7. Co-Author list sorted: (Total: 4):\n"
+        + "Demon Cyborg\nPri-Pri-Prisoner\nSilver Fang\nWaste King\n");
+    assertEquals(expected, fompout);
+  }
+
+}

@@ -1,0 +1,27 @@
+import java.lang.Integer;
+
+public class RunHistory {
+	public static void runHis(String cmd, Directory curr, FileSystem fs) {
+		Integer num;
+		num = getNum(cmd);
+		if(num != null && (int)num > 0) {
+			String rcmd = History.getHistory((int)num, (int)num);
+			if(!rcmd.substring(rcmd.length() - 5, rcmd.length()).equals("null\n")) {
+				String cmds[] = Tokenizer.tokenizeInput(cmd);
+				RunCmd.runCmd(cmds, curr, fs);
+			} else
+				Output.sendErrBuffer("Command number " + num + " does not exist\n");
+		} else
+			Output.sendErrBuffer("Cannot take negative number\n");
+	}
+
+	private static Integer getNum(String cmd) {
+		cmd = cmd.substring(1, 2);
+		try {
+			return Integer.parseInt(cmd);
+		} catch(NumberFormatException e) {
+			Output.sendErrBuffer("Invalid number after !\n");
+			return null;
+		}
+	}
+}

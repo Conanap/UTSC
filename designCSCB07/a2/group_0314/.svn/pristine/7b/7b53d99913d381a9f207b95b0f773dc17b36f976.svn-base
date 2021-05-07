@@ -1,0 +1,72 @@
+public class FileSystem {
+  private Directory root;
+  private DirStack ds;
+
+  public FileSystem() {
+    this.root = new Directory();
+    this.ds = new DirStack();
+  }
+
+  public static String[] parseFilePath(String path) {
+    String[] paths = new String[2];
+    int last = path.lastIndexOf("/");
+    if (last != -1) {
+      paths[0] = path.substring(0, last);
+      if (path.substring(last, last + 1).equals("/"))
+        last++;
+      paths[1] = path.substring(last, path.length());
+    } else
+      paths[0] = path;
+    return paths;
+  }
+
+  public Directory getDirectory(String path, Directory curr) {
+    Directory currDirectory = curr;
+    String[] nextDirectory = path.split("/");
+    int i = 0;
+    while (i < nextDirectory.length && currDirectory != null) {
+      switch (nextDirectory[i]) {
+        case "":
+          currDirectory = this.root;
+          break;
+        case ".":
+          break;
+        case "..":
+          currDirectory = currDirectory.getParent();
+          break;
+        default:
+          currDirectory = currDirectory.getDir(nextDirectory[i]);
+      }
+      i++;
+    }
+    if (path.split("/").length == 0)
+      currDirectory = this.root;
+    return currDirectory;
+  }
+
+  public void push(String path) {
+    this.ds.pushDir(path);
+  }
+
+  public String pop() {
+    return this.ds.popDir();
+  }
+
+  public Directory getRoot() {
+    return this.root;
+  }
+
+  public File getFile(String path, Directory curr) {
+    String[] paths = FileSystem.parseFilePath(path);
+    File file;
+    if (paths[1] != null)
+      curr = this.getDirectory(paths[0], curr);
+    else
+      paths[1] = paths[0];
+    if (curr != null)
+      file = curr.getFile(paths[1]);
+    else
+      file = null;
+    return file;
+  }
+}

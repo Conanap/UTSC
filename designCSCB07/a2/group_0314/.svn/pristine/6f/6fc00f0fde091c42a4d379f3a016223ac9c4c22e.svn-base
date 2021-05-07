@@ -1,0 +1,14 @@
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        PwdTest.class,
+        ValidatorTest.class,
+        TokenizerTest.class,
+        GrepTest.class,
+        HistoryTest.class,
+        LsTest.class
+})
+
+public class JShellTest {
+}

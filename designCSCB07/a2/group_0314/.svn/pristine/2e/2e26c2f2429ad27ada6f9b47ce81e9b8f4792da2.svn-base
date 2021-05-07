@@ -1,0 +1,212 @@
+package command;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+
+import filesystem.FileSystem;
+import driver.CommandRunner;
+import filesystem.Directory;
+import driver.Output;
+
+public class PushdTest {
+	private MockFileSystem fs = new MockFileSystem();
+	private PushDirectory pushd;
+	private MockDirectory curr = fs.getDirectory(".");
+	private MockOutput out = new MockOutput();
+	private MockCommandRunner cmd = new MockCommandRunner();
+
+	
+	@Before
+	public void setUp(){
+	  pushd = new PushDirectory();
+	  pushd.initialize(curr, fs, null);
+	}
+	
+	@Test
+	public void testPushRoot() {
+		MockDirectory rar = new MockDirectory("rar", fs.getDirectory("."));
+		String[] in = {"pushd", "rar"};
+		pushd.execute(in, cmd, out);
+		assertEquals(rar, cmd.getCurrDir());
+		assertEquals(".", fs.pop());
+		assertEquals("", out.getOutBuffer());
+	}
+
+	public class MockFileSystem extends FileSystem{
+		private boolean empty = true;
+		private MockDirectory root = new MockDirectory();
+		private MockDirStack ds = new MockDirStack();
+
+		public MockFileSystem () {
+
+		}
+
+		public MockDirectory getDirectory(String path) {
+			return this.root;
+		}
+
+		public void getFile(String path) {
+			return;
+		}
+
+		public String pop() {
+			return ds.pop();
+		}
+
+		public void pushd(String path) {
+			ds.push(path);
+		}
+	}
+
+	/**
+ * Created for use with PwdTest. Mocks getParent and getDirName methods.
+ */
+public class MockDirectory extends Directory {
+  private Directory parent, c1, c2;
+  private String name;
+  private File file;
+
+  /**
+   * Constructor for creating a root directory
+   */
+
+  public MockDirectory() {
+    parent = this;
+  }
+
+  /**
+   * Constructor for creating a named, non-root directory
+   */
+
+  public MockDirectory(String name, MockDirectory parent) {
+    this.parent = parent;
+    this.name = name;
+  }
+
+  /**
+   * Returns the stored directory name. Will not work for root.
+   *
+   * @return name of directory
+   */
+
+  public String getDirName() {
+    return this.name;
+  }
+
+  /**
+   * Return the parent of this directory
+   *
+   * @return parent of this directory
+   */
+
+  public MockDirectory getParent() {
+    return this.parent;
+  }
+
+  public void addDir(MockDirectory dir, String path) {
+    if(this.c1 == null)
+      this.c1 = dir;
+    else if(this.c2 == null)
+      this.c2 = dir;
+  }
+
+  public MockDirectory getC1 () {
+    if (this.c1 == null)
+      return null;
+    else 
+      return c1;
+  }
+
+  public void clearDirs() {
+    this.c1 = null;
+    this.c2 = null;
+  }
+
+  public MockDirectory getC2() {
+    if (this.c2 == null)
+      return null;
+    else
+      return c2;
+  }
+}
+
+public class MockOutput extends Output{
+  
+  private String out;
+  private String err;
+  
+  public MockOutput() {
+    out = "";
+    err = "";
+  }
+  
+  public void sendOutBuffer(String out) {
+    this.out = out;
+  }
+
+  public void sendErrBuffer(String err) {
+    this.err = err;
+  }
+  
+  public String getOutBuffer() {
+    return out;
+  }
+
+  public String getErrBuffer() {
+    return err;
+  }
+
+  public void fflushOut() {
+    out = "";
+  }
+}
+
+
+public class MockCommandRunner extends CommandRunner{
+  
+  String cmd;
+  MockDirectory curr;
+  MockFileSystem fs;
+  MockHistory his;
+
+  public MockCommandRunner() {}
+  
+  public MockCommandRunner(MockFileSystem fs) {
+  }
+
+  public void setCurrDir(MockDirectory curr) {
+  	this.curr = curr;
+  }
+
+  public MockDirectory getCurrDir() {
+  	return this.curr;
+  }
+}
+
+public class MockDirStack extends DirStack {
+	private String[] stack;
+	private int count;
+	public MockDirStack() {
+		stack = new String[10];
+		count = 0;
+	}
+
+	public void push(String str) {
+		stack[count++] = str;
+	}
+
+	public String pop() {
+		return stack[count--];
+	}
+}
+
+public class MockHistory extends History{
+  
+  String cmds;
+  int cmdCount;
+  
+  public MockHistory() {
+    cmds = "";
+  }
+}
+}

@@ -1,0 +1,377 @@
+###[ Ethernet ]### 
+  dst       = 02:42:90:6d:87:ab
+  src       = 02:42:0a:00:00:02
+  type      = 0x800
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 120
+     id        = 38515
+     flags     = DF
+     frag      = 0
+     ttl       = 64
+     proto     = tcp
+     chksum    = 0xaa5d
+     src       = 10.0.0.2
+     dst       = 142.1.97.172
+     \options   \
+###[ TCP ]### 
+        sport     = 50852
+        dport     = http
+        seq       = 3646655861
+        ack       = 452881365
+        dataofs   = 5
+        reserved  = 0
+        flags     = PA
+        window    = 229
+        chksum    = 0xfa19
+        urgptr    = 0
+        options   = []
+###[ HTTP ]### 
+###[ HTTP Request ]### 
+              Method    = 'GET'
+              Path      = '/home?lang=en'
+              Http-Version= 'HTTP/1.1'
+              Host      = 'e-commerce.seclab.space'
+              User-Agent= None
+              Accept    = None
+              Accept-Language= None
+              Accept-Encoding= None
+              Accept-Charset= None
+              Referer   = None
+              Authorization= None
+              Expect    = None
+              From      = None
+              If-Match  = None
+              If-Modified-Since= None
+              If-None-Match= None
+              If-Range  = None
+              If-Unmodified-Since= None
+              Max-Forwards= None
+              Proxy-Authorization= None
+              Range     = None
+              TE        = None
+              Cache-Control= None
+              Connection= 'close'
+              Date      = None
+              Pragma    = None
+              Trailer   = None
+              Transfer-Encoding= None
+              Upgrade   = None
+              Via       = None
+              Warning   = None
+              Keep-Alive= None
+              Allow     = None
+              Content-Encoding= None
+              Content-Language= None
+              Content-Length= None
+              Content-Location= None
+              Content-MD5= None
+              Content-Range= None
+              Content-Type= None
+              Expires   = None
+              Last-Modified= None
+              Cookie    = None
+              Headers   = 'host: e-commerce.seclab.space\r\nConnection: close'
+              Additional-Headers= None
+
+*****
+###[ Ethernet ]### 
+  dst       = 02:42:0a:00:00:02
+  src       = 02:42:90:6d:87:ab
+  type      = 0x800
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 318
+     id        = 29093
+     flags     = 
+     frag      = 0
+     ttl       = 37
+     proto     = tcp
+     chksum    = 0x2966
+     src       = 142.1.97.172
+     dst       = 10.0.0.2
+     \options   \
+###[ TCP ]### 
+        sport     = http
+        dport     = 50852
+        seq       = 452881365
+        ack       = 3646655941
+        dataofs   = 5
+        reserved  = 0
+        flags     = PA
+        window    = 65535
+        chksum    = 0x7da7
+        urgptr    = 0
+        options   = []
+###[ HTTP ]### 
+###[ HTTP Response ]### 
+              Status-Line= 'HTTP/1.1 200 OK'
+              Accept-Ranges= None
+              Age       = None
+              E-Tag     = None
+              Location  = None
+              Proxy-Authenticate= None
+              Retry-After= None
+              Server    = 'nginx'
+              Vary      = None
+              WWW-Authenticate= None
+              Cache-Control= None
+              Connection= 'close'
+              Date      = 'Wed, 24 Oct 2018 20:44:08 GMT'
+              Pragma    = None
+              Trailer   = None
+              Transfer-Encoding= None
+              Upgrade   = None
+              Via       = None
+              Warning   = None
+              Keep-Alive= None
+              Allow     = None
+              Content-Encoding= None
+              Content-Language= None
+              Content-Length= '63'
+              Content-Location= None
+              Content-MD5= None
+              Content-Range= None
+              Content-Type= 'text/html; charset=utf-8'
+              Expires   = None
+              Last-Modified= None
+              Headers   = 'Server: nginx\r\nDate: Wed, 24 Oct 2018 20:44:08 GMT\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: 63\r\nConnection: close\r\nX-Powered-By: Express\r\nETag: W/"3f-wHWVYusDU2GtGO2pVug9pUVZTRA"'
+              Additional-Headers= 'X-Powered-By: Express\r\nETag: W/"3f-wHWVYusDU2GtGO2pVug9pUVZTRA"\r\n'
+###[ Raw ]### 
+                 load      = 'Welcome to e-commerce. Please enter your username and password.'
+
+*****
+###[ Ethernet ]### 
+  dst       = 02:42:90:6d:87:ab
+  src       = 02:42:0a:00:00:02
+  type      = 0x800
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 322
+     id        = 12787
+     flags     = DF
+     frag      = 0
+     ttl       = 64
+     proto     = tcp
+     chksum    = 0xe14
+     src       = 10.0.0.2
+     dst       = 142.1.97.172
+     \options   \
+###[ TCP ]### 
+        sport     = 50854
+        dport     = http
+        seq       = 1550985978
+        ack       = 452860657
+        dataofs   = 5
+        reserved  = 0
+        flags     = PA
+        window    = 229
+        chksum    = 0xfae3
+        urgptr    = 0
+        options   = []
+###[ HTTP ]### 
+###[ HTTP Request ]### 
+              Method    = 'POST'
+              Path      = '/login'
+              Http-Version= 'HTTP/1.1'
+              Host      = 'e-commerce.seclab.space'
+              User-Agent= None
+              Accept    = None
+              Accept-Language= None
+              Accept-Encoding= None
+              Accept-Charset= None
+              Referer   = None
+              Authorization= None
+              Expect    = None
+              From      = None
+              If-Match  = None
+              If-Modified-Since= None
+              If-None-Match= None
+              If-Range  = None
+              If-Unmodified-Since= None
+              Max-Forwards= None
+              Proxy-Authorization= None
+              Range     = None
+              TE        = None
+              Cache-Control= None
+              Connection= 'close'
+              Date      = None
+              Pragma    = None
+              Trailer   = None
+              Transfer-Encoding= None
+              Upgrade   = None
+              Via       = None
+              Warning   = None
+              Keep-Alive= None
+              Allow     = None
+              Content-Encoding= None
+              Content-Language= None
+              Content-Length= '29'
+              Content-Location= None
+              Content-MD5= None
+              Content-Range= None
+              Content-Type= 'application/x-www-form-urlencoded'
+              Expires   = None
+              Last-Modified= None
+              Cookie    = 'session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; order-id=775230'
+              Headers   = 'host: e-commerce.seclab.space\r\ncookie: session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; order-id=775230\r\ncontent-type: application/x-www-form-urlencoded\r\ncontent-length: 29\r\nConnection: close'
+              Additional-Headers= None
+###[ Raw ]### 
+                 load      = 'username=alice&password=4l1c3'
+
+*****
+###[ Ethernet ]### 
+  dst       = 02:42:0a:00:00:02
+  src       = 02:42:90:6d:87:ab
+  type      = 0x800
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 323
+     id        = 42331
+     flags     = 
+     frag      = 0
+     ttl       = 37
+     proto     = tcp
+     chksum    = 0xf5aa
+     src       = 142.1.97.172
+     dst       = 10.0.0.2
+     \options   \
+###[ TCP ]### 
+        sport     = http
+        dport     = 50854
+        seq       = 452860657
+        ack       = 1550986260
+        dataofs   = 5
+        reserved  = 0
+        flags     = PA
+        window    = 65535
+        chksum    = 0x6d9e
+        urgptr    = 0
+        options   = []
+###[ HTTP ]### 
+###[ HTTP Response ]### 
+              Status-Line= 'HTTP/1.1 200 OK'
+              Accept-Ranges= None
+              Age       = None
+              E-Tag     = None
+              Location  = None
+              Proxy-Authenticate= None
+              Retry-After= None
+              Server    = 'nginx'
+              Vary      = None
+              WWW-Authenticate= None
+              Cache-Control= None
+              Connection= 'close'
+              Date      = 'Wed, 24 Oct 2018 20:44:08 GMT'
+              Pragma    = None
+              Trailer   = None
+              Transfer-Encoding= None
+              Upgrade   = None
+              Via       = None
+              Warning   = None
+              Keep-Alive= None
+              Allow     = None
+              Content-Encoding= None
+              Content-Language= None
+              Content-Length= '29'
+              Content-Location= None
+              Content-MD5= None
+              Content-Range= None
+              Content-Type= None
+              Expires   = None
+              Last-Modified= None
+              Headers   = 'Server: nginx\r\nDate: Wed, 24 Oct 2018 20:44:08 GMT\r\nContent-Length: 29\r\nConnection: close\r\nX-Powered-By: Express\r\nSet-Cookie: session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; Max-Age=604800; Path=/'
+              Additional-Headers= 'X-Powered-By: Express\r\nSet-Cookie: session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; Max-Age=604800; Path=/\r\n'
+###[ Raw ]### 
+                 load      = 'user alice has been signed in'
+
+*****
+###[ Ethernet ]### 
+  dst       = 02:42:90:6d:87:ab
+  src       = 02:42:0a:00:00:02
+  type      = 0x800
+###[ IP ]### 
+     version   = 4
+     ihl       = 5
+     tos       = 0x0
+     len       = 353
+     id        = 13777
+     flags     = DF
+     frag      = 0
+     ttl       = 64
+     proto     = tcp
+     chksum    = 0xa17
+     src       = 10.0.0.2
+     dst       = 142.1.97.172
+     \options   \
+###[ TCP ]### 
+        sport     = 50856
+        dport     = http
+        seq       = 3485281990
+        ack       = 452892907
+        dataofs   = 5
+        reserved  = 0
+        flags     = PA
+        window    = 229
+        chksum    = 0xfb02
+        urgptr    = 0
+        options   = []
+###[ HTTP ]### 
+###[ HTTP Request ]### 
+              Method    = 'PUT'
+              Path      = '/buy?item=lamp&currency=CAD'
+              Http-Version= 'HTTP/1.1'
+              Host      = 'e-commerce.seclab.space'
+              User-Agent= None
+              Accept    = None
+              Accept-Language= None
+              Accept-Encoding= None
+              Accept-Charset= None
+              Referer   = None
+              Authorization= None
+              Expect    = None
+              From      = None
+              If-Match  = None
+              If-Modified-Since= None
+              If-None-Match= None
+              If-Range  = None
+              If-Unmodified-Since= None
+              Max-Forwards= None
+              Proxy-Authorization= None
+              Range     = None
+              TE        = None
+              Cache-Control= None
+              Connection= 'close'
+              Date      = None
+              Pragma    = None
+              Trailer   = None
+              Transfer-Encoding= None
+              Upgrade   = None
+              Via       = None
+              Warning   = None
+              Keep-Alive= None
+              Allow     = None
+              Content-Encoding= None
+              Content-Language= None
+              Content-Length= '40'
+              Content-Location= None
+              Content-MD5= None
+              Content-Range= None
+              Content-Type= 'application/x-www-form-urlencoded'
+              Expires   = None
+              Last-Modified= None
+              Cookie    = 'session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; order-id=775230'
+              Headers   = 'host: e-commerce.seclab.space\r\ncookie: session-id=eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I; order-id=775230\r\ncontent-type: application/x-www-form-urlencoded\r\ncontent-length: 40\r\nConnection: close'
+              Additional-Headers= None
+###[ Raw ]### 
+                 load      = 'cc=4111111111111111&exp=12%2F20&code=945'
+
+*****

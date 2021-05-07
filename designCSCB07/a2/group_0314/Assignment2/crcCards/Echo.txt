@@ -1,0 +1,8 @@
+Class name: Echo.class
+Super class: Null
+Sub class: Null
+Responsibilities:
+*Prints output form user
+*Creates standard output from standard input
+Collaborators:
+Null

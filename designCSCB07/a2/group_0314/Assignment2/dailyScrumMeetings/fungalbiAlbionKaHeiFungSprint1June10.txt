@@ -1,0 +1,17 @@
+What did I do last time:
+	- Completed base code for JShell such that it can take commands and recognize commands
+	- Enabled JShell to output if and only if the command returns output
+	- Completed crcCards in collaboration with everyone else in the groups
+
+What do I plan to do now?
+	- Start and finish the next sprint backlog before the next sprint starts
+	- Start on commands if time permits
+	- Figure out how to get main function to run on anything besides bluej
+
+Am I blocked on anything?
+	- Waiting on file systems completion
+
+Albion Ka Hei Fung
+fungalbi
+1002444321
+June 10, 2016

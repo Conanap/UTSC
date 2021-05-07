@@ -1,0 +1,19 @@
+//**********************************************************
+//Assignment3:
+//UTORID user_name: fungalbi
+//
+//Author: Albion Ka Hei Fung
+//
+//
+//Honor Code: I pledge that this program represents my own
+//program code and that I have coded on my own. I received
+//help from no one in designing and debugging my program.
+//*********************************************************
+package JavaIO;
+
+public interface OutputStandard {
+  public void sendOutput(String[] output);
+  public void sendError(String error);
+  public void sendCoauthor(String coauth);
+  public void sendEOF();
+}

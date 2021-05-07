@@ -1,0 +1,10 @@
+Class name: Mkdir.class
+Parent class: FileSystem.class
+Subclasses: None
+
+Responsibilities:
+*Creates a new directory, either in current directory, or of a full path.
+
+Collaborators:
+*Mv.class
+*Cp.class

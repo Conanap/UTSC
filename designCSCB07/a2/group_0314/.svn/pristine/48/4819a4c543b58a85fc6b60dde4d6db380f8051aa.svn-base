@@ -1,0 +1,45 @@
+public class FileSystem {
+	private Directory root;
+	private Directory curr;
+	
+	public FileSystem() {
+		this.root = new Directory();
+		this.curr = this.root;
+	}
+
+	public Directory getCurr() {
+		return (this.curr);
+	}
+
+	public String getCurrName() {
+		return (this.curr.getName());
+	}
+
+	public void setCurr(Directory dir) {
+		this.curr = dir;
+	}
+
+	public void addFile(File file, String name) {
+		this.curr.addFile(file, name);
+	}
+
+	/* uncomment when ready
+	public File getFile (String path) {
+		String[] paths = this.parseFilePath(path);
+		File file;
+		pushd(this);
+		cd(this, paths[0]);
+		file = this.curr.getFile(paths[1]);
+		popd(this);
+		return file;
+	}
+	*/
+
+	private String[] parseFilePath(String path) {
+		String[] paths = new String[2];
+		int last = path.lastIndexOf("/");
+		paths[0] = path.substring(0, last);
+		paths[1] = path.substring(last, path.length());
+		return paths;
+	}
+}

@@ -1,0 +1,41 @@
+package command;
+
+/**
+ * This represents a file related command that appends a file with stdin. The
+ * content of the stdin is either stored within an existing file or, if the
+ * filename does not exist, a new file with said filename.
+ *
+ */
+
+public class Append extends Redirect {
+  private String content;
+  private String filename;
+
+  /**
+   * Calls redirect command with "ap" as String input, to represent an append
+   * command.
+   * 
+   * @param input  the String of the input command, in this case "ap"
+   * @param filein the String representing the name of the file input
+   * @param fs     The file system in which the current instance is running on
+   * @param curr   The current directory that the current instance is in
+   */
+  public static void append(String[] input, String filein, FileSystem fs,
+                           Directory curr, History history) {
+    int status = redirect("ap", input, filein, fs, curr, history);
+    String temps;
+    // check return status
+    // 0 means if the path before file name does not exist
+    if (status == 0) {
+      temps = "Path not found: " + Tokenizer.parseFilePath(input[3])[0] +
+              "\n";
+      Output.sendErrBuffer(temps);
+    }
+    // 2 means the file name is . or ..
+    else if (status == 2) {
+      temps = "Illegal file name: " +
+              Tokenizer.parseFilePath(input[3])[1] + "\n";
+      Output.sendErrBuffer(temps);
+    }
+  }
+}

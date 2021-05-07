@@ -1,0 +1,65 @@
+// **********************************************************
+// Assignment2:
+// Student1:
+// UTORID user_name: fungalbi
+// UT Student #: 1002444321
+// Author: Albion Ka Hei Fung
+//
+// Student2:
+// UTORID user_name:
+// UT Student #:
+// Author: Brody Chen
+//
+// Student3:
+// UTORID user_name: lawchi1
+// UT Student #: 1002470444
+// Author: Chi Fai Law
+//
+// Student4:
+// UTORID user_name: moha1075
+// UT Student #: 1002307434
+// Author: Rizadh Mohamed Nizam
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// I have also read the plagiarism section in the course info
+// sheet of CSC B07 and understand the consequences.
+// *********************************************************
+
+import java.io.InputStream;
+
+public class JShell {
+  private static boolean exit;
+  private static FileSystem fs = new FileSystem();
+  private static Directory curr;
+  private static InputStream stdin;
+
+  public static void main(String[] args) {
+    // initialize var
+    String out;
+    String[] tokens;
+    exit = false;
+    curr = fs.getRoot();
+    RunCmd.init(curr);
+    stdin = System.in;
+    while (!exit) {
+      System.out.print("JVM: ~User$ ");
+      String input = Input.getInput(stdin);
+      History.addCmd(input);
+      tokens = Tokenizer.tokenizeInput(input);
+      if (tokens.length == 1 && tokens[0].equals("exit")) {
+        exit();
+      } else {
+        out = RunCmd.runCmd(tokens, curr, fs);
+        curr = RunCmd.getCurrDir();
+        System.out.print(out);
+      }
+    }
+  }
+
+  private static void exit() {
+    exit = true;
+  }
+}

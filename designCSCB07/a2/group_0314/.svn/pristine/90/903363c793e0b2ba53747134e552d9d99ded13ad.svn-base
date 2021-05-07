@@ -1,0 +1,63 @@
+public class FileSystem {
+  private Directory root;
+  private DirStack ds;
+
+  public FileSystem() {
+    this.root = new Directory();
+    this.ds = new DirStack();
+  }
+
+  public Directory getDirectory(String path, Directory curr) {
+    Directory currDirectory = curr;
+    for (String nextDirectory : path.split("/")) {
+      switch (nextDirectory) {
+        case "":
+          currDirectory = this.root;
+          break;
+        case ".":
+          break;
+        case "..":
+          currDirectory = currDirectory.getParent();
+          break;
+        default:
+          currDirectory = currDirectory.getDir(nextDirectory);
+      }
+      return currDirectory;
+    }
+  }
+
+  public void push(String path) {
+    this.ds.pushDir(path);
+  }
+
+  public String pop() {
+    return this.ds.popDir();
+  }
+
+  public Directory getRoot() {
+    return this.root;
+  }
+
+  public File getFile(String path, Directory curr) {
+    String[] paths = FileSystem.parseFilePath(path);
+    File file;
+    Directory dir;
+    if (paths[1] != null)
+      dir = this.getDirectory(paths[0]);
+    else
+      paths[1] = paths[0];
+    file = curr.getFile(paths[1]);
+    return file;
+  }
+
+  public static String[] parseFilePath(String path) {
+    String[] paths = new String[2];
+    int last = path.lastIndexOf("/");
+    if (last != -1) {
+      paths[0] = path.substring(0, last);
+      paths[1] = path.substring(last, path.length());
+    } else
+      paths[0] = path;
+    return paths;
+  }
+}

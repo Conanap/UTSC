@@ -1,0 +1,70 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Man {
+  private static Map<String, String> usageMessages;
+  private static HashMap<String, String> manPage;
+
+  static {
+    usageMessages = new HashMap<String, String>();
+    // Input usage messages for all commands using put()
+    usageMessages.put("exit", "usage: exit\n");
+    usageMessages.put("echo", "echo FILE1 [>, >> FILE]\n");
+    usageMessages.put("cat", "cat FILE1 [FILE2 ...]\n");
+  }
+
+  static {
+    manPage = new HashMap<String, String>();
+    String temp;
+    manPage.put("exit", "usage: exit\nEnds JShell");
+    temp = "usage: cat FILE1 [FILE2 ...]\nView the contents of FILE1, ";
+    temp += "FILE2,...\n";
+    manPage.put("cat", temp);
+    temp = "usage: echo STRING [>, >> FILE]\nPrints the STRING.\n>  ";
+    temp += "Overwrite STRING into FILE\n>>  Append STRING into FILE\n";
+    manPage.put("echo", temp);
+  }
+
+  /*
+    Below is an example of how to do your man pages and usage messages!
+
+    ----------------------------------------------------------------------------------------
+    |                                                                                      |
+    |   manPage.put("echo", echoManPages);                                                 |
+    |   usageMessages.put("echo", echoUsage);                                              |
+    |                                                                                      |
+    ----------------------------------------------------------------------------------------
+
+    echoUsage being something that looks like the following line:
+
+    usage: command ARGUMENT1 ARGUMENT2 [OPTIONAL_ARGUMENT]
+
+    and echoManPages looking something like the remainder of this comment (don't forget the
+    blank lines in between!):
+
+    Brief description about the command. Around two lines.
+
+    OPTIONS:
+
+    ARGUMENT1 - what this does
+    ARGUMENT2 - and this
+    OPTIONAL_ARGUMENT - and this!
+
+  */
+
+  public static String getDocumentation(String commandName) {
+    if (manPage.containsKey(commandName)) {
+      return manPage.get(commandName);
+    } else {
+      return "No man page found for \"" + commandName + "\" \n";
+    }
+  }
+
+  public static String getUsage(String commandName) {
+    if (usageMessages.containsKey(commandName))
+      return usageMessages.get(commandName);
+    else
+      return ("-jshell: " + commandName + ": command not found\n");
+  }
+
+}

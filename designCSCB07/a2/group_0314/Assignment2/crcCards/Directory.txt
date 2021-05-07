@@ -1,0 +1,8 @@
+Class name: Directory
+Super class: None
+Sub class: None
+Responsibilities:
+*Allow adding files and directories
+*Return list of contained files and directories
+Collaborators:
+File.class

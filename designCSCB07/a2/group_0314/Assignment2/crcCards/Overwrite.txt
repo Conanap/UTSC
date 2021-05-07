@@ -1,0 +1,9 @@
+Class name: Overwrite.class
+Super class: Redirect.class
+Sub class: Null
+Responsibilities:
+*Takes standard input and redirects it to a file
+*If file exists already, remove the file to overwrite it
+*If file does not exist already, create new file and write content
+Collaborators:
+Null

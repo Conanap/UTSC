@@ -1,0 +1,46 @@
+import org.junit.Test;
+
+import CatTest.MockFile;
+import CatTest.MockFileSystem;
+
+import static org.junit.Assert.assertEquals;
+
+public class RedirectTest {
+  private MockFileSystem fs = new MockFileSystem();
+
+  private curr = fs.getDir(".");
+  
+  @Test
+  public void testRedirectOverwriteFile() {
+	MockFile file = new MockFile();
+	file.setContent("gg boys we lost");
+	int status = Overwrite.overwrite("ehhh lmao", "file", fs, curr);
+	assertEquals(1, status);
+	assertEquals("ehhh lmao", curr.getFile(file).getContent());
+  }
+
+  @Test
+  public void testRedirectOverwriteDNEFile() {
+    int status = Overwrite.overwrite("ehhh lmao", "file", fs, curr);
+    assertEquals(1, status);
+    assertEquals("ehhh lmao", curr.getFile(file).getContent());
+  }
+
+  @Test
+  public void testRedirectAppendFile() {
+    MockFile file = new MockFile();
+    file.setContent("ehhh lmao");
+    int status = Append.append("cool", "file", fs, curr);
+    assertEquals(1, status);
+    assertEquals("ehhh lmaocool", curr.getFile(file).getContent());
+  }
+
+  @Test
+  public void testRedirectAppendDNEFile() {
+    int status = Append.append("ehhh lmao", "file", fs, curr);
+    assertEquals(1, status);
+    assertEquals("ehhh lmao", curr.getFile(file).getContent());
+  }
+
+
+}

@@ -1,0 +1,15 @@
+public class Cd {
+  /**
+   * Given an String of directory names representing a directory path, and a
+   * Directory object, find and return directory at path
+   *
+   * @param path    a String giving the location of target Directory
+   * @param currDir current directory
+   * @param fs  FileSystem used to handle file navigation
+   * @return Directory  directory located at path
+   */
+  public static Directory changeDir(String path, FileSystem fs,
+                                    Directory currDir) {
+    return fs.getDirectory(path, currDir);
+  }
+}

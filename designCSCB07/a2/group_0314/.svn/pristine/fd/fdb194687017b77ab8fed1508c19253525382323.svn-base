@@ -1,0 +1,83 @@
+package command;
+
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+import filesystem.FileNotFoundException;
+import filesystem.DirectoryNotFoundException;
+
+public class Copy extends Command{
+	private FileSystem fs;
+	private Directory curr;
+	private int status = 0;
+	private final String MAN_USAGE = "cp src dest";
+	private final String MAN_DESCRIPTION = "Copies the file or directory" +
+									"into the dest directory.";
+
+	public Copy(){}
+
+	public void execute(String[] tokens, CommandRunner cmd, Output output) {
+		String src = tokens[1], dest = tokens[2];
+		Directory srcDir, deDir;
+		File srcFle, tfle;
+		try {
+			srcDir = fs.getDirectory(src, curr);
+		} catch (DirectoryNotFoundException e) {
+			srcDir = null;
+		}
+		try {
+			srcFle = fs.getFile(src, curr);
+		} catch(FileNotFoundException e) {
+			srcFle = null;
+		}
+		if(srcDir == null && srcFle == null) {
+			// print error
+			output.sendErrBuffer(tokens[1] + ": No such file or directory\n");
+			this.status = 1;
+			return; // can't find source thing
+		}
+		try {
+			deDir = fs.getDirectory(dest, curr);
+		} catch(DirectoryNotFoundException e) {
+			output.sendErrBuffer(tokens[2] + ": No such directory\n");
+			this.status = 1;
+			return; // cant find dest folder
+		}
+		if (srcDir != null) {
+			// move to dir
+			deDir.addDir(srcDir, srcDir.getName());
+		} else {
+			//moving file
+			try {
+				tfle = fs.getFile(dest + "/" + srcFle.getName(), curr);
+			} catch(FileNotFoundException e) {
+				deDir.addFile(srcFle, srcFle.getName());
+				return;
+			}
+			output.sendErrBuffer(tokens[2] + ": File already exist\n");
+			this.status = 1; // file already exist
+		}
+	}
+
+	public void initialize(Directory curr, FileSystem fs, History his) {
+		this.fs = fs;
+		this.curr = curr;
+	}
+
+	public boolean validate(String[] tokens) {
+		return true;
+	}
+
+	public String getManual() {
+		return Man.formatUsage(MAN_USAGE);
+	}
+
+	public String getUsage() {
+		return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+	}
+
+	public int getStatus() {
+		return this.status;
+	}
+}

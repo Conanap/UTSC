@@ -1,0 +1,9 @@
+import java.util.Scanner;
+import java.io.InputStream;
+
+public class Input {
+  public static String getInput(InputStream input) {
+    Scanner scan = new Scanner(input);
+    return scan.nextLine();
+  }
+}

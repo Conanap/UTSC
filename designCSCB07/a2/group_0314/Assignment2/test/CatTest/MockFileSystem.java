@@ -1,0 +1,32 @@
+package CatTest;
+
+import filesystem.Directory;
+import filesystem.FileSystem;
+
+public class MockFileSystem extends FileSystem{
+	private boolean empty;
+	private MockFile[] mf;
+	private int mfCount = 0;
+
+	public MockFileSystem () {
+		mf = new MockFile[2];
+		empty = true;
+	}
+
+	public void getFile(String path) {
+		return;
+	}
+
+	public void addFile(MockFile file) {
+		mf[mfCount++] = file;
+	}
+
+	public MockFile getFile(String path, Directory dir) {
+		if(path.equals("poop"))
+			return mf[0];
+		else if (path.equals("rar"))
+			return mf[1];
+		else
+		    return mf[1];
+	}
+}

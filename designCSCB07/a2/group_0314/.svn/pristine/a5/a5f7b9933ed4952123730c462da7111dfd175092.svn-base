@@ -1,0 +1,136 @@
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class ManTest {
+  @Test
+  public void testExitUsage() {
+    String expectedValue = "usage: exit\n";
+    assertEquals(expectedValue, Man.getUsage("exit"));
+  }
+
+  @Test
+  public void testExitDocumentation() {
+    String expectedValue = "Exits JShell.\n\n$ exit\n";
+    assertEquals(expectedValue, Man.getDocumentation("exit"));
+  }
+
+  @Test
+  public void testEchoUsage() {
+    String expectedValue = "usage: echo FILE1 [> FILE | >> FILE]\n";
+    assertEquals(expectedValue, Man.getUsage("echo"));
+  }
+
+  @Test
+  public void testEchoDocumentation() {
+    String expectedValue = "Prints the provided string.\n> Write string" +
+            " into a file\n>> Appends string to a file\n\n$ echo FILE1" +
+            " [> FILE | >> FILE]\n";
+    assertEquals(expectedValue, Man.getDocumentation("echo"));
+  }
+
+  @Test
+  public void testCatUsage() {
+    String expectedValue = "usage: cat FILE1 [FILE2 ...]\n";
+    assertEquals(expectedValue, Man.getUsage("cat"));
+  }
+
+  @Test
+  public void testCatDocumentation() {
+    String expectedValue = "View the contents of provided files.\n\n$ cat" +
+            " FILE1 [FILE2 ...]\n";
+    assertEquals(expectedValue, Man.getDocumentation("cat"));
+  }
+
+  @Test
+  public void testManUsage() {
+    String expectedValue = "usage: man COMMAND\n";
+    assertEquals(expectedValue, Man.getUsage("man"));
+  }
+
+  @Test
+  public void testManDocumentation() {
+    String expectedValue = "Print documentation for a given command.\n\n" +
+            "$ man COMMAND\n";
+    assertEquals(expectedValue, Man.getDocumentation("man"));
+  }
+
+  @Test
+  public void testLsUsage() {
+    String expectedValue = "usage: ls [PATH ...]\n";
+    assertEquals(expectedValue, Man.getUsage("ls"));
+  }
+
+  @Test
+  public void testLsDocumentation() {
+    String expectedValue = "List the contents of the specified directories." +
+            "\n\n$ ls [PATH ...]\n";
+    assertEquals(expectedValue, Man.getDocumentation("ls"));
+  }
+
+  @Test
+  public void testPwdUsage() {
+    String expectedValue = "usage: pwd\n";
+    assertEquals(expectedValue, Man.getUsage("pwd"));
+  }
+
+  @Test
+  public void testPwdDocumentation() {
+    String expectedValue = "Print the current working directory.\n\n$ pwd\n";
+    assertEquals(expectedValue, Man.getDocumentation("pwd"));
+  }
+
+  @Test
+  public void testPopdUsage() {
+    String expectedValue = "usage: popd\n";
+    assertEquals(expectedValue, Man.getUsage("popd"));
+  }
+
+  @Test
+  public void testPopdDocumentation() {
+    String expectedValue = "Remove top directory from the directory stack" +
+            " and change current directory into it\n\n$ popd\n";
+    assertEquals(expectedValue, Man.getDocumentation("popd"));
+  }
+
+  @Test
+  public void testPushdUsage() {
+    String expectedValue = "usage: pushd DIR\n";
+    assertEquals(expectedValue, Man.getUsage("pushd"));
+  }
+
+  @Test
+  public void testPushdDocumentation() {
+    String expectedValue = "Save the current directory into the directory" +
+            " stack and change current directory to the provided directory" +
+            "\n\n$ pushd DIR\n";
+    assertEquals(expectedValue, Man.getDocumentation("pushd"));
+  }
+
+  @Test
+  public void testHistoryUsage() {
+    String expectedValue = "usage: history [NUMBER]\n";
+    assertEquals(expectedValue, Man.getUsage("history"));
+  }
+
+  @Test
+  public void testHistoryDocumentation() {
+    String expectedValue = "List recent commands. If provided a number," +
+            " limit the number of listed commands to that number.\n\n" +
+            "$ history [NUMBER]\n";
+    assertEquals(expectedValue, Man.getDocumentation("history"));
+  }
+
+  @Test
+  public void testMkdirUsage() {
+    String expectedValue = "usage: mkdir DIR ...\n";
+    assertEquals(expectedValue, Man.getUsage("mkdir"));
+  }
+
+  @Test
+  public void testMkdirDocumentation() {
+    String expectedValue = "Create directories for each provided name." +
+            "\n\n$ mkdir DIR ...\n";
+    assertEquals(expectedValue, Man.getDocumentation("mkdir"));
+  }
+}

@@ -1,0 +1,11 @@
+Class name: Cp.class
+Parent class: DirMgt.class
+Subclasses: Mv.class
+
+Responsibilities:
+*Copies file from old location to new location.
+*Both old location and new location may be relative to the current directory, or full paths.
+*File at old location is not removed.
+
+Collaborators
+*Mkdir.class

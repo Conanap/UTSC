@@ -1,0 +1,10 @@
+class name: DirMgt.java
+super: Object
+sub: Pwd.java, Ls.java, Cd.java, Mv.java, Get.java, Cp.java
+responsibilities:
+Manages the local directory within the JVM
+Creates new directory and files
+Handles change of directories for files
+Handles moving and copying of files
+Collaborators:
+ShellIO.java

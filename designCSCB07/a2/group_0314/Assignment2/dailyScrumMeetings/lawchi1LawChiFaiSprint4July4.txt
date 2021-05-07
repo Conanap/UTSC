@@ -1,0 +1,17 @@
+What did I do last time:
+	- Written Mv Class (Not fully complete, see blocked on)
+	- Fixed outputs from System.out.print to either stdin or stderr
+	- (Barely) Helped with getting redirect classes working
+
+What do I plan to do now?
+	- Continue to update class outputs to stdin or stderr
+	- Assist in any other things that other group members may need help with
+	- Start doing CRC cards, as no one was assigned to do them but we will need them for both concept and final product.
+
+Am I blocked on anything?
+	- Mv class implementation requires rm to be properly implemented, which is not as of this date.
+
+Law Chi Fai
+lawchi1
+1002470444
+July 4th, 2016

@@ -1,0 +1,7 @@
+Class name: Pwd.class
+Super class: DirMgt.class
+Sub class: Null
+Responsibilities:
+*Prints current working directory in standard output
+Collaborators:
+Echo.class

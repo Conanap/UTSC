@@ -1,0 +1,195 @@
+/**
+* Runs the command and updates related files
+*
+* @author Albion Ka Hei Fung
+*/
+public class RunCmd {
+  private static Directory curr;
+  //private static Directory current = curr;
+
+  /**
+   * The method runs the command when given tokens, where the zeroth token is a
+   * string representing the command you want to run, and the tokens after are
+   * its arguments
+   *
+   * @param tokens  The tokens for the command
+   * @param current The current directory in which the instance is running
+   * @param fs      The file system in which the current isntance is running on
+   */
+  public static void String runCmd(String[] tokens, Directory current,
+                              FileSystem fs) {
+    // initialize var
+    String out = "";
+    int status = 1;
+    Directory temp; // a temp dir for comparing
+    // validate command
+    if (!Validator.validateTokens(tokens))
+      // output usage message if invalid
+      return tokens.length > 0 ? Man.getUsage(tokens[0]) : "";
+      // running the command
+    else {
+      switch (tokens[0]) {
+        // echo
+        case "echo":
+          // just echo no redirect
+          if (tokens.length == 2)
+            out = Echo.echo(tokens[1]);
+            // redirects
+          else if (tokens.length == 4) {
+            // overwrite a file
+            if (tokens[2].equals(">"))
+              status = Overwrite.overwrite(tokens, tokens[3], fs,
+                      current);
+            else // appending to a file
+              status = Append.append(tokens, tokens[3], fs,
+                      current);
+          }
+          // check return status
+          // 0 means if the path before file name does not exist
+          if (status == 0) {
+            temps = "Path not found: " + Tokenizer.parseFilePath(tokens[3])[0] +
+                    "\n";
+            Output.sendErrBuffer(temps);
+          }
+            // 2 means the file name is . or ..
+          else if (status == 2) {
+            temps = "Illegal file name: " +
+                    Tokenizer.parseFilePath(tokens[3])[1] + "\n";
+            Output.sendErrBuffer(temps);
+          }
+          break; // 1 is success
+        // mkdir
+        case "mkdir":
+          int i = 1; // loop var
+          // if more tokens and cmd did not fail
+          while (i < tokens.length && status == 1) {
+            // run command on next token
+            status = MkDir.mkdir(tokens[i], fs, current);
+            i++; //increment
+          }
+          // check exit status
+          // 0 means the dirs before last dir does not exist
+          if (status == 0) {
+            temps = "Path not found: " +
+                    Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[0] +
+                    "\n";
+            Output.sendErrBuffer(temps);
+          }
+            // 2 means the file name is . or ..
+          else if (status == 2) {
+            temps = "Illegal file name: " +
+                    Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                    "\n";
+            Output.sendErrBuffer(temps);
+          }
+            // 3 means they're trying to create a dir that already exist
+          else if (status == 3) {
+            temps = "Directory already exist: " +
+                    Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                    "\n";
+            Output.sendErrBuffer(temps);
+          }
+            // 4 means they're trying to create a dir but a file has same name
+          else if (status == 4) {
+            temps = "File already exist: " +
+                    Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                    "\n";
+            Output.sendErrBuffer(temps);
+          }
+          break; // 1 means success
+        // cd
+        case "cd":
+          // try to cd
+          temp = Cd.changeDir(tokens[1], fs, current);
+          // cd returns null if the dir doesn't exist
+          if (temp != null)
+            curr = temp;
+          else {// if can't find directory
+            temps = "Cannot find directory: " + tokens[1] + "\n";
+            Output.sendErrBuffer(temps);
+          }
+          break;
+        // ls
+        case "ls":
+          // see where you want us to ls
+          // if cmd is just ls, we just just current
+          if (tokens.length == 1)
+            out = Ls.listContents(current);
+          for (i = 1; i < tokens.length; i++)
+            out = Ls.listContents(tokens[i], fs, current);
+          break;
+        // cat
+        case "cat":
+          out = Cat.cat(tokens, fs, current);
+          break;
+        // pushd
+        case "pushd":
+          //pushing
+          temp = Pushd.pushd(tokens[1], fs, current);
+          if (temp == null) {// if dir DNE
+            temps = "Cannot find directory. Did not push current dir\n";
+            Output.sendErrBuffer(temps);
+          }
+          else // if dir exist, changing current dir
+            curr = temp;
+          break;
+        // popd
+        case "popd":
+          // poping
+          temp = Popd.popd(fs, current);
+          if (temp == null) {// if no more to pop / cant cd
+            temps = "Either pushed directory no longer exist or no more" +
+                    " directories to pop\n";
+            Output.sendErrBuffer(temps);
+          }
+          else
+            curr = temp; // cd
+          break;
+        // history
+        case "history":
+          // specified how many commands
+          if (tokens.length > 1) {
+            out = History.getHistory(Integer.parseInt(tokens[1]));
+          } else { // all history
+            out = History.getHistory();
+          }
+          break;
+        // man
+        case "man":
+          out = Man.getDocumentation(tokens[1]);
+          break;
+        // pwd
+        case "pwd":
+          out = Pwd.printWorkingDirectory(current);
+          break;
+        // cannot find command
+        default:
+          // if user just presses entre, then we don't need to print
+          if (tokens.length > 0) {
+            temps = "-jshell: " + tokens[0] + ": command not found\n";
+            Output.sendErrBuffer(temps);
+          }
+          break;
+      }
+    }
+    //return output string
+    Out.sendOutBuffer(out);
+  }
+
+  /**
+   * Use this method after running cd to update your instance's current
+   * directory.
+   */
+  public static Directory getCurrDir() {
+    return curr;
+  }
+
+  /**
+   * Initialization when your instance first starts running
+   *
+   * @param dir Pass your instance's current directory, usually root
+   */
+  public static void init(Directory dir) {
+    curr = dir;
+  }
+}

@@ -1,0 +1,105 @@
+==== A2 phase I marking ====
+
+Group number: 0314
+UTORID usernames of members: chenbrod, fungalbi, lawchi1, moha1075
+TA: Akshay Nair <akshay.nair@mail.utoronto.ca>
+
+Total deductions: 12 (Grade: F)
+Instructor bonus: +2
+Final deductions: 10 (Grade: D)
+
+============================
+
+Your team's Phase II grade is based on this scale:
+
+    http://www.artsandscience.utoronto.ca/ofr/calendar/rules.htm#grading
+
+The way we graded is as follows: your team starts with an A+. When errors and
+problems are found, you will lose 0, 1, 2, or 3 letter steps, depending on the
+severity. As an example, if you lost two steps, your team would earn an A-:
+
+     A+ -> A
+     A -> A-
+
+==== Product and Sprint backlogs ==== [up to -6]
+
+Mark: 0
+
+Mark deductions: None
+
+Other comments:
+- Put the full PB item in the SB, not just a short form.
+
+==== Java Style ==== [up to -6]
+
+Mark: -1.5
+
+Mark deductions:
+- Please split up classes into packages. (-0.5)
+- Inconsistent spacing in the test files. (-0.5)
+- Non-semantic class names. (e.g. "RunCmd" instead of "RunCommand") (-0.5)
+
+Other comments:
+- Choice of method names are questionable sometimes. (e.g. Append.append, MkDir.mkdir being the only methods in their respective class)
+
+==== Design ==== [up to -6]
+
+Mark: -3
+
+Mark deductions:
+- Too hard to add new commands. One needs to add it to Man, to Validator and to RunCmd. You should've split some of this code into the relevant command classes. (-1)
+
+- RunCmd.runCmd is far too long because of this. You need to use another redirection method such as hash tables. (-1)
+
+- Everything is static. This makes your design not extensible. You have a lot of classes, but they are all static, which does not make use of object oriented design at all.  (e.g. what is the point of extending Redirect when Redirect only has static methods?) (-1)
+
+Other comments:
+- Use inheritance for your commands. This will make it much easier to redirect to your commands.
+
+==== Javadoc ==== [up to -3]
+
+Mark: -2.5
+
+Mark deductions:
+- Missing Javadoc for instance variables (-1)
+- Missing Javadoc for some methods, as well as test cases (-1)
+- Missing tags @return and @param occasionally (-0.5)
+
+==== Testing ==== [up to -6] 
+
+Mark: -3.75
+
+Mark deductions:
+- Test code does not compile on the lab machines. There are a slew of errors and the fix is not simple. (-3)
+- From the code, the test cases aren't thorough enough. (-0.75)
+
+==== Correctness ==== [up to -6]
+
+Mark: -1.25
+
+Failed test cases (5 * -0.25 = -1.25):
+1) Popping empty stack
+    >popd
+    Expected: It shouldn’t crash the program. A message as the directory stack is empty is preferable.
+    Actual: Crashes.
+
+2) Making a directory with invalid name
+    >mkdir “Hello” Hello$
+    >ls
+    Expected: “Hello”, Hello$ should not be created since they use special characters.
+    Actual: Creates them.
+
+3) Echoing without quotes
+    >echo Hello World “
+    Expected: It shouldn’t echo Hello World, since it is not enclosed in double quotes (as stated in the handout).
+    Actual: Outputs it.
+
+4) Listing multiple files
+    >ls file.txt . newFolder 
+    Expected: It should print file.txt, the current directory contents and the contents of newFolder.
+    Actual: Only prints out contents of newFolder.
+
+5) Invalid truncating of history
+    >history -1
+    Expected: It shouldn’t crash the program, and having an error message would be preferable.
+    Actual: Crashes. Infinite loop.

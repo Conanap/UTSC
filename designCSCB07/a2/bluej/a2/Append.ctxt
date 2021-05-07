@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=input\ filein\ fs
+comment0.target=void\ append(java.lang.String,\ java.lang.String,\ FileSystem)
+numComments=1

@@ -1,0 +1,9 @@
+x=0
+for file in `ls ./ | grep q.*`
+do
+while read num
+do
+	x=`expr $x + $num`
+done <$file
+done
+echo $x

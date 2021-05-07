@@ -1,0 +1,19 @@
+What did I do last time:
+	- Wrote Overwrite.class
+	- Wrote Append.class
+	- Created base of Redirect.class
+	- Helped modify Directory.class to put files and directories rather than new ones(A Violation).
+	- Documented commands with JDoc.
+
+What do I plan to do now?
+	- Complete Redirect.class with respect to Directory system.
+	- Ensure Jdoc documentation standard is agreed upon, and that mine matches said standard.
+
+Am I blocked on anything?
+	- Until I communicate with group and completely understand how the Directory system works, Redirect.class cannot be completed.
+	- Finishing JDoc command is 'impossible' until a standard is agreed upon by everyone.
+
+Law Chi Fai
+lawchi1
+1002470444
+June 17, 2016

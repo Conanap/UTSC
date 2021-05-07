@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=input
+comment0.target=File(java.lang.String)
+comment1.params=
+comment1.target=File()
+comment2.params=input
+comment2.target=void\ setContent(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getContent()
+comment4.params=input
+comment4.target=void\ appendToContent(java.lang.String)
+numComments=5

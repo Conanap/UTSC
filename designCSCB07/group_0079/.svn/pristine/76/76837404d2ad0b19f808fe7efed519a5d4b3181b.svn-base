@@ -1,0 +1,46 @@
+package Test;
+
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import JavaIO.ConsoleOut;
+
+public class ConsoleOutTest {
+
+  private ConsoleOut co;
+  private ByteArrayOutputStream oc;
+  
+  @Before
+  public void setup() {
+    co = new ConsoleOut();
+    oc = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(oc));
+  }
+  
+  @Test
+  public void testSendEOF() {
+    co.sendEOF();
+    assertEquals("", oc.toString());
+  }
+
+  @Test
+  public void testSendOutput() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendError() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendCoauthor() {
+    fail("Not yet implemented");
+  }
+
+}

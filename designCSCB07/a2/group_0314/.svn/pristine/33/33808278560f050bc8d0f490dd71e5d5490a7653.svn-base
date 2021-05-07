@@ -1,0 +1,116 @@
+// **********************************************************
+// Assignment2:
+// Student1:
+// UTORID user_name: fungalbi
+// UT Student #: 1002444321
+// Author: Albion Ka Hei Fung
+//
+// Student2:
+// UTORID user_name:
+// UT Student #:
+// Author: Brody Chen
+//
+// Student3:
+// UTORID user_name:
+// UT Student #:
+// Author: Chi Fai Law
+//
+// Student4:
+// UTORID user_name:
+// UT Student #:
+// Author: Rizadh Nizam
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// I have also read the plagiarism section in the course info
+// sheet of CSC B07 and understand the consequences.
+// *********************************************************
+
+
+import java.util.Scanner;
+
+public class JShell {
+    private static String input, output;
+    private static boolean exit = false;
+
+    public static void main(String[] args) {
+        // uncomment when ready
+        // FileSystem file_sys = new FileSystem();
+        Scanner scan = new Scanner(System.in);
+
+        while (!exit) {
+            System.out.print("JVM: ~Root$ ");
+            input = scan.nextLine();
+            output = parseCmd(input);
+            if(output.length() > 0)
+                System.out.println(output);
+        }
+        // reset for next run
+        //exit = false;
+    }
+
+    private static void Exit() {
+        exit = true;
+    }
+
+    private static String parseCmd(String cmd) {
+        // parse command
+        String[] tokens;
+        String out = "";
+        tokens = cmd.split(" ");
+        switch (tokens[0]) {
+
+            case "exit":
+                Exit();
+                break;
+
+            case "echo":
+                // do echo
+                break;
+
+            case "mkdir":
+                for (int i = 1; i < token.length; i++) {
+                    // Sample code to each directory requested
+                    // MkDir mkDir = new Mkdir(tokens[i]);
+                }
+                break;
+
+            case "cp":
+                // do cp
+                break;
+
+            case "ls":
+                // do ls
+                break;
+
+            case "cat":
+                // do cat
+                break;
+
+            case "rm":
+                // do rm
+                break;
+
+            case "mv":
+                // do mv
+                break;
+
+            case "pushd":
+                // do pushd
+                break;
+
+            case "popd":
+                // do popd
+                break;
+
+            default:
+                // unrecognized command
+                out = "-JShell: " + tokens[0] + ": command not foud";
+                break;
+        }
+
+        return (out);
+    }
+}

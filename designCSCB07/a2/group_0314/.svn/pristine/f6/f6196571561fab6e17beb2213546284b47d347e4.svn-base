@@ -1,0 +1,35 @@
+package command;
+
+import filesystem.*;
+import driver.Output;
+import driver.CommandRunner;
+
+/**
+* Outputs the argument
+*
+* @author Albion Ka Hei Fung
+*/
+public class Echo extends Command {
+  private final String MAN_USAGE = "Echo \"STRING\"";
+  private final String MAN_DESCRIPTION = "Prints the provided string.";
+  public Echo() {}
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+  }
+
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    output.sendOutBuffer(tokens[1] + "\n");
+  }
+
+  public boolean validate(String[] tokens) {
+  	return true;
+  }
+
+  public String getManual() {
+  	return Man.formatUsage(MAN_USAGE);
+  }
+
+  public String getUsage() {
+    return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+  }
+}

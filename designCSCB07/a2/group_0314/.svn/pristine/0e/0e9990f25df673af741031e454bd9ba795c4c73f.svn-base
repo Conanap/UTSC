@@ -1,0 +1,39 @@
+import java.util.Iterator;
+
+public class Ls {
+  
+  /**
+   * Given a Directory return list of content in directory
+   * @param Directory currDir
+   * @return String outStr
+   */
+  public static String listContents (Directory currDir) {
+    String outStr = "";
+    // get directories
+    Iterator dirIt = currDir.listDirectories().iterator();
+    while (dirIt.hasNext()) {
+      outStr = outStr + (String) dirIt.next() + "\n";
+    }
+    // get files
+    Iterator  fileIt = currDir.listFiles().iterator();
+    while (fileIt.hasNext()) {
+       outStr = outStr + (String) fileIt.next() + "\n";
+    }
+    return outStr;
+  }
+  
+  /**
+   * Given current Directory and a path.
+   * return list of content in directory at path
+   * 
+   * @param String path
+   * @param Directory currDir
+   * @return String outStr
+   */
+  public static String listContents (String path, Directory currDir) {
+    currDir = Cd.changeDir(path, currDir);
+    String outStr = listContents(currDir);
+    
+    return outStr;
+  }
+}

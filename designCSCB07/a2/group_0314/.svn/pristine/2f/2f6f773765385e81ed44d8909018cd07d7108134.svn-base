@@ -1,0 +1,11 @@
+Legend:
+| means things that can be done simultaneously but do not fall under the same category
+
+order (logically, dynamic):
+1. CRC cards
+2. Jshell
+3. directory mgt | echo | exit, history, man (man is simultaneous with all)
+4. mkdir
+5. cp, rm | ls, >, >>, pwd, cat
+6. mv
+7. push, pop

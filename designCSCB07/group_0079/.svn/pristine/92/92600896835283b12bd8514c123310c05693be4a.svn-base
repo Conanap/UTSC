@@ -1,0 +1,143 @@
+// **********************************************************
+// Assignment3:
+// UTORID user_name: fungalbi
+//
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// *********************************************************
+package Test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+
+import driver.ContextParser;
+
+public class ContextParserTest {
+  private ContextParser cp;
+  private String html;
+
+  @Before
+  public void setup() {
+    cp = new ContextParser();
+  }
+
+  @Test
+  public void testGetAuthor() {
+    html = "cit-user-info <span id=\"cit-name-display\".*?>"
+        + "Mac and Cheese</span></html>";
+    cp.setHTML(html);
+    assertEquals("Mac and Cheese", cp.getAuthor());
+    cp.setHTML("");
+    assertEquals("Author name not found", cp.getAuthor());
+  }
+
+  @Test
+  public void testGetNumberCitations() {
+    html = "Citation indices<td class=\"rar\">123</td>"
+        + "Mac and Cheese</span></html>";
+    cp.setHTML(html);
+    assertEquals("123", cp.getNumberCitations());
+    cp.setHTML("");
+    assertEquals("Number of citations not found", cp.getNumberCitations());
+  }
+
+  @Test
+  public void testGetNumberi10Index() {
+    html = "<td class=\"rar\">123</td><td class=\"rar\">123</td>"
+        + "<td class=\"rar\">123</td><td class=\"rar\">123</td>"
+        + "<td class=\"rar\">432</td><td class=\"rar\">321</td></html>";
+    cp.setHTML(html);
+    assertEquals("321", cp.getNumberi10Index());
+    cp.setHTML("");
+    assertEquals("i10 not found", cp.getNumberi10Index());
+  }
+
+  @Test
+  public void testGetFirstThreePublication() {
+    html = "<table class=\"cit-table\">" + "<tr class=\"cit-table item\">"
+        + "<td id=\"col-title\"><a href=\"#\">Hi</a>"
+        + "<tr class=\"cit-table item\">"
+        + "<td id=\"col-title\"><a href=\"#\">Bye</a>"
+        + "<tr class=\"cit-table item\">"
+        + "<td id=\"col-title\"><a href=\"#\">U wot m8</a>" + "</table>";
+    cp.setHTML(html);
+    assertEquals("Hi\nBye\nU wot m8\n", cp.getFirstThreePublication());
+    html = "<table class=\"cit-table\">" + "<tr class=\"cit-table item\">"
+        + "<td id=\"col-title\"><a href=\"#\">Hi</a>"
+        + "<tr class=\"cit-table item\">"
+        + "<td id=\"col-title\"><a href=\"#\">Bye</a>" + "</table>";
+    cp.setHTML(html);
+    assertEquals("Hi\nBye\n", cp.getFirstThreePublication());
+    cp.setHTML("");
+    assertEquals("", cp.getFirstThreePublication());
+  }
+
+  @Test
+  public void testGetNumPublicationFirstFive() {
+    html = "<table class=\"cit-table\">" + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "</table>";
+    cp.setHTML(html);
+    assertEquals("10", cp.getNumPublicationFirstFive());
+    html = "<table class=\"cit-table\">" + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>" + "</table>";
+    cp.setHTML(html);
+    assertEquals("50", cp.getNumPublicationFirstFive());
+    html = "<table class=\"cit-table\">" + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>"
+        + "<td id=\"col-citedby\"><a.*?>10</a>" + "</table>";
+    cp.setHTML(html);
+    assertEquals("50", cp.getNumPublicationFirstFive());
+    cp.setHTML("");
+    assertEquals("0", cp.getNumPublicationFirstFive());
+  }
+
+  @Test
+  public void testGetNumCoauthor() {
+    html = "Co-authors" + "<a class=\"cit-dark-link\" >Hihi</a>"
+        + "<a class=\"cit-dark-link\" >Byebye</a>" + "View all co-authors";
+    cp.setHTML(html);
+    assertEquals("2", cp.getNumCoauthor());
+    cp.setHTML("");
+    assertEquals("0", cp.getNumCoauthor());
+  }
+
+  @Test
+  public void testExtractSection() {
+    html = "<html><header>What you up to?</header>"
+        + "<body><div class=\"u wot m8\">you what mate?</div><div class=\"derp"
+        + "\">You are a derp</div></body></html>";
+    cp.setHTML(html);
+    assertEquals("<div class=\"u wot m8\">you what mate?</div>",
+        cp.extractSection("<div.*?>(.*?)</div>"));
+  }
+
+  @Test
+  public void testGetCoauthors() {
+    html = "Co-authors" + "<a class=\"cit-dark-link\" >Hihi</a>"
+        + "<a class=\"cit-dark-link\" >Byebye</a>" + "View all co-authors";
+    ArrayList<String> coauth = new ArrayList<String>();
+    cp.setHTML("");
+    cp.getNumCoauthor();
+    assertEquals(coauth, cp.getCoauthors());
+    coauth.add("Hihi");
+    coauth.add("Byebye");
+    cp.setHTML(html);
+    cp.getNumCoauthor();
+    assertEquals(coauth, cp.getCoauthors());
+  }
+
+}

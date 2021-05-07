@@ -1,0 +1,15 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class Echo {
+	//str = Echo.echo(str);
+	public void testEcho() {
+		String out = Echo.echo(["echo", "hello world"]);
+		assertEquals("hello world", out);
+	}
+
+	public void testEchoWithRedirect() {
+		String out = Echo.echo(["echo", "hello world", ">", "b"]);
+		assertEquals("hello world", out);
+	}
+}

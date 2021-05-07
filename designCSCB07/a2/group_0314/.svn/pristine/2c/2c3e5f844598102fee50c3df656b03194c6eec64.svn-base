@@ -1,0 +1,9 @@
+Class name: Jshell.class
+Super: Object.class
+Subclasses: Null
+Responsibilities:
+*Provides user with standard output
+*Provides user with standard error
+*Closes the shell when the user desires with the command exit
+Collaborators:
+RunCmd.class, History.class, FileSystem.class, Directory.class, Input.class, Tokenizer.class 

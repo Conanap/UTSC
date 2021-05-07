@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+    
+  pks:
+    image: thierrysans/pycryptodome
+    container_name: pks
+    volumes:
+        - ./pks:/shared
+    entrypoint:
+        - python3
+        - /shared/pks.py
+    networks:
+      channel:
+        ipv4_address: 10.0.0.2
+        
+  alice:
+    image: thierrysans/pycryptodome
+    container_name: alice
+    volumes:
+        - ./alice:/shared
+    entrypoint:
+        - python3
+        - /shared/alice.py
+    networks:
+      channel:
+        ipv4_address: 10.0.0.3
+        
+  bob:
+    image: thierrysans/pycryptodome
+    container_name: bob
+    volumes:
+        - ./bob:/shared
+    entrypoint:
+        - python3
+        - /shared/bob.py
+    networks:
+      channel:
+        ipv4_address: 10.0.0.4
+
+  mallory:
+    image: thierrysans/pycryptodome
+    container_name: mallory
+    volumes:
+        - ./mallory:/shared
+    entrypoint:
+        - python3
+        - /shared/mallory.py
+    networks:
+      channel:
+        ipv4_address: 10.0.0.5
+
+networks:
+  channel:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/28

@@ -1,0 +1,164 @@
+package command;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+
+import filesystem.FileSystem;
+import filesystem.Directory;
+import filesystem.File;
+import driver.Output;
+import filesystem.DirStack;
+import filesystem.DirectoryNotFoundException;
+import filesystem.FileNotFoundException;
+
+public class CopyTest {
+	public class MockFileSystem extends FileSystem {
+		private MockDirectory root = new MockDirectory("root");
+		private MockDirectory d1 = new MockDirectory("d1");
+		private MockDirectory d2 = new MockDirectory("d2");
+		private MockFile c;
+		private MockFile b;
+
+		public MockFileSystem() {
+			c = new MockFile("c");
+			b = new MockFile("b");
+		}
+
+		public MockDirectory getDirectory(String path, MockDirectory curr) throws DirectoryNotFoundException {
+			if(path.equals("d1"))
+				return d1;
+			else if(path.equals("d2"))
+				return d2;
+			else if(path.equals(".") || path.equals("/"))
+				return root;
+			else
+				throw new DirectoryNotFoundException();
+		}
+
+		public MockFile getFile(String path, MockDirectory curr) throws FileNotFoundException {
+			if(path.equals("c") || path.equals("d1/c"))
+				return c;
+			else if (path.equals("b") || path.equals("d2/b"))
+				return b;
+			else
+				throw new FileNotFoundException();
+		}
+
+		public MockDirectory getRoot() {
+			return root;
+		}
+	}
+
+	public class MockDirectory extends Directory{
+		private String name;
+		private MockFile a;
+		private MockFile c;
+		private MockDirectory d2;
+		public MockDirectory(String name) {
+			this.name = name;
+		}
+
+		public void addDir(MockDirectory dir, String path) {
+			d2 = dir;
+		}
+
+		public MockDirectory getDir() {
+			return d2;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void addFile(MockFile fle, String path) {
+			if(path.equals("a"))
+				a = fle;
+			else if(path.equals("c"))
+				c = fle;
+		}
+
+		public MockFile getA() {
+			return this.a;
+		}
+
+		public MockFile getC() {
+			return this.c;
+		}
+	}
+
+	public class MockFile extends File{
+		private String name;
+		public MockFile(String name) {
+			this.name = name;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+	}
+
+	public class MockOutput extends Output{
+		private String err;
+		public MockOutput() {
+			err = "";
+		}
+
+		public void sendErrBuffer(String err) {
+			this.err = err;
+		}
+
+		public String getErrBuffer() {
+			return this.err;
+		}
+
+		public void fflush() {
+			this.err = "";
+		}
+	}
+
+	private MockFileSystem fs = new MockFileSystem();
+	private MockDirectory curr = fs.getRoot();
+	private Copy cp = new Copy();
+	private MockOutput out = new MockOutput();
+
+	@Before
+	public void setUp() {
+		fs = new MockFileSystem();
+		cp.initialize(curr, fs, null);
+		out.fflush();
+	}
+
+	@Test
+	public void testCopyDNEToDNE (){
+		String[] in = {"cp", "g", "k"};
+		cp.execute(in, null, out);
+		assertEquals("g: No such file or directory\n", out.getErrBuffer());
+	}
+
+	@Test
+	public void testCopyFileToDir() {
+		String[] in = {"cp", "c", "d1"};
+		cp.execute(in, null, out);
+		assertEquals("", out.getErrBuffer());
+		try {
+		assertEquals(fs.getFile("c", curr), fs.getDirectory("d1", curr).getC());
+		} catch(Exception e) {/*this won't happen*/}
+	}
+
+	@Test
+	public void testCopyFileToFile() {
+		String[] in = {"cp", "c", "b"};
+		cp.execute(in, null, out);
+		assertEquals("b: File already exist\n", out.getErrBuffer());
+	}
+
+	@Test
+	public void TestCopyDirToDir() {
+		String[] in = {"cp", "d1", "d2"};
+		cp.execute(in, null, out);
+		try {
+		assertEquals(fs.getDirectory("d1", curr), fs.getDirectory("d2", curr).getDir());
+		} catch (Exception e) {/*Won't happen, gdi java*/}
+	}
+}

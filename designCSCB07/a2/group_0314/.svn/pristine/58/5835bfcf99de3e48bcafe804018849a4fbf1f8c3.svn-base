@@ -1,0 +1,20 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class PopdTest {
+	private MockFileSystem fs = new MockFileSystem();
+	private MockDirectory dir = new MockDirectory();
+
+	@Test
+	public void testPopEmpty() {
+		assertEquals(null, Popd.popd(fs, dir));
+	}
+
+	@Test
+	public void testPop() {
+		fs.push("h");
+		MockDirectory h = new MockDirectory();
+		dir.addDir(h, "h");
+		assertEquals(h, Popd.popd(fs, dir));
+	}
+}

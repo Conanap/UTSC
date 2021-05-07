@@ -1,0 +1,57 @@
+/**
+* Pops a directory and cds to the directory of a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class PopDirectory implements Command {
+  private Directory curr;
+  private FileSystem fs;
+  public PopDirectory() {}
+
+  /**
+   * Pops the last pushed dir and cd to it
+   *
+   * @param fs   The file system the instance is running on
+   * @param curr The current directory
+   */
+  private Directory executePath(FileSystem fs, Directory curr) {
+    String path = fs.pop(); // popping
+    path = path.substring(0, path.length() - 1);
+    Directory temp;
+    // if no more to pop, return null, otherwise return directory
+    if (path == null)
+      temp = null;
+    else
+      temp = Cd.changeDir(path, fs, curr);
+    return temp;
+  }
+
+  public void execute(String[]tokens, CommandRunner cmd, Output output) {
+    Directory dir = this.executePath(this.fs, this.curr);
+    if(dir != null)
+      cmd.setCurrDir(dir);
+    else {
+      errs += "Either pushed directory no longer exist or no more" +
+              " directories to pop\n";
+      output.sendErrBuffer(errs);
+    }
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.fs = fs;
+    this.curr = curr;
+  }
+
+  public String getManual() {
+    return this.getusage() + "\n" +  "Remove top directory from the directory stack " +
+            "and change current directory into it";
+  }
+
+  public boolean validate(String[] tokens) {
+    return true;
+  }
+
+  public String getUsage() {
+    return "popd";
+  }
+}

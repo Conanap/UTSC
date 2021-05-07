@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Bicycle()
+comment1.params=minG\ maxG
+comment1.target=Bicycle(int,\ int)
+comment2.params=gear
+comment2.target=void\ setGear(int)
+comment3.params=
+comment3.target=int\ getGear()
+comment4.params=speed
+comment4.target=void\ setSpeed(long)
+comment5.params=
+comment5.target=long\ getSpeed()
+comment6.params=
+comment6.target=void\ printDescription()
+comment7.params=
+comment7.target=void\ hitTheBreaks()
+numComments=8

@@ -1,0 +1,44 @@
+package command;
+
+import driver.Tokenizer;
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+/**
+ * This represents a file related command that appends a file with stdin. The
+ * content of the stdin is either stored within an existing file or, if the
+ * filename does not exist, a new file with said filename.
+ *
+ */
+
+public class Append extends Redirect{
+  private String content;
+  private String filename;
+  private Directory curr;
+  private FileSystem fs;
+  private History history;
+  private Redirect redirect;
+  
+  public Append() {
+    this.setType("ap");
+  }
+  
+  public void execute(String[] tokens, CommandRunner cmd, Output output){
+  }
+  
+  public void initialize(Directory curr, FileSystem fs, History his){
+  }
+  
+  public boolean validate(String[] tokens){
+    return true;
+  }
+  
+  public String getUsage(){
+    return "";
+  }
+  
+  public String getManual(){
+    return "";
+  }
+}

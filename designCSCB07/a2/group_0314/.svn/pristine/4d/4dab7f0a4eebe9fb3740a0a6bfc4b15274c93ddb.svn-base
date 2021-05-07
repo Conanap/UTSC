@@ -1,0 +1,24 @@
+//Spring 5 backlog
+July 9 to July 15
+User stories:
+a) ... download files from a URL and putting in cwd
+
+Specific tasks:
+a-1. Curl class
+b-1. Unit test
+c-1. test and fix
+
+
+Delegation:
+
+Usr: Albion Ka Hei Fung
+Tasks: b-1, c-1
+
+Usr: Rizadh Nizam
+Tasks: b-1, c-1
+
+Usr: Brody Chen
+Tasks: b-1, c-1
+
+Usr: Chi Fai Law
+Tasks: a-1, b-1, c-1

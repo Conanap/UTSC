@@ -1,0 +1,85 @@
+package command;
+
+import java.util.HashMap;
+import java.util.Map;
+import filesystem.*;
+import driver.CommandRunner;
+
+/**
+ * @author brody
+ *
+ */
+/**
+ * @author brody
+ *
+ */
+public class History {
+  
+  /**
+   * Keeps track of total number of commands that have been executed
+   */
+  int cmdCount; 
+  /**
+   * HashMap mapping command to the index of when they were executed
+   */
+  Map<Integer, String> cmds;
+  
+  /**
+   * Construct a History object
+   */
+  public History() {
+    cmdCount = 1;
+    cmds = new HashMap<Integer, String>();
+  }
+
+  /**
+   * Stores input be retrieved later
+   * @param input command being stored
+   */
+  public void addCmd(String input) {
+    cmds.put(cmdCount++, input);
+  }
+
+  /**
+   * @return String all commands that have been executed
+   */
+  public String getHistory() {
+    return getHistory(cmdCount, 1);
+  }
+  
+  
+  /**
+   * @return String last end commands that have been executed
+   */
+  public String getHistory(int end) {
+    return getHistory(cmdCount, cmdCount - end);
+  }
+  
+  /**
+   * @param numberOfCmds number of commands being retrieved
+   * @return String numberOfCmds commands that have been executed
+   */
+  public String getHistory(int start, int end) {
+    if (end < 0) {
+      Output.sendErrBuffer("Negative index error: " + end);
+      return "";
+    } else {
+      String outStr = "";
+      // base case, first command or numberOfCmds'th command
+      if (start == end) {
+        outStr = outStr + start + ". " + cmds.get(start) + "\n";
+      // recursively get numberOfCmds commands
+      } else {
+        String prevLine = getHistory(start - 1, end);
+        String currLine = cmds.get(start);
+        if (currLine == null) {
+          outStr = outStr + prevLine;
+        } else {
+          outStr = outStr + prevLine + start + ". " +
+                  cmds.get(start) + "\n";
+        }
+      }
+    return outStr;
+    }
+  }
+}

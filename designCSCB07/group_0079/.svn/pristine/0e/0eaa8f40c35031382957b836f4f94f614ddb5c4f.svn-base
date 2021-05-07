@@ -1,0 +1,194 @@
+// **********************************************************
+// Assignment3:
+// UTORID user_name: fungalbi
+//
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// *********************************************************
+package driver;
+
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * Parses raw html strings for desired information. Specifically author name,
+ * number of citations, number of i10 since 2009, first 3 publications total
+ * number of citations for the first 5 publications, number of coauthors for
+ * each article, and a list of all the coauthors for all articles.
+ * 
+ * @author Albion Ka Hei Fung
+ *
+ */
+public class ContextParser {
+  private ArrayList<String> coauthors;
+  private String html;
+
+  // default patterns
+  private String citPattern = "<td .*?>([0-9]+?)</td>";
+  private String authorPat = "<span id=\"cit-name-display\".*?>(.*?)</span>";
+  private String citDetailPat = "<table class=\"cit-table\">.*?</table>";
+  private String tdPat = "<tr class=\"cit-table item\">"
+      + "<td id=\"col-title\"><a href=.*?>(.*?)</a>";
+  private String tdNumPat = "<td id=\"col-citedby\"><a.*?>([0-9]+?)</a>";
+  private String coauthPat = "<a class=\"cit-dark-link\".*?>(.*?)</a>";
+
+  /**
+   * Constructor for a context parser
+   */
+  public ContextParser() {
+    this.coauthors = new ArrayList<String>();
+  }
+
+  /**
+   * get the author / name of person on profile
+   * 
+   * @return name of author
+   */
+  public String getAuthor() {
+    String author;
+    // get section
+    String sec = this.extractSection("cit-user-info(.*?)</html>");
+    // regex
+    Pattern pattern = Pattern.compile(this.authorPat);
+    Matcher match = pattern.matcher(sec);
+    // find author name
+    if (!match.find())
+      return "Author name not found";
+    author = match.group(1);
+    return author;
+  }
+
+  /**
+   * get the total number of citations
+   * 
+   * @return a string representation of number of citations
+   */
+  public String getNumberCitations() {
+    String number;
+    // get section
+    String sec = this.extractSection("Citation indices.*?</html>");
+    // regex
+    Pattern pattern = Pattern.compile(this.citPattern);
+    Matcher match = pattern.matcher(sec);
+    // get number. rest of methods basically same, won't comment
+    if (!match.find())
+      return "Number of citations not found";
+    number = match.group(1);
+    return number;
+  }
+
+  /**
+   * get the total number of i10 index since 2009
+   * 
+   * @return a string representation of i10 since 2009
+   */
+  public String getNumberi10Index() {
+    Pattern pattern = Pattern.compile(this.citPattern);
+    Matcher match = pattern.matcher(this.html);
+    String i10num;
+    // we need the 6th find since 6th element in table
+    for (int i = 0; i < 5; i++)
+      match.find();
+    if (!match.find())
+      return "i10 not found";
+    i10num = match.group(1);
+    return i10num;
+  }
+
+  /**
+   * get the name of the first 3 publications
+   * 
+   * @return String of 3 publication titles separated by \\n
+   */
+  public String getFirstThreePublication() {
+    String tbl = this.extractSection(this.citDetailPat);
+    String td = this.tdPat;
+    String pubs = "";
+    Pattern pattern = Pattern.compile(td);
+    Matcher match = pattern.matcher(tbl);
+    // 3 pubs, so loop for 3. also stops when no more pubs
+    for (int i = 0; i < 3 && match.find(); i++) {
+      pubs += match.group(1);
+      pubs += "\n";
+    }
+    return pubs;
+  }
+
+  /**
+   * get the total number of citations for the first 5 publications
+   * 
+   * @return String representation for number of citations
+   */
+  public String getNumPublicationFirstFive() {
+    String tbl = this.extractSection(this.citDetailPat);
+    Pattern pattern = Pattern.compile(this.tdNumPat);
+    Matcher match = pattern.matcher(tbl);
+    String ret = "";
+    int tot = 0;
+    // add first 5. also stops when no more
+    for (int i = 0; i < 5 && match.find(); i++) {
+      tot += Integer.parseInt(match.group(1));
+    }
+    ret += tot;
+    return ret;
+  }
+
+  /**
+   * The the total number of coauthors for the specific author page.
+   * 
+   * @return String representation of number of coauthors
+   */
+  public String getNumCoauthor() {
+    String sec = this.extractSection("Co-authors.*?View all co-authors");
+    Pattern pattern = Pattern.compile(this.coauthPat);
+    Matcher match = pattern.matcher(sec);
+    int coauthNum = 0;
+    // while we can find more co authors
+    while (match.find()) {
+      if (!this.coauthors.contains(match.group(1))
+          && !match.group(1).equals("View all co-authors")) {
+        this.coauthors.add(match.group(1)); // add only if not already a coauth
+        coauthNum++; // tot num of co auth for this dude/ dudelette
+      }
+    }
+    return "" + coauthNum;
+  }
+
+  /**
+   * The function extracts a specific section of a string and returns that
+   * section. This makes looking for specific lines easier
+   * 
+   * @param pat The pattern of the section which you want to extract. Regex.
+   * @return The section that matches the regex.
+   */
+  public String extractSection(String pat) {
+    Pattern pattern = Pattern.compile(pat);
+    Matcher match = pattern.matcher(this.html);
+    if (!match.find())
+      return "";
+    return this.html.substring(match.start(), match.end());
+  }
+
+  /**
+   * get all the coauthors of all the articles. Unsorted.
+   * 
+   * @return An arraylist of strings of coauthor names
+   */
+  public ArrayList<String> getCoauthors() {
+    return this.coauthors;
+  }
+
+  /**
+   * set the html file that will be used to parse
+   * 
+   * @param html String representation of an html file
+   */
+  public void setHTML(String html) {
+    this.html = html;
+  }
+}

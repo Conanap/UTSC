@@ -1,0 +1,31 @@
+public class Validator {
+  public static boolean validateTokens(String[] tokens) {
+    boolean isValid = false;
+    switch (tokens[0]) {
+      case "echo":
+        isValid = tokens.length == 2 ||
+                (tokens.length == 4 && (tokens[3] == ">" || tokens[3] == ">>"));
+        break;
+      case "ls":
+        isValid = true;
+        break;
+      case "history":
+        isValid = tokens.length == 1 || tokens.length == 2;
+        break;
+      case "popd":
+      case "pwd":
+        isValid = tokens.length == 1;
+        break;
+      case "cd":
+      case "pushd":
+      case "man":
+        isValid = tokens.length == 2;
+        break;
+      case "mkdir":
+      case "cat":
+        isValid = tokens.length > 1;
+        break;
+    }
+    return isValid;
+  }
+}

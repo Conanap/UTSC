@@ -1,0 +1,35 @@
+/**
+ * This represents a file implementation intended for use of the Shell. The
+ * content of the file is stored as a String type variable.
+ *
+ * @author Law Chi Fai
+ * @version 1.0
+ * @since 2016-06-12
+ */
+
+public class File {
+  private String content;
+
+  // Allow initialization with and without input (Overloading)
+  public File(String input) {
+    content = input;
+  }
+
+  // Else, input is set to null. Need to be set.
+  public File() {
+    content = "";
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String input) {
+    this.content = input;
+  }
+
+  public void appendToContent(String input) {
+    this.content = content.concat(input);
+  }
+
+}

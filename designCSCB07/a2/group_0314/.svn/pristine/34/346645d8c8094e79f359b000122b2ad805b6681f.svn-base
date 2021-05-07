@@ -1,0 +1,64 @@
+package command;
+import filesystem.*;
+import driver.CommandRunner;
+public class Copy {
+	private FileSystem fs;
+	private Directory curr;
+	private int status = 0;
+
+	public Copy(){}
+
+	public void execute(String[] tokens, CommandRunner cmd, Output output) {
+		String src = tokens[1], dest = tokens[2];
+		Directory srcDir = fs.getDirectory(src, curr);
+		File srcFle = fs.getFile(src, curr);
+		if(srcDir == null && srcFle == null) {
+			// print error
+			output.sendErrBuffer(tokens[1] + ": No such file or directory\n");
+			this.status = 1;
+			return; // can't find source thing
+		}
+		Directory deDir = fs.getDirectory(dest, curr);
+		if(deDir == null) {
+			output.sendErrBuffer(tokens[2] + ": No such directory\n");
+			this.status = 1;
+			return; // cant find dest folder
+		}
+		if (srcDir != null) {
+			// move to dir
+			deDir.addDir(srcDir, srcDir.getName());
+		} else {
+			//moving file
+			File tfle = fs.getFile(dest + "/" + srcFle.getName(), curr);
+			if(tfle == null)
+				deDir.addFile(srcFle, srcFle.getName());
+			else {
+				output.sendErrBuffer(tokens[2] + ": File already exist\n");
+				this.status = 1;
+				return; // file already exist
+			}
+		}
+	}
+
+	public void initialize(Directory curr, FileSystem fs, History his) {
+		this.fs = fs;
+		this.curr = curr;
+	}
+
+	public boolean isValid(String[] tokens[]) {
+		return true;
+	}
+
+	public String getManual() {
+		return this.getUsage() + "\n" +
+		"Copies the file or directory into the dest directory.";
+	}
+
+	public String getUsage() {
+		return "cp src dest";
+	}
+
+	public int getStatus() {
+		return this.status();
+	}
+}

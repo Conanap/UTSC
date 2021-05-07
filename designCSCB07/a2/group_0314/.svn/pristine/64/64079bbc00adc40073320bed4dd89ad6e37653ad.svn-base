@@ -1,0 +1,21 @@
+import java.util.Integer;
+public class RunHistory {
+	public static void runHis(String cmd, Directory curr, FileSystem fs) {
+		int num = getNum(cmd);
+		if(num != null) {
+			String rcmd = History.getHistory(num, num);
+			String cmds[] = Tokenizer.tokenizeInput(cmd);
+			RunCmd.runCmd(cmds, curr, fs);
+		}
+	}
+
+	private static int getNum(String cmd) {
+		cmd = cmd.substring(1, 2);
+		try {
+			return Integer.parseInt(cmd);
+		} catch(NumberFormatException e) {
+			Output.sendErrBuffer("Invalid number after !\n");
+			return null;
+		}
+	}
+}

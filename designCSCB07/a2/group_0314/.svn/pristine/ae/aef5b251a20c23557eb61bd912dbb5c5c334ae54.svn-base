@@ -1,0 +1,21 @@
+What did I do last time:
+	- Made revisions (a lot, rewrote couple of times due to inconsistent decision on implementation) to JShell
+	- Completed Input.class
+	- Completed Cat.class
+	- Began implementing a file system in JShell
+
+What do I plan to do now?
+	- Complete manual for Cat and exit
+	- Complete file sys implementation
+	- Recomplete Echo (2 implementation changes, required to start from scratch)
+	- Update crc cards to reflect current design
+	- Work on things possible for Sprint 3 when all above complete (push and pop d)
+
+Am I blocked on anything?
+	- Waiting on Directory.class to implement proper file navigation so I can test Cat
+	- Waiting on completion of other commands to implement properly within JShell
+
+Albion Ka Hei Fung
+fungalbi
+1002444321
+June 14, 2016

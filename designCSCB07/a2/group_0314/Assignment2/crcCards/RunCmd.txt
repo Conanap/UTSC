@@ -1,0 +1,9 @@
+Class name: RunCmd.class
+Parent class: None
+Subclasses: None
+
+Responsibilities:
+*Run command with given tokens.
+
+Collaborators:
+FileSystem.class, Directory.class, Validator.class, Echo.class, Overwrite.class, Append.class, Tokenizer.class, Mkdir.class, Cd.class, Ls.class, Pushd.class, Cat.class, Popd.class, History.class, Man.class, Pwd.class

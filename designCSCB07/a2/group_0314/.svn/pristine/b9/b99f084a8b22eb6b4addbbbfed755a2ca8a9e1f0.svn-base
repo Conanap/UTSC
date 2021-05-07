@@ -1,0 +1,7 @@
+Class name: Ls.class
+Super class: FileSystem.class
+Sub class: Null
+Responsibilities:
+*Prints out all files and directories in the current directory
+Collaborators:
+Echo.class

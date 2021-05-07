@@ -1,0 +1,23 @@
+public class FileSystem {
+	private Directory root;
+	private Directory curr;
+	
+	public FileSystem() {
+		this.root = new Directory();
+		this.curr = this.root;
+	}
+
+	public String getCurr() {
+		return (this.curr.getName());
+	}
+
+	public void setCurrDir(Directory dir) {
+		this.curr = dir;
+	}
+
+	public void addFile(File file, String name) {
+		this.curr.addFile(file, name);
+	}
+
+	// public File getFile () {}
+}

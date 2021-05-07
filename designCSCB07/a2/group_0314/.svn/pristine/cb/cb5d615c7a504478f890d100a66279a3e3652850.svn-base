@@ -1,0 +1,52 @@
+import java.util.Map;
+import java.util.regex.Pattern;
+
+public class Grep {
+  
+  /**
+   * Method used to search through file to find lines in file at path
+   * matching a regular expression.
+   * @param regex regular expression being search for
+   * @param path path where the file is located
+   * @param file the file itself
+   * @return all lines that match regex
+   */
+  public static String grep (String regex, String path, File file){
+    String matches = "";
+    String[] lines = file.getContent().split("\n");
+    for (String line : lines) {
+      if (Pattern.matches(regex, line)){
+        matches = matches + path + ":" + line + "\n";
+      }
+    }
+    return matches;
+  }
+  
+  /**
+   * Method used to search all files in directory provided as well as all
+   * subdirectories for lines matching regex
+   * @param regex regular expression to be matched
+   * @param currDir current directory
+   * @return all lines matching regex in current and sub directories
+   */
+  public static String grepDir (String regex, Directory currDir) {
+    if (currDir.getFileContainer().isEmpty()) {
+      return "";
+    }
+    else {
+      String outStr = "";
+      // grep all files in current directory
+      Map<String, File> files = currDir.getFileContainer();
+      for (Map.Entry<String, File> file : files.entrySet()) {
+        String path = currDir.getPath() + "/" + file.getKey();
+        outStr = outStr + grep(regex, path, file.getValue());
+      }
+      // check sub-directories
+      Map<String, Directory> subDirs = currDir.getDirContainer();
+      for (Map.Entry<String, Directory> subDir : subDirs.entrySet()) {
+        outStr = outStr + grepDir(regex, subDir.getValue());
+      }
+      return outStr;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+What did I work on last time? 
+	-Wrote base code for Directory class
+	-Enabled contruction of Directory objects and retrival of their paths
+	
+What do I plan to do now?
+	-Continue to build on Directory class as more functions are needed
+	-ls command to display contents on current directory
+
+Am I blocked on anything?
+	-Nothing at the moment.

@@ -1,0 +1,59 @@
+package command;
+
+import java.util.Arrays;
+import driver.Tokenizer;
+import filesystem.*;
+import driver.CommandRunner;
+/**
+ * This represents a file related command that redirects a command to a file. If
+ * not found, a new file is created.
+ *
+ * @author Law Chi Fai
+ */
+public class Redirect {
+
+  /**
+   * Checks whether the file exists. If so, checks whether command is "ap" or
+   * "ow", and redirects command to said file. Else (i.e. file DNE), creates a
+   * new file.
+   * 
+   * @param cmd the String of the input command
+   * @param content the String representing the content to be redirected.
+   * @param filename the String representing the name of the file input
+   * @param fs The file system in which the current instance is running.
+   * @param curr The current directory that the current instance is in
+   */
+  public static int redirect(String cmd, String[] content, String filename,
+      FileSystem fs, Directory curr, History history) {
+    // run cmd
+    RunCmd.runCmd(Arrays.copyOfRange(content, 0, content.length - 2),curr, fs, history);
+    // File exists
+    if (fs.getFile(filename, curr) != null) {
+      // Command is Append
+      if (cmd == "ap") {
+        fs.getFile(filename, curr).appendToContent(Output.getOutBuffer());
+      }
+      // Command is Overwrite
+      else if (cmd == "ow") {
+        fs.getFile(filename, curr).setContent(Output.getOutBuffer());
+      }
+    }
+    // File name does not exist.
+    else {
+      String[] paths = Tokenizer.parseFilePath(filename);
+      if (paths[1] != null)
+        curr = fs.getDirectory(paths[0], curr);
+      else
+        paths[1] = paths[0];
+      if (curr != null) {
+        if ((paths[1].equals(".") || paths[1].equals("..")))
+          return (2);
+        File file = new File();
+        file.setContent(Output.getOutBuffer());
+        curr.addFile(file, paths[1]);
+      } else
+        return (0);
+    }
+    return (1);
+  }
+}

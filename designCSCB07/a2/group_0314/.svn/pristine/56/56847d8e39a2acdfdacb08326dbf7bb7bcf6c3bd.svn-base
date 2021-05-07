@@ -1,0 +1,21 @@
+Note: product backlog is formatted for use in vi
+Backlog item								Estimate
+*allow users to create directories (and files) 				2.0 hours
+*allow users to remove directories (and files)				1.0 hours
+*allow users to copy directories (and files)				0.5 hours
+*allow users to rename directories (and files)				0.5 hours
+*allow users to move directories (and files) to another			1.0 hours
+*allow users to print using echo					2.0 hours
+*allow users to list all files in directory				1.0 hours
+*allow users to see current dir with pwd				0.5 hours
+*allow users to download to ./ with get					2.0 hours
+*allow users to redirect output with > for overwrite			2.0 hours
+*allow users to redirect output with >> for appending			1.0 hours
+*allow users to print contents of files (cat)				2.0 hours
+*allow users to exit the shell using exit				1.0 hours
+*allow users to print out recent commands with history[number]		2.0 hours
+*allow users to print documentation for command with man [CMD]		2.5 hours
+*allow users to create new and save files				2.0 hours
+*allow users to interface with the computer through a shell		2.0 hours
+*allow users to use dir related commands through a directory manager	2.0 hours
+*allow users to push the current dir into a stack for later retrieval   2.0 hours

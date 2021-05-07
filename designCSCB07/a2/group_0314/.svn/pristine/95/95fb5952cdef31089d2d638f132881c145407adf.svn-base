@@ -1,0 +1,24 @@
+public class Cp {
+	public static int copy(String src, String dest, Directory curr, FileSystem fs) {
+		Directory srcDir = fs.getDirectory(src, curr);
+		File srcFle = fs.getFile(src, curr);
+		if(srcDir == null && srcFle == null) {
+			// print error
+			return 1; // can't find source thing
+		}
+		Directory deDir = fs.getDirectory(dest, curr);
+		if (srcDir != null) {
+			// move to dir
+			deDir.addDir(srcDir, srcDir.getName());
+		} else {
+			//moving file
+			File tfle = fs.getFile(dest + srcFle.getName(), curr);
+			if(tfle == null)
+				deDir.addFile(srcFle, srcFle.getName());
+			else
+				return 2; // file already exist
+
+		}
+		return 0; // success
+	}
+}

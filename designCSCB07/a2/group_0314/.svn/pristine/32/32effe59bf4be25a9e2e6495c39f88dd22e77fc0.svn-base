@@ -1,0 +1,18 @@
+What did I do?
+	- Fixed bugs in JShell that prevented compilation
+	- Changed cat so that errors go to stderr
+	- Fixed typos and bugs in redirect
+	- Updated run history to reflect new implementation
+	- Updated otehr classes to utilize stderr
+	- Updated JShell to utilize stdout and stderr properly
+	- Added entry for ! in man
+	- Added a proper support to ! due to the unique nature of how to call it
+	- Fixed some bugs in runCmd
+
+Blocked?
+	- Nop
+
+Will do?
+	- start on next sprint's stuff
+	- create the sprint backlog too
+	- update crc cards?

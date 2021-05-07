@@ -1,0 +1,10 @@
+Class name: RunCmd.class
+Parent class: None
+Subclasses: None
+
+Responsibilities:
+*Run command with given tokens.
+
+Collaborators:
+*FileSystem.class
+*Directory.class

@@ -1,0 +1,12 @@
+What did I do?
+	- Completed implementation of Cd
+	- Completed implementation of LS
+	- Wrote javadocs for methods
+
+What do I plan to do now?
+	- Complete java docs
+	- Help with testing / debugging
+	- Start and finish History class
+
+Am I blocked on anything?
+	- Nothing

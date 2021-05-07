@@ -1,0 +1,15 @@
+public class MockFile {
+  private String content;
+
+  public String getContent() {
+    return this.content;
+  }
+
+  public void setContent(String in) {
+    this.content = in;
+  }
+
+  public String appendToContent(String app) {
+    this.content = this.content.concat(app);
+  }
+}

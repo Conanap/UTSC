@@ -1,0 +1,30 @@
+package command;
+
+import driver.CommandRunner;
+import driver.Output;
+import filesystem.Directory;
+import filesystem.FileSystem;
+
+/**
+ * Handles the storage and retrieval of usage messages and documentation
+ */
+public class Man {
+  private static final String MAN_USAGE = "man COMMAND";
+  private String MAN_DESCRIPTION = "Retrieves and outputs the manual of the COMMAND";
+
+  public String getUsage() {
+    return "usage: " + MAN_USAGE + "\n";
+  }
+
+  public String getManual() {
+    return MAN_DESCRIPTION + "\n\n$ " + MAN_USAGE + "\n";
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+  }
+
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    output.sendOutBuffer(cmd.getCommand(tokens[1]).getManual());
+  }
+
+}

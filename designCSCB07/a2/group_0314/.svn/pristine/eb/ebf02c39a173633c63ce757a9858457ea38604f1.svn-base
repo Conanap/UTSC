@@ -1,0 +1,19 @@
+public static class Echo {
+
+	public static echoString(String output) {
+		String outTokens[] = output.split(" *");
+		String finalOut = "";
+		for(int i = 0; i < outTokens.length; i++) {
+			finalOut += outTokens[i];
+			finalOut += "\n";
+		}
+		return finalOut;
+	}
+
+	private static echoFiles() {
+	}
+
+	public static echoEntireString(String output) {
+		return output + "\n";
+	}
+}

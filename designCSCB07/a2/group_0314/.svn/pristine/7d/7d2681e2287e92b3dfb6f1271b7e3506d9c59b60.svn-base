@@ -1,0 +1,20 @@
+What did I do:
+	- Enabled CP and MV in runcmd
+	- Cleaned up senderr code in runcmd
+	- Removed redundant error messages
+	- optimized MV and made it work properly with cp's codes
+	- Fixed bug in runcmd that prevented cmds w/ argc > 2 from executing
+	- Renamed a slew of classes
+	- Changed the implementation of all classes I wrote to object implementation
+	- Also changed mv ^
+	- Created interface Command
+
+What will I do:
+	- debug
+	- code optimization
+	- unit test for cp, output
+	- Make output class an obj
+	- Java docs
+
+Blocked?
+	- null

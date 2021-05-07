@@ -1,0 +1,117 @@
+package command;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+import driver.Output;
+
+public class HistoryTest {
+
+  History history;
+  String[] testTokens;
+  MockOutput output;
+
+  @Before
+  public void setUp() {
+    history = new History();
+    testTokens = new String[2];
+    testTokens[0] = "history";
+    testTokens[1] = "2";
+    output = new MockOutput();
+  }
+
+  @Test
+  public void testNoCommands() {
+    Assert.assertEquals("1. " + null + "\n", history.getHistory());
+  }
+
+  @Test
+  public void testGetEmptyCount() {
+    Assert.assertEquals(1, history.getCmdCount());
+  }
+
+  @Test
+  public void testAddCmdCount() {
+    history.addCmd("hello");
+    Assert.assertEquals(2, history.getCmdCount());
+  }
+
+  @Test
+  public void testAddCmd() {
+    history.addCmd("hello");
+    Map<Integer, String> result = new HashMap<Integer, String>();
+    result.put(1, "hello");
+    Assert.assertEquals(result, history.getCmds());
+  }
+
+  @Test
+  public void testGetHistory() {
+    history.addCmd("hello");
+    Assert.assertEquals("1. hello\n", history.getHistory());
+  }
+
+  @Test
+  public void testGetHistoryMult() {
+    history.addCmd("hello");
+    history.addCmd("mkdir");
+    history.addCmd("asdfg");
+    history.addCmd("cat");
+    history.addCmd("ls abc");
+
+    Assert.assertEquals("4. cat\n5. ls abc\n", history.getHistory(2));
+  }
+
+  @Test
+  public void testGetHistoryNeg() {
+    history.addCmd("hello");
+    history.addCmd("mkdir");
+    history.addCmd("asdfg");
+    history.addCmd("cat");
+    history.addCmd("ls abc");
+
+    Assert.assertEquals("", history.getHistory(-1));
+  }
+
+  @Test
+  public void testExecute() {
+    history.addCmd("hello");
+    history.addCmd("mkdir");
+    history.addCmd("asdfg");
+    history.addCmd("cat");
+    history.addCmd("ls abc");
+
+    history.execute(testTokens, null, output);
+
+    Assert.assertEquals("4. cat\n5. ls abc\n", output.getOutBuffer());
+  }
+
+  public class MockOutput extends Output {
+
+    String out;
+    String err;
+
+    public MockOutput() {
+      out = "";
+      err = "";
+    }
+
+    public void sendOutBuffer(String out) {
+      this.out = out;
+    }
+
+    public void sendErrBuffer(String err) {
+      this.err = err;
+    }
+
+    public String getOutBuffer() {
+      return out;
+    }
+
+    public String getErrBuffer() {
+      return err;
+    }
+  }
+}

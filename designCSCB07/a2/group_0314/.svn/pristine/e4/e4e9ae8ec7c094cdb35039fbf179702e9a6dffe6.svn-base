@@ -1,0 +1,30 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class CatTest {
+  private MockFileSystem fs = new MockFileSystem();
+
+  private curr = fs.getDir(".");
+
+	@Test
+	public void testCatDNEFile() {
+		String out = Cat.cat(["cat", "poop"], fs, curr);
+		assertEquals("File not found: poop\n", out);
+	}
+
+  @Test
+	public void testCatFile() {
+		MockFile file = new MockFile();
+		file.setContent("ehhh lmao");
+		String out = Cat.cat(["cat", "poop"], fs, curr);
+		assertEquals("ehhh lmao\n", out);
+	}
+
+  @Test
+	public void testCatMultFile() {
+		MockFile file = new MockFile();
+		file.setContent("ehhh lmao");
+		String out = Cat.cat(["cat", "poop", "rar"], fs, curr);
+		assertEquals("ehhh lmao\nehhhlmao\n", out);
+	}
+}

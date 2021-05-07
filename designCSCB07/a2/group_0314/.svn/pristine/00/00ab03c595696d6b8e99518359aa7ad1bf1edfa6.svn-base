@@ -1,0 +1,11 @@
+public class Mv {
+	public static int mv(String src, String dest, Direcotry curr, FileSystem fs) {
+		int status;
+		
+		status = Cp.copy(src, dest, curr, fs);
+		// rm command would be here
+		// hopefully rm command also returns status as well, then i can apply
+		// status here as well
+		return status; // returns whether or not it was successful
+	}
+}

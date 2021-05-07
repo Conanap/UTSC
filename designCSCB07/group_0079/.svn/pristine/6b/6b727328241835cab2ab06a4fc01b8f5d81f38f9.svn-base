@@ -1,0 +1,45 @@
+//**********************************************************
+//Assignment3:
+//UTORID user_name: fungalbi
+//
+//Author: Albion Ka Hei Fung
+//
+//
+//Honor Code: I pledge that this program represents my own
+//program code and that I have coded on my own. I received
+//help from no one in designing and debugging my program.
+//*********************************************************
+package Test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class FileOutTest {
+
+  @Test
+  public void testSendEOF() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testFileOut() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendOutput() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendError() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testSendCoauthor() {
+    fail("Not yet implemented");
+  }
+
+}

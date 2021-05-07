@@ -1,0 +1,16 @@
+What did I do last time:
+	- Test case for Redirect
+	- Fixed CatTest in order to match changes made in MockFile for Redirect testing to work.
+	- Formatted all code to Google Format standard
+	- Revamped all CRC cards as well as creating additional CRC cards to match current status of project
+
+What do I plan to do now?
+	- Revise for Linguistics
+
+Am I blocked on anything?
+	- None
+
+Law Chi Fai
+lawchi1
+1002470444
+June 27, 2016

@@ -1,0 +1,31 @@
+/**
+ * This represents a file related command that redirects a command to a file.
+ * If not found, a new file is created.
+ * 
+ * 
+ * Note: Without the implementation of DirMgt, the checks meant to ensure
+ * whether a file actually exists or not are unable to be done at this time,
+ * and are therefore left in as "comments" for the future.
+ * @author  Law Chi Fai
+ * @version 0.1
+ * @since   2016-06-14
+ */
+
+public class Redirect{
+  private static String content;
+  private static String filename;
+
+  // Initialization
+  public static void redirect(String input, String filein) {
+    content = input;
+    filename = filein;
+    // if statement for whether file exists
+    // if it exists
+    // Command is Append
+    filename.appendToContent(content);
+    // Command is Overwrite
+    filename.setContent(content);
+    // if file does not exist
+    file filename = new file(content);
+  }
+}

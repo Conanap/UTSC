@@ -1,0 +1,87 @@
+/**
+* A class used to create a directory in a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class MamkeDirectory extends Command{
+  private FileSystem fs;
+  private Directory curr;
+
+  public MakeDirectory(){}
+  /**
+   * Creates a directory
+   *
+   * @param path Where and what you want to call your new dir
+   * @param fs The file system the instance is running on
+   * @param curr The current directory
+   */
+  private void executePath(String path, Output output) {
+    String[] paths = Tokenizer.parseFilePath(path);
+    String errs;
+    if (paths[1] == null) { // creating in root dir
+      if (curr.getFile(paths[0]) != null) {
+        errs += Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                ": File already exist\n";
+        output.sendErrBuffer(errs);
+        return; // File with same name exists
+      }
+      else if (curr.getDir(paths[0]) != null)
+        errs += Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                ": Directory already exist\n";
+        output.sendErrBuffer(errs);
+        return; // said dir does not exist
+      else {
+        paths[1] = paths[0];
+        paths[0] = ".";
+      }
+    }
+    // if all good, we get the dir we want to mkdir in
+    curr = fs.getDirectory(paths[0], curr);
+    if (curr == null) {// if cant find dir
+      errs += Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+              ": No such file or directory\n";
+    }
+    // if want to make . or .. dir
+    else if (paths[1].equals(".") || paths[1].equals("..")) {
+      errs += Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+              ": Illegal character in name\n";
+    }
+    else if (fs.getDirectory(paths[1], curr) != null) {// dir already exist
+      errs += Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                ": Directory already exist\n";
+        output.sendErrBuffer(errs);
+    }
+    else if (fs.getFile(paths[1], curr) != null) {// file already exist
+      errs += Tokenizer.parseFilePath(tokens[(i != 1) ? --i : i])[1] +
+                ": File already exist\n";
+        output.sendErrBuffer(errs);
+      }
+    else { // all good, let's make the dir
+      Directory dir = new Directory(paths[1], curr);
+      // add the dir
+      curr.addDir(dir, paths[1]);
+    }
+  }
+
+  public void execute(String[] tokens, COmmandRunner cmd, Output output) {
+    for(int i = 1; i < tokens.length; i++)
+      this.executePath(tokens[i], output);
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.curr = curr;
+    this.fs = fs;
+  }
+
+  public boolean isValid(String[] tokens){
+    return true;
+  }
+
+  public String getManual() {
+    return "";
+  }
+
+  public String getUsage() {
+    return "";
+  }
+}

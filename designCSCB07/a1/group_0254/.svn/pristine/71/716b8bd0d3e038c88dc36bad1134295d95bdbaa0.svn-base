@@ -1,0 +1,11 @@
+class name: Tr.java
+super: Object
+sub: Null
+responsibilities:
+Search and replace specific characters
+Outputs the result after replace happens
+Can take standard input or file
+collaborators:
+Echo.java (ShellIO.java by extension)
+Redirect.java
+DirMgt.java

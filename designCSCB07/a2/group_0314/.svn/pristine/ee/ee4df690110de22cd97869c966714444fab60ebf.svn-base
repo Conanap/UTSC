@@ -1,0 +1,5 @@
+public class Popd {
+	public static void popd(DirStack ds, FileSystem fs) {
+		//Cd.cd(ds.popDir(), fs);
+	}
+}

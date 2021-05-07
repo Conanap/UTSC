@@ -1,0 +1,9 @@
+Class name: Append.class
+Super class: Redirect.class
+Sub class: Null
+Responsibilities:
+*Take standard input and appends to a specific file
+*If file exists already ,append to end of file
+*If file does not exist, create a new file
+Collaborators:
+Echo.class, Cat.class, MkDir.class

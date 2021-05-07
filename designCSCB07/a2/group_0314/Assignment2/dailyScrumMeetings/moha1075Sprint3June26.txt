@@ -1,0 +1,7 @@
+What did I do last time?
+- Completed testing for Man and Pwd
+- Finished all JavaDoc
+What do I plan to do now?
+- Final testing and debugging
+Am I blocked on anything?
+- Nothing at the moment 

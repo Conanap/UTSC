@@ -1,0 +1,58 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class CurlTest{
+  
+  Curl curl;
+  String[] testTokens;
+  MockOutput output;
+  MockFileSystem fs;
+  MockHistory his;
+  MockCommandRunner cmd;
+  MockDirectory curr = fs.getDirectory(".");
+  
+  @Before
+  public void setUp(){
+    curl = new Curl();
+    testTokens = new String[2];
+    testTokens[0] = "curl";
+    testTokens[1] = "http://www.textfiles.com/history/heroic.txt";
+    curl.initialize(curr,fs, his);
+  }
+  
+  @Test
+  public void testURLRetrieve(){
+    try{
+      curl.execute(testTokens, cmd, output);
+      assert(True);
+    }
+    catch (IOException e){
+      assert(False);
+    }
+    catch (MalformedURLException e){
+      assert(False);
+    }
+  }
+  
+  @Test
+  public void testIOException() {
+    testTokens[1] = "asdasfasdasdasd";
+    try{
+      curl.execute(testTokens, cmd, output);
+      assert(False);
+    }
+    catch (IOException e){
+      assert(True);
+    }
+    catch (MalformedURLException e){
+      assert(True);
+    }
+  }
+  
+  @Test
+  public void testFileCreation() {
+    curl.execute(testTokens, cmd, output);
+    assertNotNull(curr.getFile("heroic.txt"));
+  }
+  
+}

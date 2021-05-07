@@ -1,0 +1,21 @@
+/**
+ * Responsible for finding the path from root to a provided directory
+ */
+public class Pwd {
+  /**
+   * Given a directory, return a string reprsentation of the the path from root
+   * the directory
+   *
+   * @param currentDirectory directory for which path should be found
+   * @return a string representation of the path
+   */
+  public static String printWorkingDirectory(Directory currentDirectory) {
+    StringBuilder directoryPaths = new StringBuilder();
+    for (; currentDirectory != currentDirectory.getParent();
+         currentDirectory = currentDirectory.getParent()) {
+      directoryPaths.append("/" + currentDirectory.getDirName());
+    }
+    return (directoryPaths.length() > 0 ? directoryPaths.toString() : "/") +
+            '\n';
+  }
+}

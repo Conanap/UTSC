@@ -1,0 +1,19 @@
+package mkdirTest;
+
+import filesystem.FileSystem;
+public class MockFileSystem extends FileSystem{
+	private boolean empty = true;
+	private MockDirectory root = new MockDirectory();
+
+	public MockFileSystem () {
+
+	}
+
+	public MockDirectory getDirectory(String path) {
+		return this.root;
+	}
+
+	public void getFile(String path) {
+		return;
+	}
+}

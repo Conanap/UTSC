@@ -1,0 +1,31 @@
+file=$1
+
+echo Letters repeated in the from list:
+for char in a b c d e f g h i j k l m n o p q r s t u v w x y z
+do
+	num=`grep $char.. $file | wc -l`
+	if test $num -gt 1
+	then
+		echo $char
+	fi
+done
+
+echo Letters missing in the from list:
+for char in a b c d e f g h i j k l m n o p q r s t u v w x y z
+do
+	num=`grep $char.. $file | wc -l`
+	if test $num -lt 1
+	then
+		echo $char
+	fi
+done
+
+echo Letters repeated in the to list:
+for char in a b c d e f g h i j k l m n o p q r s t u v w x y z
+do
+	num=`grep ..$char $file | wc -l`
+	if test $num -gt 1
+	then
+		echo $char
+	fi
+done

@@ -1,0 +1,86 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Directory {
+  private String dirName;
+  private Directory parent;
+  private Map<String, Directory> dirContainer =
+      new HashMap<String, Directory>();
+  private Map<String, File> fileContainer = new HashMap<String, File>();
+
+  // Constructs a directory given its name and its parent directory
+  public Directory(String name, Directory parentDir) {
+    dirName = name;
+    parent = parentDir;
+  }
+  
+  // Constructs a directory with no name
+  public Directory(Directory parentDir) {
+    dirName = null;
+    parent = parentDir;
+  }
+  
+  //By default, a directory with no parent is the root
+  public Directory() {
+    dirName = "root";
+    parent = null;
+  }
+  
+  public String toString() {
+    return this.getPath();
+  }
+  
+  // Returns full path from root to this
+  public String getPath() {
+    if (parent == null){
+      return this.dirName;
+    }
+    else {
+      return parent.getPath() + "/" + dirName;
+    }
+  }
+
+  // creates directory with name newDirName
+  public void mkDir(String newDirName) {
+    dirContainer.put(newDirName, new Directory(this));
+  }
+
+  // returns Directory named dirName
+  public Directory getDir(String dirName) {
+    return dirContainer.get(dirName);
+  }
+
+  // creates file named newFileName with no content
+  public void mkFile(String newFileName) {
+     fileContainer.put(newFileName, new File());
+  }
+  
+  // returns File with fileName
+  public File getFile(String fileName) {
+    return fileContainer.get(fileName);
+  }
+  
+  public void listContent() {
+    System.out.println(this.getPath());
+    Iterator dirIt = dirContainer.entrySet().iterator();
+    while (dirIt.hasNext()) {
+      Map.Entry pair = (Map.Entry)dirIt.next();
+      System.out.println(((Directory) pair.getValue()).getDirName());
+    }
+    Iterator fileIt = fileContainer.entrySet().iterator();
+    while (fileIt.hasNext()) {
+      Map.Entry pair = (Map.Entry)fileIt.next();
+      System.out.println(((Directory) pair.getValue()).getDirName());
+    }
+    System.out.println();
+  }
+
+  public String getDirName() {
+    return dirName;
+  }
+
+  public void setDirName(String dirName) {
+    this.dirName = dirName;
+  }
+}

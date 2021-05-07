@@ -1,0 +1,41 @@
+//**********************************************************
+//Assignment3:
+//UTORID user_name: fungalbi
+//
+//Author: Albion Ka Hei Fung
+//
+//
+//Honor Code: I pledge that this program represents my own
+//program code and that I have coded on my own. I received
+//help from no one in designing and debugging my program.
+//*********************************************************
+package JavaIO;
+
+import java.util.ArrayList;
+
+public class ConsoleOut implements OutputStandard{
+  
+  private ArrayList<String> outBuffer;
+  private int numCoauther;
+  
+  public ConsoleOut() {
+    this.outBuffer = new ArrayList<String>();
+    this.numCoauther = 0;
+  }
+  
+  public void sendOutput(String[] out) {
+    ; // send to console output (name = null)
+  }
+  
+  public void sendError(String error) {
+    ;
+  }
+  
+  public void sendCoauthor(String coauth) {
+    ;
+  }
+  
+  public void sendEOF() {
+    ;
+  }
+}

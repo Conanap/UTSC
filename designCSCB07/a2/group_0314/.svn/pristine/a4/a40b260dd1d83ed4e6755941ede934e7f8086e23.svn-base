@@ -1,0 +1,8 @@
+Class name: Echo.class
+Super class: JShell.class
+Sub class: Cat.class
+Responsibilities:
+*Prints output form user
+*Creates standard output from standard input
+Collaborators:
+History.class, Ls.class, Pwd.class, Overwrite.class, Append.class

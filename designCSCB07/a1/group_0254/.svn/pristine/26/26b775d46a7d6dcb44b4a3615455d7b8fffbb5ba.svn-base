@@ -1,0 +1,8 @@
+class name: Echo
+super: ShellIO
+sub: Cat.java
+responsibilities:
+Outputs output from commands to shell
+Outputs field to shell
+collaborators:
+Null

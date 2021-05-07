@@ -1,0 +1,18 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+The flag is bMZHExUltaLg
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.0.2
+Comment: https://openpgpjs.org
+
+wsBcBAEBCAAQBQJbpQxECRCtzwUEpjfRJQAAmiUIAIRTg1YqU5ZyDJftwwYP
+2zI1yT11fXjV/dJYTqjPqMx1U4FQw+cNL3G2qC5LBVp0mjHi9rXI97N9/kbN
+OLitYQP0rt5RFjerSlfIjjp/V4bmUhFKIQS8b74a+QXHq4zqlUVskGxt8kTm
+oAOdlG7eoW2nFSEf+qOoOu2DXSp3sqPOj5UlP5Biqk3uptGx8JMgPQZHRmOM
+7spg+P68zFJaBlh7sewkrsfOi6vZzEH3alzMwn+LShGYYQw6nCxEDl9KsUNW
+9KLEgR9CncuAtxR4ilTshVnLHbmxmFSP709ZMtCME0gXra3xaq4cmDpFsser
+d6o3QcOaoDU00k3HYKnCguo=
+=IAPz
+-----END PGP SIGNATURE-----

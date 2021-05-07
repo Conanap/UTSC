@@ -1,0 +1,85 @@
+package command;
+
+import driver.CommandRunner;
+import driver.Output;
+import filesystem.Directory;
+import filesystem.FileSystem;
+
+/**
+ * Responsible for finding the path from root to a provided directory
+ */
+public class Pwd extends Command {
+  private Directory currentDirectory;
+  private static final String
+      MAN_USAGE = "pwd",
+      MAN_DESCRIPTION = "Print the current working directory.";
+
+
+  /**
+   * Initializes the Pwd operation with the current directory, filesystem and
+   * history record
+   * @param curr The directory to find the path of
+   * @param fs The filesystem being operated on
+   * @param his Represent the history record for this shell instance
+   */
+  @Override
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    currentDirectory = curr;
+  }
+
+  /**
+   * Executes the Pwd command
+   * @param tokens The tokens passed by the shell
+   * @param cmd The calling object of this function
+   * @param output The buffer to send output to
+   */
+  @Override
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    StringBuilder directoryPaths = new StringBuilder();
+    String pathToCurrent;
+
+    // Loop until parent directory leads to self
+    while (currentDirectory != currentDirectory.getParent()) {
+      directoryPaths.insert(0, "/" + currentDirectory.getDirName());
+      currentDirectory = currentDirectory.getParent();
+    }
+
+    // Prevent empty string from being returned when curr was root directory
+    if (directoryPaths.length() > 0) {
+      pathToCurrent = directoryPaths.toString() + '\n';
+    } else {
+      pathToCurrent = "/\n";
+    }
+
+    output.sendOutBuffer(pathToCurrent);
+  }
+
+
+  /**
+   * Return true iff the provided tokens are valid for a Pwd operation
+   * @param tokens the tokens to be validated
+   * @return true if the provided tokens are valid
+   */
+  @Override
+  public boolean validate(String[] tokens) {
+    return tokens.length == 1;
+  }
+
+  /**
+   * Generate and return the usage message for a Pwd operation
+   * @return the usage message
+   */
+  @Override
+  public String getUsage() {
+    return Man.formatUsage(MAN_USAGE);
+  }
+
+  /**
+   * Generate and return the man page for a Pwd operation
+   * @return the man page
+   */
+  @Override
+  public String getManual() {
+    return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+  }
+}

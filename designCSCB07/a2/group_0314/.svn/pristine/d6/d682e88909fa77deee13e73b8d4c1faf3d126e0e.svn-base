@@ -1,0 +1,7 @@
+public class RunHistory {
+	public static String runHis(int num, Directory curr, FileSystem fs) {
+		String cmd = History.getHistory(num, num);
+		String cmds[] = Tokenizer.tokenizeInput(cmd);
+		return RunCmd.runCmd(cmds, curr, fs);
+	}
+}

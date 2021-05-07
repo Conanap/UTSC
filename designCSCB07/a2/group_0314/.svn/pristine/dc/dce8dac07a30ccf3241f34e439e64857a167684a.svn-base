@@ -1,0 +1,55 @@
+package command;
+
+/**
+* pushes a directory and cds to a directory of a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class PushDirectory implements Command {
+  private Directory curr;
+  private FileSystem fs;
+
+  public PushDirectory() {}
+  /**
+   * Pushes current working directory to a stack, then cd to a given directory
+   *
+   * @param path Directory to cd to after pushing cwd
+   * @param fs   The file system which the instance is running on
+   * @param curr The current directory in the instance
+   */
+  private Directory executePath(String path, FileSystem fs, Directory curr) {
+    // cd
+    Directory temp = Cd.changeDir(path, fs, curr);
+    if (temp != null) // if dir exist, then we push
+      fs.push(Pwd.printWorkingDirectory(curr));
+    return temp;
+  }
+
+  public void execute( String[] tokens, CommandRunner cmd, Output output) {
+    Directory dir = this.executePath(tokens[1], this.fs, this.curr);
+    if(dir != null)
+      cmd.setCurrDir(dir);
+    else {
+      String errs = tokens[1] + ": no such file or directory\n";
+      output.sendErrBuffer(errs);
+    }
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.curr = curr;
+    this.fs = fs;
+  }
+
+  public boolean validate(String[] tokens) {
+    return true;
+  }
+
+  public String getManual() {
+    return this.getUsage() + "\n" + "Save the current directory into the directory" +
+      " stack and change current directory to the provided directory";
+  }
+
+  public String getUsage() {
+    return "pushd DIR";
+  }
+}

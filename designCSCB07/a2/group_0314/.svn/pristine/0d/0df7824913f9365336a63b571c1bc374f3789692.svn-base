@@ -1,0 +1,51 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class MkDirTest {
+	private MockFileSystem fs = new MockFileSystem();
+	MockDirectory curr = fs.getDirectory(".");
+
+	public void testCreateOneDNEDir() {
+		int status = MkDir.mkdir("./a", fs, curr);
+		assertEquals(1, status);
+		assertEquals("a", curr.getC1().getDirName());
+
+	}
+
+	public void testCreateExistingDir() {
+		int status = MkDir.mkdir("a", fs, curr);
+		assertEquals(3, status);
+		assertEquals(null, curr.getC2());
+	}
+
+	public void testCreateSecondDir() {
+		int status = MkDir.Mkdir("b", fs, curr);
+		assertEquals(1, status);
+		assertEquals("b", curr.getC2().getDirName());
+	}
+
+	public void testInvalidName() {
+		curr.clearDirs();
+		int status = MkDir.mkdir("..", fs, curr);
+		assertEquals(2, status);
+		assertEquals(null, curr.getC1());
+		assertEquals(null, curr.getC2());
+	}
+
+	public void testInvalidName2() {
+		curr.clearDirs();
+		int status = MkDir.mkdir(".", fs, curr);
+		assertEquals(2, status);
+		assertEquals(null, curr.getC1());
+		assertEquals(null, curr.getC2());
+	}
+
+	public void testCreatExistingFile() {
+		MockFile file = new MockFile();
+		curr.addFile(file);
+		curr.clearDirs();
+		int status = MkDir.mkdir("a", fs, curr);
+		assertEquals(4, status);
+		assertEquals(null, curr.getC1());
+	}
+}

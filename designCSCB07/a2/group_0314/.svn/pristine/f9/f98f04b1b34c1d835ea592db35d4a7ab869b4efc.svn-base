@@ -1,0 +1,25 @@
+/**
+ * This represents a file related command that appends a file with stdin. The
+ * content of the stdin is either stored within an existing file or, if the
+ * filename does not exist, a new file with said filename.
+ *
+ */
+
+public class Append extends Redirect {
+  private String content;
+  private String filename;
+
+  /**
+   * Calls redirect command with "ap" as String input, to represent an append
+   * command.
+   * 
+   * @param input  the String of the input command, in this case "ap"
+   * @param filein the String representing the name of the file input
+   * @param fs     The file system in which the current instance is running on
+   * @param curr   The current directory that the current instance is in
+   */
+  public static int append(String[] input, String filein, FileSystem fs,
+                           Directory curr) {
+    return redirect("ap", input, filein, fs, curr);
+  }
+}

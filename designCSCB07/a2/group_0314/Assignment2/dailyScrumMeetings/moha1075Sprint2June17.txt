@@ -1,0 +1,9 @@
+What did I do last time?
+- complete the Validator class
+- complete the Pwd class
+What do I plan to do now?
+- Complete Javadoc for all classes I've worked on
+- Add Ls documentation into Man class
+- Add Pwd documentation into Man class
+Am I blocked on anything?
+- Nothing at the moment 

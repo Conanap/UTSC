@@ -1,0 +1,7 @@
+Class Name: Man.class
+Super class: JShell.class
+Sub class: Null
+Responsibilities:
+*Stores / retrieves the manual for all commands
+Collaborator:
+RunCmd.class

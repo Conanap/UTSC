@@ -1,0 +1,16 @@
+What'd I do
+	- completed validation methods
+	- added more places that an exception would be a good fit
+	- Fixed redirect (recoded quite a bit)
+	- Added InvalidCommandException
+	- Java docs for my classes
+	- Cat unit test
+	- Tonnes of bug fixes
+	- Test files for my classes
+	- Javadocs
+
+To do:
+	- Debug and test
+
+Blocked:
+	- Tears, tears are in the way

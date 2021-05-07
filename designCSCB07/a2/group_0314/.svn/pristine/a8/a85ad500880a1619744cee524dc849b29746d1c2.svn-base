@@ -1,0 +1,20 @@
+import static org.junit.Assert.*; 
+import MockDirectory.java;
+
+import org.junit.Test;
+
+public class LsTest {
+
+  @Test
+  public void testNewDir() {
+    String list =  Ls.listContents(new MockDirectory);
+    assertEquals("", list)
+  }
+  
+  @Test
+  public void testWithContent() {
+    MockDirectory dir = new MockDirectory();
+    String result = Ls.listContents(dir);
+    assertEqual("dir1\ndir2\nfile1")
+  }
+}

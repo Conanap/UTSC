@@ -1,0 +1,45 @@
+/**
+ * Created for use with PwdTest. Mocks getParent and getDirName methods.
+ */
+public class MockDirectory extends Directory {
+  private MockDirectory parent;
+  private String name;
+
+  /**
+   * Constructor for creating a root directory
+   */
+
+  public MockDirectory() {
+    parent = this;
+  }
+
+  /**
+   * Constructor for creating a named, non-root directory
+   */
+
+  public MockDirectory(String name, MockDirectory parent) {
+    this.parent = parent;
+    this.name = name;
+  }
+
+  /**
+   * Returns the stored directory name. Will not work for root.
+   *
+   * @return name of directory
+   */
+
+  public String getDirName() {
+    return this.name;
+  }
+
+  /**
+   * Return the parent of this directory
+   *
+   * @return parent of this directory
+   */
+
+  public MockDirectory getParent() {
+    return this.parent;
+  }
+
+}

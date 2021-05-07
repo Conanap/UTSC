@@ -1,0 +1,8 @@
+Class name: Tokenizer.class
+Super class: Null
+Sub class: Null
+Responsibilities:
+*Takes single string of command line input and turns it into argument tokens
+*Parses double quoted phrases as single arguments and ignores redundant whitespaces
+Collaborators:
+Null

@@ -1,0 +1,56 @@
+package Test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import driver.ContextParser;
+
+public class ContextParserTest {
+  private ContextParser cp = new ContextParser();
+  private String html;
+  
+  @Test
+  public void testGetAuthor() {
+    html = "cit-user-info <span id=\"cit-name-display\".*?>" +
+        "Mac and Cheese</span></html>";
+    cp.setHTML(html);
+    assertEquals("Mac and Cheese", cp.getAuthor());
+  }
+
+  @Test
+  public void testGetNumberCitations() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumberi10Index() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetFirstThreePublication() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumPublicationFirstFive() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumCoauthor() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testExtractSection() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetCoauthors() {
+    fail("Not yet implemented");
+  }
+
+}

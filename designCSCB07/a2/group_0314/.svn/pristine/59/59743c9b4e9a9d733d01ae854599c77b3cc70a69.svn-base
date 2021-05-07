@@ -1,0 +1,32 @@
+package lsTest;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import command.Ls;
+
+public class LsTest {
+  
+  Ls lister;
+  @Before
+  public void setUp() {
+    lister = new Ls();
+  }
+
+  @Test
+  public void testEmptyDir() {
+    String list =  lister.listContents(new MockDirectory("EMPTY"));
+    Assert.assertEquals("", list);
+  }
+  
+  @Test
+  public void testWithContent() {
+    String result = lister.listContents(new MockDirectory("WITHSTUFF"));
+    Assert.assertEquals("dir1\ndir2\nfile1\nfile2\n", result);
+  }
+  
+  @Test
+  public void testR() {
+    String result = lister.listContentsR(new MockDirectory("-R"));
+    Assert.assertEquals("dirB\ndirC\nfileA\nfileB\ndir1\ndir2\nfile1\nfile2\n", result);
+  }
+}

@@ -1,0 +1,15 @@
+What did I do:
+	- Implemented Command interface to Ls, Cd, History and Grep 
+	- Cleaned up in Ls, Cd, History and Grep 
+	- Updated Ls to print file
+	- Rewrote Unit test for ls
+	- Rewrote Unit test for History
+
+What will I do:
+	- Debug
+	- Optimize code
+	- Write unit tests for Cd Grep and History
+	- Write any missing javadocs
+
+What am I stuck on:
+	-Remebering to do scrum meetings on time.

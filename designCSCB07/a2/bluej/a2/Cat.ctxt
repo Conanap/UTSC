@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=tokens\ curr
+comment0.target=java.lang.String\ cat(java.lang.String[],\ Directory)
+numComments=1

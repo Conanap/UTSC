@@ -1,0 +1,44 @@
+/**
+ * This represents a file related command that redirects a command to a file. If
+ * not found, a new file is created.
+ *
+ * @param cmd      the String of the input command
+ * @param content  the String representing the content intended to be
+ *                 redirected
+ * @param filename the String representing the name of the file input
+ * @param fs       The file system in which the current instance is running on
+ * @param curr     The current directory that the current instance is in
+ */
+
+public class Redirect {
+
+  // Initialization
+  public static int redirect(String cmd, String content, String filename,
+                             FileSystem fs, Directory curr) {
+    if (fs.getFile(filename, curr) != null) {
+      // Command is Append
+      if (cmd == "ap") {
+        fs.getFile(filename, curr).appendToContent(content);
+      }
+      // Command is Overwrite
+      else if (cmd == "ow") {
+        fs.getFile(filename, curr).setContent(content);
+      }
+    } else {
+      String[] paths = FileSystem.parseFilePath(filename);
+      if (paths[1] != null)
+        curr = fs.getDirectory(paths[0], curr);
+      else
+        paths[1] = paths[0];
+      if (curr != null) {
+        if ((paths[1].equals(".") || paths[1].equals("..")))
+          return (2);
+        File file = new File();
+        file.setContent(content);
+        curr.addFile(file, paths[1]);
+      } else
+        return (0);
+    }
+    return (1);
+  }
+}

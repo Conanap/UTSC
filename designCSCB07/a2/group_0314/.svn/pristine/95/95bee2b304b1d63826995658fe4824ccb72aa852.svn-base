@@ -1,0 +1,14 @@
+Backlog item						Estimate
+*allow users to create directories (and files) 		2.0 hours
+*allow users to remove directories (and files)		1.0 hours
+*allow users to copy directories (and files)		0.5 hours
+*allow users to rename directories (and files)		0.5 hours
+*allow users to move directories (and files) to another	1.0 hours
+*allow users to print using echo			2.0 hours
+*allow users to list all files in directory		1.0 hours
+*allow users to see current dir with pwd		0.5 hours
+*allow users to download to ./ with get			2.0 hours
+*allow users to redirect output with > for overwrite	2.0 hours
+*allow users to redirect output with >> for appending	1.0 hours
+*allow users to find and replace string with regex (tr) 2.0 hours
+*allow users to print contents of files (cat)		2.0 hours

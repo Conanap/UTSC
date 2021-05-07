@@ -1,0 +1,41 @@
+/**
+ * This represents a file related command that redirects a command to a file. If
+ * not found, a new file is created.
+ *
+ * @author Law Chi Fai
+ * @version 1.0
+ * @since 2016-06-14
+ */
+
+public class Redirect {
+
+  // Initialization
+  public static int redirect(String cmd, String content, String filename, FileSystem fs, Directory curr) {
+    if (fs.getFile(filename, curr) != null) {
+      // Command is Append
+      if (cmd == "ap") {
+        fs.getFile(filename, curr).appendToContent(content);
+      }
+      // Command is Overwrite
+      else if (cmd == "ow") {
+        fs.getFile(filename, curr).setContent(content);
+      }
+    } else {
+      String[] paths = FileSystem.parseFilePath(filename);
+      Pushd.pushd(fs, curr);
+      if (paths[1] != null)
+        curr = Cd.changeDir(paths[0], fs, curr);
+      else
+        paths[1] = paths[0];
+      if (curr != null) {
+        if((paths[1].equals(".") || paths[1].equals("..")))
+          return(2);
+        File file = new File();
+        file.setContent(content);
+        curr.addFile(file, paths[1]);
+      } else
+        return(0);
+    }
+    return(1);
+  }
+}

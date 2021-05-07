@@ -1,0 +1,7 @@
+Class name: Cd.class
+Super: Null
+Subclass: Null
+Responsibilities:
+*Changes the current directory when given a FileSystem object
+Collaborators:
+FileSystem.class

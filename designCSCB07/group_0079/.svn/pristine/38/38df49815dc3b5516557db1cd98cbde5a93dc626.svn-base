@@ -1,0 +1,46 @@
+// **********************************************************
+// Assignment3:
+// UTORID user_name: fungalbi
+//
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// *********************************************************
+package test;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import driver.HTMLParser;
+
+public class HTMLParserTest {
+
+  private HTMLParser hp;
+
+  @Before
+  public void setup() {
+    hp = new HTMLParser();
+  }
+
+  @Test
+  public void testGetHTML() {
+    String html = "<html></html>";
+    try {
+      assertEquals(html, hp.getHTML("test.html"));
+
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+}

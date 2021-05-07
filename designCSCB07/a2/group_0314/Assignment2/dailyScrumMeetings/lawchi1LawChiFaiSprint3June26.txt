@@ -1,0 +1,15 @@
+What did I do last time:
+	- Updated Javadoc once more to match Standard of team
+	- Added additional comments and Javadoc to clarify program parts.
+	- Test cases
+
+What do I plan to do now?
+	- Test cases
+
+Am I blocked on anything?
+	- test case for Cat 'ambiguous', not sure if an entirely new Mock FS + Mock Directory is needed to test command properly.
+
+Law Chi Fai
+lawchi1
+1002470444
+June 26, 2016

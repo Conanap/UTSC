@@ -1,0 +1,42 @@
+//Sprint 1 backlog
+June 14 to June 19
+
+
+User Stories from Product Backlog that we will address in this sprint:
+a) Print text to the console
+b) List all files in a dir
+c) see presently working directory
+d) write text into a file
+e) append text into a file
+f) be able to obtain help documentation for all commands
+g) change directories within the file system
+h) view the contents of a file
+
+
+Specific tasks to be accomplished:
+a-1. complete Echo.class
+b-1. complete Ls.class
+c-1. complete Pwd.class
+d-1. complete Overwrite.class
+e-1. complete Append.class
+f-1. Complete documentation for all commands completed uptil this point
+g-1. complete Cd.class
+h-1. complete Cat.class
+
+Extra tasks completed last sprint (unplanned):
+1) to exit the JShell with exit command
+2) be able to control file system with commands in the shell (partial)
+
+These tasks are assigned as follows:
+
+User: Albion Ka Hei Fung
+Tasks:
+a-1, f-1, h-1
+User: Rizadh Nizam
+Tasks: b-1, c-1, f-1
+
+User: Chi Fai Law
+Tasks: d-1, e-1, f-1
+
+User: Brody Chen
+Tasks: g-1, f-1

@@ -1,0 +1,7 @@
+for i in *
+do
+	if grep g '"$i"' >/dev/null
+	then
+		echo $i
+	fi
+done

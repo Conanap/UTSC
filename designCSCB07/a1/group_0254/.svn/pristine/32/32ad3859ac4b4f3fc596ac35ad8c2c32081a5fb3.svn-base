@@ -1,0 +1,9 @@
+class name: Cat
+super: Echo.java
+sub: Null
+responsibilities:
+Prints out entire files
+Prints out standard input
+collaborators:
+DirMgt.java
+Redirect.java

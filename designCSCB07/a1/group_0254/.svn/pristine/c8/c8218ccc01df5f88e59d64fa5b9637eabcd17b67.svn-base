@@ -1,0 +1,7 @@
+class name: Cd
+super: DirMgt.java
+sub: Null
+responsibilities:
+Manage directory changes
+collaborators:
+Null

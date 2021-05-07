@@ -1,0 +1,11 @@
+public class Pwd {
+  public static String printWorkingDirectory(Directory currentDirectory) {
+    StringBuilder directoryPaths = new StringBuilder();
+    for (;currentDirectory != currentDirectory.getParent();
+         currentDirectory = currentDirectory.getParent()) {
+      directoryPaths.append("/" + currentDirectory.getDirName());
+    }
+    return (directoryPaths.length() > 0 ? directoryPaths.toString() : "/") +
+            "\n";
+  }
+}

@@ -1,0 +1,10 @@
+/**
+* Outputs the argument
+*
+* @author Albion Ka Hei Fung
+*/
+public class Echo {
+  public static String echo(String input) {
+    return (input + "\n");
+  }
+}

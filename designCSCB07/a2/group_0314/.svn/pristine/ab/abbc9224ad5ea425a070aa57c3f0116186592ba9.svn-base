@@ -1,0 +1,8 @@
+public class Cat {
+	public static String cat(String[] tokens, Directory curr) {
+		String out = "";
+		for (int i = 1; i < tokens.length; i++)
+			out += curr.getFile(tokens[i]).getContent() + "\n";
+		return out;
+	}
+}

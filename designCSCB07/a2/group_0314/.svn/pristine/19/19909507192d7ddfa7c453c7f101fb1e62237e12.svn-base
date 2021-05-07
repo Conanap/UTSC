@@ -1,0 +1,19 @@
+import java.util.HashMap;
+
+public class Man {
+  private static HashMap<String, String> usageMessages;
+
+  static {
+    usageMessages = new HashMap<String, String>();
+    // Input usage messages for all commands using put()
+  }
+
+  public static String getDocumentation(String commandName) {
+    if (usageMessages.containsKey(commandName)) {
+      return usageMessages.get(commandName);
+    } else {
+      return "No man page found for \"" + commandName + "\" \n";
+    }
+  }
+
+}

@@ -1,0 +1,7 @@
+Class name: Validator.class
+Super class: Null
+Sub class: Null
+Responsibilities:
+*Verifies whether given command tokens contain correct number of arguments, based on command name
+Collaborators:
+Null

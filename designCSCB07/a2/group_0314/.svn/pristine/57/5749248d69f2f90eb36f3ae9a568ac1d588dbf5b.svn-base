@@ -1,0 +1,8 @@
+Class name: Cat.class
+Super class: Null
+Sub class: Null
+Responsibilities:
+*Prints out files specified in arguments
+*prints out standard input
+Collaborators:
+FileSystem.class

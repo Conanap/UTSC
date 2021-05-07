@@ -1,0 +1,9 @@
+Class name: Mkdir.java
+Parent class: DirMgt.java
+Subclasses: None
+
+Responsibilities:
+*Creates a new directory, either in current directory, or of a full path.
+
+Collaborators:
+*Null

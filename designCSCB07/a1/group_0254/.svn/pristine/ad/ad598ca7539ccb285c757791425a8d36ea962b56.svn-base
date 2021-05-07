@@ -1,0 +1,19 @@
+		class name: shell.java
+Parent: Object
+subclasses: None
+responsibilities:
+Runs the shell environment
+Match input to correct command executions
+Output command output to user if necessary
+collaborators:
+Tr.java
+Cd.java
+Mv.java
+Echo.java
+Redirect.java
+Cat.java (put this with Echo.java?)
+Pwd.java (eith cat/echo.java?)
+Ls.java
+Get.java
+Cp.java
+(DirMgt.java for cd + mkdir + ls + pwd?)(make as super class?)

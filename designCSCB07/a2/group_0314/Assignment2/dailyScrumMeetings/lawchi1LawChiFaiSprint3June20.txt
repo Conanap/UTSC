@@ -1,0 +1,15 @@
+What did I do last time:
+	- Implemented Redirect.class (poorly, fixed by Albion, thanks bro)
+	- Fixed a few minor bugs in Redirect.class as well.
+
+What do I plan to do now?
+	- Create documentation for Man
+	- Help test and debug the program on different interactions
+
+Am I blocked on anything?
+	- None as of writing.
+
+Law Chi Fai
+lawchi1
+1002470444
+June 20, 2016

@@ -1,0 +1,44 @@
+package filesystem;
+
+import CatTest.MockFile;
+
+public class FileSystemTest {
+  private MockDirectory root = new MockDirectory();
+  private MockDirStack ds = new MockDirStack();
+  private FileSystem fs = new FileSystem(root, ds);
+
+  @Test
+  public void testGetRoot() {
+    assertEquals(fs.getDirectroy(), root);
+  }
+
+  @Test
+  public void testGetDirInRoot() {
+    MockDirectory rar = new MockDirectory("rar", root);
+    root.addDir(rar);
+    assertEquals(fs.getDirectroy("rar"), rar);
+  }
+
+  @Test
+  public void testPushDir() {
+    fs.push("b/c");
+    assertEquals("b/c", ds.pop());
+  }
+
+  @Test
+  public void testPopDir() {
+    ds.push("a/b");
+    assertEquals("a/b", fs.pop());
+  }
+
+  public void testGetDNEFile() {
+    assertEquals(null, fs.getFile("gg", root));
+  }
+
+  @Test
+  public void testGetFile() {
+    MockFile file = new MockFile();
+    root.addFile(file);
+    assertEquals(file, fs.getFile("gg"));
+  }
+}

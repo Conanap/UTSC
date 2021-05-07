@@ -1,0 +1,8 @@
+class name: Redirect
+super: ShellIO.java
+sub: null
+responsibilities:
+Redirects command output to file, either appendment or rewrite
+collaborators:
+Shell.java
+... (all other commands)

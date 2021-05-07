@@ -1,0 +1,27 @@
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class PwdTest {
+  @Test
+  public void testNestedDirectores() {
+    MockDirectory dir = new MockDirectory(
+            "dir3",
+            new MockDirectory(
+                    "dir2",
+                    new MockDirectory(
+                            "dir1",
+                            new MockDirectory()
+                    )
+            )
+    );
+    String wd = Pwd.printWorkingDirectory(dir);
+    assertEquals("/dir1/dir2/dir3\n", wd);
+  }
+
+  @Test
+  public void testRootDirectory() {
+    MockDirectory dir = new MockDirectory();
+    String wd = Pwd.printWorkingDirectory(dir);
+    assertEquals("/\n", wd);
+  }
+}

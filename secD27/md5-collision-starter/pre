@@ -1,0 +1,3 @@
+# -*- coding: utf-8 -*-
+out = ['I am good!', 'I am evil!']
+bits = """

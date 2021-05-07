@@ -1,0 +1,10 @@
+What did I do?
+	- Finish test cases for all classes I wrote (echo, cat, mkdir, filesystem, Input, dirstack, pop and pushd)
+	- Note: JShell and RunCmd do not have test cases as if the commands (and above classes) work correctly, they will.
+	- Finished up commenting and javadocs
+
+What will I do?
+	- Hand in everything and cry as I fail my exam tomorrow
+
+Am I blocked on anything?
+	- My arteries are blocked. Jk, nothing.

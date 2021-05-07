@@ -1,0 +1,119 @@
+package filesystem;
+
+import driver.Tokenizer;
+
+/**
+ * A file system that owns directories and a DirStack; used to keep track of
+ * directories and files
+ *
+ * @author Albion Ka Hei Fung
+ */
+
+public class FileSystem {
+  private Directory root;
+  private DirStack ds;
+
+  /**
+   * Create an empty file system with a root directory and stack
+   */
+  public FileSystem() {
+    this.root = new Directory();
+    this.ds = new DirStack();
+  }
+
+  public FileSystem(Directory dir) {
+    this.root = dir;
+    this.ds = new DirStack();
+  }
+
+  public FileSystem(Directory dir, DirStack ds) {
+    this.root = dir;
+    this.ds = ds;
+  }
+
+  /**
+   * Retrieves the specified directory from math, relative to curr directory or
+   * from root, and returns it. Returns null if DNE
+   *
+   * @param path The absolute or relative path of the directory desired
+   * @param curr The current directory the instance is on
+   */
+  public Directory getDirectory(String path, Directory curr) throws DirectoryNotFoundException{
+    Directory currDirectory = curr;
+    // spliting up into tokens
+    String[] nextDirectory = path.split("/");
+    int i = 0;
+    // traverse through the path's array to get next directory
+    while (i < nextDirectory.length && currDirectory != null) {
+      switch (nextDirectory[i]) {
+        case "":
+          currDirectory = this.root;
+          break;
+        case ".":
+          break;
+        case "..":
+          currDirectory = currDirectory.getParent();
+          break;
+        default:
+          currDirectory = currDirectory.getDir(nextDirectory[i]);
+      }
+      i++;
+    }
+    // catching cding to root
+    if (path.split("/").length == 0)
+      currDirectory = this.root;
+    return currDirectory;
+  }
+
+  /**
+   * Push the path to the DirStack
+   *
+   * @param path The path to push
+   */
+  public void push(String path) {
+    this.ds.pushDir(path);
+  }
+
+  /**
+   * Pops the next directory from DirStack
+   */
+  public String pop() {
+    return this.ds.popDir();
+  }
+
+  /**
+   * Returns the root directory
+   */
+  public Directory getRoot() {
+    return this.root;
+  }
+
+  /**
+   * Gets the file at path given the current directory, relative or absolute.
+   * Returns null if DNE
+   *
+   * @param path The relative or absolute path
+   * @param curr The current directory of the instance
+   */
+  public File getFile(String path, Directory curr) throws FileNotFoundException{
+    // parse path
+    String[] paths = Tokenizer.parseFilePath(path);
+    File file = null;
+    // get the directory that may own the file
+    if (paths[1] != null)
+      try {
+        curr = this.getDirectory(paths[0], curr);
+      } catch (DirectoryNotFoundException e) {
+        throw new FileNotFoundException();
+      }
+    else
+      paths[1] = paths[0];
+    // get the file in that directory
+    if (curr != null)
+      file = curr.getFile(paths[1]);
+    else {
+      throw new FileNotFoundException();
+    }
+    return file;
+  }
+}

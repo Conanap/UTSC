@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class Cd {
+  /**
+   * Given an String of directory names representing a directory path, and a
+   * Directory object, find and return directory at path
+   *
+   * @param String    path, Directory currDir
+   * @param Directory currDir
+   */
+  public static Directory changeDir(String path, FileSystem fs, Directory currDir) {
+    return Directory temp = fs.getDirectory(path, currDir);
+  }
+}

@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+
+/**
+ * Class responsible for tokenizing command-line input. This class cannot be
+ * instantiated.
+ */
+public class Tokenizer {
+  /**
+   * Prevent instantiation of Tokenizer
+   */
+  private Tokenizer() {
+  }
+
+  /**
+   * Convert a single string of command-line input into argument tokens.
+   * Intelligently parses double-quoted phrases as single arguments and ignores
+   * redundant whitespace.
+   *
+   * @param input A string representing command-line input
+   * @return An array of strings representing the parsed command tokens
+   */
+  public static String[] tokenizeInput(String input) {
+    input += ' ';
+    boolean inQuote = false;
+    int inputLength = input.length();
+    String currentArgument = "";
+    ArrayList<String> argumentList = new ArrayList<>();
+    for (int i = 0; i < inputLength; i++) {
+      if (input.charAt(i) == '"') {
+        // Allow quoting of empty string
+        if (inQuote) {
+          argumentList.add(currentArgument);
+          currentArgument = "";
+        }
+        inQuote = !inQuote;
+      } else if (inQuote) {
+        // Add all characters inside quotes
+        currentArgument += input.charAt(i);
+      } else if (input.charAt(i) == ' ') {
+        // End previous argument on a space
+        if (currentArgument.length() > 0) {
+          argumentList.add(currentArgument);
+          currentArgument = "";
+        }
+      } else {
+        // Add any other character
+        currentArgument += input.charAt(i);
+      }
+    }
+    return argumentList.toArray(new String[0]);
+  }
+  
+  /**
+  * Parses the file path such that the last directory / file
+  * is in the second element of the string array, the rest is
+  * in the first. Second element is null if it cannot be split
+  */
+  public static String[] parseFilePath(String path) {
+    String[] paths = new String[2];
+    int last = path.lastIndexOf("/");
+    if (last != -1) {
+      paths[0] = path.substring(0, last);
+      if (path.substring(last, last + 1).equals("/"))
+        last++;
+      paths[1] = path.substring(last, path.length());
+    } else
+      paths[0] = path;
+    return paths;
+  }
+}

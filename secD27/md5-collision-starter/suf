@@ -1,0 +1,3 @@
+"""
+from hashlib import sha256
+print out[0] if sha256(bits).hexdigest() == "34352b3c8ac538661c8591329147f6f57cc874affcb1f3909ca04ad242ea7a9a" else out[1]

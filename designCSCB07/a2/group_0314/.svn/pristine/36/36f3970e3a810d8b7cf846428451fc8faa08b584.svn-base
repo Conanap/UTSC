@@ -1,0 +1,167 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author brody
+ */
+public class Directory {
+  private String dirName;
+  private Directory parent;
+  private Map<String, Directory> dirContainer =
+          new HashMap<String, Directory>();
+  private Map<String, File> fileContainer = new HashMap<String, File>();
+
+  /**
+   * Construct a new directory with name
+   * @param name    Name of directory
+   * @param parentDir   Directory one level above directory being created
+   */
+  public Directory(String name, Directory parentDir) {
+    this.dirName = name;
+    this.parent = parentDir;
+    this.parent.addDir(this, name);
+  }
+
+  /**
+   * Construct root directory
+   */
+  public Directory() {
+    this.dirName = "root";
+    this.parent = this;
+  }
+
+  public String toString() {
+    return this.getName();
+  }
+
+  /**
+   * Returns name of directory
+   *
+   * @return dirName name of directory
+   */
+  
+  public String getPath() {
+    if (this.parent == this) {
+      return "/";
+    }
+    else {
+      return this.parent.getPath() + this.dirName + "/";
+    }
+  }
+  public String getName() {
+    return this.dirName;
+  }
+
+  /**
+   * Returns parent Directory object
+   *
+   * @return parent Parent directory of current directory
+   */
+  public Directory getParent() {
+    return this.parent;
+  }
+
+  /**
+   * Maps new directory to dirName
+   * @param dir Directory being added
+   * @param dirName name of new directory
+   */
+  public void addDir(Directory dir, String dirName) {
+    dirContainer.put(dirName, dir);
+  }
+
+  /**
+   * Returns directory with name dirName
+   * @param dirName name of directory being returned
+   * @return Directory
+   */
+  public Directory getDir(String dirName) {
+    return dirContainer.containsKey(dirName) ? dirContainer.get(dirName) : null;
+  }
+
+  /**
+   * Maps new file to fileName
+   * @param inFile  file being added to directory
+   * @param fleName name of file being added
+   */
+  public void addFile(File inFile, String fileName) {
+    fileContainer.put(fileName, inFile);
+    inFile.setName(fileName);
+  }
+
+  /**
+   * Returns file with name fileName
+   * @param fileName    name of file wanted
+   * @return File
+   */
+  public File getFile(String fileName) {
+    return fileContainer.containsKey(fileName) ? fileContainer.get(fileName) :
+            null;
+  }
+
+  /**
+   * Returns an ArrayList containing names of all directories contained
+   *
+   * @return ArrayList<String> directories
+   */
+  public ArrayList listDirectories() {
+    ArrayList<String> directories = new ArrayList<String>();
+    for (String dirName : dirContainer.keySet()) {
+      directories.add(dirName);
+    }
+    return directories;
+  }
+
+  /**
+   * Returns an ArrayList containing names of all files contained
+   * @return ArrayList<String> files
+   */
+  public ArrayList listFiles() {
+    ArrayList<String> files = new ArrayList<String>();
+    for (String fileName : fileContainer.keySet()) {
+      files.add(fileName);
+    }
+    return files;
+  }
+
+  /**
+   * Returns whether directory exists in current directory
+   *
+   * @param name - Name of directory
+   * @return in - True if directory is in file
+   */
+  public boolean hasDirectory(String name) {
+    boolean in = false;
+    for (String dirName : dirContainer.keySet()) {
+      if (name.equals(dirName)) {
+        in = true;
+      }
+    }
+    return in;
+  }
+
+  public String getDirName() {
+    return dirName;
+  }
+
+  public Map<String, Directory> getDirContainer() {
+    return dirContainer;
+  }
+
+  public void removeDir(String dirName) {
+    this.dirContainer.remove(dirName);
+  }
+
+  public Map<String, File> getFileContainer() {
+    return fileContainer;
+  }
+
+  public void removeFile(String fileName){
+    this.fileContainer.remove(fileName);
+  }
+
+  public void setFileContainer(Map<String, File> fileContainer) {
+    this.fileContainer = fileContainer;
+  }
+}

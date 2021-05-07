@@ -1,0 +1,45 @@
+- Please split up classes into packages. (-0.5)
+- Inconsistent spacing in the test files. (-0.5)
+- Non-semantic class names. (e.g. "RunCmd" instead of "RunCommand") (-0.5)
+- Too hard to add new commands. One needs to add it to Man, to Validator and to RunCmd. You should've split some of this code into the relevant command classes. (-1)
+- RunCmd.runCmd is far too long because of this. You need to use another redirection method such as hash tables. (-1)
+- Everything is static. This makes your design not extensible. You have a lot of classes, but they are all static, which does not make use of object oriented design at all.  (e.g. what is the point of extending Redirect when Redirect only has static methods?) (-1)
+- Missing Javadoc for instance variables (-1)
+- Missing Javadoc for some methods, as well as test cases (-1)
+- Missing tags @return and @param occasionally (-0.5)
+- Test code does not compile on the lab machines. There are a slew of errors and the fix is not simple. (-3)
+- From the code, the test cases aren't thorough enough. (-0.75)
+
+Failed test cases (5 * -0.25 = -1.25):
+1) Popping empty stack
+>popd
+Expected: It shouldn’t crash the program. A message as the directory stack is empty is preferable.
+Actual: Crashes.
+
+2) Making a directory with invalid name
+>mkdir “Hello” Hello$
+>ls
+Expected: “Hello”, Hello$ should not be created since they use special characters.
+Actual: Creates them.
+
+3) Echoing without quotes
+>echo Hello World “
+Expected: It shouldn’t echo Hello World, since it is not enclosed in double quotes (as stated in the handout).
+Actual: Outputs it.
+
+4) Listing multiple files
+>ls file.txt . newFolder 
+Expected: It should print file.txt, the current directory contents and the contents of newFolder.
+Actual: Only prints out contents of newFolder.
+
+5) Invalid truncating of history
+>history -1
+Expected: It shouldn’t crash the program, and having an error message would be preferable.
+Actual: Crashes. Infinite loop.
+
+
+
+- Use inheritance for your commands. This will make it much easier to redirect to your commands.
+- Put the full PB item in the SB, not just a short form. (No deduction, comment only)
+- Choice of method names are questionable sometimes. (e.g. Append.append, MkDir.mkdir being the only methods in their respective class)
+

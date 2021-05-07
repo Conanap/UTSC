@@ -1,0 +1,94 @@
+package command;
+
+import driver.Output;
+import driver.CommandRunner;
+import filesystem.*;
+
+import java.util.Map;
+
+/**
+ * Handles the storage and retrieval of usage messages and documentation
+ */
+public class Man {
+  private Command command;
+
+  // Statically input all usage messages and documentation
+  /* kept for reference
+  static {
+    usageMessages = new HashMap<String, String>();
+    descriptions = new HashMap<String, String>();
+    usageMessages.put("exit", "exit");
+    descriptions.put("exit", "Exits JShell.");
+    usageMessages.put("echo", "echo STRING");
+    descriptions.put("echo", "Prints the provided string.");
+    usageMessages.put("cat", "cat FILE1 [FILE2 ...]");
+    descriptions.put("cat", "View the contents of provided files.");
+    usageMessages.put("man", "man COMMAND");
+    descriptions.put("man", "Print documentation for a given command.");
+    usageMessages.put("ls", "ls [PATH ...]");
+    descriptions.put("ls", "List the contents of the specified directories.");
+    usageMessages.put("pwd", "pwd");
+    descriptions.put("pwd", "Print the current working directory.");
+    usageMessages.put("popd", "popd");
+    descriptions.put("popd", "Remove top directory from the directory stack " +
+            "and change current directory into it");
+    usageMessages.put("pushd", "pushd DIR");
+    descriptions.put("pushd", "Save the current directory into the directory" +
+            " stack and change current directory to the provided directory");
+    usageMessages.put("history", "history [NUMBER]");
+    descriptions.put("history", "List recent commands. If provided a number," +
+            " limit the number of listed commands to that number.");
+    usageMessages.put("mkdir", "mkdir DIR ...");
+    descriptions.put("mkdir", "Create directories for each provided name.");
+    usageMessages.put("!", "!POSITIVE_NON_ZERO_NUM");
+    descriptions.put("!", "Run the num'th command in history. num must be a valid number and non negative");
+  }
+*/
+  /**
+   * Return the full documentation available for the given command. Includes a
+   * brief description and a usage message.
+   *
+   * @param commandName name of the requested command
+   * @return description of the method and a usage
+   */
+  /*
+  private String getDocumentation(String commandName) {
+    if (descriptions.containsKey(commandName) &&
+            usageMessages.containsKey(commandName)) {
+      String documentation = "";
+      documentation += descriptions.get(commandName);
+      documentation += "\n\n";
+      documentation += "$ " + usageMessages.get(commandName);
+      documentation += "\n";
+      return documentation;
+    } else {
+      return "No man page found for \"" + commandName + "\"\n";
+    }
+  }
+
+*/
+  /**
+   * Return the usage message only for the given command.
+   *
+   * @param commandName name of the requested command
+   * @return usage message pertaining to the given command
+   */
+  public String getUsage() {
+    return "man COMMAND\n";
+  }
+
+  public String getManual() {
+    return this.getUsage() + "\n" +
+    "Retrieves and outputs the manual of the COMMAND\n";
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+  }
+
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    this.command = cmd.getCommand(tokens[1]);
+    String out = command.getManual();
+    output.sendOutBuffer(out);
+  }
+
+}

@@ -1,0 +1,60 @@
+package command;
+
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+/**
+* pushes a directory and cds to a directory of a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class PushDirectory extends Command {
+  private Directory curr;
+  private FileSystem fs;
+  private Cd cd;
+  private Pwd pwd;
+  private final String MAN_USAGE = "pushd DIR";
+  private final String MAN_DESCRIPTION = "Save the current directory into the directory" +
+      " stack and change current directory to the provided directory";
+
+  public PushDirectory() {
+    this.cd = new Cd();
+    this.pwd = new Pwd();
+  }
+  /**
+   * Pushes current working directory to a stack, then cd to a given directory
+   *
+   * @param path Directory to cd to after pushing cwd
+   * @param fs   The file system which the instance is running on
+   * @param curr The current directory in the instance
+   */
+  public void execute( String[] tokens, CommandRunner cmd, Output output) {
+    // cd
+    Directory temp = this.cd.changeDir(tokens[1], this.fs, this.curr, output);
+    if (temp != null) {// if dir exist, then we push
+      this.pwd.execute(tokens, cmd, output);
+      this.fs.push(output.getOutBuffer());
+      cmd.setCurrDir(temp);
+    }
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.curr = curr;
+    this.fs = fs;
+    this.cd.initialize(curr, fs, his);
+    this.pwd.initialize(curr, fs, his);
+  }
+
+  public boolean validate(String[] tokens) {
+    return true;
+  }
+
+  public String getManual() {
+    return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+  }
+
+  public String getUsage() {
+    return Man.formatUsage(MAN_USAGE);
+  }
+}

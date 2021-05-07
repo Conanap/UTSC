@@ -1,0 +1,27 @@
+import org.junit.Test;
+
+import MockFileSystem;
+import command.PushDirectory;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+
+public class PushdTest {
+	private MockFileSystem fs = new MockFileSystem();
+	PushDirectory pushd;
+
+	
+	@Before
+	public void setUp(){
+	  pushd = new PushDirectory();
+	}
+	
+	@Test
+	public void testPushRoot() {
+		MockDirectory rar = new MockDirectory(rar, fs.getDir("."));
+		MockDirectory d = pushd.pushd("rar", fs, fs.getDir("."));
+		assertEquals(rar, d);
+		assertEquals(".", fs.pop());
+	}
+}

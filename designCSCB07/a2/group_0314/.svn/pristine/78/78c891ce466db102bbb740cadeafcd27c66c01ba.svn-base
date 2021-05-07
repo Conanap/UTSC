@@ -1,0 +1,19 @@
+What I did:
+	- Rewrote some code for redirect, orverwrite, and append
+	- Rewrote some code for pop, pushd
+	- Rewrote some code for JShell, FileSystem, Cat
+	- All above rewrites were due to a new implementation with directory tracking
+	- Completed MkDir
+	- Debugged a lot of problems after new implementation
+	- Fixed mkdir behavior (bugs)
+	- Fixed cat behavoir (bugs)
+	- Fixed Redirect and Overwrite behaviors (bugs)
+	- Added cd man page
+	- Fixed getFile, cd and FileSystem bugs created when a file/directory does not exist
+
+What I plan to do:
+	- Debug, debug, debug, test, test, test
+	- Complete Man pages
+
+Blocked:
+	- Need History, Cp up and running

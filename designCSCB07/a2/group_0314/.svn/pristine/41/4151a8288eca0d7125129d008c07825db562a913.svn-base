@@ -1,0 +1,104 @@
+package command;
+
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Tokenizer;
+import driver.Output;
+
+import filesystem.FileNotFoundException;
+import filesystem.DirectoryNotFoundException;
+
+/**
+* A class used to create a directory in a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class MakeDirectory extends Command{
+  private FileSystem fs;
+  private Directory curr;
+  private final String MAN_USAGE = "Create directories for each provided name.";
+  private final String MAN_DESCRIPTION = "mkdir DIR [...]";
+
+  public MakeDirectory(){}
+  /**
+   * Creates a directory
+   *
+   * @param path Where and what you want to call your new dir
+   * @param fs The file system the instance is running on
+   * @param curr The current directory
+   */
+  private void executePath(String path, Output output) {
+    String[] paths = Tokenizer.parseFilePath(path);
+    String errs = "";
+    if (paths[1] == null) { // creating in root dir
+      try { // check to see if file exist
+        curr.getFile(paths[0]);
+        errs += paths[0] + ": File already exist\n";
+        output.sendErrBuffer(errs);
+        return; // File with same name exists
+      } catch(FileNotFoundException e) {
+        try { // check if dir exist
+          curr.getDir(paths[0]);
+          errs += paths[0] + ": Directory already exist\n";
+          output.sendErrBuffer(errs);
+          return; // said dir does not exist
+        } catch(DirectoryNotFoundException f){}
+      }
+        paths[1] = paths[0];
+        paths[0] = ".";
+    }
+    // if all good, we get the dir we want to mkdir in
+    try {
+      curr = fs.getDirectory(paths[0], curr);
+    } catch(DirectoryNotFoundException g) { // cant find dir
+      errs = paths[0] + ": No such file or directory\n";
+      output.sendErrBuffer(errs);
+      return;
+    }
+    // if want to make . or .. dir
+    if (paths[1].equals(".") || paths[1].equals("..")) {
+      errs = paths[1] + ": Illegal character in name\n";
+      output.sendErrBuffer(errs);
+      return;
+    }
+    try {
+      fs.getDirectory(paths[1], curr);// dir already exist
+      errs = paths[1] + ": Directory already exist\n";
+      output.sendErrBuffer(errs);
+      return;
+      } catch(DirectoryNotFoundException h) {
+        try {
+          fs.getFile(paths[1], curr); // file already exist
+          errs = paths[1] + ": File already exist\n";
+          output.sendErrBuffer(errs);
+          return;
+        } catch(FileNotFoundException k) {}
+      }
+    // all good, let's make the dir
+    Directory dir = new Directory(paths[1], curr);
+    // add the dir
+    curr.addDir(dir, paths[1]);
+  }
+
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    for(int i = 1; i < tokens.length; i++)
+      this.executePath(tokens[i], output);
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.curr = curr;
+    this.fs = fs;
+  }
+
+  public boolean validate(String[] tokens){
+    return true;
+  }
+
+  public String getManual() {
+    return Man.formatManual(MAN_USAGE, MAN_DESCRIPTION);
+  }
+
+  public String getUsage() {
+    return Man.formatUsage(MAN_USAGE);
+  }
+}

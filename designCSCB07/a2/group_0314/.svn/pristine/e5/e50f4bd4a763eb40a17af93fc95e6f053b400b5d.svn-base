@@ -1,0 +1,8 @@
+Backlog item						Estimate
+*allow users to create directories (and files) 		2.0 hours
+*allow users to remove directories (and files)		1.0 hours
+*allow users to copy directories (and files)		0.5 hours
+*allow users to rename directories (and files)		0.5 hours
+*allow users to move directories (and files) to another	1.0 hours
+*allow users to print using echo			2.0 hours
+

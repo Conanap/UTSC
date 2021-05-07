@@ -1,0 +1,11 @@
+Class name: Mv.class
+Parent class: Cp.java
+Subclasses: None
+
+Responsibilities:
+*Moves file from old location to new location.
+*Both old location and new location may be relative to the current directory, or full paths.
+*File at old location is removed.
+Collaborators:
+*Rm.class
+*Mkdir.class

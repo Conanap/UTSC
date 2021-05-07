@@ -1,0 +1,88 @@
+[HTTPRequest] e-commerce.seclab.space GET /home
+*****
+[HTTPResponse] 200 
+body: Welcome to e-commerce. Please enter your username and password.
+*****
+[HTTPRequest] e-commerce.seclab.space POST /login
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+body:
+  username: alice
+  password: 4l1c3
+*****
+[HTTPResponse] 200 
+body: user alice has been signed in
+*****
+[HTTPRequest] e-commerce.seclab.space PUT /buy
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+body:
+  cc: 4111111111111111
+  exp: 12/20
+  code: 945
+*****
+[HTTPResponse] 200 
+body: Congratulations your order #775230 has been recorded
+*****
+[HTTPRequest] e-commerce.seclab.space GET /check
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+*****
+[HTTPResponse] 200 
+body: your order #775230 has been sent
+*****
+[HTTPRequest] e-commerce.seclab.space GET /home
+*****
+[HTTPResponse] 200 
+body: Welcome to e-commerce. Please enter your username and password.
+*****
+[HTTPRequest] e-commerce.seclab.space POST /login
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+body:
+  username: alice
+  password: 4l1c3
+*****
+[HTTPResponse] 200 
+body: user alice has been signed in
+*****
+[HTTPRequest] e-commerce.seclab.space PUT /buy
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+body:
+  cc: 4111111111111111
+  exp: 12/20
+  code: 945
+*****
+[HTTPResponse] 200 
+body: Congratulations your order #775230 has been recorded
+*****
+[HTTPRequest] e-commerce.seclab.space GET /check
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+*****
+[HTTPResponse] 200 
+body: your order #775230 has been sent
+*****
+[HTTPRequest] e-commerce.seclab.space GET /home
+*****
+[HTTPResponse] 200 
+body: Welcome to e-commerce. Please enter your username and password.
+*****
+[HTTPRequest] e-commerce.seclab.space POST /login
+cookies:
+  session-id: eyJhbGciOiJIUzI1NiJ9.YWxpY2U.MHnFOEgp6Qm4GbdqyJfWeYdxnQqhZXw-kCEHw9AI--I
+  order-id: 775230
+body:
+  username: alice
+  password: 4l1c3
+*****
+[HTTPResponse] 200 
+body: user alice has been signed in
+*****

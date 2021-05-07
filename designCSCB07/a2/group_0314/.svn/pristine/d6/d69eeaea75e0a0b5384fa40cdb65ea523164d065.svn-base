@@ -1,0 +1,30 @@
+Backlog item                                                        Estimate
+* As a user, I want to be able to create files and directories      2.0 hours
+* As a user, I want to be able to remove files and directories      1.0 hours
+* As a user, I want to be able to copy files and directories        0.5 hours
+* As a user, I want to be able to rename files and directories      0.5 hours
+* As a user, I want to be able to move files and directories        1.0 hours
+* As a user, I want to be able to print text to the console         2.0 hours
+* As a user, I want to be able to list all files in a directory     1.0 hours
+* As a user, I want to be able to see which directory I am          0.5 hours
+  currently in      
+* As a user, I want to be able to write text into a file            2.0 hours
+* As a user, I want to be able to append text into a file           1.0 hours
+* As a user, I want to be able to view the contents of a file       2.0 hours
+* As a user, I want to be able to exit the shell via a command      1.0 hours
+* As a user, I want to be able to see my recent commands            2.0 hours
+* As a user, I want to be able to obtain help documentation for     2.5 hours
+  all commands
+* As a user, I want to be able to save the current directory for    3.0 hours
+  later retrieval
+* As a user, I want to be able to control the file system through   2.0 hours
+  the shell using commands
+* As a user, I want to be able to redirect stdout to a file         1.0 hours
+* As a user, I want to be able to list all contents within (a)      2.0 hours
+  specified path(s), possibly recursively
+* As a user, I want to be able to download a file from a URL and    2.5 hours
+  put it in the current working directory
+* As a user, I want to be able to use a previously used command     1.5 hours
+  without looking up what the command is, but just providing a num
+* I want to be find lines in files in directories that contain a    3.0 hours
+  specified regex

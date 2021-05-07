@@ -1,0 +1,56 @@
+package command;
+
+import filesystem.*;
+import driver.CommandRunner;
+import driver.Output;
+
+/**
+* Pops a directory and cds to the directory of a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class PopDirectory extends Command {
+  private Directory curr;
+  private FileSystem fs;
+  private Cd cd;
+  public PopDirectory() {
+    cd = new Cd();
+  }
+
+  /**
+   * Pops the last pushed dir and cd to it
+   *
+   * @param fs   The file system the instance is running on
+   * @param curr The current directory
+   */
+  public void execute(String[] tokens, CommandRunner cmd, Output output) {
+    String path = fs.pop(); // popping
+    if(path != null) {
+      path = path.substring(0, path.length() - 1);
+      String[] ntokens = {"cd", path};
+      cd.execute(ntokens, cmd, output);
+    } else {
+      String errs = "No more directories to pop\n";
+      output.sendErrBuffer(errs);
+    }
+  }
+
+  public void initialize(Directory curr, FileSystem fs, History his) {
+    this.fs = fs;
+    this.curr = curr;
+    this.cd.initialize(curr, fs, his);
+  }
+
+  public String getManual() {
+    return this.getUsage() + "\n" +  "Remove top directory from the directory stack " +
+          "and change current directory into it";
+  }
+
+  public boolean validate(String[] tokens) {
+    return true;
+  }
+
+  public String getUsage() {
+    return "popd";
+  }
+}

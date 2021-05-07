@@ -1,0 +1,170 @@
+// **********************************************************
+// Assignment2:
+// Student1:
+// UTORID user_name: fungalbi
+// UT Student #: 1002444321
+// Author: Albion Ka Hei Fung
+//
+// Student2:
+// UTORID user_name:
+// UT Student #:
+// Author: Brody Chen
+//
+// Student3:
+// UTORID user_name:
+// UT Student #:
+// Author: Chi Fai Law
+//
+// Student4:
+// UTORID user_name: moha1075
+// UT Student #: 1002307434
+// Author: Rizadh Mohamed Nizam
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// I have also read the plagiarism section in the course info
+// sheet of CSC B07 and understand the consequences.
+// *********************************************************
+
+ 
+import java.util.Stack;
+import java.util.ArrayList;
+
+public class JShell {
+  private static String output;
+  private static boolean exit = false;
+  private static Directory curr = new Directory();
+  private static Stack dirStack = new Stack();
+  // private static Stack hisStack = new Stack();
+  private static boolean valid = false;
+
+  public static void main(String[] args) {
+    // uncomment when ready
+    // FileSystem file_sys = new FileSystem();
+    String[] tokens;
+    while (!exit) {
+      System.out.print("JVM: ~Root$ ");
+      tokens = Input.getInput();
+      // validate input
+      if(valid) {
+        output = runCmd(tokens);
+        if (output.length() > 0)
+          System.out.print(output);
+      } else {
+        // output = errorMsg(tokens);
+        output += "";
+      }
+    }
+    // reset for next run
+    // exit = false;
+  }
+
+  private static void exit() {
+    exit = true;
+  }
+
+  private static String runCmd(String[] tokens) {
+    String out = "";
+    switch (tokens[0]) {
+      case "exit":
+        //if (tokens.length == 1) {
+        exit();
+        //} else {
+        //out = "usage: exit\n";
+        //}
+        break;
+      case "echo":
+        if(!valid)
+          out = "usage: echo STRING [>, >>: FILE]\n";
+        else {
+          if(tokens.length == 2)
+            //out = Echo.echo(tokens[1]);
+            out += "";
+          else if(tokens.length == 4) {
+            if(tokens[2] == ">")
+              // overwrite
+              out += "";
+            else if(tokens[2] == ">>")
+              // append
+              out += "";
+          }
+        }
+        break;
+
+      case "mkdir":
+        if (!valid)
+          out = "usage: mkdir DIR ...\n";
+        else {
+          for (int i = 1; i < tokens.length; i++)
+            // Mkdir.mkdir(tokens[i]);
+            out += "";
+        }
+        break;
+
+      case "cd":
+        if (!valid)
+          out = "usage: cd DIR\n";
+        else
+          // Cd.cd(tokens[1], curr);
+          out += "";
+        break;
+
+      case "ls":
+        if (!valid)
+          out = "usage: ls\n";
+        else {
+          for (int i = 1; i < tokens.length; i++)
+            // Ls.ls(curr);
+            out += "";
+        }
+        break;
+
+      case "cat":
+        if (!valid)
+          out = "usage: cat FILE ...\n";
+        else
+          out = Cat.cat(tokens, curr);
+        break;
+
+      case "pushd":
+        if (!valid)
+          out = "usage: pushd DIR\n";
+        else
+          //Pushd.pushd(dirStack);
+          out += "";
+        break;
+
+      case "popd":
+        if (!valid)
+          out = "usage: popd\n";
+        else
+          // Cd.cd(Popd.popd(dirStack));
+          out += "";
+        break;
+
+      case "history":
+        if (!valid)
+          out = "usage: history [NUMBER]\n";
+        else
+          // History.history(tokens[1]);
+          out += "";
+        break;
+
+      case "man":
+        if (!valid)
+          out = "usage: man COMMAND\n";
+        else
+          // Man.man(tokens[1]);
+          out += "";
+        break;
+
+      default:
+        out = "-jshell: " + tokens[0] + ": command not found\n";
+        break;
+    }
+
+    return out;
+  }
+}

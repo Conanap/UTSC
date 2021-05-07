@@ -1,0 +1,35 @@
+//Sprint 4 backlog
+July 2 to July 8
+
+User Stories from Backlog:
+a) ... I want to be able to copy file and directories
+b) ... I want to be able to move file and directories
+c) ... I want to be able to redirect all stdout
+d) ... I want to be able to run a cmd from history without looking it up
+e) ... I want to be able to get lines printed which match a regex in it
+
+Specific Tasks to be accomplished:
+a-1. Update validator
+b-1. Mv class
+c-1. Update all classes to properly utilize exception and stdout
+d-1. do the ! calss
+e-1. Cp class
+f-1. Update all redirects
+g-1. Update ls for flags
+h-1. Create a class that reads regex and return whether or not the provided string matches
+Note: try your old code for h-1?
+i-1. Grep class. Note: you just need to call the regex class in h-1 to check if it's valid
+
+Delegation:
+
+Usr: Albion ka Hei Fung
+Tasks: c-1, d-1, e-1
+
+Usr: Rizadh Nizam
+Tasks: c-1, a-1, h-1
+
+Usr: Brody Chen
+Tasks: c-1, g-1, i-1
+
+Usr: Chi Fai Law
+Tasks: c-1, f-1, b-1

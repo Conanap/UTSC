@@ -1,0 +1,8 @@
+Class name: Mv.class
+Super class: FileSystem.class
+Sub class: Null
+Responsibilities:
+*Move specified directory to new directory and remove old directory
+*Includes moving files
+Collaborators:
+Rm.class, MkDir.class

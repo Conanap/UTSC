@@ -1,0 +1,5 @@
+public class Popd {
+	public static Directory popd(FileSystem fs, curr) {
+		return Cd.changeDir(fs.pop(), fs, curr);
+	}
+}

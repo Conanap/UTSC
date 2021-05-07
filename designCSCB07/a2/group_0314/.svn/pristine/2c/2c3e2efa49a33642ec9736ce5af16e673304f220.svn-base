@@ -1,0 +1,93 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Directory {
+  private String dirName;
+  private Directory parent;
+  private Map<String, Directory> dirContainer =
+      new HashMap<String, Directory>();
+  private Map<String, File> fileContainer = new HashMap<String, File>();
+
+  // Constructs a directory given its name and its parent directory
+  public Directory(String name, Directory parentDir) {
+    dirName = name;
+    parent = parentDir;
+  }
+  
+  // Constructs a directory with no name
+  public Directory(Directory parentDir) {
+    dirName = null;
+    parent = parentDir;
+  }
+  
+  //By default, a directory with no parent is the root
+  public Directory() {
+    dirName = "root";
+    parent = this;
+  }
+  
+  public String toString() {
+    return this.getName();
+  }
+  
+  // Returns full path from root to this
+  public String getName() {
+    return this.dirName;
+  }
+
+  public Directory getParent() {
+    return parent;
+  }
+
+  public void setParent(Directory parent) {
+    this.parent = parent;
+  }
+
+  // Add Directory to Map
+  public void addDir(Directory dir, String DirName) {
+    dirContainer.put(DirName, dir);
+  }
+
+  // returns Directory named dirName
+  public Directory getDir(String dirName) {
+    return dirContainer.get(dirName);
+  }
+
+  // add File to Map
+  public void addFile(File infile, String FileName) {
+     fileContainer.put(FileName, infile);
+  }
+  
+  // returns File with fileName
+  public File getFile(String fileName) {
+    return fileContainer.get(fileName);
+  }
+  
+  // returns array containing name of all directories in directory
+  public ArrayList listDirectories() {
+    ArrayList<String> directories = new ArrayList<String>();
+    for(String dirName : dirContainer.keySet()) {
+      directories.add(dirName);
+    }
+    return directories;
+  }
+
+  //returns array containing name of all files in directory
+  public ArrayList listFiles() {
+    ArrayList<String> files = new ArrayList<String>();
+    for(String fileName : fileContainer.keySet()) {
+      files.add(fileName);
+    }
+    return files;
+  }
+
+  public String getDirName() {
+    return dirName;
+  }
+
+  public void setDirName(String dirName) {
+    this.dirName = dirName;
+  }
+}

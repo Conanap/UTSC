@@ -1,0 +1,12 @@
+public class Cat {
+	public static String cat(String[] tokens, FileSystem fs) {
+		String out = "";
+		File file;
+		for (int i = 1; i < tokens.length; i++) {
+			// file = fs.getFile(tokens[i]);
+			//out += file.getContent() + "\n";
+			out += "";
+		}
+		return out;
+	}
+}

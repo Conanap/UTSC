@@ -1,0 +1,30 @@
+//Sprint 1 backlog
+June 20 to June 27
+
+
+User Stories from Product Backlog that we will address in this sprint:
+a) ... copy files and directories
+b) ... see my recent commands
+c) ... obtain help documentation for all commands
+d) ... create directories
+
+Specific tasks to be accomplished:
+a-1. Complete Cp.java
+b-1. Complete History.java
+c-1. Complete documentation for Man
+d-1. Complete Mkdir.java
+e-1. Test and debug
+
+These tasks are assigned as follows:
+
+User: Albion Ka Hei Fung
+Tasks: d-1, e-1
+
+User: Rizadh Nizam
+Tasks: a-1, e-1
+
+User: Chi Fai Law
+Tasks: c-1, e-1
+
+User: Brody Chen
+Tasks: b-1, e-1

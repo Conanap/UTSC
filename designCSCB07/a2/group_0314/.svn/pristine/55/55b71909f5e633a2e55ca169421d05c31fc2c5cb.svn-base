@@ -1,0 +1,26 @@
+package command;
+
+/**
+* Pops a directory and cds to the directory of a file system
+*
+* @author Albion Ka Hei Fung
+*/
+public class Popd {
+  /**
+   * Pops the last pushed dir and cd to it
+   *
+   * @param fs   The file system the instance is running on
+   * @param curr The current directory
+   */
+  public static Directory popd(FileSystem fs, Directory curr) {
+    String path = fs.pop(); // popping
+    path = path.substring(0, path.length() - 1);
+    Directory temp;
+    // if no more to pop, return null, otherwise return directory
+    if (path == null)
+      temp = null;
+    else
+      temp = Cd.changeDir(path, fs, curr);
+    return temp;
+  }
+}

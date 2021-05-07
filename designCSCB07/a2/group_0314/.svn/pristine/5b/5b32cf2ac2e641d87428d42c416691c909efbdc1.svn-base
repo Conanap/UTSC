@@ -1,0 +1,110 @@
+package driver;
+
+import java.util.ArrayList;
+
+/**
+ * Class responsible for tokenizing long string of input. This class cannot be
+ * instantiated.
+ */
+public class Tokenizer {
+  /**
+   * Prevent instantiation of Tokenizer
+   */
+  private Tokenizer() {
+  }
+
+  /**
+   * Convert a single string of command-line input into argument tokens.
+   * Intelligently parses double-quoted phrases as single arguments and ignores
+   * redundant whitespace.
+   *
+   * @param input The command-line input string
+   * @return An array of parsed command and argument tokens
+   */
+  public static String[] tokenizeInput(String input) {
+    // Add an space at the end of the input so that all arguments are processed
+    input += ' ';
+    /**
+     * Keeps track of whether currently processed character is inside or
+     * outside double-quotes
+     */
+    boolean inQuote = false;
+    /**
+     * Stores the length of the input
+     */
+    int inputLength = input.length();
+    /**
+     * Buffers the current argument being processed until it can be added to
+     * the argument list
+     */
+    String currentArgument = "";
+    /**
+     * Stores the list of arguments
+     */
+    ArrayList<String> argumentList = new ArrayList<>();
+
+    // Loop until the end of the string
+    for (int i = 0; i < inputLength; i++) {
+
+      // Handle encountering a double quote
+      if (input.charAt(i) == '"') {
+        // Include the quote in the argument (allows for quote validation in
+        // commands)
+        currentArgument += input.charAt(i);
+        // If already in a quote, clear the current argument
+        if (inQuote) {
+          argumentList.add(currentArgument);
+          currentArgument = "";
+        }
+        // Switch inQuote state
+        inQuote = !inQuote;
+      }
+
+      // Add all characters inside a quoted string
+      else if (inQuote) {
+        currentArgument += input.charAt(i);
+      }
+
+      // Clear any previous non-empty arguments on an empty space
+      else if (input.charAt(i) == ' ' && currentArgument.length() > 0) {
+        argumentList.add(currentArgument);
+        currentArgument = "";
+      }
+
+      // Add ! as its own argument and force adding the next character (even a
+      // space)
+      else if (input.charAt(i) == '!' && i == 0) {
+        argumentList.add("!");
+        currentArgument += input.charAt(++i);
+      }
+
+      // Simply add the character by default
+      else {
+        currentArgument += input.charAt(i);
+      }
+    }
+
+    return argumentList.toArray(new String[0]);
+
+  }
+
+  /**
+   * Parses the file path such that the last directory / file is in the second
+   * element of the string array, the rest is in the first. Second element is
+   * null if it cannot be split
+   */
+  public static String[] parseFilePath(String path) {
+    String[] paths = new String[2];
+    int last = path.lastIndexOf("/");
+    if (last != -1) {
+      paths[0] = path.substring(0, last);
+      if (path.substring(last, last + 1).equals("/")) {
+        last++;
+      }
+      paths[1] = path.substring(last, path.length());
+    } else {
+      paths[0] = path;
+    }
+    return paths;
+  }
+}

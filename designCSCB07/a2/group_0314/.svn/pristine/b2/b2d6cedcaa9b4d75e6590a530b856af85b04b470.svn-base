@@ -1,0 +1,12 @@
+public static class Cat {
+	public static void cat (String[] files) {
+		String[] file;
+		String finalOut = "";
+		// get directory
+		// print the file
+		for (int i = 0; i < file.length; i++) {
+			finalOut += Echo.echo(file.getContent());
+		}
+		return finalOut;
+	}
+}

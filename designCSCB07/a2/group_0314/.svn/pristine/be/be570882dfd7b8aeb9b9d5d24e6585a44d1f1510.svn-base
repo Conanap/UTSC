@@ -1,0 +1,41 @@
+public class MkDir {
+	public static int mkdir(String path, FileSystem fs, Directory curr) {
+		String[] paths = FileSystem.parseFilePath(path);
+		int status;
+		if(paths[1] == null) { //creating in root dir
+			if(curr.getFile(paths[0]) != null)
+				return(4); //said dir cannot be found
+			else if(curr.getDir(paths[0]) != null)
+				return(3);
+			else { // said dir does not exist
+				paths[1] = paths[0];
+				paths[0] = ".";
+			}
+		}
+
+		curr = fs.getDirectory(paths[0], curr);
+
+		// debug if
+		if(curr == null)
+			System.out.println("Curr is null");
+		else
+			System.out.println("curr is " + curr.getDirName());
+
+		if(curr == null)
+			status = 0;
+		else if(paths[1].equals(".") || paths[1].equals(".."))
+			status = 2;
+		else if (fs.getDirectory(paths[1], curr) != null)// dir already exist
+			status = 3;
+		else if (fs.getFile(paths[1], curr) != null)//file already exist
+			status = 4;
+		else {
+			System.out.println("mkdir at " + curr.getDirName());
+			Directory dir = new Directory(paths[1], curr);
+			curr.addDir(dir, paths[1]);
+			status = 1;
+			System.out.println("made " + fs.getDirectory(paths[1], curr).getDirName());
+		}
+		return(status);
+	}
+}

@@ -1,0 +1,12 @@
+What did I do?
+	- Test cases for MKdir
+	- Test cases for Echo
+	- Moved parseFilePath to tokenizer and fixed code related with it
+	- Made cat's behaviour more similar to that of a unix terminal's
+ 
+What will I do?
+	- Test cases for the rest of the classes I wrote
+	- Test and debug, fix up code inefficiencies and style
+
+blocked?
+	- The UK referendum. Jk, nothing.

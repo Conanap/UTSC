@@ -1,0 +1,11 @@
+Class name: get
+Parent class: ShellIO.java
+Subclasses: None
+
+Responsibilities:
+*Downloads file at given URL
+*Relocates file from temp. into current directory
+*Creates new directories as needed for file downloaded
+
+Collaborators
+*DirMgt.java

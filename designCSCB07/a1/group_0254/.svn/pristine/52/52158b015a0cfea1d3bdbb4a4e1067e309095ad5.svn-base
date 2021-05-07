@@ -1,0 +1,8 @@
+class name: ShellIO.java
+super: Object
+sub: Echo.java, Cat.java, Redirect.java, Read.java(?)
+responsibilities:
+Handles input reading
+Handles command outputs and redirects
+Collaborators:
+Null

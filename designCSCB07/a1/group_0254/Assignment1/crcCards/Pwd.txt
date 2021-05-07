@@ -1,0 +1,10 @@
+Class name: Pwd.java
+Parent class: Echo.java
+Subclasses: None
+
+Responsibilities:
+*Prints the path of the current working directory.
+
+Collaborators
+*DirMgt.java
+*Redirect.java

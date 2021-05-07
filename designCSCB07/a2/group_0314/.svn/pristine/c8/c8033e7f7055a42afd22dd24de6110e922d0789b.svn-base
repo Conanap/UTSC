@@ -1,0 +1,7 @@
+Class Name: Man.class
+Super class: JShell.class
+Sub class: Null
+Responsibilities:
+*Stores / retrieves the manual for all commands
+Collaborator:
+History.class, Echo.class, Overwrite.class, Append.class, Cat.class, Rm.class, MkDir.class, Cp.class, Mv.class, Overwrite.class, Append.class, DirStack.class, Ls.class, Pwd.class

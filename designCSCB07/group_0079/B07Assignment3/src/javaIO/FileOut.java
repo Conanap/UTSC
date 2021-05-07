@@ -1,0 +1,59 @@
+// **********************************************************
+// Assignment3:
+// UTORID user_name: fungalbi
+//
+// Author: Albion Ka Hei Fung
+//
+//
+// Honor Code: I pledge that this program represents my own
+// program code and that I have coded on my own. I received
+// help from no one in designing and debugging my program.
+// *********************************************************
+package javaIO;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+/**
+ * An object that buffers output to a file, and formats the output.
+ * 
+ * @author Albion Ka Hei Fung
+ *
+ */
+public class FileOut extends OutputStandard {
+
+  private String flname;
+
+  /**
+   * Constructor for an object buffering output to a file
+   * 
+   * @param name Name of desired file to output to
+   */
+  public FileOut(String name) {
+    this.flname = name;
+    this.sb = new StringBuilder();
+    this.setUp();
+  }
+
+  /**
+   * when all files have been parsed, call this function in order to output
+   * everything to the specified file name
+   */
+  @Override
+  public void sendEOF() {
+    try {
+      // write to new file
+      FileWriter fw = new FileWriter(this.flname);
+      PrintWriter pw = new PrintWriter(fw);
+      // build string (output)
+      this.outString = this.sb.toString();
+      // write it. Note this overwrite prev. files
+      pw.write(this.outString);
+      pw.close();
+    } catch (IOException e) {
+      System.out.println("IOException for file " + this.flname);
+    }
+  }
+}

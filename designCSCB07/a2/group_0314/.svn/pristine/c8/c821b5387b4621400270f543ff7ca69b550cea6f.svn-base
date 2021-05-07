@@ -1,0 +1,8 @@
+Class name: History.class
+Super class: JShell.class
+Sub class: Null
+Responsibilities:
+*Store past commands
+*Output past commands in standard output
+Collaborators:
+Echo.class

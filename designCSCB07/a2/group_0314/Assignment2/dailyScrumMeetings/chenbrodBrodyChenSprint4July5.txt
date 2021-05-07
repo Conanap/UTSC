@@ -1,0 +1,9 @@
+What did I do?
+	- Updated implementation of Ls for -R
+	- Started on grep
+
+What do I plan to do now?
+	- Finish implementing grep
+
+Am I blocked on anything?
+	- Need to figure out how grep recognizes regexes

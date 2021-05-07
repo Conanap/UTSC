@@ -1,0 +1,49 @@
+package Test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ContextParserTest {
+
+  @Test
+  public void testGetAuthor() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumberCitations() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumberi10Index() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetFirstThreePublication() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumPublicationFirstFive() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetNumCoauthor() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testExtractSection() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testGetCoauthors() {
+    fail("Not yet implemented");
+  }
+
+}

@@ -1,0 +1,8 @@
+What did I do last time?
+- created JShell code to parse inputted commands
+- brainstormed ideas with group to implement file system
+What do I plan to do now?
+- create File and Directory CRC cards
+- finalize API for command classes
+Am I blocked on anything?
+- Need command class APIs to be finalized before JShell can call them

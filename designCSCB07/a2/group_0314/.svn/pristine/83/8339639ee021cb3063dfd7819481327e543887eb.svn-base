@@ -1,0 +1,18 @@
+package command;
+
+import filesystem.Directory;
+import filesystem.FileSystem;
+import driver.CommandRunner;
+import driver.Output;
+
+public interface Command {
+  public void initialize(Directory curr, FileSystem fs, History his);
+
+  public void execute(String[] tokens, CommandRunner cmd, Output output);
+
+  public boolean validate(String[] tokens);
+
+  public String getManual();
+
+  public String getUsage();
+}

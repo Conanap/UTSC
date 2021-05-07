@@ -1,0 +1,5 @@
+public class Pushd {
+  public static void pushd(FileSystem fs, curr) {
+    fs.push(Pwd.printWorkingDirectory(curr));
+  }
+}

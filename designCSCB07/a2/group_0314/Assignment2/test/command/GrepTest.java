@@ -1,0 +1,120 @@
+package command;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Assert;
+
+import command.Grep;
+import filesystem.Directory;
+import filesystem.File;
+
+public class GrepTest {
+
+  private Grep grepObj;
+
+  @Before
+  public void setup() {
+    grepObj = new Grep();
+  }
+
+  @Test
+  public void testGrepNothing() {
+    MockFile testFile = new MockFile("EMPTY");
+    Assert.assertEquals("", grepObj.grep("a", testFile));
+  }
+
+  @Test
+  public void testGrepContains() {
+    MockFile testFile = new MockFile("CONTAIN ONLY REGEX");
+    Assert.assertEquals("aaaa\n", grepObj.grep("a*", testFile));
+  }
+
+  @Test
+  public void testGrepContainsLines() {
+    MockFile testFile = new MockFile("MULT LINES");
+    Assert.assertEquals("bb\nbb\n", grepObj.grep("b*", testFile));
+  }
+
+  @Test
+  public void testGrepDir() {
+    MockDirectory testDir = new MockDirectory("JUST FILES", "testDir");
+    String expected = "testDir/file2:aaaa\ntestDir/file1:aa\n";
+    Assert.assertEquals(expected, grepObj.grepDir("a*", testDir));
+  }
+
+  @Test
+  public void testGrepSubDir() {
+    MockDirectory testDir = new MockDirectory("WITH SUBDIRS", "testDir");
+    String expected = "testDir/dir2/file2:aaaa\ntestDir/dir2/file1:aa\n"
+        + "testDir/dir1/file2:aaaa\ntestDir/dir1/file1:aa\n";
+    Assert.assertEquals(expected, grepObj.grepDir("a*", testDir));;
+  }
+
+  public class MockFile extends File {
+
+    private String content;
+
+    public MockFile(String testCase) {
+      switch (testCase) {
+        case "EMPTY":
+          this.content = "";
+          break;
+        case "CONTAIN ONLY REGEX":
+          this.content = "aaaa";
+          break;
+        case "MULT LINES":
+          this.content = "aa\nbb\nc\nbb\nddd";
+          break;
+        default:
+          this.content = "hello world";
+          break;
+      }
+    }
+
+    @Override
+    public String getContent() {
+      return content;
+    }
+  }
+
+  public class MockDirectory extends Directory {
+
+    private String name;
+    private Map<String, Directory> dirContainer;
+    private Map<String, File> fileContainer;
+
+    public MockDirectory(String testCase, String name) {
+      this.name = name;
+      fileContainer = new HashMap<String, File>();
+      dirContainer = new HashMap<String, Directory>();
+      switch (testCase) {
+        case ("JUST FILES"):
+          fileContainer.put("file1", new MockFile("MULT LINES"));
+          fileContainer.put("file2", new MockFile("CONTAIN ONLY REGEX"));
+          break;
+        case ("WITH SUBDIRS"):
+          dirContainer.put("dir1",
+              new MockDirectory("JUST FILES", name + "/dir1"));
+          dirContainer.put("dir2",
+              new MockDirectory("JUST FILES", name + "/dir2"));
+          break;
+      }
+    }
+
+    public Map<String, File> getFileContainer() {
+      return fileContainer;
+    }
+
+    public Map<String, Directory> getDirContainer() {
+      return dirContainer;
+    }
+
+    public String getPath() {
+      return name + "/";
+    }
+  }
+}
