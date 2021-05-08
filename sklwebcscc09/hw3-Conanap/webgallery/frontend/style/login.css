@@ -1,0 +1,21 @@
+button {
+    background: grey;
+    border: none;
+    border-radius: 0.3em;
+
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+#signin {
+    margin-left: 1.7em;
+    margin-right: 1.7em;
+}
+
+#signup {
+    margin-left: 1.3em;
+}
+
+#error_box {
+    color: red;
+}

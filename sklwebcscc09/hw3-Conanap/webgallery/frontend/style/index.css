@@ -1,0 +1,141 @@
+header a {
+	color: white;
+	text-decoration: none;
+	font-size: 8em;
+	font-family: Helvetica, "Bookman Header",Times;
+	font-style: italic;
+}
+
+body {
+	background: black;
+}
+
+img {
+	 max-height: 900px;
+	 max-width: 900px;
+}
+
+#siteHolder {
+	display: flex;
+	flex-direction: column;
+	max-width: 100em;
+	align-items: center;
+	margin: 0 auto;
+}
+
+#hideImgUpload {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	color: white;
+	font-size: 1.5em;
+	width: 1em;
+	top: 1em;
+	left: 1em;
+	cursor: pointer;
+	outline: 0;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+#hideImgUpload:focus {
+	background: none;
+}
+
+button:focus {
+	outline: 0;
+}
+
+button:hover {
+	background: #3171ce;
+}
+
+button::-moz-focus-inner {
+	border: 0;
+}
+
+.mainDivs {
+	width: 100%;
+	margin: 1em;
+	background: grey;
+	position: relative;
+	border-radius: 2em;
+}
+
+img {
+	margin: auto;
+}
+
+.indivPost {
+	display: flex;
+	flex-direction: column;
+}
+
+.indivPost h2 {
+	margin: auto;
+	font-size: 4em;
+	margin-bottom: 0.2em;
+}
+
+.indivPost div.imgInfo {
+	color: white;
+	font-size: 2em;
+	margin: auto;
+	margin-top: 1em;
+}
+
+.lowerSite {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	background: grey;
+	max-height: 8em;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 2em;
+}
+
+.lowerSite .navButton {
+	color: white;
+	font-size: 5em;
+	background: grey;
+	vertical-align: middle;
+	/*padding: 0.5em;*/
+	line-height: 1em;
+	text-align: center;
+	cursor: pointer;
+	outline: 0;
+	user-select: none;
+	-moz-user-select: none;
+	max-height: 480px;
+}
+
+#navL, #navLU {
+	margin-left: 1em;
+}
+
+#navR, #navRU {
+	margin-right: 1em;
+}
+
+footer a {
+	color: white;
+}
+
+a.signinout {
+	color: white;
+	text-align: center;
+	padding: 1em;
+	width: 30%;
+	user-select: none;
+	-moz-user-select: none;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 0.8em;
+}
+
+a.hidden {
+	display: none;
+}

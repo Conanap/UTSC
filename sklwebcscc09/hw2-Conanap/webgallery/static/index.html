@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Photo Uploado</title>
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+	<link rel="stylesheet" type="text/css" href="style/form.css">
+	<link rel="stylesheet" type="text/css" href="style/comment.css">
+</head>
+
+<body>
+
+	<div id="siteHolder">
+		<header>
+			<a href="index.html" id="title">Photo Uploado</a>
+		</header>
+		<div class="mainDivs" id="uploadDiv">
+			<button id="hideImgUpload">▲</button>
+
+			<form id="addImageForm" class="fillableForm">
+				<input type="text" id="postAuthor" name="author" placeholder="Author" required/>
+				<input type="text" id="postTitle" name="title" placeholder="Title" required />
+				<input type="url" id="postUrl" name="url" placeholder="URL" required />
+				<input type="submit" value="Upload">
+			</form>
+		</div>
+
+		<div class="lowerSite">
+			<div id="navL" class="navButton"><<</div>
+			<div id="navR" class="navButton">>></div>
+		</div>
+		<div id="pictures" class="mainDivs">
+			<!-- <div> -->
+				<!-- <img src=""> -->
+
+				<!-- <div class="commentWrapper"> -->
+					<!-- <form id="commentForm" class="fillableForm"> -->
+						<!-- <input type="text" name="Cauthor" placeholder="Author" /> -->
+						<!-- <textarea type="text" name="comment" placeholder="Entre something here!"></textarea> -->
+					<!-- </form> -->
+
+					<!-- <div class="comments"> -->
+						<!-- <h3>Not me</h3> -->
+						<!-- <p>hi</p> -->
+						<!-- <h3>Not me</h3> -->
+						<!-- <p>hi</p> -->
+					<!-- </div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		</div>
+
+	</div>
+
+</body>
+
+<footer>
+	<script src="js/api.js"></script>
+	<script src="js/indexScript.js"></script>
+</footer>
+</html>

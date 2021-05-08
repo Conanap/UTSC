@@ -1,0 +1,55 @@
+form.fillableForm {
+	display: flex;
+	flex-direction: column;
+	margin: 1em;
+	border: 2em grey solid;
+	border-radius: 0.5em;
+	background: grey;
+	width: auto;
+}
+
+#uploadDiv {
+	transition: all 0.4s ease;
+}
+
+.parentCollapsedDiv {
+	height: 5em;
+}
+
+form input {
+	height: 3.5em;
+	margin: 0.5em;
+	border: 1px solid grey;
+	border-radius: 0.5em;
+	color: grey;
+	text-align: center;
+}
+
+form input[type=file] {
+	height: auto;
+	width: auto;
+	margin: auto;
+	color: white;
+	justify-content: space-around;
+}
+
+#addImageForm input::placeholder {
+	text-align: center;
+}
+
+form textarea {
+	margin: 0.5em;
+	height: 5em;
+}
+
+.delete {
+	font-size: 2em;
+	color: #a80a0a;
+	text-align: right;
+	margin-right: 1em;
+	margin-top: 0.5em;
+	margin-bottom: -0.5em;
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+}

@@ -1,0 +1,6 @@
+{"_id":"0","content":"adsfadsf","username":"abc","upvote":0,"downvote":0,"createdAt":{"$$date":1549394051623},"updatedAt":{"$$date":1549394059343},"votiBoi":1}
+{"_id":"0","content":"adsfadsf","username":"abc","upvote":1,"downvote":0,"createdAt":{"$$date":1549394051623},"updatedAt":{"$$date":1549394121265},"votiBoi":1}
+{"_id":"0","content":"adsfadsf","username":"abc","upvote":2,"downvote":0,"createdAt":{"$$date":1549394051623},"updatedAt":{"$$date":1549394122064},"votiBoi":1}
+{"_id":"0","content":"adsfadsf","username":"abc","upvote":2,"downvote":2,"createdAt":{"$$date":1549394051623},"updatedAt":{"$$date":1549394122993},"votiBoi":1}
+{"_id":"0","content":"adsfadsf","username":"abc","upvote":2,"downvote":2,"createdAt":{"$$date":1549394051623},"updatedAt":{"$$date":1549394123168},"votiBoi":1}
+{"$$deleted":true,"_id":"0"}

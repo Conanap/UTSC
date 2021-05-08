@@ -1,0 +1,72 @@
+.commentWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.comments {
+	margin: auto;
+	width: 100%;
+}
+
+.indivCmt {
+	display: flex;
+	flex-direction: column;
+	background: #262626;
+	padding-top: 1em;
+	padding-bottom: -2em;
+	margin-bottom: 1em;
+	padding-left: -1em;
+}
+
+.indivCmt p {
+	color: white;
+	font-size: 1.3em;
+	padding-left: 4em;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.indivCmt p.cmtDate {
+	margin-top: 0.7em;
+	margin-bottom: 1em;
+}
+
+.indivCmt h3 {
+	color: white;
+	text-decoration: underline;
+	padding-left: 3em;
+	padding-bottom: 0;
+	margin-top: 0;
+	font-size: 1.5em;
+}
+
+.cmtHdr {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: -2em;
+}
+
+.indivCmt .cmtHdr .deleteCmt {
+	margin-right: 3em;
+	color: red;
+	cursor: pointer;
+	-moz-user-select: none;
+	user-select: none;
+	margin-top: 0;
+}
+
+.commentNav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: white;
+	font-size: 2em;
+	margin: 1em;
+}
+
+.cmtNavButton {
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+}
